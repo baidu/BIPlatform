@@ -1,0 +1,32 @@
+<!--
+数据例子：
+var demoData = {
+    "planeTableParamList": [
+        {
+            "text": "表1",
+            "value": "table1"
+        },
+        {
+            "text": "表2",
+            "value": "table2"
+        },
+        {
+            "text": "表3",
+            "value": "table3"
+        }
+    ]
+};
+-->
+<li class="table-link-set-item">
+    <input value="" placeholder="请输入操作列名" data-value="{{$data.operationColumnId}}">
+    <select class="right mr-10 j-table-link-set-plane-table">
+        <option value="">请选择平面表</option>
+        {{each $data.planeTableList as $planeTable}}
+        <option value="{{$planeTable.value}}">{{$planeTable.text}}</option>
+        {{/each}}
+    </select>
+    <span type="button" class="form-common-input-button f-l hide j-next">设置参数</span>
+    <span class="biplt-radius biplt-radius-red biplt-del mt-3 ml-5 f-l c-p j-del" title="删除" data-status="add">
+        <span></span>
+    </span>
+</li>

@@ -1,0 +1,51 @@
+<div class="con-releaseBox">
+    <div class="con-head">
+        <a href="{{url}}" {{if url!=='#'}}target="_blank"{{/if}}><div class="con-hRead"></div></a>
+        {{if type == 'POST'}}
+        <a href="javascript:;"><div class="con-hReturn j-report-list"></div></a>
+        {{else}}
+        <a href="javascript:;"><div class="con-hEdit j-report-edit"></div></a>
+        {{/if}}
+    </div>
+    <div class="con-body">
+        <div class="con-report-url">
+            <ul class="con-url">
+                <li>你可以将下面的报表地址分享给好友，或者通过邮件的方式发送出去</li>
+                <li id="copyUrlBtnCopyContent" class="con-url-text con-br">{{content}}</li>
+            </ul>
+            <ul class="con-url-a" id="copyUrlBtnContainer">
+                <li id="copyUrlBtn"><a><span class="conspan">复制URL地址</span></a></li>
+                <li><a href="{{url}}" {{if url!=='#'}}target="_blank"{{/if}}><span class="conspan">新窗口浏览</span></a></li>
+            </ul>
+        </div>
+        <div class="con-tiled">
+            <ul class="con-report">
+                <li class="con-report-title">平铺式报表</li>
+                <li>将下面的代码加入到你的网页HTML代码中，让用户在你的网页上看到报表</li>
+                <li id="copyTiledBtnCopyContent" class="con-report-text con-br">
+                    &lt;iframe height="600" allowTransparency="true"
+                    style="width:100%;border:none;overflow:auto;"
+                    frameborder="0"
+                    src="{{url}}"&gt;&lt;/iframe&gt;
+                </li>
+            </ul>
+            <ul id="copyTiledBtnContainer" class="con-copy">
+                <li id="copyTiledBtn"><a href="javascript:;"><span class="conspan">复制代码</span></a></li>
+            </ul>
+        </div>
+        <div class="con-embedded">
+            <ul class="con-report">
+                <li class="con-report-title">嵌入式报表</li>
+                <li>下面的代码，能够适应各业务系统的个性化布局展现，可以实现报表的自适应调整</li>
+                <li id="copyEmbeddedBtnCopyContent" class="con-report-text con-br">
+                    &lt;iframe height="600" allowTransparency="true"
+                    style="width:100%;border:none;overflow:auto;" frameborder="0"
+                    src="{{url}}"&gt;&lt;/iframe&gt;
+                </li>
+            </ul>
+            <ul id="copyEmbeddedBtnContainer" class="con-copy">
+                <li id="copyEmbeddedBtn"><a href="javascript:;"><span class="conspan">复制代码</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>

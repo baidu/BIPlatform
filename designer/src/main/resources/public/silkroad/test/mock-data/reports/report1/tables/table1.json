@@ -1,0 +1,18 @@
+{
+    "status": 0,
+    "statusInfo": "提示信息",
+    "data": {
+        "fields": [
+            {"id": "day", "name": "日"},
+            {"id": "week", "name": "周"},
+            {"id": "month", "name": "月"},
+            {"id": "quarter", "name": "季度"}
+        ],
+        "dateFormatOptions": {
+            "day": ["yyyy-MM-dd", "yyyy/MM/dd"],
+            "week": ["yyyy-W", "yyyy/W"],
+            "month": ["yyyy-MM", "yyyy/MM"],
+            "quarter": ["yyyy-QQ", "yyyy/QQ"]
+        }
+    }
+}

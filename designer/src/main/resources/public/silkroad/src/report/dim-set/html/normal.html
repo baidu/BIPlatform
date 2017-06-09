@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../../css/all.css" rel="stylesheet" type="text/css" />
+    <link href="../../../css/biz/report-dim-set.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="dim-setting">
+<ul class="dim-setting-head">
+    <li class="classification classification-focus"><span>普通维度</span></li>
+    <li class="classification"><span>时间维度</span></li>
+    <li class="classification"><span>回调维度</span></li>
+    <li class="classification"><span>自定义维度</span></li>
+</ul>
+<div class="dim-setting-body">
+<div class="dim-container-normal">
+    <ul class="normal-column-names c-f">
+        <li><span>主数据表</span></li>
+        <li><span>主表字段</span></li>
+        <li><span>关联数据表</span></li>
+        <li><span>关联表字段</span></li>
+    </ul>
+    <div class="normal-main">
+        <div class="normal-main-box c-f">
+            <span class="cube-name">cube1</span>
+            <span class="normal-cube-open"></span>
+            <div class="normal-relation-container c-f">
+                <div class="normal-relation-box">
+                    <select name="" id="" class="normal-relation-box-select-fields mr-20"></select>
+                    <span class="equal">=</span>
+                    <select name="" id="" class="normal-relation-box-select-table mr-30" ></select>
+                    <select name="" id="" class="normal-relation-box-select-fields mr-10"></select>
+                    <span class="delete"></span>
+                </div>
+                <div class="normal-relation-box">
+                    <span class="normal-broken-line"></span>
+                    <select name="" id="" class="normal-relation-box-select-fields mr-20"></select>
+                    <span class="equal">=</span>
+                    <select name="" id="" class="normal-relation-box-select-table mr-30"></select>
+                    <select name="" id="" class="normal-relation-box-select-fields mr-10"></select>
+                    <span class="delete"></span>
+                </div>
+                <div class="normal-relation-box">
+                    <span class="normal-broken-line"></span>
+                    <select name="" id="" class="normal-relation-box-select-fields mr-20"></select>
+                    <span class="equal">=</span>
+                    <select name="" id="" class="normal-relation-box-select-table mr-30"></select>
+                    <select name="" id="" class="normal-relation-box-select-fields mr-10"></select>
+                    <span class="delete"></span>
+                    <span class="add"></span>
+                </div>
+            </div>
+        </div>
+        <div class="normal-main-box c-f">
+            <span class="cube-name">cube1</span>
+            <span class="normal-cube-close"></span>
+        </div>
+    </div>
+    <span class="prompt mt-50">注：建立关联后，默认将关联表的所有字段全部取出</span>
+</div>
+
+</div>
+<div class="t-c mt-100">
+    <span class="button button-flat-primary m-10">返回重新选择数据表</span>
+    <span class="button button-flat-primary m-10">完成</span>
+    <span class="button button-flat-primary m-10">取消</span>
+</div>
+</div>
+</body>
+</html>

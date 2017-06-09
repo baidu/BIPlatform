@@ -1,0 +1,35 @@
+/**
+ * Suggest
+ */
+.ui-suggest {
+    position: relative;
+    height: 20px;
+    width: 160px;
+    border: 1px solid #A9ADB6;
+    background-color: #FFF;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    *display: inline;
+    *zoom: 1
+}
+.ui-suggest .ui-input {
+    border: 1px solid white;
+}
+.ui-suggest-options {
+    border: 1px solid #A8ADB6;
+    background: white;
+    font-size: 12px;
+}
+.ui-suggest-item {
+    white-space: nowrap;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 4px;
+    cursor: default;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+.ui-suggest-item-hover, .ui-suggest-item-focus {
+    background: #E4EAFA;
+}

@@ -1,0 +1,72 @@
+<div class="dim-container-callback hide j-callback-main">
+    <ul class="callback-column-names c-f">
+        <li class="callback-column-names-main-table"><span>主数据表</span></li>
+        <li class="callback-column-names-setting"><span>配置区</span></li>
+    </ul>
+    {{each dim.callback as $cube i}}
+    <div class="callback-main-box c-f j-callback-main-box" bodyIndex={{i}}>
+        <span class="cube-name" cubeId={{$cube.cubeId}} title={{cubes[$cube.cubeId].name}}>{{cubes[$cube.cubeId].name}}</span>
+        <span class="callback-cube-open j-callback-cube-open"></span>
+        <div class="callback-relation-container c-f">
+            {{each $cube.children as $line j}}
+            <div class="callback-relation-box c-f j-callback-relation-box" bodyIndex={{j}}>
+                {{if j !==0 }}
+                <span class="callback-broken-line"></span>
+                {{/if}}
+                <div class="callback-relation-content">
+                    <div class="first-part c-f">
+                        <span>选择回调字段：</span>
+                        <select>
+                            <option value="0">请选择</option>
+                            {{each cubes[$cube.cubeId].currDims as $dim}}
+                            <option value={{$dim.id}}
+                            {{if $dim.id === $line.currDim}}selected="selected"
+                            {{/if}}>{{$dim.name}}
+                            </option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="callback-relation-content-two-part c-f">
+                        <span class="callback-address-name">填写回调地址：</span>
+                        <input type="text" name="" id="" class="callback-address-input j-callback-address-input" value="{{$line.address}}" />
+                        <span class="callback-address-prompt">
+                            例如：http://10.46.133.66:8999/pfplat/callbackmock.action
+                        </span>
+                    </div>
+                    <div class="callback-relation-content-three-part c-f">
+                        <span class="callback-cache-name">选取缓存类型：</span>
+                        <div>
+                            <input type="radio" value="1" class="callback-cache-type-right-input " name="callback-cache-body{{i}}-box{{j}}"
+                            {{if $line.refreshType === 1}} checked="checked" {{/if}} />
+                            <label class="callback-cache-type-right-label">
+                                无需缓存（数据量大，不推荐）
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" value="2" class="callback-cache-type-right-input" name="callback-cache-body{{i}}-box{{j}}"
+                            {{if $line.refreshType === 2}} checked="checked" {{/if}} />
+                            <label class="callback-cache-type-right-label">
+                                在数据刷新后立刻刷新缓存
+                            </label>
+                        </div>
+                        <div class="ml-89">
+                            <input type="radio" value="3" class="callback-cache-type-right-input" name="callback-cache-body{{i}}-box{{j}}"
+                            {{if $line.refreshType === 3}} checked="checked" {{/if}}/>
+                                <span class="callback-cache-type-right-label">间隔
+                                <input type="text" class="callback-cache-type-interval j-callback-cache-type-interval" value="{{$line.interval}}" />
+                                秒刷新一次缓存</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="delete j-callback-delete"></span>
+                {{if j === ($cube.children.length-1)}}
+                <span class="add j-callback-add"></span>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+        <span class="callback-error-msg j-callback-error-msg hide"></span>
+    </div>
+    {{/each}}
+</div>
+

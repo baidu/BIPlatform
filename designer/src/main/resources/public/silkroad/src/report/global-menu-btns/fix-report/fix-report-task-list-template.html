@@ -1,0 +1,38 @@
+<div class="fix-report-task-mgr-list">
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th class="list-index">任务名称</th>
+                <th class="list-name">运行状态</th>
+                <th class="list-btns">操作</th>
+                <th class="list-url">url地址</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{each taskMgrList as $item index}}
+        <tr class="task-item" task-id="{{$item.taskId}}">
+            <td><div class="list-index ellipsis" title="{{$item.taskName}}">{{$item.taskName}}</div></td>
+            <td><div class="list-name ellipsis" title="{{$item.statusInfo}}">{{$item.statusInfo}}</div></td>
+            <td>
+                <div class="list-btns">
+                        <span class="biplt-radius biplt-start c-p j-task-start" title="启动">
+                            <span></span>
+                        </span>
+                    <span class="biplt-normal biplt-look c-p j-task-look" title="查看"><span></span></span>
+                    <span class="biplt-radius biplt-radius-red biplt-del c-p j-task-del" title="删除"><span></span></span>
+                </div>
+            </td>
+            <td><div class="list-url text c-p ellipsis j-task-url" title="{{$item.taskUrl}}">{{$item.taskUrl}}</div></td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+    {{if taskMgrList.length == 0}}
+    <div class="empty-data ta-c">暂无数据</div>
+    {{/if}}
+</div>
+<div class="box-add c-f">
+     <span class="biplt-radius c-p biplt-add f-r j-task-add" title="新增任务">
+        <span></span>
+    </span>
+</div>

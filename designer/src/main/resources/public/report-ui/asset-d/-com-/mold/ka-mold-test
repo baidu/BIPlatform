@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+
+#parse("/asset-d/-com-/-cominclude-.vm")
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>KA-收入报表</title>
+
+    #comCSS
+
+    <style type="text/css">
+        .ka-block-body {
+            padding: 10px;
+            font-size: 12px;
+        }
+        .ka-line-time {
+            margin: 0 0 10px 0;
+            overflow: hidden;
+        }
+        .ka-time-form {
+            float: left;
+            vertical-align: top;
+            margin-right: 10px;
+        }
+        .ka-time-form-item {
+            margin-right: 80px;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: middle;
+        }
+        .ka-adv-ctrl-btn {
+            float: left;
+            vertical-align: top;
+        }
+        .ka-adv-form {
+            margin: 5px 0 10px 0;
+            width: 940px;
+            font-size: 12px;
+        }
+        .ka-adv-form-line {
+            margin-bottom: 7px;
+        }
+        .ka-adv-form-text {
+            width: 115px;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: middle;
+        }
+        .ka-adv-form-item {
+            width: 160px;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: middle;
+        }
+        .ka-adv-form-sep {
+            margin-left: 20px;
+        }
+
+        .ka-block-tab-title {
+            height: 27px;
+        }
+        .ka-block-tab-title .ui-tab {
+            display: none;
+        }
+        .ka-block-tab-content {
+            border: 1px solid #D7D7D7;
+            padding: 10px;
+        }
+
+        .ka-chart-meta {
+            margin: 5px 5px 10px 5px;
+        }
+        .ka-chart-meta-sel {
+            width: 160px;
+        }
+        .ka-chart-meta-label {
+            margin-right: 10px;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: middle;
+        }
+        .ka-chart-range-sel {
+            margin: 0 10px 0 20px;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: middle;
+        }
+        .ka-chart-download-btn {
+            float: right;
+        }
+
+        .ka-block-chart {
+            margin-bottom: 15px;
+        }
+        .ka-block-table-meta {
+            width: 900px;
+        }
+        .ka-table {
+            border-top: 2px solid #2070BB;
+            height: 400px;
+        }
+        .ka-line-table-breadcrumb {
+            padding: 10px 5px 6px 10px;
+            overflow: hidden;
+        }
+        .ka-table-breadcrumb {
+            float: left;
+            line-height: 26px;
+        }
+        .ka-table-right-btn {
+            float: right;
+        }
+        .ka-table-meta-ctrl-btn {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: middle;
+            margin-right: 15px;
+        }
+        .ka-table-download-btn {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: middle;
+        }
+        .ka-table-prompt {
+            font-size: 12px;
+            color: #888;
+            padding: 6px 15px 10px 10px;            
+            overflow: hidden;
+            line-height: 18px;
+        }
+        .ka-table-count {
+            float: left;
+            line-height: 18px;            
+            vertical-align: middle;
+            width: 600px;
+        }
+        .ka-table-count-num {
+            font-size: 14px;
+            color: #4289D4;
+            font-weight: bold;
+            font-family: Arial;
+        }
+        .ka-table-prompt-sel {
+            float: right;
+            line-height: 18px;            
+            vertical-align: middle;
+        }
+
+    </style>
+
+</head>
+
+<body class="di-page-html-body"><!-- escape enter
+    --><div data-o_o-di="BODY" class="di-page-div-body">
+
+        <div class="ka-block-body" data-o_o-di="snpt-ka1">
+
+
+            <!-- 条件 -->
+
+            <div class="ka-line-time">
+                <div class="ka-time-form" data-o_o-di="snpt-ka1.cpnt-ka1-form1">
+                    <div class="ka-time-form-item" data-o_o-di="snpt-ka1.vu-ka1-form1-time91"></div>
+                    <span>数据过滤：</span>
+                    <div class="ka-time-form-item" data-o_o-di="snpt-ka1.vu-ka1-form1-filter"></div>
+                </div>
+                <div class="ka-adv-ctrl-btn" data-o_o-di="snpt-ka1.vpt-ka1-fold1-ctrlbtn1"></div>
+            </div>
+
+            <div data-o_o-di="snpt-ka1.vctnr-ka1-fold1">
+                <div class="ka-adv-form" data-o_o-di="snpt-ka1.vpt-ka1-fold1-body1">
+                    <div data-o_o-di="snpt-ka1.cpnt-ka1-form9">
+                        <div class="ka-adv-form-line">
+                            <div class="ka-adv-form-text">岗位</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-pos93"></div>
+                            <div class="ka-adv-form-text ka-adv-form-sep">广告主行业</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-guanggaozhuhangye1"></div>
+                            <div class="ka-adv-form-text ka-adv-form-sep">产品线</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-prodline1"></div>
+                        </div>
+
+                        <div class="ka-adv-form-line">
+                            <div class="ka-adv-form-text">产品大类</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-chanpindalei1"></div>
+                            <div class="ka-adv-form-text ka-adv-form-sep">频道</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-pindao1"></div>
+                            <div class="ka-adv-form-text ka-adv-form-sep">P4P/非P4P</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-p4pnp4p1"></div>                            
+                        </div>
+
+                        <div class="ka-adv-form-line">
+                            <div class="ka-adv-form-text">网页/非网页/hao123</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-wangyefeiwangye1"></div>
+                            <div class="ka-adv-form-text ka-adv-form-sep">广告主集团</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-guanggaozhujituan1"></div>
+                            <div class="ka-adv-form-text ka-adv-form-sep">广告主</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-guanggaozhu1"></div>
+                        </div>
+
+                        <div class="ka-adv-form-line">
+                            <div class="ka-adv-form-text">代理商类型</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-dailishangleixing1"></div>                            
+                            <div class="ka-adv-form-text ka-adv-form-sep">代理商集团</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-dailishangjituan1"></div>
+                            <div class="ka-adv-form-text ka-adv-form-sep">代理商</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-dailishang1"></div>
+                        </div>
+
+                        <div class="ka-adv-form-line">
+                            <div class="ka-adv-form-text">框架编号</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-kuangjiabianhao1"></div>
+                            <div class="ka-adv-form-text ka-adv-form-sep">结算方式</div>
+                            <div class="ka-adv-form-item" data-o_o-di="snpt-ka1.vu-ka1-form9-jiesuanfangshi1"></div>
+                        </div>
+
+                        <div>
+                            <div data-o_o-di="snpt-ka1.vu-ka1-form9-confirm9"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB -->
+
+            <div class="ka-block-tab-title" data-o_o-di="snpt-ka1.vctnr-ka1-layer1">
+                <div data-o_o-di="snpt-ka1.vpt-ka1-layer1-tab1"></div>
+                <div data-o_o-di="snpt-ka1.vpt-ka1-layer1-tab2"></div>
+                <div data-o_o-di="snpt-ka1.vpt-ka1-layer1-tab3"></div>
+                <div data-o_o-di="snpt-ka1.vpt-ka1-layer1-tab4"></div>
+                <div data-o_o-di="snpt-ka1.vpt-ka1-layer1-tab5"></div>
+                <!-- <div data-o_o-di="snpt-ka1.vpt-ka1-layer1-tab6"></div> -->
+            </div>
+
+            <div style="display:none" class="ka-block-tab-content" data-o_o-di="snpt-ka1.vpt-ka1-layer1-body1">
+
+                <!-- snippet ka11 -->
+
+                <div data-o_o-di="snpt-ka11">
+
+                    <div class="ka-chart-meta" data-o_o-di="snpt-ka11.cpnt-ka11-chart-meta1">
+                        <span class="ka-chart-meta-label">选择指标</span>
+                        <div class="ka-chart-meta-sel" data-o_o-di="snpt-ka11.vu-ka11-chart-meta1"></div>
+                        <div class="ka-chart-range-sel" data-o_o-di="snpt-ka11.cpnt-ka11-chart-form1">
+                            <div class="ka-chart-range-sel" data-o_o-di="snpt-ka11.cpnt-ka11-chart-form1-range1">
+                            </div>
+                        </div>
+                        <div class="ka-chart-download-btn" data-o_o-di="snpt-ka11.vu-ka11-chart1-downloadbtn1"></div>
+                    </div>
+
+                    <div class="ka-block-chart" data-o_o-di="snpt-ka11.cpnt-ka11-chart1">
+                        <div data-o_o-di="snpt-ka11.vu-ka11-chart1"></div>
+                    </div>
+                </div>
+
+                <!-- snippet ka12 -->
+
+                <div data-o_o-di="snpt-ka12">
+
+                    <div data-o_o-di="snpt-ka12.vctnr-ka12-fold1">
+                    </div>
+
+                    <div class="di-table-area" data-o_o-di="snpt-ka12.cpnt-ka12-table1">
+                        <div class="ka-line-table-breadcrumb">
+                            <div class="ka-table-breadcrumb" data-o_o-di="snpt-ka12.vu-ka12-breadcrumb1"></div>
+                            <div class="ka-table-right-btn"> 
+                                <div class="ka-table-meta-ctrl-btn" data-o_o-di="snpt-ka12.vpt-ka12-fold1-ctrlbtn1"></div>
+                                <div class="ka-table-download-btn" data-o_o-di="snpt-ka12.vu-ka12-table1-downloadbtn1"></div>
+                            </div>
+                        </div>
+                        <div data-o_o-di="snpt-ka12.vpt-ka12-fold1-body1">
+                            <div class="ka-block-table-meta" data-o_o-di="snpt-ka12.cpnt-ka12-table-meta1">
+                                <div class="ka-table-meta" data-o_o-di="snpt-ka12.vu-ka12-table-meta1"></div>
+                            </div>
+                        </div>
+                        <div class="ka-table" data-o_o-di="snpt-ka12.vu-ka12-table1"></div>
+                        <div class="ka-table-prompt">
+                            <div class="ka-table-count" data-o_o-di="snpt-ka12.vu-ka12-count1">
+                                符合查询条件的数据只显示<span class="ka-table-count-num">#{currRecordCount}</span>条。
+                            </div>
+                            <div class="ka-table-prompt-sel">点击表行可显示对应的趋势线，最多可选中5行</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div style="display:none" class="ka-block-tab-content" data-o_o-di="snpt-ka1.vpt-ka1-layer1-body2">
+
+                <!-- snippet ka13 -->
+
+                <div data-o_o-di="snpt-ka13">
+
+                    <div class="ka-chart-meta" data-o_o-di="snpt-ka13.cpnt-ka13-chart-meta1">
+                        <span class="ka-chart-meta-label">选择指标</span>
+                        <div class="ka-chart-meta-sel" data-o_o-di="snpt-ka13.vu-ka13-chart-meta1"></div>
+                        <div class="ka-chart-range-sel" data-o_o-di="snpt-ka13.cpnt-ka13-chart-form1">
+                            <div class="ka-chart-range-sel" data-o_o-di="snpt-ka13.cpnt-ka13-chart-form1-range1">
+                            </div>
+                        </div>
+                        <div class="ka-chart-download-btn" data-o_o-di="snpt-ka13.vu-ka13-chart1-downloadbtn1"></div>
+                    </div>
+
+                    <div class="ka-block-chart" data-o_o-di="snpt-ka13.cpnt-ka13-chart1">
+                        <div data-o_o-di="snpt-ka13.vu-ka13-chart1"></div>
+                    </div>
+                </div>
+
+                <!-- snippet ka14 -->
+
+                <div data-o_o-di="snpt-ka14">
+
+                    <div data-o_o-di="snpt-ka14.vctnr-ka14-fold1">
+                    </div>
+
+                    <div data-o_o-di="snpt-ka14.cpnt-ka14-table1">
+                        <div class="ka-line-table-breadcrumb">
+                            <div class="ka-table-breadcrumb" data-o_o-di="snpt-ka14.vu-ka14-breadcrumb1"></div>
+                            <div class="ka-table-right-btn"> 
+                                <div class="ka-table-meta-ctrl-btn" data-o_o-di="snpt-ka14.vpt-ka14-fold1-ctrlbtn1"></div>
+                                <div class="ka-table-download-btn" data-o_o-di="snpt-ka14.vu-ka14-table1-downloadbtn1"></div>
+                            </div>
+                        </div>
+                        <div data-o_o-di="snpt-ka14.vpt-ka14-fold1-body1">
+                            <div class="ka-block-table-meta" data-o_o-di="snpt-ka14.cpnt-ka14-table-meta1">
+                                <div class="ka-table-meta" data-o_o-di="snpt-ka14.vu-ka14-table-meta1"></div>
+                            </div>
+                        </div>
+                        <div class="ka-table" data-o_o-di="snpt-ka14.vu-ka14-table1"></div>
+                        <div class="ka-table-prompt">
+                            <div class="ka-table-count" data-o_o-di="snpt-ka14.vu-ka14-count1">
+                                符合查询条件的数据只显示<span class="ka-table-count-num">#{currRecordCount}</span>条。
+                            </div>
+                            <div class="ka-table-prompt-sel">点击表行可显示对应的趋势线，最多可选中5行</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div style="display:none" class="ka-block-tab-content" data-o_o-di="snpt-ka1.vpt-ka1-layer1-body3">
+
+                <!-- snippet ka15 -->
+
+                <div data-o_o-di="snpt-ka15">
+
+                    <div class="ka-chart-meta" data-o_o-di="snpt-ka15.cpnt-ka15-chart-meta1">
+                        <span class="ka-chart-meta-label">选择指标</span>
+                        <div class="ka-chart-meta-sel" data-o_o-di="snpt-ka15.vu-ka15-chart-meta1"></div>
+                        <div class="ka-chart-range-sel" data-o_o-di="snpt-ka15.cpnt-ka15-chart-form1">
+                            <div class="ka-chart-range-sel" data-o_o-di="snpt-ka15.cpnt-ka15-chart-form1-range1">
+                            </div>
+                        </div>
+                        <div class="ka-chart-download-btn" data-o_o-di="snpt-ka15.vu-ka15-chart1-downloadbtn1"></div>
+                    </div>
+
+                    <div class="ka-block-chart" data-o_o-di="snpt-ka15.cpnt-ka15-chart1">
+                        <div data-o_o-di="snpt-ka15.vu-ka15-chart1"></div>
+                    </div>
+                </div>
+
+                <!-- snippet ka16 -->
+
+                <div data-o_o-di="snpt-ka16">
+
+                    <div data-o_o-di="snpt-ka16.vctnr-ka16-fold1">
+                    </div>
+
+                    <div data-o_o-di="snpt-ka16.cpnt-ka16-table1">
+                        <div class="ka-line-table-breadcrumb">
+                            <div class="ka-table-breadcrumb" data-o_o-di="snpt-ka16.vu-ka16-breadcrumb1"></div>
+                            <div class="ka-table-right-btn"> 
+                                <div class="ka-table-meta-ctrl-btn" data-o_o-di="snpt-ka16.vpt-ka16-fold1-ctrlbtn1"></div>
+                                <div class="ka-table-download-btn" data-o_o-di="snpt-ka16.vu-ka16-table1-downloadbtn1"></div>
+                            </div>
+                        </div>
+                        <div data-o_o-di="snpt-ka16.vpt-ka16-fold1-body1">
+                            <div class="ka-block-table-meta" data-o_o-di="snpt-ka16.cpnt-ka16-table-meta1">
+                                <div class="ka-table-meta" data-o_o-di="snpt-ka16.vu-ka16-table-meta1"></div>
+                            </div>
+                        </div>
+                        <div class="ka-table" data-o_o-di="snpt-ka16.vu-ka16-table1"></div>
+                        <div class="ka-table-prompt">
+                            <div class="ka-table-count" data-o_o-di="snpt-ka16.vu-ka16-count1">
+                                符合查询条件的数据只显示<span class="ka-table-count-num">#{currRecordCount}</span>条。
+                            </div>
+                            <div class="ka-table-prompt-sel">点击表行可显示对应的趋势线，最多可选中5行</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div style="display:none" class="ka-block-tab-content" data-o_o-di="snpt-ka1.vpt-ka1-layer1-body4">
+
+                <!-- snippet ka17 -->
+
+                <div data-o_o-di="snpt-ka17">
+                    <div class="ka-chart-meta" data-o_o-di="snpt-ka17.cpnt-ka17-chart-meta1">
+                        <span class="ka-chart-meta-label">选择指标</span>
+                        <div class="ka-chart-meta-sel" data-o_o-di="snpt-ka17.vu-ka17-chart-meta1"></div>
+                        <div class="ka-chart-range-sel" data-o_o-di="snpt-ka17.cpnt-ka17-chart-form1">
+                            <div class="ka-chart-range-sel" data-o_o-di="snpt-ka17.cpnt-ka17-chart-form1-range1">
+                            </div>
+                        </div>
+                        <div class="ka-chart-download-btn" data-o_o-di="snpt-ka17.vu-ka17-chart1-downloadbtn1"></div>
+                    </div>
+                    
+                    <div class="ka-block-chart" data-o_o-di="snpt-ka17.cpnt-ka17-chart1">
+                        <div data-o_o-di="snpt-ka17.vu-ka17-chart1"></div>
+                    </div>
+                </div>
+
+                <!-- snippet ka18 -->
+
+                <div data-o_o-di="snpt-ka18">
+
+                    <div data-o_o-di="snpt-ka18.vctnr-ka18-fold1">
+                    </div>                
+
+                    <div data-o_o-di="snpt-ka18.cpnt-ka18-table1">
+                        <div class="ka-line-table-breadcrumb">
+                            <div class="ka-table-breadcrumb" data-o_o-di="snpt-ka18.vu-ka18-breadcrumb1"></div>
+                            <div class="ka-table-right-btn"> 
+                                <div class="ka-table-meta-ctrl-btn" data-o_o-di="snpt-ka18.vpt-ka18-fold1-ctrlbtn1"></div>
+                                <div class="ka-table-download-btn" data-o_o-di="snpt-ka18.vu-ka18-table1-downloadbtn1"></div>
+                            </div>
+                        </div>
+                        <div data-o_o-di="snpt-ka18.vpt-ka18-fold1-body1">
+                            <div class="ka-block-table-meta" data-o_o-di="snpt-ka18.cpnt-ka18-table-meta1">
+                                <div class="ka-table-meta" data-o_o-di="snpt-ka18.vu-ka18-table-meta1"></div>
+                            </div>
+                        </div>
+                        <div class="ka-table" data-o_o-di="snpt-ka18.vu-ka18-table1"></div>
+                        <div class="ka-table-prompt">
+                            <div class="ka-table-count" data-o_o-di="snpt-ka18.vu-ka18-count1">
+                                符合查询条件的数据只显示<span class="ka-table-count-num">#{currRecordCount}</span>条。
+                            </div>
+                            <div class="ka-table-prompt-sel">点击表行可显示对应的趋势线，最多可选中5行</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div style="display:none" class="ka-block-tab-content" data-o_o-di="snpt-ka1.vpt-ka1-layer1-body5">
+
+                <!-- snippet ka19 -->
+
+                <div data-o_o-di="snpt-ka19">
+                    <div class="ka-chart-meta" data-o_o-di="snpt-ka19.cpnt-ka19-chart-meta1">
+                        <span class="ka-chart-meta-label">选择指标</span>
+                        <div class="ka-chart-meta-sel" data-o_o-di="snpt-ka19.vu-ka19-chart-meta1"></div>
+                        <div class="ka-chart-range-sel" data-o_o-di="snpt-ka19.cpnt-ka19-chart-form1">
+                            <div class="ka-chart-range-sel" data-o_o-di="snpt-ka19.cpnt-ka19-chart-form1-range1">
+                            </div>
+                        </div>
+                        <div class="ka-chart-download-btn" data-o_o-di="snpt-ka19.vu-ka19-chart1-downloadbtn1"></div>
+                    </div>
+                    
+                    <div class="ka-block-chart" data-o_o-di="snpt-ka19.cpnt-ka19-chart1">
+                        <div data-o_o-di="snpt-ka19.vu-ka19-chart1"></div>
+                    </div>
+                </div>
+
+                <!-- snippet ka20 -->
+
+                <div data-o_o-di="snpt-ka20">
+
+                    <div data-o_o-di="snpt-ka20.vctnr-ka20-fold1">
+                    </div>
+
+                    <div data-o_o-di="snpt-ka20.cpnt-ka20-table1">
+                        <div class="ka-line-table-breadcrumb">
+                            <div class="ka-table-breadcrumb" data-o_o-di="snpt-ka20.vu-ka20-breadcrumb1"></div>
+                            <div class="ka-table-right-btn"> 
+                                <div class="ka-table-meta-ctrl-btn" data-o_o-di="snpt-ka20.vpt-ka20-fold1-ctrlbtn1"></div>
+                                <div class="ka-table-download-btn" data-o_o-di="snpt-ka20.vu-ka20-table1-downloadbtn1"></div>
+                            </div>
+                        </div>
+                        <div data-o_o-di="snpt-ka20.vpt-ka20-fold1-body1">
+                            <div class="ka-block-table-meta" data-o_o-di="snpt-ka20.cpnt-ka20-table-meta1">
+                                <div class="ka-table-meta" data-o_o-di="snpt-ka20.vu-ka20-table-meta1"></div>
+                            </div>
+                        </div>
+                        <div class="ka-table" data-o_o-di="snpt-ka20.vu-ka20-table1"></div>
+                        <div class="ka-table-prompt">
+                            <div class="ka-table-count" data-o_o-di="snpt-ka20.vu-ka20-count1">
+                                符合查询条件的数据只显示<span class="ka-table-count-num">#{currRecordCount}</span>条。
+                            </div>
+                            <div class="ka-table-prompt-sel">点击表行可显示对应的趋势线，最多可选中5行</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!--
+            <div style="display:none" class="ka-block-tab-content" data-o_o-di="snpt-ka1.vpt-ka1-layer1-body6">
+            -->
+                <!-- snippet ka21 -->
+            <!--
+                <div data-o_o-di="snpt-ka21">
+                    <div class="ka-chart-meta" data-o_o-di="snpt-ka21.cpnt-ka21-chart-meta1">
+                        <span class="ka-chart-meta-label">选择指标</span>
+                        <div class="ka-chart-meta-sel" data-o_o-di="snpt-ka21.vu-ka21-chart-meta1"></div>
+                        <div class="ka-chart-range-sel" data-o_o-di="snpt-ka21.cpnt-ka21-chart-form1">
+                            <div class="ka-chart-range-sel" data-o_o-di="snpt-ka21.cpnt-ka21-chart-form1-range1">
+                            </div>
+                        </div>
+                        <div class="ka-chart-download-btn" data-o_o-di="snpt-ka21.vu-ka21-chart1-downloadbtn1"></div>
+                    </div>
+                    
+                    <div class="ka-block-chart" data-o_o-di="snpt-ka21.cpnt-ka21-chart1">
+                        <div data-o_o-di="snpt-ka21.vu-ka21-chart1"></div>
+                    </div>
+                </div>
+            -->
+                <!-- snippet ka22 -->
+            <!--
+                <div data-o_o-di="snpt-ka22">
+
+                    <div data-o_o-di="snpt-ka22.vctnr-ka22-fold1">
+                    </div>
+
+                    <div data-o_o-di="snpt-ka22.cpnt-ka22-table1">
+                        <div class="ka-line-table-breadcrumb">
+                            <div class="ka-table-breadcrumb" data-o_o-di="snpt-ka22.vu-ka22-breadcrumb1"></div>
+                            <div class="ka-table-right-btn"> 
+                                <div class="ka-table-meta-ctrl-btn" data-o_o-di="snpt-ka22.vpt-ka22-fold1-ctrlbtn1"></div>
+                                <div class="ka-table-download-btn" data-o_o-di="snpt-ka22.vu-ka22-table1-downloadbtn1"></div>
+                            </div>
+                        </div>
+                        <div data-o_o-di="snpt-ka22.vpt-ka22-fold1-body1">
+                            <div class="ka-block-table-meta" data-o_o-di="snpt-ka22.cpnt-ka22-table-meta1">
+                                <div class="ka-table-meta" data-o_o-di="snpt-ka22.vu-ka22-table-meta1"></div>
+                            </div>
+                        </div>
+                        <div class="ka-table" data-o_o-di="snpt-ka22.vu-ka22-table1"></div>
+                        <div class="ka-table-prompt">
+                            <div class="ka-table-count" data-o_o-di="snpt-ka22.vu-ka22-count1">
+                                符合查询条件的数据只显示<span class="ka-table-count-num">#{currRecordCount}</span>条。
+                            </div>
+                            <div class="ka-table-prompt-sel">点击表行可显示对应的趋势线，最多可选中5行</div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            -->
+
+        </div>
+
+
+    <script type="text/javascript">
+        window.__$DI__OPT$__ = {
+            depictRef: [
+            ],
+            depict: {
+                "entityDefs": [
+                ]
+            }
+        };
+    </script>
+
+    #comJS
+    #enterDI
+
+    </div><!--
+--></body>
+</html>

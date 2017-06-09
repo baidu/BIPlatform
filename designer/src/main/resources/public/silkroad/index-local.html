@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>报表平台-配置端</title>
+    <!--<link type="text/css" rel="stylesheet" href="asset/css/-di-silkroad-min.css"/>-->
+    <link type="text/css" rel="stylesheet" href="src/css/all.css"/>
+    <link rel="stylesheet" class="link-skin" href="/silkroad/asset/bb/css/-di-product-debug.css"/>
+</head>
+<body>
+<div class="nav j-nav"></div>
+<div class="nav-placeholder"></div>
+<div class="main j-main"></div>
+<div class="foot ta-c j-foot">&copy; 版权信息</div>
+<script type="text/javascript" src="src/common/ZeroClipboard.js"></script>
+<script type="text/javascript" src="dep/require-2.1.11.js"></script>
+<script type="text/javascript" src="dep/jquery-1.11.1.js"></script>
+<script src="/silkroad/asset/di/-di-product-debug.js"></script>
+<script type="text/javascript">
+    require.config({
+        baseUrl: 'src/',  //本地模拟为src，线上版问asset
+        paths: {
+            'underscore': '../dep/underscore-1.6.0.min',
+//            'jquery': '../dep/jquery-1.11.1.min',
+            'backbone': '../dep/backbone-1.1.2.min',
+            'template': '../dep/template-3.0.0.min',
+            'jqueryui': '../dep/jquery-ui.custom-1.10.4',
+            'jquerydi': 'common/jquery.di',
+            'spectrum': '../dep/spectrum/spectrum',
+            'dialog': 'core/dialog',
+            'url': 'core/url',
+            'constant': 'core/constant',
+            'ztree-core': '../dep/ztree/jquery.ztree.core-3.5',
+            'ztree-check': '../dep/ztree/jquery.ztree.excheck-3.5'
+        },
+        shim: {
+            'dialog': {
+                deps: [
+                    'jqueryui'
+                ]
+            },
+//            'jqueryui': {
+//                'deps': [
+//                    'jquery'
+//                ]
+//            },
+//            'jquerydi': {
+//                'deps': [
+//                    'jquery'
+//                ]
+//            },
+//            'spectrum':{
+//                'deps': [
+//                    'jquery'
+//                ]
+//            },
+            'backbone': {
+                deps: [
+                    'underscore',
+//                    'jquery',
+                    'jquerydi',
+                    'template'
+                ]
+            },
+            'ztree-check': {
+                'deps': [
+                    'jquery',
+                    'ztree-core'
+                ]
+            }
+        }
+    });
+
+    require(['enter'], function (main) {
+        var option = {
+            webRoot: '/silkroad'
+        };
+        var temp = $.ajax;
+
+        var ajax = function (p) {
+            if (p.type == 'PUT') {
+                p.type = 'POST';
+            }
+            temp(p);
+        };
+        $.ajax = ajax;
+
+        main.enter(option);
+    });
+
+</script>
+</body>
+</html>

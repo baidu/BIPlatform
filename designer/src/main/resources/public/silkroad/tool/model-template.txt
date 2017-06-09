@@ -1,0 +1,36 @@
+/**
+ * @file
+ * @author 赵晓强(longze_xq@163.com)
+ * @date {{date}}
+ */
+define(function () {
+
+    return Backbone.Model.extend({
+        url: '',
+
+        /**
+         * 构造函数
+         *
+         * @constructor
+         */
+        initialize: function () {
+
+        },
+
+        /**
+         *
+         *
+         * @public
+         */
+        loadA: function () {
+            $.ajax(
+                this.url,
+                {
+                    success: function (data) {
+                        //
+                    }
+                }
+            );
+         }
+    });
+});

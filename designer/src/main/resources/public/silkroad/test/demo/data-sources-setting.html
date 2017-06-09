@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>数据源配置</title>
+<link type="text/css" rel="stylesheet" href="../../src/css/all.css" />
+</head>
+<body>
+	<div class="data-sources-setting">
+		<div class="con-data-table c-f">
+			<select class="data-table-select">
+				<option value="data-a">数据表A</option>
+				<option value="data-b">数据表B</option>
+				<option value="data-c">数据表C</option>
+			</select> <span class="icon-data-sources"></span>
+		</div>
+
+		<div class="con-ind">
+			<div class="title">指标</div>
+			<div class="item">
+				<span>点击（click）</span><span class="collect">∨</span>
+			</div>
+			<div class="item">
+				<span>点击（click）</span><span class="collect">∨</span>
+			</div>
+			<div class="item">
+				<span>点击（click）</span><span class="collect">∨</span>
+			</div>
+			<div class="item">
+				<span>点击（click）</span><span class="collect">∨</span>
+			</div>
+			<div class="item">
+				<span class="fw-b">ACP</span>
+			</div>
+			<div class="item">
+				<span class="fw-b">R</span>
+			</div>
+			<div class="item">
+				<span class="add">+</span>
+			</div>
+		</div>
+
+		<div class="con-dim">
+			<span class="setting"></span>
+
+			<div class="title">维度</div>
+			<div class="item">
+				<span>行业（trade_name）</span>
+			</div>
+			<div class="item">
+				<span>产品线（product_line_name）</span>
+			</div>
+			<div class="item c-f con-add-group">
+				<span class="icon-add-group f-l"></span><input
+					class="group-name f-l" placeholder="请输入组合维度名称" type="text">
+			</div>
+
+			<div class="item-group">
+				<div class="group-title">
+					<span>组合维度名称</span> <span class="delete" title="删除该组（组内维度自动释放）">
+						— </span>
+				</div>
+				<div class="item">
+					<span>产品线（product_line_name）</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

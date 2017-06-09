@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="../../src/css/all.css"/>
+    <title>设置cube</title>
+</head>
+<body>
+<div>
+    <div class="con-set-cube c-f">
+        <div class="con-data-sources-list f-l">
+            <span class="btn-has-icon btn-has-icon-data-sources data-line c-p j-copy-report">创建副本</span>
+            <span class="btn-has-icon btn-has-icon-data-sources data-line selected c-p j-copy-report">创建副本</span>
+            <span class="btn-has-icon btn-has-icon-data-sources data-line c-p j-copy-report">创建副本</span>
+        </div>
+        <div class="con-cube-list f-l">
+            <div class="title fs-14">请选择要实用的数据表（可多选）</div>
+            <ul>
+                <li class="data-line c-p">时间(dim_time)</li>
+                <li class="data-line c-p selected">产品线(dim_product_line)</li>
+                <li class="data-line c-p">时间(dim_time)</li>
+            </ul>
+            <div class="con-set-group">
+                <span class="btn-has-icon btn-has-icon-info c-p j-set-group">添加分组配置信息</span>
+
+                <div class="form-common-line first-line">
+                    <div class="form-common-text form-common-text-big">
+                        <input type="text" class="" placeholder="填写正则表达式"/>
+                        <span class="form-common-text-validation hide"></span>
+                        <span class="form-common-btn-extend form-common-btn-extend-absolute" title="删除">+</span>
+                        <span class="form-common-btn-extend form-common-btn-extend-absolute delete" title="删除">×</span>
+                    </div>
+                </div>
+                <div class="form-common-line">
+                    <div class="form-common-text form-common-text-big">
+                        <input type="text" class="" placeholder="填写正则表达式"/>
+                        <span class="form-common-text-validation hide"></span>
+                        <span class="form-common-btn-extend form-common-btn-extend-absolute" title="删除">×</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-common-line ta-c">
+        <span class="button button-flat-primary">提交</span>
+        <span class="button button-flat-primary">取消</span>
+    </div>
+</div>
+</body>
+</html>

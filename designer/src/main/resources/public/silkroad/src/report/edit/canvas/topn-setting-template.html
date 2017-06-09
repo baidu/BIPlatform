@@ -1,0 +1,46 @@
+<!--
+数据例子：
+var demoData = {
+    measureId: '',
+    reocrdSize: '',
+    topType: '',
+    indList: [
+
+    ],
+    topTypeList: {
+        desc: bottom,
+        asc: top,
+        none: none
+    }
+};
+-->
+<div class="topn-indlist">
+    <div class="topn-indlist-item">
+        <span>指标选择：</span>
+        <select name="measureId">
+            <option value=""
+            {{if !measureId}} selected="selected" {{/if}}>请选择</option>
+            {{each indList as $ind}}
+            <option value={{$ind.id}}
+            {{if measureId && $ind.id === measureId}} selected="selected" {{/if}}>{{$ind.caption}}
+            </option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="topn-indlist-item">
+        <span>排序方式：</span>
+        <select name="topType">
+            {{each topTypeList as $option key}}
+            <option value={{key}}
+            {{if topType && key === topType}}
+            selected="selected"
+            {{/if}}>{{$option}}
+            </option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="topn-indlist-item">
+        <span>请输入条数：</span>
+        <input type="text" name="recordSize" value="{{recordSize}}"/>
+    </div>
+</div>

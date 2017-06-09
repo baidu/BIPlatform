@@ -1,0 +1,54 @@
+{"statusInfo": "successfully", "status": 0, "data": {
+    "xAxis": [
+        {
+            "id": "3eecd518ef202447fa3d2b5e02e48834",
+            "caption": "一级行业名称",
+            "name": "dim_trade_t_trade_name_l1",
+            "cubeId": "ed075e65bb3ecd23531515439a55ab8c",
+            "olapElementId": "3eecd518ef202447fa3d2b5e02e48834",
+            "used": false,
+            "chartType": null
+        },
+        {
+            "id": "8a4ccb362c475d29a83facb981a1e48e",
+            "caption": "二级行业名称",
+            "name": "dim_trade_t_trade_name_l2",
+            "cubeId": "ed075e65bb3ecd23531515439a55ab8c",
+            "olapElementId": "8a4ccb362c475d29a83facb981a1e48e",
+            "used": false,
+            "chartType": null
+        }
+    ],
+    "yAxis": [
+        {
+            "id": "dd83b6ee8a3b0b88aa922039f5c277ee",
+            "caption": "展现",
+            "name": "shw",
+            "cubeId": "ed075e65bb3ecd23531515439a55ab8c",
+            "olapElementId": "dd83b6ee8a3b0b88aa922039f5c277ee",
+            "used": false,
+            "chartType": null
+        },
+        {
+            "id": "ea9ab67fab9dc8abbdaba453800bbf35",
+            "caption": "自增ID",
+            "name": "id",
+            "cubeId": "ed075e65bb3ecd23531515439a55ab8c",
+            "olapElementId": "ea9ab67fab9dc8abbdaba453800bbf35",
+            "used": false,
+            "chartType": null
+        },
+        {
+            "id": "1715ec69288f4b730d24ec24fcf7bf23",
+            "caption": "点击消费",
+            "name": "csm",
+            "cubeId": "ed075e65bb3ecd23531515439a55ab8c",
+            "olapElementId": "1715ec69288f4b730d24ec24fcf7bf23",
+            "used": false,
+            "chartType": null
+        }
+    ],
+    "sAxis": [],
+    "candDims": null,
+    "candInds": null
+}, "properties": {}}

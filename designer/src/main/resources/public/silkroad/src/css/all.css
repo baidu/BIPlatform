@@ -1,0 +1,23 @@
+/* 样式压缩文件集合，开发时用@import引入，发布时用前端压缩工具压缩替换 */
+@import url(component/jquery-ui/jquery.ui.all.css);
+
+@import url(base.css);
+/* 公共组件 */
+@import url(component/widget.css);
+@import url(component/button.css);
+@import url(component/form.css);
+@import url(component/spectrum/spectrum.css);
+@import url(component/ztree/ztree.css);
+@import url(component/select-tree/select-tree.css);
+
+/* 业务逻辑 */
+@import url(biz/nav.css);
+@import url(biz/data-sources-create.css);
+@import url(biz/data-sources-setting.css);
+@import url(biz/report.css);
+@import url(biz/report-dim-set.css);
+@import url(biz/globalbtn.css);
+@import url(biz/globalmenu.css);
+
+/* 皮肤 */
+@import url(skin-blue.css);

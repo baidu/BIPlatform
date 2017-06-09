@@ -1,0 +1,11 @@
+/target/
+.setting*
+.project
+.classpath
+/tesseract_data/
+.class
+.sh
+.doc
+.docx
+.checkstyle
+/.clover/

@@ -1,0 +1,82 @@
+{
+    "data": {
+        "indList": [
+            {
+                "id": "1",
+                "name": "车迟国",
+                "tag": "chechi_guo",
+                "type": 0,
+                "methodType": 0,
+                "changeToDim": 0,
+                "visible": 1
+            },
+            {
+                "id": "2",
+                "name": "女儿国-文字喜多多",
+                "tag": "nver_guo",
+                "type": 0,
+                "methodType": 1,
+                "changeToDim": 0,
+                "visible": 1
+            },
+            {
+                "id": "3",
+                "name": "天竺国",
+                "tag": "tianzhu_guo",
+                "type": 0,
+                "methodType": 2,
+                "changeToDim": 0,
+                "visible": 1
+            },
+            {
+                "id": "4",
+                "name": "比丘国",
+                "tag": "biqiu_guo",
+                "type": 0,
+                "methodType": 0,
+                "changeToDim": 1,
+                "visible": 1
+            },
+            {
+                "id": "6",
+                "name": "灭法国",
+                "tag": "miefaguo_hide",
+                "type": 0,
+                "methodType": 0,
+                "changeToDim": 0,
+                "visible": 0
+            },
+
+
+            {
+                "id": "7",
+                "name": "唐僧被色诱的国家",
+                "tag": "tangseng_seyou",
+                "type": 1,
+                "methodType": 0,
+                "expr": "女儿国 + 天竺国"
+
+            },
+            {
+                "id": "8",
+                "name": "RUN",
+                "tag": "run",
+                "type": 1,
+                "methodType": 0,
+                "expr": "原始指标1"
+
+            },
+            {
+                "id": "9",
+                "name": "so_many_words",
+                "tag": "如此多的文字呈现也没有问题，是吧",
+                "type": 1,
+                "methodType": 0,
+                "expr": "原始指标1"
+
+            }
+        ]
+    },
+    "status": 0,
+    "statusInfo": ""
+}

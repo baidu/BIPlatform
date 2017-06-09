@@ -1,0 +1,389 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+     <style type="text/css">
+        /*CSS Reset*/
+        body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;font-size: 12px;}
+        table{border-collapse:collapse;border-spacing:0;}
+        fieldset,img {border:0;}
+        address,caption, cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+        ol,ul {list-style:none;}
+        capation,th{text-align:left;}
+        h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+        q:before, q:after{content:' '}
+        abbr,acronym{border:0;}
+        
+        /*浮窗内容区域样式*/
+        .float-window
+        {
+            position: absolute;
+            border: 1px solid #C5C5C5;
+            -moz-border-radius: 3px;
+            webkit-border-radius: 3px;
+            -ms-border-radius: 3px;
+            border-radius: 3px;
+            z-index: 999;
+            min-width: 100px;
+            min-height: 100px;
+        }
+        
+        .float-window-ul
+        {
+            background-color: white;
+        }
+        
+        .float-window-ul .float-window-ul-li
+        {
+            padding: 5px 15px;
+            color: #000;
+            cursor: pointer;
+            min-height: 15px;
+            min-width: 80px;
+        }
+        
+        .float-window-ul-li:hover
+        {
+            background-color: #4698E9;
+            color: #fff;
+        }
+        
+        /*测试页面样式*/
+       body {
+            /*background-color: green;*/
+        }
+        .main {
+            position: relative;
+            background-color: black;
+            width: 1650px;
+            height: 1000px;
+        }
+        .main-top1 {
+            height: 50px;
+            background-color:green;
+        }
+        .main-top1-test-box1 {
+             float: left;
+             width: 100px;
+             height: 28px;
+             line-height: 28px;
+             border: 1px solid white;
+             background-color: red;
+             color: #fff;
+             text-align: center;
+             cursor: pointer;
+        }
+        .main-top1-test-box2 {
+             float: left;
+             margin-left: 200px;
+             width: 100px;
+             height: 28px;
+             border: 1px solid white;
+             line-height: 28px;
+             background-color: red;
+             color: #fff;
+             text-align: center;
+             cursor: pointer;
+        }
+        .main-top1-test-box3 {
+             float: right;
+             width: 100px;
+             height: 28px;
+             border: 1px solid white;
+             line-height: 28px;
+             background-color: red;
+             color: #fff;
+             text-align: center;
+             cursor: pointer;
+        }
+        
+        .main-top2 {
+            margin-top: 10px;
+            height: 50px;
+            background-color: green;
+        }
+        .main-top2-test-box1 {
+             float: right;
+             margin-right: 110px;
+             width: 100px;
+             height: 28px;
+             border: 1px solid white;
+             line-height: 28px;
+             background-color: red;
+             color: #fff;
+             text-align: center;
+             cursor: pointer;
+        }
+        .main-top3 {
+            margin-top: 10px;
+            height: 50px;
+            background-color:green;
+        }
+        .main-top3-test-box1 {
+             float: right;
+             margin-right: 109px;
+             width: 100px;
+             height: 28px;
+             border: 1px solid white;
+             line-height: 28px;
+             background-color: red;
+             color: #fff;
+             text-align: center;
+             cursor: pointer;
+        }
+        
+        .main-bottom1 {
+            position: absolute;
+            bottom: 0px;
+            width: 1650px;
+            height: 30px;
+            background-color:green;
+        }
+        .main-bottom1-test-box1 {
+             float:left;
+             width: 100px;
+             height: 28px;
+             border: 1px solid white;
+             line-height: 30px;
+             background-color: red;
+             color: #fff;
+             text-align: center;
+             cursor: pointer;
+        }
+        .main-bottom1-test-box2 {
+             float:right;
+             margin-right:110px;
+             width: 100px;
+             height: 28px;
+             border: 1px solid white;
+             line-height: 30px;
+             background-color: red;
+             color: #fff;
+             text-align: center;
+             cursor: pointer;
+        }
+        
+       .main-bottom2 {
+            position: absolute;
+            bottom: 45px;
+            width: 300px;
+            height: 30px;
+            background-color:green;
+        }
+        .main-bottom2-test-box1 {
+             float:left;
+             width: 100px;
+             height: 28px;
+             border: 1px solid white;
+             line-height: 30px;
+             background-color: red;
+             color: #fff;
+             text-align: center;
+             cursor: pointer;
+        }
+        .main-bottom3 {
+            position: absolute;
+            left: 350px;
+            bottom: 44px;
+            width: 300px;
+            height: 30px;
+            background-color:green;
+        }
+        .main-bottom3-test-box1 {
+             float:left;
+             width: 110px;
+             height: 28px;
+             border: 1px solid white;
+             line-height: 30px;
+             background-color: red;
+             color: #fff;
+             text-align: center;
+             cursor: pointer;
+        }
+       .main-bottom4 {
+            position: absolute;
+            right: 0px;
+            bottom: 45px;
+            width: 300px;
+            height: 30px;
+            background-color:green;
+        }
+        .main-bottom4-test-box1 {
+             float:right;
+             width: 110px;
+             height: 28px;
+             border: 1px solid white;
+             line-height: 30px;
+             background-color: red;
+             color: #fff;
+             text-align: center;
+             cursor: pointer;
+        }
+       .main-bottom5 {
+            position: absolute;
+            right: 350px;
+            bottom: 44px;
+            width: 300px;
+            height: 30px;
+            background-color:green;
+        }
+        .main-bottom5-test-box1 {
+             float:right;
+             width: 110px;
+             height: 28px;
+             border: 1px solid white;
+             line-height: 30px;
+             background-color: red;
+             color: #fff;
+             text-align: center;
+             cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript" src="../../dep/require-2.1.11.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="main-top1"> 
+            <div class="main-top1-test-box1">
+                                测试弹窗1
+            </div>
+            <div class="main-top1-test-box2">
+                            测试弹窗2
+            </div>
+             <div class="main-top1-test-box3">
+                            测试弹窗3
+            </div>
+        </div>
+        
+         <div class="main-top2"> 
+            <div class="main-top2-test-box1" title="右侧间距是112px,也就是浮窗的宽度，如果再小于这个宽度，就要左侧显示了">
+                                右侧临界点
+            </div>
+         </div>
+         
+         <div class="main-top3"> 
+            <div class="main-top3-test-box1" title="右侧间距是111px,小于浮窗宽度，就要左侧显示">
+                                右侧小于浮窗宽度
+            </div>
+         </div>
+      <div class="main-bottom5"> 
+            <div class="main-bottom5-test-box1">
+                            右侧下面临界点-1px
+            </div>
+         </div>
+        <div class="main-bottom4"> 
+            <div class="main-bottom4-test-box1">
+                            右侧下面临界点
+            </div>
+         </div>
+           <div class="main-bottom3"> 
+            <div class="main-bottom3-test-box1">
+                            左侧下面临界点-1px
+            </div>
+         </div>
+         
+          <div class="main-bottom2"> 
+            <div class="main-bottom2-test-box1">
+                            左侧下面临界点
+            </div>
+         </div>
+         <div class="main-bottom1"> 
+            <div class="main-bottom1-test-box1">
+                    测试下面1
+            </div>
+             <div class="main-bottom1-test-box2">
+                                    测试下面2
+            </div>
+         </div>
+    </div>
+    
+    <script type="text/javascript">
+        require.config({
+            baseUrl: '../../src/',  //本地模拟为src，线上版问asset
+            paths: {
+                jquery: '../dep/jquery-1.11.1',
+                floatwindow: 'common/float-window'
+            },
+            shim: {
+                'floatwindow': {
+                    deps: [
+                        'jquery'
+                    ]
+                }
+            }
+        });
+    
+        require(['floatwindow'], function (FloatWindow) {
+             var html = [
+                '<ul class="float-window-ul">',
+                    '<li class="float-window-ul-li"><span>SUM</span></li>',
+                    '<li class="float-window-ul-li"><span>COUNT</span></li>',
+                    '<li class="float-window-ul-li"><span>AVERAGE</span></li>',
+                '</ul>'
+            ].join('');
+
+            var html1 = [
+                '<ul class="float-window-ul">',
+                    '<li class="float-window-ul-li"><span>点击我</span></li>',
+                    '<li class="float-window-ul-li"><span>猛戳我</span></li>',
+                '</ul>'
+            ].join('');
+
+            var floatWindow = new FloatWindow({
+                content: html
+            });
+            var el = floatWindow.el;
+            $(el).find('.float-window-ul-li').click(function () {
+                $(el).hide();
+            });
+            
+            $('.main-top1-test-box1').click(function () {
+                floatWindow.show($(this)[0]);
+
+            });
+            $('.main-top1-test-box2').click(function () {
+                floatWindow.show($(this)[0]);
+
+            });
+            $('.main-top1-test-box3').click(function () {
+                floatWindow.show($(this)[0]);
+
+            });
+            
+            $('.main-top2-test-box1').click(function () {
+                floatWindow.show($(this)[0]);
+
+            });
+            
+            $('.main-top3-test-box1').click(function () {
+                floatWindow.show($(this)[0]);
+            });
+            
+            $('.main-bottom1-test-box1').click(function () {
+                floatWindow.show($(this)[0]);
+            });
+            $('.main-bottom1-test-box2').click(function () {
+                floatWindow.show($(this)[0]);
+            });
+            
+            $('.main-bottom2-test-box1').click(function () {
+                floatWindow.show($(this)[0]);
+            });
+            
+            $('.main-bottom3-test-box1').click(function () {
+                floatWindow.show($(this)[0]);
+            });
+            
+            $('.main-bottom4-test-box1').click(function () {
+                floatWindow.show($(this)[0]);
+            });
+            
+            $('.main-bottom5-test-box1').click(function () {
+                floatWindow.show($(this)[0]);
+            });
+
+        });
+    </script>
+</body>
+</html>
+
+<html></html>

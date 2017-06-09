@@ -1,0 +1,33 @@
+{
+
+    "status": 0,
+    "statusInfo": "",
+    "data": [
+        {
+            "id": "id_1",
+            "caption": "原始指标1",
+            "name": "COMMON",
+            "type": "COMMON",
+            "aggregator": "SUM",
+            "canToDim": true,
+            "visible": true
+        },
+        {
+            "id": "id_2",
+            "caption": "原始指标2",
+            "name": "COMMON",
+            "aggregator": "SUM",
+            "canToDim": true,
+            "visible": true
+        },
+        {
+            "id": "3",
+            "caption": "巴拉巴",
+            "name": "balaba",
+            "type": "COMMON",
+            "aggregator": "SUM",
+            "canToDim": true,
+            "visible": true
+        }
+    ]
+}

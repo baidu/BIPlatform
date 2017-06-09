@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>是否是有效的dom节点</title>
+    <script type="text/javascript">
+        // 将js的各种方法转为字符串
+        var toString = function (value, type) {
+
+            if (typeof value !== 'string') {
+
+                type = typeof value;
+                if (type === 'number') {
+                    value += '';
+                } else if (type === 'function') {
+                    value = toString(value.call(value));
+                } else {
+                    value = '';
+                }
+            }
+
+            return value;
+
+        };
+    </script>
+</head>
+<body>
+<ul>
+    <li>
+        列表节点
+    </li>
+</ul>
+<h4>单测结果输出：</h4>
+<script type="text/javascript">
+
+    //简单测试框架
+    function test(testArr, expectArr, explain) {
+        var tStr;
+        for (var i = 0, len = testArr.length; i < len; i++) {
+
+
+            if (explain && explain[i]) {
+                tStr = explain[i] + ' -> ' + expectArr[i] + ':';
+            }
+
+            if (toString(testArr[i]) === expectArr[i]) {
+                tStr += '成功';
+            } else {
+                tStr += '失败';
+            }
+
+
+            document.write(tStr + '<br />');
+        }
+    }
+
+    // 对验证的说明
+    var explain = [
+        '数字0',
+        'NaN,类似2/0',
+        '对象数字new Number(3)',
+        '直接字符串“str”',
+        '对象字符串new String("str")'
+    ];
+    // 测试用例
+    var testArr =
+            [
+                0,
+                2 / 0,
+                new Number(3),
+                'str',
+                new String('str'),
+                function(){
+                    var a = '';
+                }
+            ];
+
+    // 预期结果
+    var expect =
+            [
+                '0',
+                'Infinity',
+                '3',
+                'str',
+                'str'
+            ];
+
+    test(testArr, expect, explain);
+    document.write('------------------------<br />');
+
+</script>
+</body>
+</html>

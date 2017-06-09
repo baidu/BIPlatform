@@ -1,0 +1,10 @@
+{
+    "status": 0,
+    "statusInfo": "加载完成",
+    "data": {
+        "id": "cpnt-liteolap1",
+        "selectionAreaId": "cpnt-selection1",
+        "tableAreaId": "cpnt-table1",
+        "chartAreaId": "cpnt-chart1"
+    }
+}

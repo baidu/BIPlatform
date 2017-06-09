@@ -1,0 +1,10 @@
+/**
+ * messagebox
+ */
+.ui-messagebox {
+    width: 400px;
+}
+.ui-messagebox-bottom {
+    margin-top: 10px;
+    text-align: right;
+}

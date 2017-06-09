@@ -1,0 +1,26 @@
+<div class="con-comp-setting-type1 j-comp-setting" data-comp-id="{{compId}}" data-comp-type="TIME_COMP">
+    <div class="data-axis-line data-axis-line-48 j-comp-setting-line j-line-x" data-axis-type="x">
+        <span class="letter">时间维度:</span>
+        {{each xAxis as $dim}}
+        <div class="item hover-bg c-m j-root-line  ui-draggable j-can-to-ind ui-draggable-dragging olap-element-dragging" data-id="{{$dim.id}}" data-name="{{$dim.name}}">
+            <span class="item-text j-item-text icon-font">
+            {{$dim.caption}}（{{$dim.name}}）
+            </span>
+            <span class="icon hide j-delete" title="删除">×</span>
+        </div>
+        {{/each}}
+    </div>
+    <div class="data-axis-line data-axis-line-48 data-btn-line">
+        <span class="letter">设置:</span>
+        <span class="icon-letter icon-letter-btn j-set-default-time">默认选中时间</span>
+        <span>时间选择类型：</span>
+        <select class="select-calendar-type" data-comp-id="{{compId}}" data-comp-type="TIME_COMP">
+            <option value="CAL_SELECT" {{if $data.compMold && $data.compMold==="CAL_SELECT"}} selected="selected"{{/if}}>
+            时间单选
+            </option>
+            <option value="DOUBLE_CAL_SELECT" {{if $data.compMold && $data.compMold==="DOUBLE_CAL_SELECT"}} selected="selected"{{/if}}>
+            时间双选
+            </option>
+        </select>
+    </div>
+</div>

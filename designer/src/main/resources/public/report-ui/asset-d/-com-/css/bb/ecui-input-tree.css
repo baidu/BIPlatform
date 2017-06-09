@@ -1,0 +1,62 @@
+/*ui-input-tree*/
+.ui-input-tree {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #D5D5D5;
+    background-color: #FFF;
+    vertical-align: middle;
+    *display: inline;
+    zoom: 1;
+}
+.ui-input-tree-text {
+    display: block;
+    height: 29px;
+    padding-left: 10px;
+    border-top: 1px solid #F0F0F0;
+    line-height: 28px;
+    font-size: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.ui-input-tree-button {
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*top: 0;*/
+    /*width: 18px;*/
+    /*height: 30px;*/
+    /*background: url(img/ecui.png) -21px -160px;*/
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 7px;
+    right: 5px;
+    background: url(img/esesui-ui-combo-arrow.png) no-repeat scroll left -9px;
+    background-repeat: no-repeat, no-repeat;
+    background-position: left -9px, 0 0;
+}
+.ui-input-tree-cancel {
+    position: absolute;
+    top: 1px;
+    right: 20px;
+    height: 29px;
+    width: 8px;
+    background: url(img/ecui.png) -77px -160px;
+}
+.ui-input-tree-layer {
+    z-index: 32765;
+    width: 200px;
+    height: 300px;
+    padding: 5px;
+    border: 1px solid #A8ADB6;
+    background: #FFF;
+    overflow: auto; 
+}
+.ui-input-tree-layer .ui-data-tree {
+    width: 200px;
+    line-height: 1.5;
+}
+.ui-input-tree-layer .ui-data-tree-children {
+    line-height: 0;
+}

@@ -1,0 +1,60 @@
+/*-------------------------------------------------*/
+/* 业务逻辑 -- 工具栏菜单                          */
+/*-------------------------------------------------*/
+.component-menutwo {
+    position: absolute;
+    left: 50px;
+    width: 100px;
+    height: 200px;
+    background: green;
+}
+/* 组件菜单 */
+.component-menu {
+    position: absolute;
+    left: 30px;
+}
+/* 组件菜单 */
+.skin-menu {
+    position: absolute;
+    left: 120px;
+    background: #f9f9f7;
+    border: 1px solid #d7d7d7;
+}
+/* 菜单公共样式 */
+.global-menus {
+    display: none;
+    z-index: 5;
+}
+.skin-menu-box {
+    background: #f9f9f7;
+    margin: 5px;
+}
+.classic-skin {
+    background: #FFF;
+}
+.lightBlue-skin {
+    background: #CFEBF5;
+}
+.skin-type {
+    padding: 5px;
+    height: 20px;
+    cursor: pointer;
+}
+.skin-type:hover{
+    background: #e4e4e4;
+}
+.skin-type div{
+    float: left;
+}
+.skin-pic{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+.skin-name {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    margin-left: 7px;
+}

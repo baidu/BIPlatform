@@ -1,0 +1,12 @@
+<!-- 指标提示信息设置 -->
+<div class="data-format">
+    <div class="data-format-alone">
+        <span>对各指标提示信息进行单独设置</span>
+        {{each dataFormat as $formatItem name}}
+        <div class="data-format-alone-dim">
+            <span>{{$formatItem.caption}}：</span>
+            <input type="text" name={{name}} value={{$formatItem.format}} placeholder="请输入描述信息"/>
+        </div>
+        {{/each}}
+    </div>
+</div>

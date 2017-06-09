@@ -1,0 +1,100 @@
+/** 
+ * drag list
+ */
+.ui-draggable-list {
+    /*font-size: 0;*/
+}
+.ui-draggable-list-item {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    margin: 3px;
+    padding: 3px 7px;
+    vertical-align: middle;
+    border: 1px solid #51a0c9;
+    background: #85c6e6;
+    cursor: move;
+    font-size: 12px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;    
+    border-radius: 10px;    
+}
+.ui-draggable-list-item-dim {
+    background: #d7ebf6;
+}
+.ui-draggable-list-item-disabled {
+    color: #bcbcbc;
+    border: 1px solid #E6E6E6;
+    background: #fff;    
+}
+.ui-draggable-list-item-hover {
+    background: #85c5e8;
+    border: 1px solid #53a2cb;
+}
+.ui-draggable-list-item-active {
+    -o-box-shadow:5px 5px 5px #999;
+    -moz-box-shadow:5px 5px 5px #999;
+    -webkit-box-shadow:5px 5px 5px #999;    
+    box-shadow:5px 5px 5px #999;
+}
+.ui-draggable-list-placehold {
+    position: relative;
+    vertical-align: middle;
+    border: 1px dashed #56ABD8;
+    background: #FFF;
+}
+.ui-draggable-list-item-selected {
+    background: #eee;
+    border: 1px solid #E6E6E6;    
+}
+
+/** 
+ * drop list
+ */
+.ui-droppable-list {
+    /*font-size: 0;*/
+    min-height: 28px;
+}
+.ui-droppable-list-item {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    margin: 3px;
+    padding: 3px 7px;
+    vertical-align: middle;
+    cursor: move;
+    border: 1px solid #51a0c9;
+    background: #85c6e6;
+    color: #000;
+    font-size: 12px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;    
+    border-radius: 10px;
+}
+.ui-droppable-list-item-active {
+    -o-box-shadow:5px 5px 5px #999;
+    -moz-box-shadow:5px 5px 5px #999;
+    -webkit-box-shadow:5px 5px 5px #999;    
+    box-shadow:5px 5px 5px #999;
+}
+.ui-droppable-list-item-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url(img/magnifier_medium_left.png);
+    vertical-align: middle;
+    margin-left: 2px;
+    cursor: pointer;
+}
+.ui-droppable-list-item-dim {
+    background: #d7ebf6;
+}
+.ui-droppable-list-placehold {
+    vertical-align: middle;
+    border: 1px dashed #56ABD8;
+    background: #fff;
+}

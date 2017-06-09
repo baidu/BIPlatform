@@ -1,0 +1,162 @@
+{
+	"desc": "查询条件||多维图形||多图",
+    "diKey": "DEPICT",
+    "clzDefs": [
+        {
+            "clzKey": "OLAP_TABLE",
+            "dataOpt": {
+                "emptyHTML": "未查询到相关数据"
+            }
+        },
+        {
+            "clzKey": "ECUI_SELECT",
+            "dataOpt": {
+                "optionSize": 10
+            }
+        }
+    ],
+    "entityDefs": [
+        {
+            "id": "snpt1",
+            "clzType": "SNIPPET"
+        },
+        {
+            "id": "snpt1.cpnt-form1",
+            "clzType": "COMPONENT",
+            "clzKey": "DI_FORM",
+            "reportType": "RTPL_VIRTUAL",
+            "init": { 
+                "action": { "name": "sync" }
+            },
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "input": []
+            },
+            "dataOpt": { "submitMode": "IMMEDIATE" }
+        },
+        {
+            "id": "snpt1.cpnt-form2",
+            "clzType": "COMPONENT",
+            "clzKey": "DI_FORM",
+            "reportType": "RTPL_VIRTUAL",
+            "init": { 
+                "action": { "name": "sync" }
+            },
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "input": []
+            },
+            "dataOpt": { "submitMode": "IMMEDIATE" }
+        },
+        {
+            "id": "snpt1.cpnt-form3",
+            "clzType": "COMPONENT",
+            "clzKey": "DI_FORM",
+            "reportType": "RTPL_VIRTUAL",
+            "init": { 
+                "action": { "name": "sync" }
+            },
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "input": []
+            },
+            "dataOpt": { "submitMode": "IMMEDIATE" }
+        },
+        {
+            "id": "snpt1.cpnt-chart1", 
+            "clzType": "COMPONENT",
+            "clzKey": "DI_CHART",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "mainChart": "snpt1.vu-chart1"
+            },
+            "interactions": [
+                {
+                   "events": [
+                        { "rid": "snpt1.cpnt-form1", "name": "submit" },
+                        { "rid": "snpt1.cpnt-form1", "name": "dataloaded" }
+                    ],
+                    "action": { "name": "sync" },
+                    "argHandlers": [
+                        ["clear"],
+                        ["getValue", "snpt1.cpnt-form1"]
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "snpt1.vu-chart1", 
+            "clzType": "VUI",
+            "clzKey": "H_CHART",
+            "dataOpt": {
+                "height": 260,
+                "legend": { "xMode": "pl" },
+                "weekViewRange": [null, "-1d"]
+            }
+        },
+        {
+            "id": "snpt1.cpnt-chart2", 
+            "clzType": "COMPONENT",
+            "clzKey": "DI_CHART",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "mainChart": "snpt1.vu-chart2"
+            },
+            "interactions": [
+                {
+                   "events": [
+                        { "rid": "snpt1.cpnt-form2", "name": "submit" },
+                        { "rid": "snpt1.cpnt-form2", "name": "dataloaded" }
+                    ],
+                    "action": { "name": "sync" },
+                    "argHandlers": [
+                        ["clear"],
+                        ["getValue", "snpt1.cpnt-form2"]
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "snpt1.vu-chart2", 
+            "clzType": "VUI",
+            "clzKey": "H_CHART",
+            "dataOpt": {
+                "height": 260,
+                "legend": { "xMode": "pl" },
+                "weekViewRange": [null, "-1d"]
+            }
+        },
+        {
+            "id": "snpt1.cpnt-chart3", 
+            "clzType": "COMPONENT",
+            "clzKey": "DI_CHART",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "mainChart": "snpt1.vu-chart3"
+            },
+            "interactions": [
+                {
+                   "events": [
+                        { "rid": "snpt1.cpnt-form3", "name": "submit" },
+                        { "rid": "snpt1.cpnt-form3", "name": "dataloaded" }
+                    ],
+                    "action": { "name": "sync" },
+                    "argHandlers": [
+                        ["clear"],
+                        ["getValue", "snpt1.cpnt-form3"]
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "snpt1.vu-chart3", 
+            "clzType": "VUI",
+            "clzKey": "H_CHART",
+            "dataOpt": {
+                "height": 260,
+                "legend": { "xMode": "pl" },
+                "weekViewRange": [null, "-1d"]
+            }
+        }
+    ]
+}

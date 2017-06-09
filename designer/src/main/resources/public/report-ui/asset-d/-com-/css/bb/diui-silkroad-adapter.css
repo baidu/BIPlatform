@@ -1,0 +1,46 @@
+/**
+ * @name                      :roport-ui针对silkroad所做的的css适配
+ * @author                    :lizhantong
+ * @email                     :lztlovely@126.com
+ * @version                   :1.0
+ * @type                      :扩展类
+ * @explain                   :所有silkroad额外给roport-ui所增加的css，都在这里适配，因为展现报表的时候，需要在这里显示
+ * @relating                  :暂无
+ * @dependent                 :暂无
+ */
+
+.comp-box {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.component-item {
+    /*overflow: auto;*/
+}
+.hide {
+    display: none;
+}
+
+/* 文本框组件样式 */
+.text-div {
+    width: 100%;
+    height: 30px;
+    border: 0;
+    cursor: pointer;
+    color: #000;
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "微软雅黑";
+    outline-style: none;
+}
+.div-write {
+    display: table;
+}
+.div-write div{
+    vertical-align: middle;
+    display: table-cell;
+}
+/*@end*/

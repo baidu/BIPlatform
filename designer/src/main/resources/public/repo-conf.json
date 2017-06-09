@@ -1,0 +1,511 @@
+/**
+ * repo config
+ * Copyright 2012 Baidu Inc. All rights reserved.
+ * 
+ * @file:    描述构件和文件的关系。只为构建程序使用。
+ * @author:  sushuang(sushuang)
+ */
+
+ {
+    /**
+     * 别名字典，主要用于定义文件路径
+     * 在这里面可以使用globbing patterns，其他地方暂禁止使用
+     */
+    "fileAliasDict": {
+        // js
+        "xcoreProdJS": [
+            "<%= prop.dirSrcCore %>/xui/xui.js",
+            "<%= prop.dirSrcCore %>/xui/xproject.js",
+            "<%= prop.dirSrcCore %>/tangram/tangram-1.5.13.customized-prod-source.js",
+            "<%= prop.dirSrcCore %>/e-json.js",
+            "<%= prop.dirSrcCore %>/xutil/xutil.js",
+            "<%= prop.dirSrcCore %>/xutil/commonUtil.js",
+            "<%= prop.dirSrcCore %>/xutil/*.js", // 先xutil.js再其余
+            "<%= prop.dirSrcCore %>/xui/xobject.js",
+            "<%= prop.dirSrcCore %>/xui/xdatasource.js",
+            "<%= prop.dirSrcCore %>/xui/xview.js"
+        ],
+        "xcoreConsoleJS": [
+            "<%= prop.dirSrcCore %>/xui/xui.js",
+            "<%= prop.dirSrcCore %>/xui/xproject.js",
+            "<%= prop.dirSrcCore %>/tangram/tangram-1.5.13.customized-console-source.js",
+            "<%= prop.dirSrcCore %>/e-json.js",
+            "<%= prop.dirSrcCore %>/xutil/xutil.js", 
+            "<%= prop.dirSrcCore %>/xutil/*.js", // 先xutil.js再其余
+            "<%= prop.dirSrcCore %>/xui/xobject.js",
+            "<%= prop.dirSrcCore %>/xui/xdatasource.js",
+            "<%= prop.dirSrcCore %>/xui/xview.js"
+        ],
+        "appBegin": [
+            "<%= prop.dirSrc %>/biz-shared/app-declare.js"
+        ],
+        "appEnd": [
+            "<%= prop.dirSrc %>/biz-shared/app-link.js"
+        ],
+        "prodBaseJS": [
+            "<%= prop.dirSrc %>/biz-shared/di.config/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.helper/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.arg/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.model/btns-model.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.model/engine.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.model/di-factory.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.model/common-param-factory.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.adapter/general-adapter-method.js",
+            "<%= prop.dirDIView %>/interact-entity.js",
+            "<%= prop.dirDIView %>/general-snippet.js",
+            "<%= prop.dirDIView %>/general-vcontainer.js",
+            "<%= prop.dirDIView %>/general-vpart.js",
+            "<%= prop.dirSrc %>/biz-product/di.product.display.ui/layout-page.js"
+        ],
+        "prodAllJS": [
+            "<%= prop.dirSrc %>/biz-shared/di.config/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.helper/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.arg/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.vui/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.adapter/general-adapter-method.js", // 先引用
+            "<%= prop.dirSrc %>/biz-shared/di.shared.model/btns-model.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.model/common-param-factory.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.model/engine.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.model/di-factory.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.ui/interact-entity.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.ui/panel-page.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.adapter/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.model/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.ui/*.js",
+            "<%= prop.dirSrc %>/biz-product/di.product.display.model/*.js",
+            "<%= prop.dirSrc %>/biz-product/di.product.display.ui/*.js"
+        ],
+        "consoleAllJS": [
+            "<%= prop.dirSrc %>/biz-shared/di.config/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.helper/*.js",
+            "<%= prop.dirSrc %>/biz-console/di.console.config/*.js",
+            "<%= prop.dirSrc %>/biz-console/di.console.helper/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.arg/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.vui/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.adapter/general-adapter-method.js", // 先引用
+            "<%= prop.dirSrc %>/biz-shared/di.shared.model/btns-model.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.model/common-param-factory.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.model/di-factory.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.ui/interact-entity.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.ui/panel-page.js",
+            "<%= prop.dirSrc %>/biz-console/di.shared.ui/base-config-panel.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.adapter/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.model/*.js",
+            "<%= prop.dirSrc %>/biz-shared/di.shared.ui/*.js",
+            "<%= prop.dirSrc %>/biz-console/di.console.shared.model/*.js",
+            "<%= prop.dirSrc %>/biz-console/di.console.shared.ui/*.js",
+            "<%= prop.dirSrc %>/biz-console/di.console.editor.model/*.js",
+            "<%= prop.dirSrc %>/biz-console/di.console.editor.ui/*.js",
+            "<%= prop.dirSrc %>/biz-console/di.console.mgr.model/*.js",
+            "<%= prop.dirSrc %>/biz-console/di.console.mgr.ui/*.js",
+            "<%= prop.dirSrc %>/biz-console/di.console.frame.ui/*.js",
+            "!<%= prop.dirSrc %>/biz-shared/di.shared.model/menu-page-manager.js", // 已弃用，后续除去
+            "!<%= prop.dirSrc %>/biz-console/di.console.shared.ui/menu-main-page.js" // 已弃用，后续除去
+        ],
+        "ecuiBaseJS": [
+            "<%= prop.dirECUICore %>/ecui.js", 
+            "<%= prop.dirECUICore %>/adapter.js", 
+            "<%= prop.dirECUICore %>/core.js", 
+            "<%= prop.dirECUICore %>/control.js",
+            "<%= prop.dirECUICore %>/decorate.js",
+            "<%= prop.dirECUICore %>/combine.js",
+            "<%= prop.dirECUICore %>/form.js",
+            "<%= prop.dirSrc %>/biz-shared/app-ecui.js"
+        ],
+        "xuiuiBaseJS": [
+            "<%= prop.dirXUI %>/xui-ui.js"
+        ],
+        "lib3rdJS": [
+            "<%= prop.dirSrcCore %>/jquery/jquery.htmlClean.js",
+            "<%= prop.dirSrcCore %>/jsonlint/jsl.parser.js",
+            "<%= prop.dirSrcCore %>/jsonlint/jsl.format.js",
+            "<%= prop.dirSrcCore %>/codemirror/codemirror.js",
+            "<%= prop.dirSrcCore %>/codemirror/addon/edit/matchbrackets.js",
+            "<%= prop.dirSrcCore %>/codemirror/addon/edit/continuecomment.js",
+            "<%= prop.dirSrcCore %>/codemirror/mode/javascript.js",
+            "<%= prop.dirSrcCore %>/codemirror/mode/velocity.js",
+            "<%= prop.dirSrcCore %>/codemirror/mode/xml.js",
+            "<%= prop.dirSrcCore %>/codemirror/mode/css.js",
+            "<%= prop.dirSrcCore %>/codemirror/mode/htmlmixed.js",
+            "<%= prop.dirSrcCore %>/codemirror/mode/sql.js"
+        ],
+        "ecuiAllJS": [
+            "ecuiBaseJS",
+            "<%= prop.dirECUICore %>/input-control.js",
+            "<%= prop.dirECUICore %>/button.js",
+            "<%= prop.dirECUICore %>/scrollbar.js",
+            "<%= prop.dirECUICore %>/panel.js",
+            "<%= prop.dirECUICore %>/items.js",
+            "<%= prop.dirECUICore %>/checkbox.js",
+            "<%= prop.dirECUICore %>/radio.js",
+            "<%= prop.dirECUICore %>/select.js",
+            "<%= prop.dirECUICore %>/form.js",
+            "<%= prop.dirECUICore %>/tree-view.js",
+            "<%= prop.dirECUICore %>/month-view.js",
+            "<%= prop.dirECUICore %>/table.js",
+            "<%= prop.dirECUICore %>/tab.js",
+            "<%= prop.dirECUICore %>/listbox.js",
+            "<%= prop.dirECUICore %>/label.js",
+            "<%= prop.dirECUICore %>/check-tree.js",
+            "<%= prop.dirECUICore %>/messagebox.js",
+            "<%= prop.dirECUICore %>/slow-locked-table.js",
+            "<%= prop.dirECUIExt %>/calendar.js",
+            "<%= prop.dirECUIExt %>/combox.js",
+            "<%= prop.dirECUIExt %>/tip.js",
+            "<%= prop.dirECUIExt %>/pl-float-menu.js",
+            "<%= prop.dirECUIExt %>/pl-float-menu-button-line.js",
+            "<%= prop.dirECUIExt %>/pl-button.js",
+            "<%= prop.dirECUIExt %>/container.js",
+            "<%= prop.dirECUIExt %>/tab-container.js",
+            "<%= prop.dirECUIExt %>/ist-calendar.js",
+            "<%= prop.dirECUIExt %>/data-tree.js",
+            "<%= prop.dirECUIExt %>/multi-select.js",
+            "<%= prop.dirECUIExt %>/calendar-plus.js",
+            "<%= prop.dirECUIExt %>/x-calendar-view.js",
+            "<%= prop.dirECUIExt %>/x-calendar-layer.js",
+            "<%= prop.dirECUIExt %>/x-calendar.js",
+            "<%= prop.dirECUIExt %>/h-button.js",
+            "<%= prop.dirECUIExt %>/switch-button.js",
+            "<%= prop.dirECUIExt %>/olap-table.js",
+            "<%= prop.dirECUIExt %>/custom-table.js",
+            "<%= prop.dirECUIExt %>/ext-pager.js",
+            "<%= prop.dirECUIExt %>/breadcrumb.js",
+            "<%= prop.dirECUIExt %>/ind-tree.js",
+            "<%= prop.dirECUIExt %>/input.js",
+            "<%= prop.dirECUIExt %>/input-tree.js",
+            "<%= prop.dirECUIExt %>/suggest.js",
+            "<%= prop.dirECUIExt %>/draggable-list.js",
+            "<%= prop.dirECUIExt %>/droppable-list.js"
+        ],
+        "xuiuiAllJS": [
+            "xuiuiBaseJS",
+            "<%= prop.dirXUI %>/*.js"
+        ],
+        "uiAllJS": [
+            "ecuiAllJS",
+            "xuiuiAllJS"
+        ],
+        "mockJS": [
+            "<%= prop.dirSrc %>/mockup/frontendmockup/xmock.js",
+            "<%= prop.dirSrc %>/mockup/frontendmockup/data/_meta_.js",
+            "<%= prop.dirSrc %>/mockup/frontendmockup/data/**/*.js",
+            "<%= prop.dirSrc %>/mockup/frontendmockup/data-register.js",
+            "<%= prop.dirSrc %>/mockup/frontendmockup/log.js"
+        ],
+        "stubAllJS": [
+            "<%= prop.dirSrc %>/biz-product/di.product.client/di-stub.js",
+            "<%= prop.dirSrc %>/biz-product/di.product.client/lite-dialog.js"
+        ],
+        "prodECUIAllCSS": [
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-button.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-select.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-menu.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-scrollbar.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-tab.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-messagebox.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-form.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-radio.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-calendar.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-calendar-plus.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-xcalendar.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-dim.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-data-tree.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-table.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-pager.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-ind-tree.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-draggable.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-breadcrumb.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-input-tree.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-suggest.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/ecui-input.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/diui-rptsave.css"
+        ],
+        "consoleECUIAllCSS": [
+            "<%= prop.dirSrcCSS %>/ecui-button.css",
+            "<%= prop.dirSrcCSS %>/ecui-select.css",
+            "<%= prop.dirSrcCSS %>/ecui-menu.css",
+            "<%= prop.dirSrcCSS %>/ecui-scrollbar.css",
+            "<%= prop.dirSrcCSS %>/ecui-tab.css",
+            "<%= prop.dirSrcCSS %>/ecui-messagebox.css",
+            "<%= prop.dirSrcCSS %>/ecui-form.css",
+            "<%= prop.dirSrcCSS %>/ecui-radio.css",
+            "<%= prop.dirSrcCSS %>/ecui-calendar.css",
+            "<%= prop.dirSrcCSS %>/ecui-calendar-plus.css",
+            "<%= prop.dirSrcCSS %>/ecui-xcalendar.css",
+            "<%= prop.dirSrcCSS %>/ecui-dim.css",
+            "<%= prop.dirSrcCSS %>/ecui-data-tree.css",
+            "<%= prop.dirSrcCSS %>/ecui-table.css",
+            "<%= prop.dirSrcCSS %>/ecui-pager.css",
+            "<%= prop.dirSrcCSS %>/ecui-ind-tree.css",
+            "<%= prop.dirSrcCSS %>/ecui-draggable.css",
+            "<%= prop.dirSrcCSS %>/ecui-breadcrumb.css",
+            "<%= prop.dirSrcCSS %>/ecui-input-tree.css",
+            "<%= prop.dirSrcCSS %>/ecui-suggest.css",
+            "<%= prop.dirSrcCSS %>/ecui-input.css",
+            "<%= prop.dirSrcCSS %>/diui-rptsave.css"
+        ],
+        "prodBaseCSS": [
+            // css and img
+            // TODO
+            // 暂时css没时间做按需加载，用全加载
+            "prodECUIAllCSS",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/xui-*.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/di.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/diui-*.css",
+            // TODO：下面这个需要整理后干掉，不应该有的
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/product.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/esui-range-calendar.css",
+            "<%= prop.dirBinCom %>/css/<%= prop.skin %>/dropkick.css"
+        ],
+        "consoleBaseCSS": [
+            // TODO
+            // 后面做一下拆分
+            "lib3rdCSS",
+            "consoleECUIAllCSS",
+            "<%= prop.dirSrcCSS %>/xui-*.css",
+            "<%= prop.dirSrcCSS %>/di.css",
+            "<%= prop.dirSrcCSS %>/diui-*.css",
+            "<%= prop.dirSrcCSS %>/console.css",
+            "<%= prop.dirSrcCSS %>/console-edit.css",
+            "<%= prop.dirSrcCSS %>/console-mgr.css"
+        ],
+        "lib3rdCSS": [
+            "<%= prop.dirSrcCSS %>/codemirror/codemirror.css",
+            "<%= prop.dirSrcCSS %>/codemirror/theme/rubyblue.css"//,
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/cobalt.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/xq-light.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/vibrant-ink.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/xq-dark.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/twilight.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/solarized.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/night.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/neat.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/monokai.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/midnight.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/lesser-dark.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/erlang-dark.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/elegant.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/eclipse.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/blackboard.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/ambiance.css",
+            // "<%= prop.dirSrcCSS %>/codemirror/theme/ambiance-mobile.css"
+        ]
+    },
+
+    /** 
+     * 文件依赖字典
+     * 不是什么好设计, 组件类名和文件名不一定有规律, 
+     * 如果都按照AMD的方式则不会有这些麻烦, 
+     * 但是使用的控件库不一定都遵循AMD。
+     */
+    "fileDependsDict": [
+
+        // 公共工具
+        // FIXME
+        // 后续去除此ecui引用
+        { "filePath": "<%= prop.dirSrc %>/biz-shared/di.helper/dialog.js", "depends": ["<%= prop.dirECUICore %>/messagebox.js"] },
+
+        // DI Models （只包含了有depends的models）
+        { "filePath": "<%= prop.dirDIModel %>/btns-model.js", "depends": ["<%= prop.dirDIModel %>/auth-model.js", "<%= prop.dirDIModel %>/date-model.js", "<%= prop.dirDIModel %>/user-model.js"] },
+        // { "filePath": "<%= prop.dirDIModel %>/console-page-manager.js", "depends": ["<%= prop.dirDIModel %>/btns-model.js"] },
+        { "filePath": "<%= prop.dirDIModel %>/panel-page-manager.js", "depends": ["<%= prop.dirDIModel %>/panel-page-radio-adapter.js", "<%= prop.dirDIModel %>/panel-page-tab-adapter.js"] },
+        { "filePath": "<%= prop.dirDIModel %>/table-model.js", "depends": ["<%= prop.dirDIModel %>/page-info.js"] },
+
+        // DI Views （包含了全部）
+        { "filePath": "<%= prop.dirDIView %>/base-config-panel.js", "depends": ["<%= prop.dirECUICore %>/form.js", "<%= prop.dirECUICore %>/button.js"] },
+        { "filePath": "<%= prop.dirDIView %>/di-echart.js", "depends": ["<%= prop.dirDIModel %>/di-echart-model.js"] },
+        { "filePath": "<%= prop.dirDIView %>/di-liteolap-chart.js", "depends": ["<%= prop.dirDIModel %>/di-chart-model.js"] },
+        { "filePath": "<%= prop.dirDIView %>/di-form.js", "depends": ["<%= prop.dirDIModel %>/di-form-model.js"] },
+        { "filePath": "<%= prop.dirDIView %>/di-tab.js", "depends": ["<%= prop.dirECUIExt %>/tab-container.js"] },
+        { "filePath": "<%= prop.dirDIView %>/di-table.js", "depends": ["<%= prop.dirDIModel %>/di-table-model.js"] },
+        { "filePath": "<%= prop.dirDIView %>/di-rtplclone.js", "depends": ["<%= prop.dirDIModel %>/di-rtplclone-model.js"] },
+        { "filePath": "<%= prop.dirDIView %>/di-rptsave.js", "depends": ["<%= prop.dirDIModel %>/di-rptsave-model.js"] },
+        { "filePath": "<%= prop.dirDIView %>/di-plane-table.js", "depends": ["<%= prop.dirDIModel %>/di-plane-table-model.js"] },
+        { "filePath": "<%= prop.dirDIView %>/dim-select-panel.js", "depends": ["<%= prop.dirDIModel %>/dim-select-model.js", "<%= prop.dirECUICore %>/form.js", "<%= prop.dirECUICore %>/button.js"] },
+        { "filePath": "<%= prop.dirDIView %>/multidim-select-panel.js", "depends": ["<%= prop.dirDIModel %>/multidim-select-model.js", "<%= prop.dirECUICore %>/form.js", "<%= prop.dirECUICore %>/button.js"] },
+        { "filePath": "<%= prop.dirDIView %>/fold-panel.js", "depends": [] },
+        { "filePath": "<%= prop.dirDIView %>/general-snippet.js", "depends": [] },
+        { "filePath": "<%= prop.dirDIView %>/general-vcontainer.js", "depends": [] },
+        { "filePath": "<%= prop.dirDIView %>/general-vpart.js", "depends": [] },
+        { "filePath": "<%= prop.dirDIView %>/interact-entity.js", "depends": [] },
+        { "filePath": "<%= prop.dirDIView %>/meta-condition.js", "depends": ["<%= prop.dirDIView %>/dim-select-panel.js", "<%= prop.dirDIModel %>/meta-condition-model.js"] },
+        { "filePath": "<%= prop.dirDIView %>/olap-meta-config.js", "depends": ["<%= prop.dirDIModel %>/olap-meta-config-model.js"] },
+        { "filePath": "<%= prop.dirDIView %>/liteolap-meta-config.js", "depends": ["<%= prop.dirDIModel %>/olap-meta-config-model.js"] },
+        { "filePath": "<%= prop.dirDIView %>/panel-page.js", "depends": ["ecuiBaseJS"] },
+
+
+        // DI Inner VUI （包含了全部）
+        { "filePath": "<%= prop.dirInnerVUI %>/hidden-input.js", "depends": [] },
+        { "filePath": "<%= prop.dirInnerVUI %>/offline-download.js", "depends": ["<%= prop.dirECUIExt %>/h-button.js", "<%= prop.dirECUICore %>/form.js"] },
+        { "filePath": "<%= prop.dirInnerVUI %>/olap-meta-dragger.js", "depends": ["<%= prop.dirECUIExt %>/draggable-list.js", "<%= prop.dirECUIExt %>/droppable-list.js", "<%= prop.dirDIView %>/multidim-select-panel.js", "<%= prop.dirDIView %>/dim-select-panel.js"] },
+        { "filePath": "<%= prop.dirInnerVUI %>/olap-meta-select.js", "depends": ["<%= prop.dirECUICore %>/select.js","<%= prop.dirECUIExt %>/multi-select.js"] },
+        { "filePath": "<%= prop.dirInnerVUI %>/text-label.js", "depends": [] },
+        { "filePath": "<%= prop.dirInnerVUI %>/multi-checkbox.js", "depends": [] },
+        { "filePath": "<%= prop.dirInnerVUI %>/simple-radio.js", "depends": [] },
+        { "filePath": "<%= prop.dirInnerVUI %>/range-calendar.js", "depends": ["<%= prop.dirSrcCore %>/rangecalendar/esui-range-calendar.js", "<%= prop.dirSrcCore %>/rangecalendar/kalendae.js"] },
+        { "filePath": "<%= prop.dirInnerVUI %>/cascade-select.js", "depends": ["<%= prop.dirSrcCore %>/dropkick/dropkick.js"] },
+        { "filePath": "<%= prop.dirInnerVUI %>/rich-select.js", "depends": ["<%= prop.dirSrcCore %>/richselect/richselect.js"] },
+
+        // ecui core （包含了全部）
+        { "filePath": "<%= prop.dirECUICore %>/items.js", "depends": ["ecuiBaseJS"] },
+        { "filePath": "<%= prop.dirECUICore %>/month-view.js", "depends": ["ecuiBaseJS"] },
+        { "filePath": "<%= prop.dirECUICore %>/panel.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/scrollbar.js"] },
+        { "filePath": "<%= prop.dirECUICore %>/input-control.js", "depends": ["ecuiBaseJS"] },
+        { "filePath": "<%= prop.dirECUICore %>/scrollbar.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/button.js"] },
+        { "filePath": "<%= prop.dirECUICore %>/button.js", "depends": ["ecuiBaseJS"] },
+        { "filePath": "<%= prop.dirECUICore %>/checkbox.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/input-control.js"] },
+        { "filePath": "<%= prop.dirECUICore %>/radio.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/input-control.js"] },
+        { "filePath": "<%= prop.dirECUICore %>/select.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/items.js", "<%= prop.dirECUICore %>/input-control.js", "<%= prop.dirECUICore %>/button.js", "<%= prop.dirECUICore %>/scrollbar.js", "<%= prop.dirECUICore %>/panel.js"] },
+        { "filePath": "<%= prop.dirECUICore %>/form.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/button.js"] },
+        { "filePath": "<%= prop.dirECUICore %>/tree-view.js", "depends": [] },
+        { "filePath": "<%= prop.dirECUICore %>/table.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/scrollbar.js", "<%= prop.dirECUICore %>/panel.js"] },
+        { "filePath": "<%= prop.dirECUICore %>/tab.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/items.js", "<%= prop.dirECUICore %>/button.js"] },
+        { "filePath": "<%= prop.dirECUICore %>/listbox.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/items.js", ] },
+        { "filePath": "<%= prop.dirECUICore %>/label.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/panel.js"] },
+        { "filePath": "<%= prop.dirECUICore %>/check-tree.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/tree-view.js"] },
+        { "filePath": "<%= prop.dirECUICore %>/messagebox.js", "depends": ["ecuiBaseJS"] },
+        { "filePath": "<%= prop.dirECUICore %>/locked-table.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/table.js"] },
+        { "filePath": "<%= prop.dirECUICore %>/slow-locked-table.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/table.js"] },
+
+        // ecui ext （包含了全部）
+        { "filePath": "<%= prop.dirECUIExt %>/calendar.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/input-control.js", "<%= prop.dirECUICore %>/select.js", "<%= prop.dirECUICore %>/button.js", "<%= prop.dirECUICore %>/month-view.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/combox.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/select.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/multi-select.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/items.js", "<%= prop.dirECUICore %>/input-control.js", "<%= prop.dirECUICore %>/button.js", "<%= prop.dirECUICore %>/scrollbar.js", "<%= prop.dirECUICore %>/panel.js", "<%= prop.dirECUICore %>/select.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/tip.js", "depends": ["ecuiBaseJS"] },
+        { "filePath": "<%= prop.dirECUIExt %>/pl-button.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/button.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/container.js", "depends": ["ecuiBaseJS"] },
+        { "filePath": "<%= prop.dirECUIExt %>/tab-container.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/button.js", "<%= prop.dirECUICore %>/items.js", "<%= prop.dirECUICore %>/tab.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/ist-calendar.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUIExt %>/calendar.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/data-tree.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/tree-view.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/calendar-plus.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/input-control.js", "<%= prop.dirECUICore %>/select.js", "<%= prop.dirECUICore %>/button.js", "<%= prop.dirECUICore %>/month-view.js", "<%= prop.dirECUICore %>/select.js", "<%= prop.dirECUIExt %>/ist-calendar.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/x-calendar-view.js", "depends": ["ecuiBaseJS"] },
+        { "filePath": "<%= prop.dirECUIExt %>/x-calendar-layer.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/button.js", "<%= prop.dirECUICore %>/input-control.js", "<%= prop.dirECUICore %>/select.js", "<%= prop.dirECUIExt %>/x-calendar-view.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/x-calendar.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/button.js", "<%= prop.dirECUICore %>/input-control.js", "<%= prop.dirECUICore %>/select.js", "<%= prop.dirECUIExt %>/x-calendar-layer.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/h-button.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/button.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/switch-button.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUIExt %>/h-button.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/olap-table.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/slow-locked-table.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/breadcrumb.js", "depends": ["ecuiBaseJS"] },
+        { "filePath": "<%= prop.dirECUIExt %>/ind-tree.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/items.js", ] },
+        { "filePath": "<%= prop.dirECUIExt %>/input.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/input-control.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/input-tree.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/button.js", "<%= prop.dirECUICore %>/button.js", "<%= prop.dirECUIExt %>/data-tree.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/suggest.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/scrollbar.js", "<%= prop.dirECUICore %>/panel.js", "<%= prop.dirECUICore %>/button.js", "<%= prop.dirECUICore %>/items.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/draggable-list.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/items.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/droppable-list.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/items.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/custom-table.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUICore %>/slow-locked-table.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/pager.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUIExt %>/pager.js", "<%= prop.dirECUICore %>/items.js", "<%= prop.dirECUICore %>/select.js", "<%= prop.dirECUICore %>/button.js"] },
+        { "filePath": "<%= prop.dirECUIExt %>/ext-pager.js", "depends": ["ecuiBaseJS", "<%= prop.dirECUIExt %>/pager.js"] },
+
+        // xui （包含了全部）
+        { "filePath": "<%= prop.dirXUI %>/e-chart.js", "depends": ["xuiuiBaseJS", "<%= prop.srcEchartsMap %>"] }
+//        // htmlClean
+//        { "filePath": "<%= prop.dirSrcCore %>/jquery/jquery.htmlClean.js", "depends": ["<%= prop.srcJquery %>"] },
+//
+//        // json lint
+//        { "filePath": "<%= prop.dirSrcCore %>/jsonlint/jsl.parser.js", "depends": ["<%= prop.srcJquery %>"] },
+//        { "filePath": "<%= prop.dirSrcCore %>/jsonlint/jsl.format.js", "depends": ["<%= prop.srcJquery %>"] }
+    ],
+
+    /** 
+     * 文件和类的对应，在repo-dict和本文件中出现的clzPath都须在此字典中出现，
+     * 构建程序在依照repo-dict构建时会从此字典中寻找文件路径。
+     * 其中filePath是其主文件，而所依赖的文件在FILE_DEPENDENCY_DICT中定义。
+     */
+    "clzPathDict": [
+        // snippet
+        { "clzPath": "di.shared.ui.GeneralSnippet", "filePath": "<%= prop.dirDIView %>/general-snippet.js" },
+
+        // component
+        { "clzPath": "di.shared.ui.InteractEntity", "filePath": "<%= prop.dirDIView %>/interact-entity.js" },
+        { "clzPath": "di.shared.ui.DIChart", "filePath": "<%= prop.dirDIView %>/di-chart.js" },
+        { "clzPath": "di.shared.ui.DILiteOlapChart", "filePath": "<%= prop.dirDIView %>/di-liteolap-chart.js" },
+        { "clzPath": "di.shared.ui.DIEChart", "filePath": "<%= prop.dirDIView %>/di-echart.js" },
+        { "clzPath": "di.shared.ui.DITable", "filePath": "<%= prop.dirDIView %>/di-table.js" },
+        { "clzPath": "di.shared.ui.DIReportSave", "filePath": "<%= prop.dirDIView %>/di-rptsave.js" },
+        { "clzPath": "di.shared.ui.DIRtplClone", "filePath": "<%= prop.dirDIView %>/di-rtplclone.js" },
+        { "clzPath": "di.shared.ui.DIForm", "filePath": "<%= prop.dirDIView %>/di-form.js" },
+        { "clzPath": "di.shared.ui.DIPlaneTable", "filePath": "<%= prop.dirDIView %>/di-plane-table.js" },
+        { "clzPath": "di.shared.ui.DimSelectPanel", "filePath": "<%= prop.dirDIView %>/dim-select-panel.js" },
+        { "clzPath": "di.shared.ui.MultiDimSelectPanel", "filePath": "<%= prop.dirDIView %>/multidim-select-panel.js" },
+        { "clzPath": "di.shared.ui.OlapMetaConfig", "filePath": "<%= prop.dirDIView %>/olap-meta-config.js" },
+        { "clzPath": "di.shared.ui.LiteOlapMetaConfig", "filePath": "<%= prop.dirDIView %>/liteolap-meta-config.js" },
+
+        // vcontainer
+        { "clzPath": "di.shared.ui.GeneralVContainer", "filePath": "<%= prop.dirDIView %>/general-vcontainer.js" },
+        { "clzPath": "di.shared.ui.DITab", "filePath": "<%= prop.dirDIView %>/di-tab.js" },
+        { "clzPath": "di.shared.ui.FoldPanel", "filePath": "<%= prop.dirDIView %>/fold-panel.js" },
+
+        // vpart
+        { "clzPath": "di.shared.ui.GeneralVPart", "filePath": "<%= prop.dirDIView %>/general-vpart.js" },
+
+        // vuiAdapter
+        { "clzPath": "di.shared.adapter.CalendarPlusVUIAdapter", "filePath": "<%= prop.dirVUIAdapter %>/calendar-plus-vui-adapter.js" },
+        { "clzPath": "di.shared.adapter.EcuiInputTreeVUIAdapter", "filePath": "<%= prop.dirVUIAdapter %>/ecui-input-tree-vui-adapter.js" },
+        { "clzPath": "di.shared.adapter.EcuiInputVUIAdapter", "filePath": "<%= prop.dirVUIAdapter %>/ecui-input-vui-adapter.js" },
+        { "clzPath": "di.shared.adapter.EcuiSelectVUIAdapter", "filePath": "<%= prop.dirVUIAdapter %>/ecui-select-vui-adapter.js" },
+        { "clzPath": "di.shared.adapter.EcuiSuggestVUIAdapter", "filePath": "<%= prop.dirVUIAdapter %>/ecui-suggest-vui-adapter.js" },
+        { "clzPath": "di.shared.adapter.EcuiCustomTableVUIAdapter", "filePath": "<%= prop.dirVUIAdapter %>/ecui-custom-table-vui-adapter.js" },
+        { "clzPath": "di.shared.adapter.EcuiPagerVUIAdapter", "filePath": "<%= prop.dirVUIAdapter %>/ecui-pager-vui-adapter.js" },
+        { "clzPath": "di.shared.adapter.EChartVUIAdapter", "filePath": "<%= prop.dirVUIAdapter %>/e-chart-vui-adapter.js" },
+        { "clzPath": "di.shared.adapter.IstCalendarVUIAdapter", "filePath": "<%= prop.dirVUIAdapter %>/ist-calendar-vui-adapter.js" },
+        { "clzPath": "di.shared.adapter.MetaConfigVUIAdapter", "filePath": "<%= prop.dirVUIAdapter %>/meta-config-vui-adapter.js" },
+        { "clzPath": "di.shared.adapter.XCalendarVUIAdapter", "filePath": "<%= prop.dirVUIAdapter %>/x-calendar-vui-adapter.js" },
+
+        // DI inner vui
+        { "clzPath": "di.shared.vui.HiddenInput", "filePath": "<%= prop.dirInnerVUI %>/hidden-input.js" },
+        { "clzPath": "di.shared.vui.OfflineDownload", "filePath": "<%= prop.dirInnerVUI %>/offline-download.js" },
+        { "clzPath": "di.shared.vui.OlapMetaDragger", "filePath": "<%= prop.dirInnerVUI %>/olap-meta-dragger.js" },
+        { "clzPath": "di.shared.vui.OlapMetaSelect", "filePath": "<%= prop.dirInnerVUI %>/olap-meta-select.js" },
+        { "clzPath": "di.shared.vui.TextLabel", "filePath": "<%= prop.dirInnerVUI %>/text-label.js" },
+        { "clzPath": "di.shared.vui.MultiCheckbox", "filePath": "<%= prop.dirInnerVUI %>/multi-checkbox.js" },
+        { "clzPath": "di.shared.vui.SimpleRadio", "filePath": "<%= prop.dirInnerVUI %>/simple-radio.js" },
+        { "clzPath": "di.shared.vui.SaveButton", "filePath": "<%= prop.dirInnerVUI %>/rptsave-save.js" },
+        { "clzPath": "di.shared.vui.TabButton", "filePath": "<%= prop.dirInnerVUI %>/rptsave-tab.js" },
+        { "clzPath": "di.shared.vui.RangeCalendar", "filePath": "<%= prop.dirInnerVUI %>/range-calendar.js" },
+        { "clzPath": "di.shared.vui.CascadeSelect", "filePath": "<%= prop.dirInnerVUI %>/cascade-select.js" },
+        { "clzPath": "di.shared.vui.FieldsFilter", "filePath": "<%= prop.dirInnerVUI %>/fields-filter.js" },
+        // xui-ui
+        { "clzPath": "xui.ui.EChart", "filePath": "<%= prop.dirXUI %>/e-chart.js" },
+        // ecui core
+        { "clzPath": "ecui.ui.Button", "filePath": "<%= prop.dirECUICore %>/button.js" },
+        { "clzPath": "ecui.ui.Checkbox", "filePath": "<%= prop.dirECUICore %>/checkbox.js" },
+        { "clzPath": "ecui.ui.Radio", "filePath": "<%= prop.dirECUICore %>/radio.js" },
+        { "clzPath": "ecui.ui.Select", "filePath": "<%= prop.dirECUICore %>/select.js" },
+        { "clzPath": "ecui.ui.Form", "filePath": "<%= prop.dirECUICore %>/form.js" },
+        { "clzPath": "ecui.ui.TreeView", "filePath": "<%= prop.dirECUICore %>/tree-view.js" },
+        { "clzPath": "ecui.ui.Table", "filePath": "<%= prop.dirECUICore %>/table.js" },
+        { "clzPath": "ecui.ui.Tab", "filePath": "<%= prop.dirECUICore %>/tab.js" },
+        { "clzPath": "ecui.ui.ListBox", "filePath": "<%= prop.dirECUICore %>/listbox.js" },
+        { "clzPath": "ecui.ui.Label", "filePath": "<%= prop.dirECUICore %>/label.js" },
+        { "clzPath": "ecui.ui.CheckTree", "filePath": "<%= prop.dirECUICore %>/check-tree.js" },
+        { "clzPath": "ecui.ui.messagebox", "filePath": "<%= prop.dirECUICore %>/messagebox.js" },
+        { "clzPath": "ecui.ui.LockedTable", "filePath": "<%= prop.dirECUICore %>/locked-table.js" },
+        { "clzPath": "ecui.ui.SlowLockedTable", "filePath": "<%= prop.dirECUICore %>/slow-locked-table.js" },
+
+        // ecui ext
+        { "clzPath": "ecui.ui.Calendar", "filePath": "<%= prop.dirECUIExt %>/calendar.js" },
+        { "clzPath": "ecui.ui.Combox", "filePath": "<%= prop.dirECUIExt %>/combox.js" },
+        { "clzPath": "ecui.ui.Tip", "filePath": "<%= prop.dirECUIExt %>/tip.js" },
+        { "clzPath": "ecui.ui.MultiSelect", "filePath": "<%= prop.dirECUIExt %>/multi-select.js" },
+        { "clzPath": "ecui.ui.PlButton", "filePath": "<%= prop.dirECUIExt %>/pl-button.js" },
+        { "clzPath": "ecui.ui.Container", "filePath": "<%= prop.dirECUIExt %>/container.js" },
+        { "clzPath": "ecui.ui.TabContainer", "filePath": "<%= prop.dirECUIExt %>/tab-container.js" },
+        { "clzPath": "ecui.ui.IstCalendar", "filePath": "<%= prop.dirECUIExt %>/ist-calendar.js" },
+        { "clzPath": "ecui.ui.DataTree", "filePath": "<%= prop.dirECUIExt %>/data-tree.js" },
+        { "clzPath": "ecui.ui.CalendarPlus", "filePath": "<%= prop.dirECUIExt %>/calendar-plus.js" },
+        { "clzPath": "ecui.ui.XCalendarLayer", "filePath": "<%= prop.dirECUIExt %>/x-calendar-layer.js" },
+        { "clzPath": "ecui.ui.XCalendar", "filePath": "<%= prop.dirECUIExt %>/x-calendar.js" },
+        { "clzPath": "ecui.ui.HButton", "filePath": "<%= prop.dirECUIExt %>/h-button.js" },
+        { "clzPath": "ecui.ui.SwitchButton", "filePath": "<%= prop.dirECUIExt %>/switch-button.js" },
+        { "clzPath": "ecui.ui.OlapTable", "filePath": "<%= prop.dirECUIExt %>/olap-table.js" },
+        { "clzPath": "ecui.ui.Breadcrumb", "filePath": "<%= prop.dirECUIExt %>/breadcrumb.js" },
+        { "clzPath": "ecui.ui.IndTree", "filePath": "<%= prop.dirECUIExt %>/ind-tree.js" },
+        { "clzPath": "ecui.ui.Input", "filePath": "<%= prop.dirECUIExt %>/input.js" },
+        { "clzPath": "ecui.ui.Textarea", "filePath": "<%= prop.dirECUIExt %>/input.js" },
+        { "clzPath": "ecui.ui.InputTree", "filePath": "<%= prop.dirECUIExt %>/input-tree.js" },
+        { "clzPath": "ecui.ui.Suggest", "filePath": "<%= prop.dirECUIExt %>/suggest.js" },
+        { "clzPath": "ecui.ui.DraggableList", "filePath": "<%= prop.dirECUIExt %>/draggable-list.js" },
+        { "clzPath": "ecui.ui.DroppableList", "filePath": "<%= prop.dirECUIExt %>/droppable-list.js" },
+        { "clzPath": "ecui.ui.CustomTable", "filePath": "<%= prop.dirECUIExt %>/custom-table.js" },
+        { "clzPath": "ecui.ui.ExtPager", "filePath": "<%= prop.dirECUIExt %>/ext-pager.js" }
+    ]
+}

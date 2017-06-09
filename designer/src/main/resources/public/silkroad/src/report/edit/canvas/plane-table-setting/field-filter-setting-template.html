@@ -1,0 +1,30 @@
+<!--
+数据例子：
+var demoData = {
+    type: '',
+    name: '',
+    defaultValue: '',
+    sqlContidion: ''
+};
+-->
+<div class="silkroad-data-field-filter-set">
+    <span class="field-id" data-id="{{$data.id}}" title="{{$data.text}}">{{$data.text}}</span>
+    <input class="field-name" value="{{$data.name}}" placeholder="名称"/>
+    <select class="condition">
+        {{if $data.isMeasure}}
+        <option value="EQ" {{if $data.sqlCondition=='EQ'}}selected=selected {{/if}}>等于</option>
+        <option value="NOT_EQ" {{if $data.sqlCondition=='NOT_EQ'}}selected=selected {{/if}}>不等于</option>
+        <option value="LT" {{if $data.sqlCondition=='LT'}}selected=selected {{/if}}>小于</option>
+        <option value="GT" {{if $data.sqlCondition=='GT'}}selected=selected {{/if}}>大于</option>
+        <option value="LT_EQ" {{if $data.sqlCondition=='LT_EQ'}}selected=selected {{/if}}>小于等于</option>
+        <option value="GT_EQ" {{if $data.sqlCondition=='GT_EQ'}}selected=selected {{/if}}>大于等于</option>
+        <option value="IN" {{if $data.sqlCondition=='IN'}}selected=selected {{/if}}>in</option>
+        <option value="BETWEEN_AND" {{if $data.sqlCondition=='BETWEEN_AND'}}selected=selected {{/if}}>between-and</option>
+        <option value="LIKE" {{if $data.sqlCondition=='LIKE'}}selected=selected {{/if}}>like</option>
+        {{else}}
+        <option value="EQ" {{if $data.sqlCondition=='EQ'}}selected=selected {{/if}}>等于</option>
+        <option value="IN" {{if $data.sqlCondition=='IN'}}selected=selected {{/if}}>in</option>
+        {{/if}}
+    </select>
+    <input type="text" class="default-value" value="{{$data.defaultValue}}" placeholder="默认值"/>
+</div>

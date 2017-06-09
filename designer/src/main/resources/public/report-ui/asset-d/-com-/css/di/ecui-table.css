@@ -1,0 +1,722 @@
+/**
+ * Table
+ */
+.ui-table {
+    border-top: 3px solid #2070BB;
+}
+.ui-table table {
+    table-layout: fixed;
+}
+.ui-table-head {
+    border: 1px solid #E6E6E6;
+    height: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.ui-table-locked-head {
+    border-right: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    border-left: 2px solid #E6E6E6;
+    border-top: 1px solid #E6E6E6;
+    height: 30px;
+    overflow: hidden;
+}
+.ui-table-layout,
+.ui-table-locked-layout {
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+}
+.ui-table-cell {
+    background: #FFF;
+    border-right: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 9px;
+    color: #555;
+    margin: 0;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+.ui-table-cell-limited{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.ui-table-hcell,
+.ui-table-rowhcell {
+    position: relative;
+    background: #F6F6F6;
+    border-right: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    color: #3C78A2;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 9px;
+    margin: 0;
+    vertical-align: middle;
+    cursor: default;
+    font-weight: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+.ui-table-hcell-bag {
+    margin: 0 10px 0 10px;
+}
+.ui-plane-table-hcell-bag{
+    margin: 0 20px 0 20px;
+}
+.ui-plane-table-hcell-bag-lastcolumn{
+    padding: 0 33px 0 0;
+}
+.ui-table-rowhcell {
+    color: #333;
+}
+/* 解决ie7下（固定列）单元格自动换行的问题（强制所有文字不换行，溢出隐藏） */
+.ui-table-rowhcell div {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.ui-table-row {
+    cursor: pointer;
+}
+.ui-table-row-hover .ui-table-ccell {
+    background: #FFFF99;
+}
+.ui-table-row-hover {
+    background: #ccc;
+}
+.ui-table-row-checked .ui-table-ccell,
+.ui-table-row-selected .ui-table-ccell {
+    background: #FFFF99;
+}
+
+/*.ui-table-row {
+    cursor: pointer;
+}
+.ui-table-row-hover .ui-table-cell {
+    background: #FFFF99;
+}
+.ui-table-row-hover .ui-table-rowhcell {
+    background: #DCEFD1;
+}*/
+/*.ui-table-cell-align-right {*/
+    /*text-align: right;*/
+/*}*/
+/*.ui-table-cell-align-center {*/
+    /*text-align: center;*/
+/*}*/
+.ui-table-cell-link {
+    color: #0F7DD2;
+    text-decoration: underline;
+}
+.ui-table-hcell-empty {
+    width: 840px;
+}
+.ui-table-cell-empty {
+    padding: 0 5px;
+}
+.ui-table-tree-item {
+    padding-left: 16px;
+    position: relative;
+}
+.ui-table-e-c-icon {
+    height: 9px;
+    width: 9px;
+    overflow: hidden;
+    background: url(img/icon.png) 0px 0px no-repeat;
+    position: absolute;
+    left: 2px;
+    top: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    display: none;
+}
+.ui-table-expanded-icon {
+    background-position: -16px -151px;
+    display: block;
+    text-align: center;
+}
+/*.ui-table-expanded-icon-left {*/
+    /*background-position: -16px -151px;*/
+    /*display: block;*/
+    /*text-align: left;*/
+/*}*/
+/*.ui-table-expanded-icon-right {*/
+    /*background-position: -16px -151px;*/
+    /*display: block;*/
+    /*text-align: right;*/
+/*}*/
+.ui-table-collapsed-icon {
+     background-position: -25px -151px;
+     display: block;
+     text-align: center;
+ }
+/*.ui-table-collapsed-icon-left {*/
+    /*background-position: -25px -151px;*/
+    /*display: block;*/
+    /*text-align: left;*/
+/*}*/
+/*.ui-table-collapsed-icon-right {*/
+    /*background-position: -25px -151px;*/
+    /*display: block;*/
+    /*text-align: right;*/
+/*}*/
+/*.ui-table-default-icon {*/
+    /*padding-left: 9px;*/
+/*}*/
+/*这句样式对表格层级显示可能有问题，会多一些padding-left，到时候需要注意下*/
+.ui-table-expand-background .ui-table-default-icon{
+    padding-left: 15px;
+}
+.ui-table-default-icon {
+    padding-left: 0;
+}
+/* 表格纵向滚动条 */
+.ui-table .ui-vscrollbar {
+    width: 16px;
+    background: #F0F0F0;
+    padding: 16px 0;
+}
+.ui-table .ui-vscrollbar .ui-button {
+    cursor: default;
+    padding: 0;
+    margin: 0;
+    background-color: #E6F1FB;
+}
+.ui-table .ui-vscrollbar .ui-button-hover {
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -o-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+}
+.ui-table .ui-vscrollbar-prev {
+    width: 14px;
+    height: 14px;
+    border: 0;
+    background: url(img/icon2.png) -59px -66px no-repeat;
+    overflow: hidden;
+    border: 1px solid #A2BCC7;
+}
+.ui-table .ui-vscrollbar-next {
+    width: 14px;
+    height: 14px;
+    border: 0;
+    background: url(img/icon2.png) -59px -84px no-repeat;
+    overflow: hidden;
+    border: 1px solid #A2BCC7;
+}
+.ui-table .ui-vscrollbar .ui-scrollbar-thumb {
+    width: 16px;
+    border: 1px solid #A2BCC7;
+}
+/* 表格横向滚动条 */
+.ui-table .ui-hscrollbar {
+    height: 16px;
+    background: #F0F0F0;
+    padding: 0 16px;
+}
+.ui-table .ui-hscrollbar .ui-button {
+    cursor: default;
+    padding: 0;
+    margin: 0;
+    background-color: #E6F1FB;
+}
+.ui-table .ui-hscrollbar .ui-button-hover {
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    border-radius: 0;
+    -webkit-border-radius: 0px;
+    -o-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+}
+.ui-table .ui-hscrollbar-prev {
+    width: 14px;
+    height: 14px;
+    background: url(img/icon2.png) -42px -84px no-repeat;
+    overflow: hidden;
+    border: 1px solid #A2BCC7;
+}
+.ui-table .ui-hscrollbar-next {
+    width: 14px;
+    height: 14px;
+    background: url(img/icon2.png) -42px -66px no-repeat;
+    overflow: hidden;
+    border: 1px solid #A2BCC7;
+}
+.ui-table .ui-hscrollbar .ui-scrollbar-thumb {
+    height: 16px;
+    border: 1px solid #A2BCC7;
+}
+/*条件格式*/
+.ui-table-condfmt-arr {
+    background: url(img/icon2.png) 0 -106px;
+    width: 10px;
+    height: 10px;
+    overflow: hidden;
+    margin-right: 5px;
+    margin-left: 3px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+.ui-table-condfmt-arr-1 {
+    /*上升绿箭*/
+    background-position: 0 -106px;
+}
+.ui-table-condfmt-arr-2 {
+    /*下降红箭*/
+    background-position: -30px -106px;
+}
+.ui-table-condfmt-arr-3 {
+    /*上升红箭*/
+    background-position: -20px -106px;
+}
+.ui-table-condfmt-arr-4 {
+    /*下降绿箭*/
+    background-position: -10px -106px;
+}
+.ui-table-head-tips {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    background: #999;
+    border-radius: 8px;
+    line-height: 15px;
+    color: #FFF;
+    display: inline-block;
+    background: url("img/icon_help_none.png");
+}
+.ui-table-head-drag {
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    cursor: col-resize;
+}
+.ui-table-head-th-content {
+    position: relative;
+    height: 30px;
+    margin: 0 auto;
+}
+.ui-table-hcell-sort-desc {
+    background-image: url(img/icon-hcell-desc.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    width: 8px;
+    height: 15px;
+    color: #E7F9FE;
+}
+.ui-table-hcell-sort-asc {
+    background-image: url(img/icon-hcell-asc.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    width: 8px;
+    height: 15px;
+    color: #E7F9FE;
+}
+.ui-table-hcell-sort,
+.ui-table-hcell-sort-none {
+    background-image: url(img/icon-hcell-sort.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    width: 8px;
+    height: 15px;
+    color: #E7F9FE;
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*padding-right: 12px;*/
+    /*top: 7px;*/
+}
+.ui-table-heade-th-content span {
+    padding: 0;
+}
+.ui-table-head-font {
+    /*margin-left: 5px;*/
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /*height: 15px;*/
+    /*line-height: 15px;*/
+}
+
+.ui-table-head-drag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+}
+.ui-table-drag-box {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    cursor: col-resize;
+}
+.ui-table-dot-box-drag {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 9px;
+    height: 100%;
+    display: none;
+}
+.ui-table-dot-box-line {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-right: 1px dashed #CCCCCC;
+}
+
+.ui-table-hcell-field-set {
+    background-image: url(img/icon-hcell-field-filter.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    width: 20px;
+    height: 16px;
+    color: #E7F9FE;
+    cursor: pointer;
+}
+
+.ui-table-expand-background {
+    /*background-color: #F6F6F5;*/
+}
+
+/*.ui-table-locked-head th {*/
+    /*display: block;*/
+    /*overflow: hidden;*/
+/*}*/
+.ui-table-locked-head .ui-table-head-font {
+    display: block;
+}
+.ui-table-locked-head table {
+    width: 100%;
+}
+
+.ui-table-cell-align-center {
+    text-align: center;
+}
+.ui-table-cell-align-left {
+    text-align: left;
+}
+.ui-table-cell-align-right {
+    text-align: right;
+}
+
+.ui-table-field-set-item {
+
+}
+
+.ui-table-fieldset-exhibition {
+    width: 100%;
+    height: 30px;
+    overflow-y: hidden;
+    margin-bottom: 5px;
+}
+.ui-table-fieldset-exhibition > div {
+    position: relative;
+    display: inline-block;
+    background: white;
+    margin-right: 5px;
+}
+.ui-table-fieldset-exhibition span {
+    width: 100px;
+    display: inline-block;
+    border: solid 1px #E6E6E6;
+    padding-right: 15px;
+    height: 28px;
+    line-height: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ui-table-fieldset-exhibition .delete {
+    position: absolute;
+    text-decoration: none;
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+    top: 0px;
+    right: 0px;
+    color: #333;
+    font-size: 18px;
+    font-family: arial, "宋体";
+    text-align: center;
+}
+.ui-table-fieldset-exhibition .delete:hover {
+    color: white;
+    font-weight:bold;
+    /* font-size:22px; */
+    border: 1px solid rgb(252, 244, 244);
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+    border-radius: 50%;
+    background: rgb(223, 149, 134);
+}
+
+.ui-tip {
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+}
+.ui-tip-layer-hidden {
+    display: none;
+}
+/**
+  * ESUI (Enterprise Simple UI)
+  * Copyright 2013 Baidu Inc. All rights reserved.
+  *
+  * @file 通用提示用漂浮层
+  * @author dbear
+  */
+.ui-tip-layer {
+    background: #fff;
+    border: 1px solid #b3b9bc;
+    padding: 10px 18px 10px;
+    line-height: 1.5em;
+    z-index: 1002;
+    position: absolute;
+    box-shadow: 0 0 10px #b3b9bc;
+    min-width: 100px;
+    max-width: 300px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.ui-tip-layer-rt,
+.ui-tip-layer-rb {
+    margin-left: -10px;
+}
+.ui-tip-layer-lt,
+.ui-tip-layer-lb {
+    margin-left: 10px;
+}
+.ui-tip-layer-title,
+.ui-tip-layer-body {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+.ui-tip-layer-title {
+    margin: .5em 0;
+}
+.ui-tip-layer-body {
+    margin-bottom: 5px;
+}
+.ui-tip-layer-arrow {
+    display: none;
+    position: absolute;
+    font-size: 1px;
+}
+.ui-tip-layer-arrow-tl {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -24px -12px;
+    background-color: transparent;
+    width: 12px;
+    height: 13px;
+    top: -13px;
+    left: 12px;
+}
+.ui-tip-layer-arrow-tr {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -36px -12px;
+    background-color: transparent;
+    width: 12px;
+    height: 13px;
+    top: -13px;
+    right: 12px;
+}
+.ui-tip-layer-arrow-bl {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -12px -12px;
+    background-color: transparent;
+    width: 12px;
+    height: 13px;
+    bottom: -13px;
+    left: 12px;
+}
+.ui-tip-layer-arrow-br {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: 0px -12px;
+    background-color: transparent;
+    width: 12px;
+    height: 13px;
+    bottom: -13px;
+    right: 12px;
+}
+.ui-tip-layer-arrow-lt {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -26px 0px;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    top: 7px;
+    left: -13px;
+}
+.ui-tip-layer-arrow-lb {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -39px 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    bottom: 7px;
+    left: -13px;
+}
+.ui-tip-layer-arrow-rt {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    top: 7px;
+    right: -13px;
+}
+.ui-tip-layer-arrow-rb {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -13px 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    bottom: 7px;
+    right: -13px;
+}
+.ui-tip-layer-hidden {
+    display: none;
+}
+
+/**
+  * ESUI (Enterprise Simple UI)
+  * Copyright 2013 Baidu Inc. All rights reserved.
+  *
+  * @file 通用提示用漂浮层
+  * @author dbear
+  */
+.ui-tiplayer {
+    background: #fff;
+    border: 1px solid #b3b9bc;
+    padding: 10px 18px 10px;
+    line-height: 1.5em;
+    z-index: 1002;
+    position: absolute;
+    box-shadow: 0 0 10px #b3b9bc;
+    min-width: 100px;
+    max-width: 300px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.ui-tiplayer-title,.ui-tiplayer-body {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    max-width: 500px;
+    max-height: 195px;
+    overflow: auto
+}
+
+.ui-tiplayer-title {
+    margin: .5em 0
+}
+
+.ui-tiplayer-arrow {
+    display: none;
+    position: absolute;
+    font-size: 1px
+}
+
+.ui-tiplayer-arrow-lt {
+    display: block;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: -26px 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    top: 7px;
+    left: -13px
+}
+
+.ui-tiplayer-arrow-lb {
+    display: block;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: -39px 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    bottom: 7px;
+    left: -13px
+}
+
+.ui-tiplayer-arrow-rt {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    width: 9px;
+    height: 9px;
+    top: -8px;
+    right: 5px
+}
+
+.ui-tiplayer-arrow-rb {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    width: 9px;
+    height: 9px;
+    bottom: -9px;
+    right: 5px
+}
+
+.ui-tiplayer-hidden {
+    display: none
+}

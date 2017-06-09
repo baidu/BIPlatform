@@ -1,0 +1,78 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "caption": "车迟国",
+            "name": "chechi_guo",
+            "type": "COMMON",
+            "aggregator": "SUM",
+            "changeToDim": 0,
+            "visible": 1
+        },
+        {
+            "id": "2",
+            "caption": "女儿国-文字喜多多",
+            "name": "nver_guo",
+            "type": "COMMON",
+            "aggregator": "COUNT",
+            "changeToDim": 0,
+            "visible": 1
+        },
+        {
+            "id": "3",
+            "caption": "天竺国",
+            "name": "tianzhu_guo",
+            "type": "COMMON",
+            "aggregator": "AVERAGE",
+            "changeToDim": 0,
+            "visible": 1
+        },
+        {
+            "id": "4",
+            "caption": "比丘国",
+            "name": "biqiu_guo",
+            "type": "COMMON",
+            "aggregator": "SUM",
+            "changeToDim": 1,
+            "visible": 1
+        },
+        {
+            "id": "6",
+            "caption": "灭法国",
+            "name": "miefaguo_hide",
+            "type": "COMMON",
+            "aggregator": "SUM",
+            "changeToDim": 0,
+            "visible": 0
+        },
+        {
+            "id": "7",
+            "caption": "唐僧被色诱的国家",
+            "name": "tangseng_seyou",
+            "type": 1,
+            "aggregator": "SUM",
+            "expr": "女儿国 + 天竺国"
+
+        },
+        {
+            "id": "8",
+            "caption": "RUN",
+            "name": "run",
+            "type": 1,
+            "aggregator": "SUM",
+            "expr": "原始指标1"
+
+        },
+        {
+            "id": "9",
+            "caption": "so_many_words",
+            "name": "如此多的文字呈现也没有问题，是吧",
+            "type": 1,
+            "aggregator": "SUM",
+            "expr": "原始指标1"
+
+        }
+    ],
+    "status": 0,
+    "statusInfo": ""
+}

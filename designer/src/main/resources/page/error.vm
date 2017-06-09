@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html class="fit-height">
+<head>
+    <meta charset="UTF-8" />
+    <title>暂无数据</title>
+    <link rel="stylesheet" href="src/css/errorpage.css"/>
+</head>
+
+<body>
+    <div id="main" onclick="javascript:window.location.reload();">
+    </div>
+</body>
+</html>

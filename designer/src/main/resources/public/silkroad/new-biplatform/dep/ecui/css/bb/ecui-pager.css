@@ -1,0 +1,109 @@
+/** 
+ * Pager
+ */ 
+.ui-pager {
+    background: #F8F8F8;
+    color: #137BD4;
+    line-height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.ui-pager-items {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.ui-pager-button, 
+.ui-pager-item {
+    display: inline-block;
+    vertical-align: middle;
+    height: 18px;
+    color: #137BD4;
+    border: 1px solid #FFF;
+    position: relative;
+    cursor: default;
+    margin-right: 10px;
+}
+.ui-pager-item {
+    padding: 0px 5px;
+}
+.ui-pager-button-hover, 
+.ui-pager-item-hover {
+    background: #E0ECC4;
+    border-color: #C6D7A1;
+}
+.ui-pager-button-icon {
+    width: 8px;
+    height: 18px;
+    position: absolute;
+    background: url(../img/icon2.png) -67px -25px no-repeat;
+}
+.ui-pager-button-prv {
+    padding: 0px 10px 0px 20px;
+}
+.ui-pager-button-prv .ui-pager-button-icon {
+    left: 3px;
+    top: 0px;
+    background-position: -67px -25px;
+}
+.ui-pager-button-nxt {
+    padding: 0px 20px 0px 10px;
+}
+.ui-pager-button-nxt .ui-pager-button-icon {
+    right: 3px;
+    top: 0px;
+    background-position: -85px -25px;
+}
+.ui-pager-button-active, 
+.ui-pager-item-active, 
+.ui-pager-item-selected {
+    border-color: #5F9303;
+    background-color: #7BBE0E;
+    color: #F8F8F8;
+}
+.ui-pager-button-disabled {
+    color: #CCC;
+    background: none;
+}
+.ui-pager-button-prv-disabled .ui-pager-button-icon {
+    background-position: -67px -43px;
+}
+.ui-pager-button-nxt-disabled .ui-pager-button-icon {
+    background-position: -85px -43px;
+}
+
+/**
+ * ext pager
+ */
+.ui-ext-pager {
+    display: inline-block;
+    color: #137BD4;
+    vertical-align: middle;
+    color: #3C75A2;
+}
+.ui-ext-pager-sum {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.ui-ext-pager-text {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.ui-ext-pager-sum em {
+    font-style: normal;
+    margin: 0px 3px;
+}
+.ui-ext-pager-pagesize {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+.ui-ext-pager-pagesize .ui-select {
+    margin: 0px 3px;
+    text-align: left;
+}
+.ui-ext-pager .ui-pager {
+    background-color: #FFF;
+}

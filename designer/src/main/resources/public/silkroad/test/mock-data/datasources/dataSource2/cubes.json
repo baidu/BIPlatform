@@ -1,0 +1,16 @@
+{
+    "data": {
+        "cubeList": [
+            {
+                "id": 1,
+                "name": "cubb1"
+            },
+            {
+                "id": 2,
+                "name": "cubb2"
+            }
+        ]
+    },
+    "status": 0,
+    "statusInfo": ""
+}

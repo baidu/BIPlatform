@@ -1,0 +1,1 @@
+define(["template"],function(a){function b(b){"use strict";b=b||{};var c=a.utils,d=(c.$helpers,"");return d+='<div class="guide-line guide-top j-guide-line"></div>\r\n<div class="guide-line guide-right j-guide-line"></div>\r\n<div class="guide-line guide-bottom j-guide-line"></div>\r\n<div class="guide-line guide-left j-guide-line"></div>'}return{render:b}});

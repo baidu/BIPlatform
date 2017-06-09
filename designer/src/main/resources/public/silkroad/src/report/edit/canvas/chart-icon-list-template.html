@@ -1,0 +1,9 @@
+<ul class="comp-setting-charticons">
+    {{each $data as $item index}}
+        {{if $item === false}}
+            <li><span class="icon {{index}}" chart-type="{{index}}"></span></li>
+        {{else}}
+            <li><span class="icon {{index}} {{index}}-focus" chart-type="{{index}}"></span></li>
+        {{/if}}
+    {{/each}}
+</ul>

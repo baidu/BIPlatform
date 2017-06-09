@@ -1,0 +1,45 @@
+/**
+ * @file
+ * @author 赵晓强(longze_xq@163.com)
+ * @date {{date}}
+ */
+define([
+        'template',
+        'dialog',
+        '{{ModelUrl}}',
+        '{{templateUrl}}'
+    ],
+    function (template, dialog, {{ModelName}}Model, {{ModelName2}}Template) {
+
+        return Backbone.View.extend({
+            events: {
+
+            },
+
+            /**
+             * 构造函数
+             * @param {$HTMLElement} option.el view的顶层DOM：
+             * @param {string} option.id
+             * @constructor
+             */
+            initialize: function () {
+                var that = this;
+                this.model = new {{ModelName}}Model();
+
+            },
+
+            /**
+             * 销毁当前view
+             *
+             * @public
+             */
+            destroy: function () {
+                // 销毁 model
+                this.model.clear({silent: true});
+                // 停止监听model事件
+                this.stopListening();
+                // 解绑jq事件
+                this.$el.unbind().empty();
+            }
+        });
+});

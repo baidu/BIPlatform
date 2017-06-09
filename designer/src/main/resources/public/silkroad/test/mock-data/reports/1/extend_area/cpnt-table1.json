@@ -1,0 +1,17 @@
+{
+    "status": 0,
+    "statusInfo": "",
+    "data": {
+        "xAxis": [
+            {
+                "id": "1",
+                "tag": "车迟国",
+                "caption": "chechi_guo",
+                "cubeId": "1",
+                "oLapElementId": "1"
+            }
+        ],
+        "yAxis": [],
+        "sAxis": []
+    }
+}

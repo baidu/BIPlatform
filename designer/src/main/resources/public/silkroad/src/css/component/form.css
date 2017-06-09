@@ -1,0 +1,100 @@
+/*-------------------------------------------------*/
+/* 公共组件样式    */
+/*-------------------------------------------------*/
+@import url(button.css);
+
+/** 常用表单的样式 */
+.form-common-label {
+    display: inline-block;
+    text-align: left;
+}
+.form-common-text {
+    display: inline-block;
+    height: 22px;
+    padding: 0 5px 0 5px;
+    width: 222px;
+    border: #a9a9a9 solid 1px;
+    position: relative;
+    background: #ffffff;
+}
+.form-common-text input {
+    border: 0;
+    outline: none;
+    width: 100%;
+    margin: 2px 0;
+}
+.form-common-text-small {
+    width: 150px;
+}
+.form-common-text-230 {
+    width: 230px;
+}
+.form-common-text-big {
+    width: 350px;
+}
+.form-common-text-xl {
+    width: 490px;
+}
+.form-common-text-validation {
+    position: absolute;
+    top: 21px;
+    left: 0;
+    color: #ff0000;
+}
+.form-common-btn-extend {
+    border: #b3b3b3 solid 1px;
+    border-radius: 3px;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0 0 0 7px;
+    color: #b3b3b3;
+    height: 22px;
+    width: 22px;
+    text-align: center;
+    overflow: hidden;
+    display: inline-table;
+    position: relative;
+    cursor: pointer;
+}
+.form-common-btn-extend:hover {
+    background-color: #3399ff;
+    color: #fff;
+    border: #589fe7 solid 1px;
+}
+.form-common-btn-extend:active {
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 0 white;
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 0 white;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 0 white;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    background: #1495b7;
+    color: #547f7f;
+    border-color: #107893;
+    border-width: 0;
+    padding: 1px;
+}
+.form-common-btn-extend-absolute {
+    position: absolute;
+    right: -30px;
+    top: -1px;
+}
+.form-common-select {
+    height: 22px;
+}
+.form-common-select-small {
+    height: 20px;
+}
+.form-common-text .form-common-text-small {
+    width: 176px;
+    height: 18px;
+    border: #a9a9a9 solid 1px;
+    margin-top: 1px;
+}
+.form-common-input-button {
+    background-color: #00a1cb;
+    color: white;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    padding: 2px 16px;
+    cursor: pointer;
+}

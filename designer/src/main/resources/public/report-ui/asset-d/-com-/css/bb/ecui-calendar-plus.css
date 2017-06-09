@@ -1,0 +1,54 @@
+/**
+ * calendar-plus
+ */
+.ui-calendar-plus { 
+    font-size:12px;
+    width: auto;
+    min-width: 150px
+}
+.ui-calendar-plus .ui-button-hover {
+    background: white;
+}
+.ui-calendar-plus .ui-button-active {
+    background: #B7B7B7;
+}
+.ui-calendar-plus .ml10 {
+    margin-left: 10px;
+}
+.ui-calendar-plus-label {
+    vertical-align: middle;
+}
+.ui-calendar-plus-box .ui-calendar-text {
+    font-size: 14px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #555;
+}
+.ui-calendar-plus-box .ui-calendar {
+    width: auto;
+}
+.ui-calendar-plus-btnpre, .ui-calendar-plus-btnnext{
+    margin-left: 10px;
+    cursor: pointer;
+    display: inline-block;
+    width: 20px;
+    height: 24px;
+    line-height: 24px;
+}
+.ui-calendar-plus-btn-disable {
+    color: red;
+    cursor: default;
+}
+.ui-calendar-plus-btnpre:hover, .ui-calendar-plus-btnnext:hover {
+    background-color: silver;
+}
+.ui-calendar-plus-btn-disable:hover {
+    background: none;
+}
+.ui-calendar-plus-box {
+    margin-right: 10px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+}

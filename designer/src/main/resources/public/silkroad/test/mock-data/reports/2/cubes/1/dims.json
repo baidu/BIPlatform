@@ -1,0 +1,108 @@
+{
+    "data": {
+        "dimList": [
+            {
+                "id": "100",
+                "caption": "镇妖宝塔",
+                "name": "zhenyao_baota",
+                "type": "STANDARD_DIMENSION",
+                "changeToInd": 0
+            },
+            {
+                "id": "101",
+                "caption": "金箍棒",
+                "name": "jingubang",
+                "type": "STANDARD_DIMENSION",
+                "changeToInd": 1
+            },
+            {
+                "id": "102",
+                "caption": "三尖两刃刀",
+                "name": "sanjian_liangren",
+                "type": "STANDARD_DIMENSION",
+                "changeToInd": 0
+            },
+            {
+                "id": "104",
+                "caption": "红天绫",
+                "name": "hong_tian_ling",
+                "type": "STANDARD_DIMENSION",
+                "changeToInd": 0
+            },
+            {
+                "id": "105",
+                "caption": "乾坤圈",
+                "name": "qiankun_quan",
+                "type": "STANDARD_DIMENSION",
+                "changeToInd": 0
+            },
+            {
+                "id": "106",
+                "caption": "风火轮",
+                "name": "fenghuo_hun",
+                "type": "STANDARD_DIMENSION",
+                "changeToInd": 0
+            },
+            {
+                "id": "103",
+                "caption": "哪吒宝物组",
+                "name": "id_or_group_caption",
+                "type": "GROUP_DIMENSION",
+                "levels": [
+                    {
+                        "id": "104",
+                        "caption": "红天绫",
+                        "name": "hong_tian_ling",
+                        "changeToInd": 0
+                    },
+                    {
+                        "id": "105",
+                        "caption": "乾坤圈",
+                        "name": "qiankun_quan",
+                        "changeToInd": 0
+                    },
+                    {
+                        "id": "106",
+                        "caption": "风火轮",
+                        "name": "fenghuo_hun",
+                        "changeToInd": 0
+                    }
+                ]
+            },
+            {
+                "id": "107",
+                "caption": "悟空偷了哪吒宝物赃物组,多文字",
+                "name": "wukong_tou_nezha",
+                "levels": [
+                    {
+                        "id": "108",
+                        "caption": "红天绫",
+                        "name": "hong_tian_ling",
+                        "changeToInd": 0
+                    },
+                    {
+                        "id": "109",
+                        "caption": "乾坤圈",
+                        "name": "qiankun_quan",
+                        "changeToInd": 0
+                    },
+                    {
+                        "id": "110",
+                        "caption": "风火轮",
+                        "name": "fenghuo_hun",
+                        "changeToInd": 0
+                    }
+                ]
+            },
+            {
+                "id": "108",
+                "caption": "新维度组",
+                "name": "wukong_tou_nezha",
+                "type": "GROUP_DIMENSION",
+                "levels": []
+            }
+        ]
+    },
+    "status": 0,
+    "statusInfo": ""
+}

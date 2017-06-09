@@ -1,0 +1,49 @@
+/**
+ * 维度控件
+ */
+.ui-dim-item, 
+.ui-dim-linkage-item {
+    line-height: 28px;
+    position: relative;
+    margin-right: 10px;
+    cursor: default;
+    display: inline-block;
+    overflow: hidden;
+    *display: inline;
+    *zoom: 1;
+}
+.ui-dim-item-title, 
+.ui-dim-linkage-item-title {
+    color: #666;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+.ui-dim-item-text, 
+.ui-dim-linkage-item-text {
+    margin:  0px 20px 0px 5px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+.ui-dim-item-primary .ui-dim-item-text {
+    color: #F00;
+}
+.ui-dim-item-button {
+    width: 8px;
+    height: 4px;
+    overflow: hidden;
+    position: absolute;
+    top: 12px;
+    right: 3px;
+    background: url(img/icon.png) -12px -47px no-repeat;
+}
+.ui-dim-item-layer, 
+.ui-dim-linkage-item-dim-layer {
+    border: 1px solid #9C9C9C;
+    background-color: #FFF;
+    width: 230px;
+    height: 300px;
+    padding: 3px;
+    overflow: auto;
+}

@@ -1,0 +1,44 @@
+{"statusInfo": "successfully", "status": 0, "data": {
+    "xAxis": [
+        {
+            "id": "3",
+            "caption": "一级行业名称",
+            "name": "dim_trade_t_trade_name_l1",
+            "cubeId": "ed075e65bb3ecd23531515439a55ab8c",
+            "olapElementId": "3eecd518ef202447fa3d2b5e02e48834",
+            "used": false
+        }
+    ],
+    "yAxis": [
+        {
+            "id": "3",
+            "caption": "现金",
+            "name": "cash",
+            "cubeId": "ed075e65bb3ecd23531515439a55ab8c",
+            "olapElementId": "4e8b5d9b1910951a67b226356472dba4",
+            "used": false,
+            "chartType": "bar"
+        }
+    ],
+    "sAxis": [],
+    "candDims": [
+        {
+            "id": "3eecd518ef202447fa3d2b5e02e48834",
+            "caption": "一级行业名称",
+            "name": "dim_trade_t_trade_name_l1",
+            "cubeId": "ed075e65bb3ecd23531515439a55ab8c",
+            "olapElementId": "3eecd518ef202447fa3d2b5e02e48834",
+            "used": true
+        }
+    ],
+    "candInds": [
+        {
+            "id": "4e8b5d9b1910951a67b226356472dba4",
+            "caption": "现金",
+            "name": "cash",
+            "cubeId": "ed075e65bb3ecd23531515439a55ab8c",
+            "olapElementId": "4e8b5d9b1910951a67b226356472dba4",
+            "used": true
+        }
+    ]
+}, "properties": {}}

@@ -1,0 +1,37 @@
+{
+    "status": 0,
+    "statusInfo": "加载完成",
+    "data": {
+        "dsId": 2,
+        "factTables": [
+            {
+                "id": 1,
+                "name": "table_0"
+            },
+            {
+                "id": 3,
+                "name": "table_2_0"
+            },
+            {
+                "id": 4,
+                "name": "table_2_1"
+            },
+            {
+                "id": 5,
+                "name": "table_2_x"
+            },
+            {
+                "id": 6,
+                "name": "table_3_0"
+            },
+            {
+                "id": 7,
+                "name": "table_3_1"
+            }
+        ],
+        "prefixs": [
+            "table_2",
+            "table_3"
+        ]
+    }
+}

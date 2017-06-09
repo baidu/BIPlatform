@@ -1,0 +1,55 @@
+<!--
+数据例子：
+var demoData = {
+    options: {
+        'I,III': '千分位整数（18,383）',
+        'I,III.DD': '千分位两位小数（18,383.88）',
+        'I.DD%': '百分比两位小数（34.22%）',
+        'HH:mm:ss': '时间（13:23:22）',
+        'D天HH:mm:ss': '时间格式（2天1小时23分45秒）'
+    },
+    defaultFormat: 'I,III',
+    dataFormat: {
+        'cash': {
+            caption: '现金',
+            format: 'I,III'
+        },
+        'crm': {
+            caption: '点击消费',
+            format: 'I,III.dd'
+        }
+    }
+};
+-->
+<div class="data-format">
+    <div class="data-format-default c-f">
+        <span title="指标默认数据格式">指标默认数据格式：</span>
+        <select name="defaultFormat">
+            <option value=""
+            {{if !defaultFormat}} selected="selected" {{/if}}>请选择</option>
+            {{each options as $option optionKey}}
+            <option value={{optionKey}}
+                {{if defaultFormat && optionKey === defaultFormat}}
+                    selected="selected"
+                {{/if}}>{{$option}}
+            </option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="data-format-alone c-f">
+        <span>对各指标进行单独设置</span>
+        {{each dataFormat as $formatItem name}}
+        <div class="data-format-alone-dim">
+            <span title="{{$formatItem.caption}}">{{$formatItem.caption}}：</span>
+            <select name="{{name}}">
+                <option value="" {{if !$formatItem.format}} selected="selected" {{/if}}>请选择</option>
+                {{each options as $option optionKey}}
+                <option value={{optionKey}}
+                {{if $formatItem.format && optionKey === $formatItem.format}} selected="selected"
+                {{/if}}>{{$option}}</option>
+                {{/each}}
+            </select>
+        </div>
+        {{/each}}
+    </div>
+</div>

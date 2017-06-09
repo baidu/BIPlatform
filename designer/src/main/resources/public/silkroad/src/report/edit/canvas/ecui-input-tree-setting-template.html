@@ -1,0 +1,14 @@
+<div class="con-comp-setting-type1 j-comp-setting j-comp-single-drop-down-tree"  data-comp-id="{{compId}}" data-comp-type="SINGLE_DROP_DOWN_TREE">
+    <div class="data-axis-line data-axis-line-48 j-comp-setting-line j-line-x" data-axis-type="x">
+        <span class="letter">维度:</span>
+        {{each xAxis as item}}
+        <div class="item hover-bg j-root-line" data-id="{{item.id}}" data-name="{{item.name}}">
+            <span class="item-text j-item-text icon-font" title="{{item.caption}}（{{item.name}}）">
+            {{item.caption}}（{{item.name}}）
+            </span>
+            <span class="icon hide j-delete" title="删除">×</span>
+        </div>
+        {{/each}}
+    </div>
+    </div>
+</div>

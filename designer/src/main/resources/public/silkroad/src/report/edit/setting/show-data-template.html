@@ -1,0 +1,18 @@
+<div class="data-sources-setting data-sources-set-show-data">
+    <div class="j-oriInd">
+        <div class="title">指标</div>
+        {{each oriInd}}
+        <div class="item ellipsis" title="{{$value.name}}（{{$value.id}}）">
+            <label><input class="checkbox" type="checkbox" {{if $value.selected}}checked{{/if}} value="{{$value.id}}">{{$value.name}}（{{$value.id}}）</label>
+        </div>
+        {{/each}}
+    </div>
+    <div class="j-oriDim">
+        <div class="title">维度</div>
+        {{each oriDim}}
+        <div class="item ellipsis" title="{{$value.name}}（{{$value.id}}）">
+            <label><input class="checkbox" type="checkbox" {{if $value.selected}}checked{{/if}} value="{{$value.id}}">{{$value.name}}（{{$value.id}}）</label>
+        </div>
+        {{/each}}
+    </div>
+</div>

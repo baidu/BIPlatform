@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+#parse("/asset-d/-com-/-cominclude-.vm")
+
+    <head>
+    	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>报表</title>
+        
+        #comCSS
+
+       <style type="text/css">
+            .left_chart {
+                  display: inline-block;
+                  width: 490px;
+                  margin: 5px 5px 5px 0px;
+                  vertical-align: top;
+			}
+            .right_chart {
+                  display: inline-block;
+                  width: 490px;
+                  margin: 5px 0px 5px 0px;
+                  vertical-align: top;
+			}
+			/*重载hchart的样式，将原来定长的宽度改成auto的  ..*/
+			.xui-e-chart {
+			    width: auto;
+			    position:relative;
+			    background:#FFF;
+			    /*zIndex设置特别针对IE8, 不然浮层会被charts遮盖...*/
+			    z-index:0;
+			} 
+            .tab-content{
+            	border: 1px solid #D7D7D7;
+				padding: 10px 5px 10px 5px;
+            }
+            .di-cond-block {
+                padding: 5px 8px;
+            }
+            .tab-container{
+            	margin: 0 0px 10px 0;
+            }
+        </style>
+    </head>
+
+    <body class="di-page-html-body"><!-- escape enter
+     --><div data-o_o-di="BODY" class="di-page-div-body">
+
+            <!-- DI_BEGIN^_^DONT_MODIFY_ME -->
+
+              <div class="di-o_o-body" data-o_o-di="snpt1">
+               <div class="tab-content tab-container">
+	              	<div class="di-o_o-block di-cond-block" data-o_o-di="snpt1.cpnt-form1">
+	                </div>
+	                <div class="di-o_o-block" data-o_o-di="snpt1.cpnt-chart1">
+	               		<div data-o_o-di="snpt1.vu-chart1"></div>
+	               	</div>
+               </div>
+               <div>
+               		<div class="left_chart tab-content">
+		                <div class="di-o_o-block di-cond-block" data-o_o-di="snpt1.cpnt-form2">
+		                </div>
+		               	<div class="di-o_o-block" data-o_o-di="snpt1.cpnt-chart2">
+		                	<div  data-o_o-di="snpt1.vu-chart2"></div>
+		                </div>
+	                </div>
+	                <div class="right_chart tab-content">
+		                <div class="di-o_o-block di-cond-block" data-o_o-di="snpt1.cpnt-form3">
+	               		</div >
+		                <div class="di-o_o-block" data-o_o-di="snpt1.cpnt-chart3">
+		                	<div  data-o_o-di="snpt1.vu-chart3"></div>
+		                </div>
+	                </div>
+                </div>
+
+            </div>
+
+            <!-- DI_END^_^DONT_MODIFY_ME -->
+
+            <script type="text/javascript">
+                window.__$DI__OPT$__ = {
+                    depictRef: [],
+                    depict: { entityDefs: [] }
+                };
+            </script>
+
+            #comJS
+            #enterDI
+
+        </div><!--
+ --></body>
+</html>

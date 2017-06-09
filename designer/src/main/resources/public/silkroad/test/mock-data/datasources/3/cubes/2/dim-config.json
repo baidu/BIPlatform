@@ -1,0 +1,122 @@
+{
+    "data": {
+        "cubeName": "测试表",
+        "relationTables": [
+            {
+                "id": "table1", 
+                "name": "普通表1", 
+                "fields": [
+                    {"id": "table1Field1", "name": "普通表1-字段1"},
+                    {"id": "table1Field2", "name": "普通表1-字段2"}
+                ]
+            },
+            {
+                "id": "table2", 
+                "name": "普通表2", 
+                "fields": [
+                    {"id": "table2Field1", "name": "普通表2-字段1"},
+                    {"id": "table2Field2", "name": "普通表2-字段2"}
+                ]
+            }
+        ],
+        "dateRelationTables": [
+             {
+                "id": "table1", 
+                "name": "内置表", 
+                "type": 1, 
+                "fields": [{"id": "day", "name": "日"}, {"id": "week", "name": "周"}, {"id": "month", "name": "月"}, {"id": "quarter", "name": "季度"}],
+                "dateFormatOptions": {
+                    "day": ["yyyy-MM-dd", "yyyy/MM/dd"],
+                    "week": ["yyyy-W", "yyyy/W"],
+                    "month": ["yyyy-MM", "yyyy/MM"],
+                    "quarter": ["yyyy-QQ", "yyyy/QQ"]
+                },
+                "dateLevel": {
+                    "day": [{"id": "day", "name": "日"}, {"id": "week", "name": "周"}, {"id": "month", "name": "月"}, {"id": "quarter", "name": "季度"}],
+                    "week": [{"id": "week", "name": "周"}],
+                    "month": [{"id": "month", "name": "月"}, {"id": "quarter", "name": "季"}],
+                    "quarter": [{"id": "quarter", "name": "季"}]
+                }
+            },
+            {
+                "id": "table2", 
+                "name": "普通表", 
+                "type": 2, 
+                "fields": [{"id": "day", "name": "日"}, {"id": "week", "name": "周"}, {"id": "month", "name": "月"}, {"id": "quarter", "name": "季度"}],
+                "dateFormatOptions": {
+                    "day": ["yyyy-MM-dd", "yyyy/MM/dd"],
+                    "week": ["yyyy-W", "yyyy/W"],
+                    "month": ["yyyy-MM", "yyyy/MM"],
+                    "quarter": ["yyyy-QQ", "yyyy/QQ"]
+                },
+                "dateLevel": {
+                    "day": [{"id": "day", "name": "日"}, {"id": "week", "name": "周"}, {"id": "month", "name": "月"}, {"id": "quarter", "name": "季度"}],
+                    "week": [{"id": "week", "name": "周"}],
+                    "month": [{"id": "month", "name": "月"}, {"id": "quarter", "name": "季度"}],
+                    "quarter": [{"id": "quarter", "name": "季度"}]
+                }
+            }
+            
+        ],
+        "currDims": [
+            {"id": "dim1", "name": "维度1"},
+            {"id": "dim2", "name": "维度2"},
+            {"id": "dim3", "name": "维度3"}
+        ],
+        "dim": {
+            "normal": [{
+                        "relationTable": "table1",
+                        "currDim": "dim1",
+                        "field": "table1Field1",
+                        "selectedViewFields": ["普通表1-字段1"]
+                    },
+                    {
+                        "relationTable": "table2",
+                        "currDim": "dim1",
+                        "field": "table2Field1",
+                        "selectedViewFields": ["普通表2-字段1","普通表2-字段2"]
+                    }
+             ],
+             "relationDate": {
+                "relationTable": "table1",
+                "currDim": "dim1",
+                "field": "month",
+                "format": "yyyy-MM",
+                "dateLevel": {
+                    "day": {
+                        "selected": true,
+                        "format": "yyyy-MM-dd"
+                    },
+                    "week": {
+                        "selected": false,
+                        "format": "yyyy-W"
+                    },
+                    "month": {
+                        "selected": false,
+                        "format": "yyyy-MM"
+                    },
+                    "quarter": {
+                        "selected": true,
+                        "format": "yyyy-QQ"
+                    }
+                }
+            },
+            "callback": [
+                {
+                    "address": "测试地址1",
+                    "refreshType": 1,
+                    "interval": 10,
+                    "currDim": "dim1" 
+                },
+                {
+                    "address": "测试地址2",
+                    "refreshType": 3,
+                    "interval": 20,
+                    "currDim": "dim1"  
+                }
+            ]
+        }
+    },
+    "status": 0,
+    "statusInfo": "错误哈"
+}

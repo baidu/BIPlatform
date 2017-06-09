@@ -1,0 +1,1 @@
+define(function(){var a={};return a.getIndList=function(){return dataInsight.main.model.get("indList").data},a});

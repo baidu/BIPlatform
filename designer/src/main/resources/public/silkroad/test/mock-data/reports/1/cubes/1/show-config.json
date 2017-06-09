@@ -1,0 +1,24 @@
+{
+    "data": {
+        "oriInd": [
+            {
+                "id": "ind_name",
+                "name": "指标名",
+                "selected": 0
+            },
+            {
+                "id": "ind_name2",
+                "name": "指标名2",
+                "selected": 1
+            }
+        ],
+        "oriDim": [
+            {
+                "id": "dim_name",
+                "name": "指标",
+                "selected": 1
+            }
+        ]
+    },
+    "status": 0
+}

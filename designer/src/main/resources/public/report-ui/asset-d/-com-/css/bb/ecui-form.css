@@ -1,0 +1,86 @@
+/**
+ * Form
+ */
+.ui-form {
+    position: absolute;
+    border: 1px solid #4085B4;
+    overflow: hidden;
+    padding-top: 40px;
+    background-color: #FFF;
+}
+.ui-form-title {
+    height: 28px;
+    background: #00aef3;
+    line-height: 28px;
+    padding: 6px 0 6px 10px;
+    /*border-bottom: 1px solid #4085B4;*/
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: #FFF;
+    font-weight: bold;
+}
+.ui-form-close {
+    display: block;
+    width: 11px;
+    height: 12px;
+    top: 14px;
+    right: 12px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    cursor: default;
+    background: url(img/close_alert.png);
+}
+.ui-form-body {
+    background-color: #FFF;
+    padding: 20px 10px 30px 10px;
+}
+.ui-form-inner {
+    background-color: #FFF;
+    padding: 10px;
+}
+.ui-messagebox-pic {
+    width: 89px;
+    height: 80px;
+    margin: 20px 8px 26px 38px;
+    background: url(img/alarm.png);
+    float: left;
+}
+.ui-messagebox-bottom {
+    width: 205px;
+    height: 32px;
+    margin: 34px 8px 6px 8px;
+    float: right;
+}
+.ui-messagebox-bottom .ui-button-g {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    color: #00aef3;
+    padding: 0 20px;
+    background: #FFF;
+    border: 1px solid #00aef3;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    width: 24px;
+    font-family: 'Microsoft Yahei';
+    font-size: 12px;
+    cursor: pointer;
+}
+.ui-form-body .ui-messagebox-text {
+    width: 185px;
+    padding-right: 20px;
+    height: 24px;
+    margin: 15px 8px 10px 8px;
+    float: right;
+    font-size: 14px;
+    font-family: 'Microsoft Yahei';
+}
+.ui-messagebox-bottom .ui-button-g:hover {
+    background: #00aef3;
+    border: 1px solid #0099e0;
+    color: #FFF
+}

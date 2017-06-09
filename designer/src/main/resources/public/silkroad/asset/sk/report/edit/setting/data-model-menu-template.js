@@ -1,0 +1,1 @@
+define(["template"],function(a){function b(b){"use strict";b=b||{};var c=a.utils,d=(c.$helpers,"");return d+='<ul class="br-3">\r\n    <!--<li class="br-3 data-sources-float-window-item j-show-data"><span>筛选显示数据</span></li>-->\r\n    <li class="br-3 data-sources-float-window-item j-change-data-sources"><span>修改数据模型</span></li>\r\n</ul>'}return{render:b}});

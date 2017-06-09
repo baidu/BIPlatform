@@ -1,0 +1,10 @@
+#main {
+    /* position: absolute; */
+    /* left: 50%;
+    top: 50%; */
+    width: 499px;
+    height: 411px;
+    background: url(img/op-error.png) no-repeat;
+    margin: 0 auto;
+    cursor: pointer;
+}

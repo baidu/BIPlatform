@@ -1,0 +1,11 @@
+/**
+ * offline download
+ */
+.offline-download-head {
+    font-size: 12px;
+    margin-right: 15px;
+}
+.offline-download-input {
+    margin-right: 25px;
+    width: 200px;
+}

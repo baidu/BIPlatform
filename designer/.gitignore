@@ -1,0 +1,16 @@
+/target/
+.setting*
+.project
+.classpath
+/tesseract_data/
+.class
+.sh
+.doc
+.docx
+.checkstyle
+/build_no_deploy.sh
+/build.sh
+/designer (1).iml
+/designer.iml
+.buildpath
+/bin/

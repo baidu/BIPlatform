@@ -1,0 +1,179 @@
+
+.xui-e-chart {
+    width: 100%;
+    height: 100%;
+    position:relative;
+    background:#FFF;
+    /*zIndex设置特别针对IE8, 不然浮层会被charts遮盖...*/
+    z-index:0;
+}
+.xui-e-chart-header {
+    /*position: absolute;*/
+    /*top: 14px;*/
+    /*left: 80px;*/
+    float: left;
+    width: 100%;
+    z-index: 999;
+}
+.xui-e-chart-title {
+    font-weight:bold;
+    line-height:22px;
+    float:left;
+}
+.xui-e-chart-legend {
+    padding:0px 70px;
+    font-size: 12px;
+    font-family: '微软雅黑', Arial;
+}
+.xui-e-chart-legend-item {
+    display:inline-block;
+    position:relative;
+    margin:0 5px 5px 0;
+    line-height:22px;
+    padding:0 20px 0 5px;
+    cursor:pointer;
+    color:#FFF;
+    font-weight:bold;
+    *display:inline;
+    *zoom:1;
+}
+.xui-e-chart-legend-item-icon {
+    display:block;
+    height:15px;
+    width:10px;
+    position:absolute;
+    top:4px;
+    right:5px;
+    background:url(img/icon.png) -32px -385px;
+}
+.xui-e-chart-legend-item.hidden .ui-charts-legend-item-icon {
+    background-position:-42px -385px;
+}
+.xui-e-chart-content {
+    float: left;
+    width: 100%;
+}
+/*.xui-e-chart-empty {*/
+    /*float: left;*/
+    /*width: 99%;*/
+    /*height: 98%;*/
+    /*text-align: center;*/
+    /*border: 1px solid #DDD;*/
+    /*font-size: 12px;*/
+    /*color: #999;*/
+/*}*/
+.xui-e-chart-empty {
+    float: left;
+    width: 99%;
+    height: 98%;
+    text-align: center;
+}
+.xui-e-chart-empty-img {
+    width: 242px;
+    height: 61px;
+    text-align: center;
+    background: url(img/chart-empty.png) no-repeat;
+    margin: 0px auto;
+}
+.zoom-buttons {}
+.zoom-buttons span {
+    float: left;
+    padding: 2px 6px;
+    cursor: pointer;
+    border: 1px solid white;
+    font-family: "微软雅黑", "Arial";
+    font-size: 12px;
+    color: #282828;
+    fill: #282828;
+}
+.zoom-buttons span:hover {
+    border: 1px solid #50BFC6;
+}
+.zoom-buttons .zoom-button-focus {
+    border: 1px solid #50BFC6;
+    background-color: #D7EBF6
+}
+.zoom-dateRange {
+    float: right
+}
+.zoom-dateRange span {
+    color: #B0B0B0;
+    font-weight: bold;
+}
+.zoom-dateRange input {
+    width: 80px; height: 16px; border: 1px solid silver; margin-left: 5px; margin-right: 5px; text-align: center; color: #3784B7; font-weight: bold;
+}
+.echarts-candidate {
+    float: left;
+    /*padding-left: 80px;*/
+    padding-top: 14px;
+}
+.echarts-candidate label {
+    float: left;
+    margin-top: 5px;
+    margin-right: 8px;
+    height: 15px;
+    line-height: 15px;
+    cursor: pointer;
+    font-family: "微软雅黑", "宋体";
+    font-size: 12px;
+
+}
+.echarts-candidate input {
+    float: left;
+    margin-top: 5px;
+    height: 15px;
+    line-height: 15px;
+    width: 20px;
+    cursor: pointer;
+}
+
+/**
+ * @name                      :topn设置
+ * @author                    :lizhantong
+ * @email                     :lztlovely@126.com
+ * @version                   :1.0
+ * @type                      :扩展类
+ * @explain                   :暂无
+ * @relating                  :暂无
+ * @dependent                 :暂无
+ */
+.echart-topn {
+    position: absolute;
+    width: 200px;
+    height: 30px;
+    background-color: green;
+    top: 0px;
+    right: 0px;
+}
+.echart-topn-item {
+    float:  left;
+    width : 100%;
+    padding: 2px
+}
+.echart-topn-item span {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    width: 40px;
+}
+.echart-topn-item select {
+    float: left;
+    width: 90px;
+    height: 20px;
+}
+.echart-topn-item input {
+    float: left;
+    width: 90px;
+    heigh: 15px;
+}
+.echart-topn-item-btn {
+    float: left;
+    width: 100%;
+    padding-left: 20px;
+}
+.echart-topn-item-btn input {
+    float: left;
+    width: 90px;
+    height: 20px;
+}

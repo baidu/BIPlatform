@@ -1,0 +1,77 @@
+<div class="con-tab">
+    <!--<span class="item">静止时间</span>-->
+    <span class="item">动态时间</span>
+</div>
+<div class="con-tab-content">
+    {{each list as item}}
+    {{if item.type == 'D'}}
+    <div class="item j-item" data-type="D">
+        <div class="title">日粒度设置</div>
+        <div class="content">
+            <input type="text" name="singleDateSetting" value="{{item.defaultSelectedVal}}"/>
+            <select>
+                <option value="D">日</option>
+            </select>
+        </div>
+    </div>
+    {{/if}}
+
+    {{if item.type == 'W'}}
+    <div class="item j-item" data-type="W">
+        <div class="title">周粒度设置</div>
+        <div class="content">
+            <input type="text" name="singleDateSetting" value="{{item.defaultSelectedVal}}"/>
+            <select>
+                <option value="D"{{if item.defaultSelectedUnit == 'D'}} selected{{/if}}>日</option>
+                <option value="W"{{if item.defaultSelectedUnit == 'W'}} selected{{/if}}>周</option>
+            </select>
+        </div>
+    </div>
+    {{/if}}
+
+    {{if item.type == 'M'}}
+    <div class="item j-item" data-type="M">
+        <div class="title">月粒度设置</div>
+        <div class="content">
+            <input type="text" name="singleDateSetting" value="{{item.defaultSelectedVal}}"/>
+            <select>
+                <option value="D"{{if item.defaultSelectedUnit == 'D'}} selected{{/if}}>日</option>
+                <option value="W"{{if item.defaultSelectedUnit == 'W'}} selected{{/if}}>周</option>
+                <option value="M"{{if item.defaultSelectedUnit == 'M'}} selected{{/if}}>月</option>
+            </select>
+        </div>
+    </div>
+    {{/if}}
+
+    {{if item.type == 'Q'}}
+    <div class="item j-item" data-type="Q">
+        <div class="title">季粒度设置</div>
+        <div class="content">
+            <input type="text" name="singleDateSetting" value="{{item.defaultSelectedVal}}"/>
+            <select>
+                <option value="D"{{if item.defaultSelectedUnit == 'D'}} selected{{/if}}>日</option>
+                <option value="W"{{if item.defaultSelectedUnit == 'W'}} selected{{/if}}>周</option>
+                <option value="M"{{if item.defaultSelectedUnit == 'M'}} selected{{/if}}>月</option>
+                <option value="Q"{{if item.defaultSelectedUnit == 'Q'}} selected{{/if}}>季</option>
+            </select>
+        </div>
+    </div>
+    {{/if}}
+
+    {{if item.type == 'Y'}}
+    <div class="item j-item" data-type="Y">
+        <div class="title">季粒度设置</div>
+        <div class="content">
+            <input type="text" name="singleDateSetting" value="{{item.defaultSelectedVal}}"/>
+            <select>
+                <option value="D"{{if item.defaultSelectedUnit == 'D'}} selected{{/if}}>日</option>
+                <option value="W"{{if item.defaultSelectedUnit == 'W'}} selected{{/if}}>周</option>
+                <option value="M"{{if item.defaultSelectedUnit == 'M'}} selected{{/if}}>月</option>
+                <option value="Q"{{if item.defaultSelectedUnit == 'Q'}} selected{{/if}}>季</option>
+                <option value="Y"{{if item.defaultSelectedUnit == 'Y'}} selected{{/if}}>年</option>
+            </select>
+        </div>
+    </div>
+    {{/if}}
+    {{/each}}
+</div>

@@ -1,0 +1,19 @@
+<div class="con-component-box j-con-component-box">
+
+    <!--<select id="component-group-selector">-->
+        <!--{{each componentList as group}}-->
+        <!--<option value="{{group.id}}">{{group.caption}}</option>-->
+        <!--{{/each}}-->
+    <!--</select>-->
+
+    {{each componentList as group}}
+    <div class="con-component j-con-component" data-group-id="{{group.id}}">
+        {{each group.items as item}}
+        <div class="component-item {{item.iconClass}} j-component-item" data-component-type="{{item.type}}" data-mold="{{item.mold}}" data-set-all="{{item.defaultValue}}">
+            <img src="src/css/img/global-menu/comp-menu-{{item.iconClass}}.png"/>
+            {{item.caption}}
+        </div>
+        {{/each}}
+    </div>
+    {{/each}}
+</div>

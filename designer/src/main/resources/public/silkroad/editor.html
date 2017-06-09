@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="editor/jquery.cleditor.css" />
+    <script src="dep/jquery-1.11.1.min.js"></script>
+    <script src="editor/jquery.cleditor.min.js"></script>
+    <script>
+        /**
+           * load page ： load report list init all eidtor
+           **/
+         var editorConf = { width: 'auto', height: 250, controls:"source"};
+        $(document).ready(function () { 
+	        	sendAjax("GET", "json", "reports", initList);	
+	        	$("#txtVm").cleditor(editorConf);
+	        	$("#txtJson").cleditor(editorConf);
+        });
+        
+        /**
+           * ajax util function
+           *
+           */
+        function sendAjax(method, type, url, successFun) {
+	        	$.ajax({
+	                type : method,
+	                dataType : "json",
+	                cache : false,
+	                timeout  : 10000,
+	                url : url,
+	                data : "isajax=1",
+	                success  : successFun,
+	                error : function(){
+                        alert("读取失败");
+                    }
+	            });
+        }
+        
+        function initEditor (data) {
+        	   if (data["status"] == 0) {
+        		   var report = data["data"];
+        		   var vmEditor = $("#txtVm").cleditor(editorConf)[0];
+                $("#txtVm").val(report["vmContent"]);
+                vmEditor.updateFrame();
+                vmEditor.$frame.hide();
+                vmEditor.$area.show();
+                var jsonEditor = $("#txtJson").cleditor(editorConf)[0];
+               $("#txtJson").val(report["jsonContent"]);
+               jsonEditor.updateFrame();
+        	   } else {
+        		   alert("获取报表信息失败");
+        	   }
+        }
+        function initList(data){
+        	   var selectComp = document.getElementById("reportList")
+            selectComp.onchange = function () {
+        		   sendAjax("GET", "json", "reports/"  + $("#reportList").val(), initEditor);
+            };
+            if (data['status'] == 0) {
+                var reportList = data["data"];
+                var html = "";
+                for (var report in reportList) {
+                    var reportData = reportList[report];
+                    html += "<option value='" + reportData["id"] + "'> " + reportData["name"] + "</option>";
+                }
+                selectComp.innerHTML = html;
+            } else {
+                alert("读取失败");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h5>注意：非专业人士，请勿擅操作</h5>
+    <form action="/silkroad/reports/jsonVm" method="post">
+        报表列表 <select id ="reportList"  name="reportId" >
+        </select>
+	     <hr>
+	     <h5>样式文件</h5>
+	    <textarea id="txtVm" name="vmTxt"></textarea>
+	    <h5>布局文件</h5>
+	    <textarea id="txtJson" name="jsonTxt"></textarea>
+	     <input type="submit" name="submit" value="提交">
+    </form>
+</body>
+</html>

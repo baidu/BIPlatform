@@ -1,0 +1,18 @@
+<div class="j-global-box">
+    <img class="j-global-add" src="src/css/img/add.png"/>
+    <div class="j-con-global-attr">
+        {{each $data.para as $value}}
+        <div class="j-global-attr">
+            <input type="text" class="parameter-name" value="{{$value.name}}" placeholder="维度名称"/>
+            <select class="parameter-id">
+                {{each $data.dimList as $dim}}
+                <option value="{{$dim.id}}" {{if $dim.id == $value.elementId}} selected="selected" {{/if}}>{{$dim.caption}}</option>
+                {{/each}}
+            </select>
+            <input type="text" class="parameter-default" value="{{$value.defaultValue}}" placeholder="默认值"/>
+            <input type="checkbox" class="parameter-needed" {{if $value.needed == true}} checked="checked"{{/if}}}/>
+            <div class="j-global-close"></div>
+        </div>
+        {{/each}}
+    </div>
+</div>

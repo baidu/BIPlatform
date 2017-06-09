@@ -1,0 +1,191 @@
+/*-------------------------------------------------*/
+/* 基础样式，提供常用样式封装                           */
+/*-------------------------------------------------*/
+body {
+    margin: 0px;
+    font-size: 12px;
+    padding: 0px;
+    min-width: 1200px;
+    font-family: '微软雅黑', '宋体';
+}
+div, p, ul, li, input {
+    margin: 0px;
+    padding: 0px;
+}
+input {
+    outline: none;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #0066cc;
+}
+/* 有链接的颜色 */
+.c-link {
+    color: #0070C0;
+}
+.c-p {
+    cursor: pointer;
+}
+.c-m {
+    cursor: move;
+}
+/* 清除浮动 */
+.c-f:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    zoom: 1;
+}
+.f-l {
+    float: left;
+}
+.f-r {
+    float: right;
+}
+.fs-14 {
+    font-size: 14px;
+}
+.fs-18 {
+    font-size: 18px;
+}
+.fw-b {
+    font-weight: bold;
+}
+.hide {
+    display: none;
+}
+.m-5 {
+    margin: 5px;
+}
+.m-10 {
+    margin: 10px;
+}
+.m-15 {
+    margin: 15px;
+}
+.m-20 {
+    margin: 20px;
+}
+.mt-1 {
+    margin-top: 1px;
+}
+.mt-3 {
+    margin-top: 3px;
+}
+.mt-5 {
+    margin-top: 5px;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.mt-15 {
+    margin-top: 15px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+.mt-50 {
+    margin-top: 50px;
+}
+.mt-100 {
+    margin-top: 100px;
+}
+.mt-260 {
+    margin-top: 260px;
+}
+.mr-3 {
+    margin-right: 3px;
+}
+.mr-10 {
+    margin-right: 10px;
+}
+.mr-20 {
+    margin-right: 20px;
+}
+.mr-30 {
+    margin-right: 30px;
+}
+.ml-2 {
+    margin-left: 2px;
+}
+.ml-5 {
+    margin-left: 5px;
+}
+.ml-15 {
+    margin-left: 15px;
+}
+.ml-25 {
+    margin-left: 25px;
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+.o-h {
+    overflow: hidden;
+}
+.p-r {
+    position: relative;
+}
+.p-a {
+    position: absolute;
+}
+.ta-c {
+    text-align: center;
+}
+.td-u {
+    text-decoration: underline;
+}
+.w-30 {
+    width: 30px;
+}
+.w-90 {
+    width: 100px;
+}
+.w-100 {
+    width: 100px;
+}
+.w-105 {
+    width: 105px;
+}
+.w-130 {
+    width: 130px;
+}
+.w-150 {
+    width: 150px;
+}
+.w-170 {
+    width: 170px;
+}
+.w-200 {
+    width: 200px;
+}
+.w-300 {
+    width: 300px;
+}
+.w-p-40 {
+    width: 40%;
+}
+.w-p-100 {
+    width: 100%;
+}
+.h-25 {
+    height: 25px;
+}
+.cor-red {
+    color: red;
+}
+.h-30 {
+    height: 30px;
+}
+.word-bread {
+    word-wrap: break-word;
+    overflow: hidden;
+}

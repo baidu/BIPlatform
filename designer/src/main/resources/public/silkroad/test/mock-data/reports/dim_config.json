@@ -1,0 +1,194 @@
+{
+    "status": 0,
+    "statusInfo": "提示信息",
+    "data": {
+        "relationTables": [
+            {
+                "id": "table1",
+                "name": "表1",
+                "fields": [{"id": "table1Fields1", "name": "table1Fields1"},{"id": "table1Fields2", "name": "table1Fields2"}]
+            },
+            {
+                "id": "table2",
+                "name": "表2",
+                "fields": [{"id": "table2Fields1", "name": "table2Fields1"},{"id": "table2Fields2", "name": "table2Fields2"}]
+            }
+        ],
+        "dateRelationTables": [
+            {
+                "id": "table1",
+                "name": "时间模块表1",
+                "fields": [
+                    {"id": "day", "name": "日"},
+                    {"id": "week", "name": "周"},
+                    {"id": "month", "name": "月"},
+                    {"id": "quarter", "name": "季度"}
+                ],
+                "dateFormatOptions": {
+                    "day": ["yyyy-MM-dd", "yyyy/MM/dd"],
+                    "week": ["yyyy-W", "yyyy/W"],
+                    "month": ["yyyy-MM", "yyyy/MM"],
+                    "quarter": ["yyyy-QQ", "yyyy/QQ"]
+                }
+            },
+            {
+                "id": "table2",
+                "name": "时间模块表2"
+            }
+        ],
+        "cubes": {
+            "cube1": {
+                "name": "cube测试1",
+                "currDims": [
+                    {"id": "dim1", "name": "维度1"},
+                    {"id": "dim2", "name": "维度2"},
+                    {"id": "dim3", "name": "维度3"}
+                ],
+                "allFields": [{"id": "field1", "name": "field1"}, {"id": "field2", "name": "field2"}, {"id": "field3", "name": "field3"}]
+            },
+            "cube2": {
+                "name": "cube测试2",
+                "currDims": [
+                    {"id": "dim1", "name": "维度1"},
+                    {"id": "dim2", "name": "维度2"},
+                    {"id": "dim3", "name": "维度3"}
+                ],
+                "allFields": [{"id": "field1", "name": "field1"}, {"id": "field2", "name": "field2"}, {"id": "field3", "name": "field3"}]
+            }
+        },
+        "dim": {
+            "normal":[
+                {
+                    "cubeId": "cube1",
+                    "children": [{
+                        "currDim": "dim1",
+                        "relationTable": "table1",
+                        "field": "table1Fields1"
+                    },
+                    {
+                        "currDim": "dim2",
+                        "relationTable": "table2",
+                        "field": "table2Fields2"
+                    }]
+                },
+                {
+                    "cubeId": "cube2",
+                    "children": [{
+                        "currDim": "dim1",
+                        "relationTable": "table1",
+                        "field": "table1Fields1"
+                    },
+                    {
+                        "currDim": "dim2",
+                        "relationTable": "table2",
+                        "field": "table2Fields2"
+                    }]
+                }
+            ],
+            "date": [
+                {
+                    "cubeId": "cube1",
+                    "children": [{
+                        "relationTable": "0",
+                        "currDim": "dim1",
+                        "field": "day",
+                        "format": "yyyy-MM-dd",
+                        "dateLevel": {
+                            "day": "yyyy-MM-dd",
+                            "week": "yyyy-W",
+                            "month": "yyyy-MM",
+                            "quarter": "yyyy-QQ"
+                        }
+                    }]
+
+                },
+                {
+                    "cubeId": "cube2",
+                    "children": [{
+                        "relationTable": "table1",
+                        "currDim": "dim1",
+                        "field": "day",
+                        "format": "yyyy-MM-dd",
+                        "dateLevel": {
+                            "day": "yyyy-MM-dd",
+                            "week": "yyyy-W",
+                            "month": "yyyy-MM",
+                            "quarter": "yyyy-QQ"
+                        }
+                    }]
+
+                }
+            ],
+            "callback":[
+                {
+                    "cubeId": "cube1",
+                    "children": [
+                        {
+                            "address": "12.12.12.12",
+                            "refreshType": 1,
+                            "interval": 10,
+                            "currDim": "dim1"
+                        },
+                        {
+                            "address": "12.12.12.12",
+                            "refreshType": 1,
+                            "interval": 10,
+                            "currDim": "dim1"
+                        },
+                        {
+                            "address": "12.12.12.12",
+                            "refreshType": 1,
+                            "interval": 10,
+                            "currDim": "dim1"
+                        }
+                    ]
+                },
+                {
+                    "cubeId": "cube2",
+                    "children": [
+                        {
+                            "address": "12.12.12.12",
+                            "refreshType": 1,
+                            "interval": 10,
+                            "currDim": "dim1"
+                        },
+                        {
+                            "address": "12.12.12.12",
+                            "refreshType": 1,
+                            "interval": 10,
+                            "currDim": "dim1"
+                        }
+                    ]
+                }
+            ],
+            "custom": [
+                {
+                    "cubeId": "cube1",
+                    "children": [
+                        {
+                            "dimName": "维度名称1-1",
+                            "sql": "select * from table"
+                        },
+                        {
+                            "dimName": "维度名称1-2",
+                            "sql": "select * from table"
+                        }
+                    ]
+                },
+                {
+                    "cubeId": "cube2",
+                    "children": [
+                        {
+                            "dimName": "维度名称2-1",
+                            "sql": "select * from table"
+                        },
+                        {
+                            "dimName": "维度名称2-2",
+                            "sql": "select * from table"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

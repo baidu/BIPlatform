@@ -1,0 +1,45 @@
+<!--
+数据例子：
+var demoData = {
+    outParamDim: {
+        id: '',
+        caption: '',
+        name: ''
+    },
+    levelData: {
+        'level1': '当前级别',
+        'level12': '下一级别'
+    },
+    selectDimId: '',
+    selectDimName: '',
+    selectLevel: ''
+};
+-->
+<div class="comp-relation-event">
+    <span>选择被关联组件</span>
+    <div class="comp-realtion-box">
+    </div>
+    <span>选择传出参数</span>
+    <div class="comp-realtion-param">
+        <span class="span-out-param">选择传出维度</span>
+        <select class="j-comp-relation-event-out-param">
+            {{each outParamDim as $option key}}
+            <option value="{{$option.id}}${{$option.name}}" dimGroup="{{if $option.dimGroup === true}}true{{else}}false{{/if}}"
+            {{if selectDimId && $option.id === selectDimId}}
+            selected="selected"
+            {{/if}}>{{$option.caption}}
+            </option>
+            {{/each}}
+        </select>
+        <span class="span-level">选择当前还是下一级</span>
+        <select class="j-comp-relation-event-out-param-level">
+            {{each outParamLevel as $option key}}
+            <option value={{key}}
+            {{if selectLevel && key === selectLevel}}
+            selected="selected"
+            {{/if}}>{{$option}}
+            </option>
+            {{/each}}
+        </select>
+    </div>
+</div>

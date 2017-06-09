@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>拖放探索</title>
+    <script type="text/javascript" src="../../dep/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../dep/jquery-ui.custom-1.10.4.js"></script>
+    <style type="text/css" rel="stylesheet">
+        .con-drag-elm {
+            border: 1px solid #015fde;
+            height: 50px;
+            padding: 5px;
+        }
+        .drag-elm {
+            display: inline-block;
+            background: #85C5E8;
+            border: 1px solid #51a0c9;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+        }
+        .area-landing {
+            height: 50px;
+            border: solid 1px #000;
+            padding: 5px;
+        }
+
+        #log {
+            position: fixed;
+            right: 5px;
+            top: 10px;
+            border: solid 1px #0066cc;
+            line-height: 20px;
+            width: 150px;
+            max-width: 200px;
+        }
+
+        .drop-active {
+            border: 1px solid #74e183;
+            box-shadow: 3px 3px 57px 2px rgba(116,225,131,.4) inset;/*#74e183*/
+        }
+        .drop-active:hover,
+        .drop-hover {
+            background: #e1f9e4;
+        }
+
+        .cursor {
+            color: #ffffff;
+        }
+
+        .c-m {
+            cursor: move;
+        }
+        .a {
+            color: #ffffff;
+        }
+        .b {
+            color: #8fcf00;
+        }
+    </style>
+
+</head>
+<body>
+<div id="log"></div>
+<h3>拖拽到指定区域</h3>
+
+<h4>待拖拽的元素</h4>
+
+<div id="sortable" class="con-drag-elm j-up-area">
+    <span class="drag-elm j-drag-1 j-sortable" data-id="1">元素-1 </span>
+    <span class="drag-elm j-drag-1 j-sortable" data-id="2"> 元素-2</span>
+    <span class="drag-elm j-drag-1 j-sortable" data-id="3">元素-3 </span>
+    <span class="drag-elm j-drag-1 j-sortable" data-id="4">元素-4 </span>
+    <span class="drag-elm j-drag-1 j-sortable" data-id="5">元素-5</span>
+    <span class="drag-elm j-drag-1 j-sortable" data-id="6">元素-6</span>
+
+</div>
+<h4>着陆区域(以复制的方式)</h4>
+
+<div class="area-landing j-down-area">
+
+</div>
+<h4>着陆区域(以移动的方式)</h4>
+
+<div class="area-landing j-down-area-2">
+
+</div>
+<script>
+    $(function () {
+        var $upElem = $(".j-drag-1");
+        var $upArea = $('.j-up-area');
+        var $downArea = $('.j-down-area');
+
+        // 定义可排序
+        $downArea.sortable({
+            items: ".j-sortable", //可以被拖拽排序的选择器
+            axis: 'x',
+            stop: function(event, ui){
+                // 进入的区域dom
+                var $con = $(this);
+
+                console.log('stop');
+                ui.item.css('opacity','0.3');
+                var id = ui.item.attr('data-id');
+
+                // 处理重复
+                if(
+                        $con.find('[data-id=' + id + ']').length > 1
+                        &&
+                        !confirm('已经存在，是否任然接收拖入？')
+                   ){
+                        ui.item.remove();
+
+                }else{
+                    ui.item.css('opacity','1');
+                    // ajax ,
+
+                    // 如果ajax失败
+                }
+
+            }
+        });
+
+        // 定义可拖拽
+        $upElem.draggable({
+            revert: "invalid", // when not dropped, the item will revert back to its initial position
+            containment: "document",
+            //appendTo: $downArea,  // 拖拽产生的隐藏元素
+            //axis: "x", // 定义只能水平拖
+            cancel: '.j-no-drag', //遇到什么选择器的时候放弃拖拽
+            connectToSortable: '.j-down-area', // 可以排序（要求helper必须是clone）
+            helper: "clone", // 如果被设为clone，则
+            //cursorAt: { left: '50%', top: '50%' },??会从上面飞下来
+            opacity: 0.8, // 被拖拽元素的透明度
+            //cursor: "cursor" ??
+            // containment      ??
+            create: function( event, ui ){
+
+            },
+            drop: function(){
+                var d = '';
+            }
+        }).addClass('c-m');
+
+        // 定义可放下(上到下)
+        $downArea.droppable({
+            accept: ".j-drag-1",
+            activeClass: "drop-active", //被激发（可接收当前被拖起元素）
+            //hoverClass: 'drop-hover', //移上的时候添加的样式
+            tolerance: 'fit',
+            over: function(event, ui){
+                $('.j-down-area').addClass('drop-hover');
+            },
+            out: function(event, ui){
+                $('.j-down-area').removeClass('drop-hover');
+            }
+        });
+
+        // 定义可放下(下到上)
+//        $upArea.droppable({
+//            accept: ".j-drag-2",
+//            activeClass: "drop-active",
+//            drop: function (event, ui) {
+//                var $item = ui.draggable;
+//                $item.appendTo($upArea).removeClass('j-drag-2').addClass('j-drag-1');
+//            }
+//        });
+    });
+</script>
+</body>
+</html>

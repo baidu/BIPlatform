@@ -1,0 +1,40 @@
+/**
+ * Fold Panel
+ */
+.di-fold-panel-ctrl-btn {
+    height: 24px;
+    font-size: 12px;
+    color: #0F7DD2;
+    text-decoration: none;
+    vertical-align: middle;
+    margin-right: 5px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+.di-fold-panel-ctrl-btn-text {
+    line-height: 24px;
+    display: inline;
+    vertical-align: middle;
+}
+.di-fold-panel-ctrl-up {
+    background: url(img/icon2.png) -5px -116px no-repeat;
+    overflow: hidden;
+    width: 5px;
+    height: 7px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+.di-fold-panel-ctrl-down {
+    background: url(img/icon2.png) 0 -116px no-repeat;
+    overflow: hidden;
+    width: 5px;
+    height: 7px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+

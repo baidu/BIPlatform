@@ -1,0 +1,33 @@
+<!--
+数据例子：
+var demoData = {
+    indList: {
+        click: {
+            caption: '',
+            axisName: ''
+        }
+    }
+};
+-->
+<!-- 指标颜色设置 -->
+<div class="dialog-content">
+    <div class="base-setting-box c-f j-appearance-setting">
+        <span class="f-l">外观设置</span>
+        <div class="base-setting-item f-l c-f w-p-100 ml-5 j-appearance-item">
+            <input type="checkbox" class="f-l c-p" name="isShowInds" {{if appearance.isShowInds==true}} checked="checked" {{/if}} />
+            <label class="f-l ml-2 mt-1">显示指标区域</label>
+        </div>
+        <div class="base-setting-item f-l c-f w-p-100 ml-5 j-appearance-item">
+            <input type="checkbox" class="f-l c-p" name="isShowLegend" {{if appearance.isShowLegend==true}} checked="checked" {{/if}} />
+            <label class="f-l ml-2 mt-1">显示图例</label>
+        </div>
+        <div class="base-setting-item f-l c-f w-p-100 ml-5 j-appearance-item">
+            <input type="checkbox" class="f-l c-p j-isShowTitle" name="isShowTitle" {{if appearance.isShowTitle==true}} checked="checked" {{/if}} />
+            <label class="f-l ml-2 mt-1">显示标题</label>
+        </div>
+        <div class="base-setting-item f-l c-f w-p-100 ml-5 j-appearance-set-title {{if appearance.isShowTitle!=true}} hide {{/if}}">
+            <label class="f-l ml-2 mt-1">请输入标题</label>
+            <input type="text" class="f-l c-p input-text ml-5" name="chartTitle" value="{{appearance.chartTitle}}" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,200 @@
+----------------------------
+【 DATA-INSIGHT前端代码说明 】
+----------------------------
+
+{
+    注：
+    （1）项目的结构不是ecom fe标准的结构
+        （标准及规范参见http://fe.baidu.com/doc/ecom/std/）。
+        因为项目初始较早，彼时规范尚未推出或工具未完善。而向规范迁移有一定成本。
+    （2）但是，开发中，JS/HTML/CSS编码规范需要遵守。
+        如果遇到早期的未合编码规范的代码，需要尽可能逐步修改（ecui体系并不强制要求合规范）。
+}
+
+
+（1）文件结构
+
+	（1.1）工程分两种发布：
+		console：提供报表管理、编辑端，供报表制作人员、管理人员使用。
+		product：提供报表在生产环境的展现。
+
+	（1.2）线上目录：
+		(1.2.1) /asset 目录下是console最终发布的js、css、图片代码。
+		(1.2.2) /asset-d 目录下是product的内容（即视图模板服务器中的内容）。
+            (1.2.2.1) asset-d实际部署在文件管理服务器上，只有："/asset-d/-com-/-cominclude-.vm"这个文件在svn上维护，其余部分均不在svn维护，而是在视图模板服务器上维护。
+            （但是为了调试方便，部分内容也会在svn上存有备份）
+            (1.2.2.2) asset-d中的内容（暨视图模板服务器中内容）
+                · /asset-d/-com-/css目录下是各种皮肤，通过grunt装载。
+                · /asset-d/-com-/mold目录下是mold模板，用于快速构建。
+                · /asset-d下其他目录，是每个产品线的目录。
+                每个产品线目录是同构的。
+                例如：产品线kaacrm的目录是asset-d/kaacrm。
+                    内部有：
+                    · 三个视图模板目录：
+                        · /asset-d/kaacrm/dev      报表线上配置时使用的目录
+                        · /asset-d/kaacrm/pre      报表线预发布时使用的目录
+                        · /asset-d/kaacrm/release  报表线正式发布时使用的目录
+                    · 上述每个视图模板目录的内容是（视图模板目录都是同构的）：
+                        · -di-product.js文件：这是为此产品线生成的js代码文件（由grunt生成）
+                        · css目录：此产品的css引用（来源于/asset-d/-com-/css，由grunt装载）
+                        · 每个视图模板的描述文件，包括：
+                            · 一个*.vm文件：即snippet描述，每个视图模板的布局描述
+                            · 一个*.json文件：即depict描述，每个视图模板的元件的定义和交互行为的描述
+                            （snippet和depict的文件名，就是视图模板id）
+		（1.2.3）page 目录下是线上管理端引用的vm。
+
+	（1.3）源代码及其他目录和文件（线上环境不引用）：
+        （1.3.1）/Gruntfile.js grunt构件程序文件。详见下方构建程序描述。
+        （1.3.2）/repo-conf.json 文件依赖描述，会被Gruntfile.js引用作为构建依据之一。
+        （1.3.3）/page-sample 目录下是html、vm等测试、实验、mock用的临时目录。
+		（1.3.4）/src 目录是js、css、图片等源码，其中：
+			· biz-shared 目录是console和product公用的业务js代码，product和console都会从中选择引用。
+				其中：
+				· di.config 下是ajax、字典、话术、url等相关配置
+				· di.helper 下是各种帮助方法，可自由添加
+				· di.shared.model 下是公用的Model
+				· di.shared.ui 下是公用的View
+                · di.shared.adapter 下是为外部ui组件引入DI所写的适配器
+                · di.shared.vui 下是DI内建的几个控件
+                · di.shared.arg 下是参数转换器
+			· biz-console 目录是console的代码。
+                其中：
+				· di.console.config 下是console工程对di.config的补充或重载（如果有需要的话）
+				· di.console.helper 下是console工程对di.helper的补充或重载（如果有需要的话），以及私有的帮助方法
+				· di.console.shared.model 下是console工程自己的公有的Model
+				· di.console.shared.ui 下是console工程自己的公有的View
+				· di.console.frame.ui 下是报表编辑、管理视图的外壳
+				· di.console.frame.mgr.model 下是报表管理端的Modle
+				· di.console.frame.mgr.ui 下是报表管理端的View
+				· di.console.editor.model 下是报表编辑器的Model
+				· di.console.editor.ui 下是报表编辑器的View
+			· biz-product 目录是product的业务代码。
+                · di.product.client 下是di-stub，即给客户端接入DI用的桩
+                · di.product.display.ui 下是product的View
+			· core 目录是底层库
+                其中：
+				· ecui 略
+                · codemirror 用于代码格式化，console端使用
+				· highcharts 略
+                · jquery 
+                    因为要使用highcharts和codemirror才引入（其他地方严禁使用）
+                    codemirror只在console端使用
+                    highchart后续要换乘echarts，从而在product端去掉jquery的引用
+				· tangram 略
+                · jsonlint 用于json格式化，和json校验，console端使用
+				· xui 是工程框架，含Modle和View的基类
+                . xui-ui 是零散的无归属的控件的放置处，现在只含有h-charts
+				· xutil 一些公用的业务帮助方法集合，如果有需要时可以从里面找找直接引用
+			· css 目录是console端css
+			· mockup 目录是mock数据，其中：
+				frontendmockup 是前端mock的相关代码，其中：
+					xmock.js 提供前端mock功能，重载了工程统一使用的ajax实现
+					data-register.js 是前端mock数据统一注册的地方，开发时可自由调整哪些使用mock哪些不使用
+					data 目录中是各业务模块的前端mock代码
+
+
+
+（2）关于构建和管理端程序。
+    管理端构建由Gruntfile.js结合Web端程序进行。
+
+    （2.1）product端的构建，在线上进行。
+        在console系统中由用户触发。
+        包括：
+            创建产品线：创建dev，生成目录架构，生成-di-product.js、（根据-com-中的皮肤）css/*。
+            重置产品线：重置-di-product.js、（根据-com-中的皮肤）css/*。
+            toPre：会分析视图模板文件、repo-conf.json、repo-dict.js，构建出该工程的-di-product.js、css/*。
+            toRelease：拷贝模板和代码文件从pre到release，完成发布。
+
+	（2.2）console端的构建，在线下进行。
+        console端的打包命令格式：
+            grunt toConsole:<min/single/debug>:<mock>
+                例：
+                发布：grunt toConsole
+                debug文件模式+使用mock数据：grunt toConsole:debug:mock
+                single文件模式+使用mock数据：grunt toConsole:single:mock
+
+
+
+（3）product端运行时流程简要说明
+    （假设访问某产品线ppp的reportTemplateId为aaa的报表）
+
+    · 初始化运行时流程：
+        请求报表url（含ppp和aaa作为参数） 
+        => di-stub（可选，如果直接访问报表，或者客户系统不使用di-stub，则不经过此步骤）
+        => server端genereateReport.action（报表载入，从视图模板服务器上取aaa.vm，vm渲染，返回前端） 
+        => 进入LayoutPage（layout-page.js），初始化DIFactory（di-factory.js），进行：
+            · 加载aaa.json
+            · 装载报表aaa.json中所有引用的元件类
+                · 挂载di的契约方法
+                · 注册元件类
+                · 根据路径得到元件类(以及其他引用，如adapter的类）的js引用
+            · 创建aaa中声明的元件实例
+            · 创建并分配commonParamHandler
+            · 创建并挂载interaction的实现
+        => 如果有声明init行为，则对这些COMPONENT进行init
+
+    · 用户交互运行时流程：
+        控件（VUI）事件或者DOM事件
+        => COMPONENT接收，由DIFactory接管的interaction处理逻辑进行处理
+            · 事件链处理
+            · deaf处理
+            · rule求值
+            · argHandler依次执行
+        => COMPONENT自身的handler执行
+        => （根据interaction的描述）触发联锁的事件（如图表联动），重复前面步骤。
+            直至interaction描述中形成的事件链结束。
+
+
+
+（4）代码简要说明
+    
+    · 前端核心引擎代码在此二个文件中：
+        · /src/biz-shared/di.shared.model/di-factory.js
+        · /src/biz-product/di.product.display.ui/layout-page.js
+    
+    · interaction交互数据处理器：
+        · /src/biz-shared/di.shared.arg/arg-handler-factory.js
+
+    · 统一ajax交互处理器：
+        · /src/biz-shared/di.shared.model/common-param-factory.js
+        · 负责后台的reportTemplateId的转换与同步，externalParam的默认传输
+
+    · 视图模板解析：
+        · /src/biz-shared/di.helper/snippet-parser.js
+
+    · 主要COMPONENT：
+        · /src/biz-shared/di.shared.ui/di-table.js
+        · /src/biz-shared/di.shared.model/di-table-model.js
+        · /src/biz-shared/di.shared.ui/di-chart.js
+        · /src/biz-shared/di.shared.model/di-chart-model.js
+        · /src/biz-shared/di.shared.ui/di-plane-table.js
+        · /src/biz-shared/di.shared.model/di-plane-table-model.js
+        · /src/biz-shared/di.shared.ui/olap-meta-config.js
+        · /src/biz-shared/di.shared.model/olap-meta-config-model.js
+
+    · 按需挑选合并构建线上（各产品线）JS的程序：
+        · /Gruntfile.js
+        · /repo-conf.json
+        · /src/biz-shared/di.config/repo-dict.js
+
+    · 管理端、编辑器：
+        · /src/biz-console/*.js
+        · 入口为
+            · /src/biz-console/di.console.frame.ui/console-frame.js
+            · /src/biz-console/di.console.frame.ui/main-page.js
+
+
+
+（101）关于tangram
+    （4.1）项目中引用的是tangram-1.5.0.1，这是tangram-1.5.0在本项目中的修改。修改点说明在tangram-1.5.0.1头部.
+	（4.2）prod的tangram只包括：
+        baidu.ajax
+        baidu.json
+        baidu.dom.ready
+        baidu.page (只含视图大小部分)
+	
+（102）关于highcharts
+	项目中使用的highcharts是经过修改的版本，修改点在文件头部有
+
+(有问题请联系：sushuang)
+

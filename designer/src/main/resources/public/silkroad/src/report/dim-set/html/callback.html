@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../../css/all.css" rel="stylesheet" type="text/css" />
+    <link href="../../../css/biz/report-dim-set.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="dim-setting">
+<ul class="dim-setting-head">
+    <li class="classification classification-focus"><span>普通维度</span></li>
+    <li class="classification"><span>时间维度</span></li>
+    <li class="classification"><span>回调维度</span></li>
+    <li class="classification"><span>自定义维度</span></li>
+</ul>
+<div class="dim-setting-body">
+
+
+
+<div class="dim-container-callback">
+    <div class="callback-main-box c-f">
+        <span class="cube-name">cube1</span>
+        <span class="callback-cube-open"></span>
+        <div class="callback-relation-container c-f">
+            <div class="callback-relation-box c-f">
+                <div class="callback-relation-content">
+                    <div class="first-part c-f">
+                        <span>选择被关联表：</span>
+                        <select name="" id=""> </select>
+                    </div>
+                    <div class="callback-relation-content-two-part c-f">
+                        <span class="callback-address-name">填写回调地址：</span>
+                        <input type="text" name="" id="" class="callback-address-input"/>
+                                        <span class="callback-address-prompt">
+                                            例如：http://10.46.133.66:8999/pfplat/callbackmock.action
+                                        </span>
+                    </div>
+                    <div class="callback-relation-content-three-part c-f">
+                        <span class="callback-cache-name">选取缓存类型：</span>
+                        <div>
+                            <input type="radio" class="callback-cache-type-right-input"/>
+                            <label class="callback-cache-type-right-label">
+                                无需缓存（数据量大，不推荐）
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" class="callback-cache-type-right-input"/>
+                            <label class="callback-cache-type-right-label">
+                                在数据刷新后立刻刷新缓存
+                            </label>
+                        </div>
+                        <div class="ml-89">
+                            <input type="radio" class="callback-cache-type-right-input"/>
+                                            <span class="callback-cache-type-right-label">间隔
+                                            <input type="text" class="callback-cache-type-interval"/>
+                                            秒刷新一次缓存</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="callback-relation-box c-f">
+                <div class="callback-relation-content">
+                    <div class="first-part c-f">
+                        <span>选择被关联表：</span>
+                        <select name="" id=""> </select>
+                    </div>
+                    <div class="callback-relation-content-two-part c-f">
+                        <span class="callback-address-name">填写回调地址：</span>
+                        <input type="text" name="" id="" class="callback-address-input"/>
+                                        <span class="callback-address-prompt">
+                                            例如：http://10.46.133.66:8999/pfplat/callbackmock.action
+                                        </span>
+                    </div>
+                    <div class="callback-relation-content-three-part c-f">
+                        <span class="callback-cache-name">选取缓存类型：</span>
+                        <div>
+                            <input type="radio" class="callback-cache-type-right-input"/>
+                            <label class="callback-cache-type-right-label">
+                                无需缓存（数据量大，不推荐）
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" class="callback-cache-type-right-input"/>
+                            <label class="callback-cache-type-right-label">
+                                在数据刷新后立刻刷新缓存
+                            </label>
+                        </div>
+                        <div class="ml-89">
+                            <input type="radio" class="callback-cache-type-right-input"/>
+                                            <span class="callback-cache-type-right-label">间隔
+                                            <input type="text" class="callback-cache-type-interval"/>
+                                            秒刷新一次缓存</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="callback-main-box c-f">
+        <span class="cube-name">cube1</span>
+        <span class="callback-cube-close"></span>
+    </div>
+</div>
+
+
+</div>
+<div class="ta-c mt-100">
+    <span class="button button-flat-primary m-10">返回重新选择数据表</span>
+    <span class="button button-flat-primary m-10">完成</span>
+    <span class="button button-flat-primary m-10">取消</span>
+</div>
+</div>
+</body>
+</html>

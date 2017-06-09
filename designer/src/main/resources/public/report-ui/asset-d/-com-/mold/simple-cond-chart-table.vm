@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+#parse("/asset-d/-com-/-cominclude-.vm")
+
+    <head>
+    	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>报表</title>
+        
+        #comCSS
+
+        <style type="text/css">
+            .block-body {
+                padding: 10px;
+                font-size: 12px;
+                min-height: 400px;
+            }
+            .block-cond {
+                vertical-align: top;
+                margin: 0 10px 20px 0;
+                border: 1px solid #8CCA54;
+                border-radius: 3px;
+                padding: 5px;
+            }
+            .block-confirm {
+                margin: 0 10px 20px 0;
+            }
+            .block-chart {
+                margin: 0 10px 20px 0;
+            }
+            .block-table {
+                margin: 0 10px 20px 0;
+            }
+            .vu-table {
+                height: 500px;
+            }
+
+        </style>
+    </head>
+
+    <body class="di-page-html-body"><!-- escape enter
+     --><div data-o_o-di="BODY" class="di-page-div-body">
+     
+            <!-- DI_BEGIN^_^DONT_MODIFY_ME -->
+     
+            <div class="block-body" data-o_o-di="snpt1">
+                <div class="di-o_o-cond block-cond" data-o_o-di="snpt1.cpnt-form1">
+                    <div class="di-o_o-line">
+                        <span class="di-o_o-item">时间范围</span>
+                        <span class="di-o_o-item" data-o_o-di="snpt1.vu-form1-time1"></span>
+                    </div>
+                    <div class="di-o_o-line">
+                        <div class="di-o_o-item">部门选择</div>
+                        <div class="di-o_o-item" data-o_o-di="snpt1.vu-form1-pos1"></div>
+                        
+                        <div class="di-o_o-item di-o_o-space-l1">行业选择</div>
+                        <div class="di-o_o-item" data-o_o-di="snpt1.vu-form1-trade1"></div>
+                        
+                        <div class="di-o_o-item di-o_o-space-l1">产品线选择</div>
+                        <div class="di-o_o-item" data-o_o-di="snpt1.vu-form1-prod1"></div>
+                    </div>
+                </div>
+                <div class="block-confirm" data-o_o-di="snpt1.vu-form1-confirm1"></div>
+
+                <div class="block-chart" data-o_o-di="snpt1.cpnt-chart1">
+                    <div data-o_o-di="snpt1.vu-chart1"></div>
+                </div>
+
+                <div class="block-table" data-o_o-di="snpt1.cpnt-table1">
+                    <div class="vu-table" data-o_o-di="snpt1.vu-table1"></div>
+                </div>
+
+                <div class="block-table" data-o_o-di="snpt1.cpnt-table2">
+                    <div class="vu-table" data-o_o-di="snpt1.vu-table2"></div>
+                </div>
+            </div>
+            <!-- DI_END^_^DONT_MODIFY_ME -->
+
+            <script type="text/javascript">
+                window.__$DI__OPT$__ = {
+                    depictRef: [],
+                    depict: { entityDefs: [] }
+                };
+            </script>
+
+            #comJS
+            #enterDI
+
+        </div><!--
+ --></body>
+</html>

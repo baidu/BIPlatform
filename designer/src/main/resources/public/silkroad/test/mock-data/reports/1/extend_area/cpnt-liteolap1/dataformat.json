@@ -1,0 +1,9 @@
+{
+    "status": 0,
+    "statusInfo": "",
+    "data": {
+        "defaultFormat": "I,III",
+        "chechi_guo":  "I,III.DD",
+        "nver_guo": "HH:mm:ss"
+    }
+}

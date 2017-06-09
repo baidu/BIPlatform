@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .icon-arrow {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-left: 1px solid #0066cc;
+            border-bottom: 1px solid #0066cc;
+        }
+        .icon-arrow:after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            float: left;
+            border-left: 1px solid #0066cc;
+            border-bottom: 1px solid #0066cc;
+            margin: -3px 0px 0 2px;
+        }
+        .icon-arrow-down {
+            transform: rotate(-45deg);
+        }
+        .icon-arrow-up {
+            transform: rotate(135deg);
+        }
+    </style>
+</head>
+<body>
+<span class="icon-arrow icon-arrow-down"></span>
+<span class="icon-arrow icon-arrow-up"></span>
+</body>
+</html>

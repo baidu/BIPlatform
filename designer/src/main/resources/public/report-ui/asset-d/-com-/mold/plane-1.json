@@ -1,0 +1,62 @@
+{
+	"desc" : "明细表格",
+    "diKey": "DEPICT",
+    "clzDefs": [
+        {
+            "clzKey": "OLAP_TABLE",
+            "dataOpt": {
+                "emptyHTML": "未查询到相关数据"
+            }
+        },
+        {
+            "clzKey": "ECUI_SELECT",
+            "dataOpt": {
+                "optionSize": 10
+            }
+        }
+    ],
+    "entityDefs": [
+        {
+            "id": "snpt1",
+            "clzType": "SNIPPET"
+        },
+        {
+            "id": "snpt1.cpnt-table1",
+            "clzType": "COMPONENT",
+            "clzKey": "DI_PLANE_TABLE",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "mainTable": "snpt1.vu-table1",
+                "download": "snpt1.vu-table1-download1",
+                "pager": "snpt1.vu-table1-pager1"
+            },
+            "init": { "action": { "name": "sync" } }
+        },
+        { 
+            "id": "snpt1.vu-table1", 
+            "clzType": "VUI",
+            "clzKey": "ECUI_SLOW_PLANE_TABLE",
+            "name": "table",
+            "dataOpt": {
+                "rowHCellCut": 30,
+                "hCellCut": 30,
+                "cCellCut": 30,
+                "vScroll": true
+            }
+        },
+        {
+            "id": "snpt1.vu-table1-download1",
+            "clzType": "VUI",
+            "clzKey": "H_BUTTON",
+            "dataOpt": {
+                "skin": "ui-download-btn",
+                "text": "下载数据"
+            }
+        },
+        {
+            "id": "snpt1.vu-table1-pager1",
+            "clzType": "VUI",
+            "clzKey": "ECUI_PAGER"
+        }
+    ]
+}

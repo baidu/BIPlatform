@@ -1,0 +1,31 @@
+<div class="title">
+    指标
+    <span class="icon-data-sources j-setting-derive-inds derivative-ind-setting" title="管理衍生指标"></span>
+</div>
+<div class="j-con-org-ind con-org-ind">
+    {{each indList.data}} {{if $value.type == "COMMON" && $value.visible == true}}
+    <div class="item c-m hover-bg j-root-line j-org-ind j-olap-element{{if $value.canToDim}} j-can-to-dim{{/if}}" data-id="{{$value.id}}">
+        <span class="item-text ellipsis j-item-text" title="{{$value.tag}}（{{$value.name}}）">
+            {{$value.caption}}（{{$value.name}}）
+        </span>
+        <span class="icon-letter collect j-method-type" title="点击设置指标汇总方式">
+            {{indList.map[$value.aggregator]}}
+        </span>
+    </div>
+    {{/if}}{{/each}}
+    {{each indList.data}} {{if $value.type == "CALLBACK"}}
+    <div class="item c-m hover-bg j-root-line j-org-ind j-olap-element" data-id="{{$value.id}}">
+        <span class="item-text ellipsis j-item-text" title="{{$value.tag}}（{{$value.name}}）">
+            {{$value.caption}}（{{$value.name}}）
+        </span>
+        <span class="icon-letter collect j-method-type" title="点击设置指标汇总方式">
+            {{indList.map[$value.aggregator]}}
+        </span>
+    </div>
+    {{/if}}{{/each}}
+</div>
+{{each indList.data}}{{if $value.type == "CAL" || $value.type == "RR" || $value.type == "SR"}}
+<div class="item c-m hover-bg j-olap-element j-cal-ind" data-id="{{$value.id}}">
+    <span class="item-text ellipsis fw-b" title="{{$value.caption}}">{{$value.caption}}</span>
+</div>
+{{/if}}{{/each}}

@@ -1,0 +1,26 @@
+<!-- 其他操作 -->
+<div class="data-format">
+    <div class="data-format-alone c-f">
+        <div class="data-format-black f-l">
+            <input type="checkbox" name="filterBlank" class="f-l c-p"
+                   {{if $data.filterBlank=="true" }} checked="checked" {{/if}} />
+            <label class="f-l ml-2">过滤空白行</label>
+        </div>
+        <div class="data-format-black f-l">
+            <input type="checkbox" name="canChangedMeasure" class="f-l c-p" {{if $data.canChangedMeasure=="true"}}
+                   checked="checked" {{/if}} />
+            <label class="f-l ml-2">显示富文本下拉框</label>
+        </div>
+        <div class="data-format-black f-l">
+            <input type="checkbox"  name="needSummary" class="f-l c-p" {{if $data.needSummary=="true"}}
+                   checked="checked" {{/if}} />
+            <label class="f-l ml-2">显示合计行</label>
+        </div>
+        <div class="data-format-black f-l">
+            <input type="checkbox"  name="isShowZero" class="f-l c-p" {{if $data.isShowZero=="true"}}
+                   checked="checked" {{/if}} />
+            <label class="f-l ml-2">无数据是否显示为0</label>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,136 @@
+<div class="dim-container-date hide j-date-main">
+    <ul class="date-column-names c-f">
+        <li class="date-column-names-main-table"><span>主数据表</span></li>
+        <li class="date-column-names-setting"><span>配置区</span></li>
+    </ul>
+    <!--循环cube列表（dim.normal）-->
+    {{each dim.date as $cube i}}
+    <div class="date-main-box c-f j-date-main-box">
+        <span class="cube-name" cubeId={{$cube.cubeId}} title={{cubes[$cube.cubeId].name}}>{{cubes[$cube.cubeId].name}}</span>
+        <span class="straight-line"></span>
+        {{if $cube.children[0].relationTable === "0" || $cube.children[0].relationTable === "ownertable"}}
+        <!--内置维度-->
+        <div class="date-relation-owner">
+            <div class="date-relation-owner-first-part c-f">
+                <span>选择被关联表：</span>
+                <select class="j-relation-table-select">
+                    <option value="0">请选择</option>
+                    <option value="ownertable"
+                    {{if $cube.children[0].relationTable==="ownertable"}}
+                    selected = "selected"{{/if}}>内置表</option>
+                    {{each dateRelationTables as $dateRelationTable j}}
+                    <option value={{$dateRelationTable.name}}>{{$dateRelationTable.comment}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="date-relation-owner-two-part c-f j-date-two-part">
+                <span>选择时间字段：</span>
+                <select>
+                    <option value="0">请选择</option>
+                    {{each cubes[$cube.cubeId].currDims as $dim}}
+                    <option value={{$dim.name}}
+                    {{if $dim.name === $cube.children[0].currDim}}selected="selected"
+                    {{/if}}>{{$dim.comment}}
+                    </option>
+                    {{/each}}
+                </select>
+                <span>粒度：</span>
+                <select class="j-owner-date-level-select">
+                    <option value="0">请选择</option>
+                    {{each defaultDate.level as $level}}
+                    <option value={{$level.id}}
+                    {{if $level.id === $cube.children[0].field}}selected="selected"
+                    {{/if}}>{{$level.name}}
+                    </option>
+                    {{/each}}
+                </select>
+                <span>时间格式：</span>
+                <select class="j-owner-date-type-select">
+                    <option value="0">请选择</option>
+                    {{each defaultDate.level as $level}}
+                    {{if $level.id === $cube.children[0].field}}
+                    {{each defaultDate.dateFormatOptions[$cube.children[0].field] as $format}}
+                    <option value={{$format}}
+                    {{if $format === $cube.children[0].format}}selected="selected"
+                    {{/if}}>{{$format}}</option>
+                    {{/each}}
+                    {{/if}}
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        {{else}}
+        <!--普通维度-->
+        <div class="date-relation-normal">
+            <div class="first-part c-f">
+                <span>选择被关联表：</span>
+                <!--内置表为0-->
+                <select class="j-relation-table-select">
+                    <option value="0">请选择</option>
+                    <option value="ownertable"
+                    {{if $cube.children[0].relationTable==="ownertable"}}
+                    selected = "selected"{{/if}}>内置表</option>
+                    {{each dateRelationTables as $dateRelationTable j}}
+                    <option value={{$dateRelationTable.id}}
+                    {{if $dateRelationTable.id === $cube.children[0].relationTable}}
+                    selected = "selected"
+                    {{/if}}>{{$dateRelationTable.name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="date-relation-normal-two-part c-f j-date-two-part">
+                <span>指定关联字段：</span>
+                <select>
+                    <option value="0">请选择</option>
+                    {{each cubes[$cube.cubeId].currDims as $dim}}
+                    <option value={{$dim.id}}
+                    {{if $dim.id === $cube.children[0].currDim}}selected="selected"
+                    {{/if}}>{{$dim.name}}
+                    </option>
+                    {{/each}}
+                </select>
+                <span class="equal">=</span>
+
+                <select>
+                    <option value="0">请选择</option>
+                    {{each dateRelationTables as $dateRelationTable}}
+                    {{if $dateRelationTable.id === $cube.children[0].relationTable}}
+                    {{each $dateRelationTable.fields as $field}}
+                    <option value={{$field.id}}
+                    {{if $field.id === $cube.children[0].field}}selected="selected"
+                    {{/if}}>{{$field.name}}
+                    </option>
+                    {{/each}}
+                    {{/if}}
+                    {{/each}}
+                </select>
+            </div>
+            <!--需要去后台获取-->
+            <div class="date-relation-normal-three-part j-date-three-part">
+                <span class="date-relation-normal-three-part-name">日期格式：</span>
+                <div class="date-relation-normal-three-part-box c-f">
+                    {{each dateRelationTables as $dateRelationTable}}
+                    {{if $dateRelationTable.id === $cube.children[0].relationTable}}
+                    {{each $dateRelationTable.fields as $field}}
+                    <div class="date-relation-normal-three-part-box-date-format c-f">
+                        <span>{{$field.name}}</span>
+                        <select>
+                            <option value="0">请选择</option>
+                            {{each $dateRelationTable.dateFormatOptions[$field.id] as $format}}
+                            <option value="{{$format}}" {{if $format === $cube.children[0].dateLevel[$field.id]}} selected="selected" {{/if}}>{{$format}}
+                            </option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    {{/each}}
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        <span class="date-error-msg j-date-error-msg hide"></span>
+    </div>
+   {{/each}}
+</div>
+

@@ -1,0 +1,31 @@
+<div class="title">
+    维度
+    <!--<span class="icon-data-sources j-setting-dim-group" title="维度组管理"></span>-->
+</div>
+<div class="j-con-org-dim con-org-dim">
+    {{each dimList as $item}}{{if $item.type !== "GROUP_DIMENSION"}}
+    <div class="item hover-bg c-m j-root-line j-olap-element{{if $item.canToInd}} j-can-to-ind{{/if}}{{if $item.type=="STANDARD_DIMENSION"}} j-org-dim{{/if}} {{if $item.type=="TIME_DIMENSION"}} j-time-dim{{/if}} {{if $item.type=="CALLBACK"}} j-callback-dim{{/if}}" data-id="{{$item.id}}" data-name="{{$item.name}}">
+        <span class="item-text ellipsis j-item-text">{{$item.caption}}（{{$item.name}}）</span>
+        <span class="icon-letter collect j-edit-dim-name" data-id="{{$item.id}}" title="编辑名称">E</span>
+    </div>
+    {{/if}}{{/each}}
+</div>
+{{each dimList as $item}}{{if $item.type == "GROUP_DIMENSION"}}
+<div class="item-group c-m j-dim-group" data-id="{{$item.id}}">
+    <div class="group-title hover-bg j-olap-element j-group-title" title="编辑维度组" data-id="{{$item.id}}" data-group="item-group">
+        <span class="icon-letter icon-fold j-icon-fold fs-18">－</span>
+        <span class="item-text ellipsis j-item-text">{{$item.caption}}</span>
+        <span class="icon-letter icon-group j-edit-dim-group">E</span>
+    </div>
+    {{each $item.levels as $item}}
+    <div class="item c-m hover-bg j-root-line j-sub-dim" data-id="{{$item.id}}">
+        <span class="item-text ellipsis j-item-text">{{$item.caption}}（{{$item.name}}）</span>
+        <span class="icon-letter collect j-delete-sub-dim" data-id="{{$item.id}}" title="删除此项">D</span>
+    </div>
+    {{/each}}
+</div>
+{{/if}} {{/each}}
+<div class="item ta-c">
+    <span class="btn-small br-3 j-add-dim-group-btn">添加维度组</span>
+    <input class="group-name j-add-dim-group-input hide" placeholder="输入维度组名，回车确定" type="text"/>
+</div>

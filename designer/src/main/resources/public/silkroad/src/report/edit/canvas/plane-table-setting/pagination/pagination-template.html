@@ -1,0 +1,29 @@
+<!-- 其他操作 -->
+<div class="data-format">
+    <div class="data-format-alone c-f">
+        <div class="data-format-black f-l c-f w-p-100">
+            <input type="checkbox" name="isPagination" class="f-l c-p j-isPagination" {{if $data.isPagination==true}}
+                   checked="checked" {{/if}} />
+            <label class="f-l ml-2">显示分页</label>
+        </div>
+        <div class="data-format-black f-l c-f w-p-100 j-isPaginationBox {{if $data.isPagination!=true}}hide{{/if}}">
+            <label class="f-l">请输入页记录数：</label>
+            <input class="f-l input-text ml-15 w-100 j-pageSize" type="text" placeholder="请输入数字"/>
+            <span type="button" class="form-common-input-button f-l ml-5 j-new-pageSize">新增页码</span>
+        </div>
+        <div class="data-format-black f-l c-f w-p-100 j-isPaginationBox {{if $data.isPagination!=true}}hide{{/if}}">
+            <label class="f-l">默认页记录数：</label>
+            <select class="f-l ml-25 h-25 w-105 c-p j-pageSizeOptions">
+                {{each $data.pageSizeOptions as option}}
+                <option value="{{option}}" {{if option==$data.pageSize}}selected="selected"{{/if}}>{{option}}</option>
+                {{/each}}
+            </select>
+            <span type="button" class="form-common-input-button f-l ml-5 j-reset-pageSize">恢复默认</span>
+        </div>
+        <div class="data-format-black f-l c-f w-p-100 j-notPaginationBox {{if $data.isPagination==true}}hide{{/if}}">
+            <label class="f-l">请输入默认记录数：</label>
+            <input class="f-l input-text w-150" type="text" {{if $data.isPagination!=true}}value={{$data.pageSize}}{{/if}} placeholder="请输入数字"/>
+        </div>
+        <div class="data-format-black f-l c-f w-p-100 cor-red hide j-pagination-error-msg"></div>
+    </div>
+</div>

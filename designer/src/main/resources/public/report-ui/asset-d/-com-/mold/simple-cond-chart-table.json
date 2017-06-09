@@ -1,0 +1,234 @@
+{
+	"desc" : "查询条件||多维图形||多维表格||无面包屑导航",
+    "diKey": "DEPICT",
+    "clzDefs": [
+        {
+            "clzKey": "OLAP_TABLE",
+            "dataOpt": {
+                "emptyHTML": "未查询到相关数据"
+            }
+        },
+        {
+            "clzKey": "ECUI_SELECT",
+            "dataOpt": {
+                "optionSize": 10
+            }
+        }
+    ],
+    "entityDefs": [
+        {
+            "id": "snpt1",
+            "clzType": "SNIPPET"
+        },
+        {
+            "id": "snpt1.cpnt-form1",
+            "clzType": "COMPONENT",
+            "clzKey": "DI_FORM",
+            "reportType": "RTPL_VIRTUAL",
+            "init": { 
+                "action": { "name": "sync" }
+            },
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "input": [
+                    "snpt1.vu-form1-time1",
+                    "snpt1.vu-form1-pos1",
+                    "snpt1.vu-form1-trade1",
+                    "snpt1.vu-form1-prod1"
+                ],
+                "confirm": "snpt1.vu-form1-confirm1"
+            },
+            "dataOpt": { "submitMode": "CONFIRM" }
+        },
+        {
+            "id": "snpt1.vu-form1-time1",
+            "clzType": "VUI",
+            "clzKey": "RANGE_POP_CALENDAR",
+            "name": "Time",
+            "dataOpt": {
+                "defaultTime": ["-6d", "0d"],
+                "range": ["2011-01-01", "+1d"]
+            }
+        },             
+        {
+            "id": "snpt1.vu-form1-pos1",
+            "clzType": "VUI",
+            "clzKey": "ECUI_INPUT_TREE",
+            "name": "Pos",
+            "cfgOpt": { "async": true }
+        },
+        {
+            "id": "snpt1.vu-form1-trade1",
+            "clzType": "VUI",
+            "clzKey": "ECUI_SELECT",
+            "name": "Trade"
+        },
+        {
+            "id": "snpt1.vu-form1-prod1",
+            "clzType": "VUI",
+            "clzKey": "ECUI_SELECT",
+            "name": "ProductLine"
+        },
+        {
+            "id": "snpt1.vu-form1-confirm1",
+            "clzType": "VUI",
+            "clzKey": "H_BUTTON",
+            "dataOpt": { 
+                "skin": "ui-normal-btn",
+                "text": "报表生成"
+            }
+        },
+        {
+            "id": "snpt1.cpnt-table1",
+            "clzType": "COMPONENT",
+            "clzKey": "DI_TABLE",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "mainTable": "snpt1.vu-table1"
+            },
+            "interactions": [
+                {
+                    "events": [
+                        { "rid": "snpt1.cpnt-form1", "name": "dataloaded" },
+                        { "rid": "snpt1.cpnt-form1", "name": "submit" }
+                    ],
+                    "action": { "name": "sync" },
+                    "argHandlers": [
+                        ["clear"],
+                        ["getValue", "snpt1.cpnt-form1"]
+                    ]
+                }
+            ]
+        },
+        { 
+            "id": "snpt1.vu-table1", 
+            "clzType": "VUI",
+            "clzKey": "OLAP_TABLE",
+            "name": "table",
+            "dataOpt": {
+                "rowHCellCut": 30,
+                "hCellCut": 30,
+                "cCellCut": 30,
+                "vScroll": true
+            }
+        },
+        {
+            "id": "snpt1.cpnt-table2",
+            "clzType": "COMPONENT",
+            "clzKey": "DI_PLANE_TABLE",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "mainTable": "snpt1.vu-table2"
+            }
+        },
+        { 
+            "id": "snpt1.vu-table2", 
+            "clzType": "VUI",
+            "clzKey": "OLAP_TABLE",
+            "name": "table",
+            "dataOpt": {
+                "rowHCellCut": 30,
+                "hCellCut": 30,
+                "cCellCut": 30,
+                "vScroll": true
+            }
+        },
+        {
+            "id": "snpt1.cpnt-meta1",
+            "clzType": "COMPONENT",
+            "clzKey": "OLAP_META_CONFIG",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "main": "snpt1.vu-meta1"
+            },
+            "interactions": [
+                { 
+                    "event": { "rid": "snpt1.cpnt-chart1", "name": "dataloaded" }, 
+                    "action": { "name": "sync" }, 
+                    "once": true 
+                }
+            ],
+            "dataOpt": {
+                "needShowCalcInds": true,
+                "submitMode": "IMMEDIATE",
+                "reportType": "RTPL_OLAP_CHART",
+                "datasourceId": { "SELECT": "LIST_SELECT" }
+            }
+        },
+        {
+            "id": "snpt1.vu-meta1", 
+            "clzType": "VUI",
+            "clzKey": "OLAP_META_IND_MULTI_SELECT"
+        },
+        {
+            "id": "snpt1.cpnt-chart1", 
+            "clzType": "COMPONENT",
+            "clzKey": "DI_CHART",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "mainChart": "snpt1.vu-chart1"
+            },
+            "interactions": [
+                {
+                   "events": [
+                        { "rid": "snpt1.cpnt-form1", "name": "submit" },
+                        { "rid": "snpt1.cpnt-form1", "name": "dataloaded" }
+                    ],
+                    "action": { "name": "sync" },
+                    "argHandlers": [
+                        ["clear"],
+                        ["getValue", "snpt1.cpnt-form1"]
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "snpt1.vu-chart1", 
+            "clzType": "VUI",
+            "clzKey": "H_CHART",
+            "dataOpt": {
+                "height": 260,
+                "legend": { "xMode": "pl" },
+                "weekViewRange": [null, "-1d"],
+                "rangeSelector": {
+                    "byAxisType": {
+                        "date": {
+                            "buttons": [
+                                { "type": "day", "count": 29, "text": "30日" },
+                                { "type": "day", "count": 89, "text": "90日" },
+                                { "type": "thisMonth", "text": "本月" },
+                                { "type": "all", "text": "全部" }
+                            ],
+                            "selected": 4
+                        },
+                        "week": {
+                            "buttons": [
+                                { "type": "week", "count": 7, "text": "8周" },
+                                { "type": "week", "count": 15, "text": "16周" },
+                                { "type": "thisYear", "text": "本年" },
+                                { "type": "all", "text": "全部" }
+                            ],
+                            "selected": 3
+                        },
+                        "month": {
+                            "buttons": [
+                                { "type": "xMonth", "count": 12, "text": "12月", "by": "max" },
+                                { "type": "xMonth", "count": 24, "text": "24月", "by": "max" },
+                                { "type": "all", "text": "全部" }
+                            ],
+                            "selected": 2
+                        },
+                        "quarter": {
+                            "buttons": [
+                                { "type": "xQuarter", "count": 4, "text": "4季", "by": "max" },
+                                { "type": "xQuarter", "count": 8, "text": "8季", "by": "max" },
+                                { "type": "all", "text": "全部" }
+                            ],
+                            "selected": 2
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

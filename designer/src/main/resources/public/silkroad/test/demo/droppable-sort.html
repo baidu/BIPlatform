@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>拖放组件</title>
+    <script type="text/javascript" src="../../dep/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../dep/jquery-ui.custom-1.10.4.js"></script>
+    <script src="../../dep/jquery.ui.sortable.js"></script>
+
+    <style type="text/css" rel="stylesheet">
+        .con-drag-elm {
+            border: 1px solid #015fde;
+            height: 50px;
+            padding: 5px;
+        }
+        .drag-elm {
+            display: inline-block;
+            background: #85C5E8;
+            border: 1px solid #51a0c9;
+            padding: 5px;
+            margin: 5px;
+        }
+        .area-landing {
+            height: 50px;
+            border: solid 1px #000;
+            padding: 5px;
+        }
+
+        #log {
+            position: fixed;
+            right: 5px;
+            top: 10px;
+            border: solid 1px #0066cc;
+            line-height: 20px;
+            width: 150px;
+            max-width: 200px;
+        }
+
+        .drop-active {
+            background: #74e183;
+        }
+
+        .c-m {
+            cursor: move;
+        }
+    </style>
+
+</head>
+<body>
+<div id="log"></div>
+<h3>拖拽到指定区域</h3>
+<input type="button" value="恢复拖拽功能" id="switch-draggable">
+<input type="button" value="将第一个设为不可拖拽" id="disable-first">
+
+<h4>待拖拽的元素</h4>
+
+<div id="sortable" class="con-drag-elm j-up-area">
+    <span class="drag-elm j-drag-1 j-sortable">元素-1 </span>
+    <span class="drag-elm j-drag-1 j-sortable"> 元素-2</span>
+    <span class="drag-elm j-drag-1 j-sortable">元素-3 </span>
+    <span class="drag-elm j-drag-1 j-sortable">元素-4 </span>
+
+</div>
+<h4>着陆区域</h4>
+
+<div class="area-landing j-down-area">
+    <span class="drag-elm j-drag-1 j-sortable">元素-5</span>
+    <span class="drag-elm j-drag-1 j-sortable">元素-6</span>
+</div>
+
+<h4>注：此方法通过排序的方式来实现拖拽，有两个隐患：</h4>
+<div>1、当某一组中没有item的时候不能从另一组中直接拖入（需要另外做hack）</div>
+<div>2、对于“A组item能拖入B组但B组item不能拖入A组”这种场景不能很好支持</div>
+<script>
+    $(function () {
+        var $upElem = $(".j-drag-1", '.j-up-area');
+        var $upArea = $('.j-up-area');
+        var $downArea = $('.j-down-area');
+        // 可排序
+        $("body").sortable({
+            items: ".j-sortable"
+        });
+return ;
+        // 定义可放下(上到下)
+        $downArea.droppable({
+            accept: ".j-drag-1",
+            activeClass: "drop-active",//被激发（可接收当前被拖起元素）
+            drop: function (event, ui) {
+                var $upElem = ui.draggable;
+                $upElem.appendTo($downArea).removeClass('j-drag-1').addClass('j-drag-2');
+            }
+        });
+
+        // 定义可放下(下到上)
+        $upArea.droppable({
+            accept: ".j-drag-2",
+            activeClass: "drop-active",
+            drop: function (event, ui) {
+                var $item = ui.draggable;
+                $item.appendTo($upArea).removeClass('j-drag-2').addClass('j-drag-1');
+            }
+        });
+
+        $('#switch-draggable').click(function () {
+            var $t = $(this);
+            if ($t.val() == '取消拖拽功能') {
+                $upElem.draggable('destroy').removeClass('c-m');
+                $t.val('恢复拖拽功能');
+            } else {
+
+                // 定义可拖拽
+                $upElem.draggable({
+                    cancel: "a.ui-icon", // clicking an icon won't initiate dragging
+                    revert: "invalid", // when not dropped, the item will revert back to its initial position
+                    containment: "document",
+                    helper: "clone",
+                    cursor: "move"
+                }).addClass('c-m');
+
+                $t.val('取消拖拽功能');
+            }
+        });
+
+        $('#switch-draggable').click();
+    });
+</script>
+</body>
+</html>

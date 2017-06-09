@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="src/css/base.css">
+    <link type="text/css" rel="stylesheet" href="src/css/home.css">
+    <script type="text/javascript" src="dep/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="src/home.js"></script>
+</head>
+<body>
+<div class="cover">
+    <img src="src/css/img/bgimg.png"/>
+</div>
+<!--主页元素区域-->
+<div class="home-body">
+    <!--主页标题-->
+    <div class="home-title text-align">在这里重新认识报表</div>
+    <div class="home-content text-align">New&nbsp;&nbsp;&nbsp;&nbsp;report&nbsp;&nbsp;&nbsp;&nbsp;platform</div>
+    <!--登录注册按钮-->
+    <div class="home-button text-align" id="home-button">
+        <div class="registration">免&nbsp;费&nbsp;注&nbsp;册</div>
+        <div class="experience">用&nbsp;户&nbsp;登&nbsp;录</div>
+    </div>
+    <!--主页报表图片区域-->
+    <div class="home-pic">
+        <div class="pic-bar"></div>
+        <div class="pic-table"></div>
+        <div class="pic-pie"></div>
+    </div>
+    <!--注册区域标题-->
+    <div class="home-register-title text-align">欢迎您的使用</div>
+    <!--注册区域标题下划线-->
+    <div class="home-register-line"></div>
+    <!--注册区域框体-->
+    <div class="home-register-sign register-top">
+        <div class="register-title">&nbsp;&nbsp;&nbsp;&nbsp;注册<div class="close"></div></div>
+        <div class="register-box" id="register-enter">
+            <input type="text" class="register-infor infor-margin-top" id="register-usename" placeholder="用户名(由字母,数字组成)" />
+            <div class="prompt"></div>
+            <input type="password" class="register-infor register-right" id="register-pass" placeholder="密码(由字母,数字,特殊符号组成)" />
+            <div class="prompt"></div>
+            <input type="password" class="register-infor register-right" id="register-repass" placeholder="确认密码" />
+            <div class="prompt"></div>
+            <input type="text" class="register-infor register-right" id=register-company placeholder="所属部门" />
+            <div class="prompt"></div>
+            <input type="text" class="register-infor register-right" id="register-email" placeholder="邮箱" />
+            <div class="prompt"></div>
+            <span>
+                    服务类型&nbsp;&nbsp;
+                    <select id="servicetype">
+                        <option value="1">线上服务</option>
+                        <option value="0">线下服务</option>
+                    </select>
+                </span>
+            <div class="prompt"></div>
+            <div class="c-f">
+                <input type="text" class="register-infor" style="width: 220px; float: left" id="register-validateCode" placeholder="请输入验证码" />
+                <img src="auth" class="validate-code" id="register-code"/>
+            </div>
+            <div class="prompt"></div>
+        </div>
+        <div class="register-btn" id="register">免&nbsp;费&nbsp;注&nbsp;册</div>
+    </div>
+    <!--登录区域标题-->
+    <div class="home-sign-title text-align">欢迎您的使用</div>
+    <!--登录区域下划线-->
+    <div class="home-sign-line"></div>
+    <!--登录区域框体-->
+    <div class="home-register-sign sign-top">
+        <div class="register-title">&nbsp;&nbsp;&nbsp;&nbsp;登录<div class="close"></div></div>
+        <div class="register-box" id="sign-enter">
+            <input type="text" class="register-infor infor-margin-top" id="sign-usename" placeholder="用户名" />
+            <div class="prompt"></div>
+            <input type="password" class="register-infor" id="sign-pass" placeholder="密码" />
+            <div class="prompt"></div>
+            <div class="c-f">
+                <input type="text" class="register-infor" style="width: 220px; float: left" id="sign-validateCode" placeholder="请输入验证码" />
+                <img src="auth" class="validate-code" id="sign-code"/>
+            </div>
+            <div class="prompt"></div>
+        </div>
+        <!--<div class="sign-next"><input type="checkbox"/><a href="javascript:;">下次自动登录</a>&nbsp;|&nbsp;<a href="javascript:;">忘记密码</a></div>-->
+        <div class="register-btn" id="sign">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</div>
+    </div>
+</div>
+</body>
+</html>

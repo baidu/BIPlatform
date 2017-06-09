@@ -1,0 +1,1531 @@
+/*-------------------------------------------------*/
+/* 业务逻辑 -- 报表                                  */
+/*-------------------------------------------------*/
+.con-report-list table {
+    width: 100%;
+}
+.con-report-list th {
+    padding: 18px 0 7px 0px;
+    text-align: left;
+    border-bottom: 3px solid #4a7eb0;
+}
+.con-report-list .report-index {
+    width: 34px;
+}
+.con-report-list .report-name {
+    width: 520px;
+}
+.con-report-list .report-btns {
+    width: 345px;
+    padding-left: 13px;
+}
+
+/* 报表列表与数据源列表公用一套样式 */
+.con-report-list .data-sources-btns {
+    width: 123px;
+    padding-left: 11px;
+}
+.con-report-list td {
+    padding: 5px;
+    border-bottom: 1px solid #65778b;
+}
+.con-report-list tbody tr:hover {
+    background: #f6f5f5;
+}
+.con-report-list .report-line .num {
+    display: inline-block;
+    width: 20px;
+}
+.con-report-list .report-line .text {
+    display: block;
+    width: 500px;
+}
+.set-report-name .text {
+    font-size: 16px;
+    color: #2776a4;
+    padding: 42px 0 24px 0;
+}
+
+/*cube 列表*/
+.con-set-cube {
+    width: 900px;
+    overflow: hidden;
+    margin: 20px auto;
+    box-sizing: border-box;
+}
+.con-data-sources-list,
+.con-cube-list {
+    width: 65%;
+    box-sizing: border-box;
+    padding-right: 20px;
+    height: auto;
+    margin-bottom: -10000px;
+    padding-bottom: 10000px;
+}
+.con-data-sources-list {
+    width: 35%;
+    display: inline;
+}
+.con-data-sources-list .btn-has-icon-data-sources {
+    display: block;
+    margin: 0px 10px;
+    padding: 5px 5px 4px 30px;
+}
+.con-data-sources-list .btn-has-icon-data-sources-group {
+    height: 20px;
+    margin-top: 6px;
+    width: 100%;
+}
+.con-set-cube .data-line:hover {
+    background-color: #f0f7fc;
+}
+.con-set-cube .data-line.selected {
+    background-color: #deebf3;
+}
+.con-cube-list {
+    border-left: 2px solid #cccccc;
+    margin-left: -2px;
+    padding-left: 19px;
+}
+.con-cube-list.loading {
+    background-position: center 37px;
+}
+.con-cube-list .title,
+.con-data-sources-list .title {
+    border-bottom: 1px solid #cccccc;
+    font-weight: bold;
+    line-height: 200%;
+    font-size: 14px;
+}
+.con-cube-list .data-line {
+    margin: 3px;
+    padding: 2px;
+}
+.con-cube-list .con-set-group {
+    border-top: 1px solid #cccccc;
+    margin: 3px;
+    padding: 2px;
+}
+.con-set-group .form-common-line {
+    margin: 3px 0;
+}
+.con-set-group .form-common-line .delete {
+    right: -58px;
+}
+
+/* 报表编辑 - 右边画布*/
+.con-report-edit .canvas {
+    position: relative;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    -ms-box-flex: 1;
+    box-flex: 1;
+}
+
+/* 报表编辑 - 组件箱*/
+.con-report-edit .con-component-box {
+    position: absolute;
+    width: 210px;
+    overflow: hidden;
+    padding: 2px;
+    z-index: 3;
+    background: #f9f9f7;
+    font-size: 12px;
+    border: 1px solid #d7d7d7;
+}
+.con-report-edit .con-component-box .con-component {
+    margin: 5px;
+}
+.con-component-box .icon-letter {
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    background: #65b0fa;
+    color: #fff;
+}
+.con-component-box .icon-letter:hover {
+    background: #3e92e5;
+}
+.icon-letter-placeholder {
+    float: right;
+    height: 30px;
+    width: 30px;
+}
+.con-component-box select {
+    width: 120px;
+    margin-bottom: 8px;
+}
+.con-component .component-item {
+    display: inline-block;
+    cursor: move;
+    width: 60px;
+    text-align: center;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.con-component .component-item img{
+    padding: 0 10px;
+}
+.con-component .component-item:hover {
+    background-color: #e4e4e4;
+}
+
+/* 报表组件的配置区*/
+.canvas .report-setting {
+    margin: 5px;
+}
+
+/* 报表的实时展示区*/
+.canvas .report {
+    margin: -2px 5px 0 1px;
+    overflow: auto;
+    min-height: 200px;
+    position: relative;
+    border: 2px solid #cccccc;
+    width: 99.5%;
+
+}
+.report {
+    background-image: url(../img/grid.png);
+}
+.canvas .report.active {
+    border: 2px solid #65b0fa;
+}
+.canvas .report > div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+}
+.report .shell-component {
+    position: absolute;
+    /*overflow: hidden;*/
+    border: 1px solid #fff;
+}
+.report .shell-component:hover {
+    border: 1px solid rgba(0, 119, 119, 0.168627);
+}
+.report .shell-component.active {
+    z-index: 10;
+    border: 1px solid #65b0fa;
+    box-shadow: 0px 0px 5px 3px #65b0fa;
+}
+.report .shell-component.disable {
+    box-shadow: 0px 0px 5px 3px #FA5C10;
+}
+.shell-component .con-edit-btns {
+    white-space: nowrap;
+    /*width: 100%;*/
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.con-edit-btns .fold {
+    cursor: pointer;
+    background: #777777;
+    position: absolute;
+    line-height: 12px;
+    color: #fff;
+    text-align: center;
+    width: 12px;
+    height: 12px;
+    top: -1px;
+    left: -1px;
+}
+.con-edit-btns .fold:hover {
+    background: #555555;
+}
+.shell-component .con-edit-btns input {
+    position: relative;
+    left: -3px;
+    top: 2px;
+    margin-right: 3px;
+}
+.con-edit-btns .special {
+    padding-left: 11px;
+}
+.report .shell-component:hover .con-edit-btns {
+    display: block;
+}
+
+/* 参考线 */
+.shell-component .guide-line {
+    position: absolute;
+    overflow: hidden;
+}
+.hide {
+    display: none;
+}
+.guide-top {
+    top: -1px;
+    width: 10000px;
+    left: -5000px;
+    border-top: 1px dashed #007777;
+}
+.guide-right {
+    right: -1px;
+    height: 10000px;
+    top: -5000px;
+    border-right: 1px dashed #007777;
+}
+.guide-bottom {
+    bottom: 0;
+    width: 10000px;
+    left: -5000px;
+    border-bottom: 1px dashed #007777;
+}
+.guide-left {
+    left: -1px;
+    height: 10000px;
+    top: -5000px;
+    border-left: 1px dashed #007777;
+}
+.comp-setting > div {
+    background: #fff;
+    padding: 5px 10px 5px 10px;
+    z-index: 2;
+}
+/* 组件相关设置配置区 */
+.comp-setting .data-axis-line {
+    margin: 5px 0 5px 20px;
+    padding: 3px 3px 3px 5px;
+    position: relative;
+    border: 1px solid #d7d7d7;
+}
+/* 3个汉字的宽度 */
+.comp-setting .data-axis-line-34 {
+    margin: 5px 0 5px 34px;
+}
+/* 4个汉字的宽度 */
+.comp-setting .data-axis-line-48 {
+    margin: 5px 0 5px 48px;
+}
+.comp-setting .data-btn-line {
+    margin: 5px 0 2px 50px;
+    border: none;
+}
+.comp-setting .data-axis-line .letter {
+    margin: 0 2px 0 -72px;
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+}
+.comp-setting .item {
+    display: inline-block;
+    background: #fff;
+    font-size: 12px;
+    padding: 2px 18px 2px 3px;
+    margin-left: 3px;
+    position: relative;
+    border-radius: 3px;
+    border: 1px solid #e6e3e3;
+    height: 18px
+}
+.comp-setting .item:hover .icon{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background: #65b0fa;
+    color: #fff;
+    font-weight: normal;
+    cursor: pointer;
+}
+.comp-setting .icon {
+    height: 14px;
+    line-height: 13px;
+}
+.comp-setting .item .icon-font {
+    /*float: left;*/
+    display: inline-block;
+}
+.comp-setting .item .icon-font {
+    /*float: left;*/
+    display: inline-block;
+}
+.comp-setting .item .icon-chart {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+    cursor: pointer;
+}
+.comp-setting .item .bar {
+    background: url(../img/bar.png) no-repeat;
+}
+.comp-setting .item .pie {
+    background: url(../img/pie.png) no-repeat;
+}
+.comp-setting .item .line {
+    background: url(../img/line.png) no-repeat;
+}
+.comp-setting .item .column {
+    background: url(../img/column.png) no-repeat;
+}
+.comp-setting .item .map {
+    background: url(../img/map.png) no-repeat;
+}
+.comp-setting .icon-letter {
+    right: 3px;
+    top: 2px;
+}
+.canvas .active {
+    border: 1px solid #65b0fa;
+}
+/*Y轴图标列表选项*/
+.comp-setting-charticons {
+    background-color: #fff;
+    border: 1px solid #e6e3e3;
+}
+.comp-setting-charticons .icon {
+    margin: 5px 0 5px 10px;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    display: block;
+}
+.comp-setting-charticons .bar {
+    background: url(../img/bar.png) no-repeat;
+}
+.comp-setting-charticons .line {
+    background: url(../img/line.png) no-repeat;
+}
+.comp-setting-charticons .pie {
+    background: url(../img/pie.png) no-repeat;
+}
+.comp-setting-charticons .column{
+    background: url(../img/column.png) no-repeat;
+}
+.comp-setting-charticons .map {
+    background: url(../img/map.png) no-repeat;
+}
+.comp-setting-charticons .bar:hover {
+    background: url(../img/bar-hover.png) no-repeat;
+}
+.comp-setting-charticons .line:hover {
+    background: url(../img/line-hover.png) no-repeat;
+}
+.comp-setting-charticons .pie:hover {
+    background: url(../img/pie-hover.png) no-repeat;
+}
+.comp-setting-charticons .column:hover {
+    background: url(../img/column-hover.png) no-repeat;
+}
+.comp-setting-charticons .map:hover {
+    background: url(../img/map-hover.png) no-repeat;
+}
+.comp-setting-charticons .bar-focus {
+    background: url(../img/bar-hover.png) no-repeat;
+}
+.comp-setting-charticons .line-focus {
+    background: url(../img/line-hover.png) no-repeat;
+}
+.comp-setting-charticons .pie-focus{
+    background: url(../img/pie-hover.png) no-repeat;
+}
+.comp-setting-charticons .column-focus {
+    background: url(../img/column-hover.png) no-repeat;
+}
+.comp-setting-charticons .map-focus{
+    background: url(../img/map-hover.png) no-repeat;
+}
+/* 保存/发布按钮 */
+.canvas .button-save-report {
+    position: fixed;
+    bottom: 5px;
+    right: 12px;
+    z-index: 5;
+}
+.canvas .button-publish-report {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    z-index: 5;
+}
+
+/* publish-report-dialog样式 */
+.con-releaseBox {
+    position: relative;
+    top: 50px;
+    margin: 0 auto;
+    width: 700px;
+    padding:0;
+}
+.con-head {
+    float: left;
+    width: 700px;
+    background-color: #F5F5F5;
+    border-bottom: 1px solid #D9D9D9;
+    border-top: 1px solid #D9D9D9;
+    text-align: center;
+
+}
+/* 浏览，返回，编辑三个按钮 */
+.con-head div {
+    width: 77px;
+    height: 20px;
+    background-color: #fff;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #D9D9D9;
+}
+/* 编辑按钮 */
+.con-hEdit {
+    float: right;
+    margin-right: 20px;
+    color: #000;
+    background: url("../img/publish-report-dialog-img/edit.png");
+}
+/* 浏览按钮 */
+.con-hRead {
+    float: left;
+    margin-left: 20px;
+    color: #000;
+    background: url("../img/publish-report-dialog-img/read.png");
+}
+/* 返回列表按钮 */
+.con-hReturn {
+    float: right;
+    margin-right: 20px;
+    color: #000;
+    background: url("../img/publish-report-dialog-img/return.png");
+}
+/* 菜单以外的三个表 */
+.con-body {
+    float: left;
+    width: 700px;
+}
+.con-body div {
+    float: left;
+    width: 700px;
+    border: 1px solid #D9D9D9;
+    margin-top: 10px;
+}
+/* 表1的非按钮部分 */
+.con-url {
+    float: left;
+    list-style: none;
+    width: 500px;
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+.con-url-text {
+    background-color: #EDF6F9;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    color: #A1C0E7;
+}
+/* 表1的按钮部分 */
+.con-url-a {
+    position: relative;
+    float: right;
+    list-style: none;
+    height: 20px;
+    width: 190px;
+    margin-top: 50px;
+}
+.con-url-a li {
+    float: left;
+    width: 78px;
+    height: 25px;
+    text-align: center;
+    line-height: 24px;
+    background-color: #2976A4;
+    margin-left: 10px;
+}
+/* 表2,3的非按钮部分 */
+.con-report {
+    float: left;
+    list-style: none;
+    width: 600px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.con-report li {
+    float: left;
+    width: 570px;
+    margin-bottom: 15px;
+}
+.con-report-title {
+    color: #338DCD;
+    font-size: 16px;
+}
+.con-report-text {
+    background-color: #EDF6F9;
+    color: #A1C0E7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+/* 表2,3的按钮部分 */
+.con-copy {
+    position: relative;
+    float: left;
+    width: 70px;
+    height: 25px;
+    background-color: #2976A4;
+    margin-top: 100px;
+    text-align: center;
+    line-height: 24px;
+}
+/* 按钮连接颜色 */
+.conspan {
+    color: #FFF;
+}
+/* 内容强制换行 */
+.con-br {
+    word-wrap : break-word ;
+    word-break: break-all;
+    overflow: auto;
+}
+
+/**
+ * @name                      :数据格式设置
+ * @author                    :lizhantong
+ * @version                   :1.0
+ * @type                      :扩展类
+ * @explain                   :数据格式设置模块
+ * @relating                  :暂无
+ * @dependent                 :暂无
+ */
+.data-format {
+    width: 300px;
+}
+.data-format > select {
+    width: 150px;
+    height: 25px;
+    margin-left: 5px;
+}
+.data-format .data-format-default {
+    padding: 10px 10px;
+    border-bottom: 1px solid #C5C5C5;
+}
+.data-format-default > span {
+    width: 110px;
+    float: left;
+    text-align: right;
+    line-height: 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.data-format-default > select {
+    float: left;
+    width: 150px;
+}
+.data-format .data-format-alone {
+    padding: 10px 10px;
+}
+.data-format-alone > span {
+    float: left;
+    width: 100%;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.data-format-alone .data-format-alone-dim {
+    float: left;
+    margin-top: 10px;
+}
+.data-format-alone-dim > span {
+    width: 110px;
+    float: left;
+    text-align: right;
+    line-height: 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.data-format-alone-dim .error-msg {
+    width: 110px;
+    float: left;
+    line-height: 25px;
+}
+.data-format-alone-dim > select {
+    float: left;
+    width: 150px;
+}
+.data-format-black {
+    /*text-align: center;*/
+    /*margin: 0 auto;*/
+    margin: 0 0 10px 50px;
+}
+.data-format-black input {
+    outline: none;
+    height: 25px;
+    line-height: 25px;
+}
+.data-format-black .input-text {
+    outline: none;
+    height: 20px;
+    line-height: 20px;
+}
+.data-format-black label {
+    height: 25px;
+    line-height: 25px;
+}
+.data-format-black .form-common-input-button {
+    padding: 2px 6px;
+}
+/*@end*/
+
+/**
+ * @name                      :图形指标颜色设置
+ * @author                    :lizhantong
+ * @version                   :1.0
+ * @type                      :扩展类
+ * @explain                   :数据格式设置模块
+ * @relating                  :暂无
+ * @dependent                 :暂无
+ */
+.ind-color {
+    width: 300px;
+}
+.ind-color .ind-color-alone {
+    padding: 10px 10px;
+}
+.ind-color-alone > span {
+    float: left;
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.ind-color-alone .ind-color-alone-ind {
+    float: left;
+    margin-top: 10px;
+}
+.ind-color-alone-ind > span {
+    width: 110px;
+    float: left;
+    text-align: right;
+    line-height: 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.ind-color-alone-ind > input {
+    float: left;
+}
+/*@end*/
+
+/**
+ * @name                      :坐标轴名字设置
+ * @author                    :lizhantong
+ * @version                   :1.0
+ * @type                      :扩展类
+ * @explain                   :数据格式设置模块
+ * @relating                  :暂无
+ * @dependent                 :暂无
+ */
+.dialog-content {
+    width: 300px;
+}
+.dialog-content .base-setting-box {
+    padding: 10px 10px;
+}
+.base-setting-box > span {
+    width: 100%;
+    font-weight: bold;
+}
+.base-setting-box .base-setting-item {
+    margin-top: 10px;
+}
+
+.base-setting-item > label {
+    height: 25px;
+    line-height: 25px;
+}
+.base-setting-item > input {
+    outline: none;
+    height: 25px;
+    line-height: 25px;
+}
+.base-setting-item  .input-text {
+    outline: none;
+    height: 20px;
+    line-height: 20px;
+}
+.base-setting-item > span{
+    height: 25px;
+    line-height: 25px;
+    width: 110px;
+    text-align: right;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.base-setting-item > .error-msg {
+    height: 25px;
+    line-height: 25px;
+    width: 110px;
+    text-align: left;
+    padding-left: 110px;
+}
+/*@end*/
+
+/**
+ * @name                      :topn设置
+ * @author                    :lizhantong
+ * @email                     :lztlovely@126.com
+ * @version                   :1.0
+ * @type                      :扩展类
+ * @explain                   :暂无
+ * @relating                  :暂无
+ * @dependent                 :暂无
+ */
+.topn-indlist {
+    width: 300px;
+}
+.topn-indlist-item {
+    float:  left;
+    width : 100%;
+    padding: 10px
+}
+.topn-indlist-item span {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    width: 80px;
+}
+.topn-indlist-item select {
+    float:  left;
+    width : 100px;
+    height: 20px;
+}
+.topn-indlist-item input {
+    float:  left;
+    width : 100px;
+    height: 15px;
+}
+/*@end*/
+
+/**
+ * @name                      :双坐标轴设置
+ * @author                    :weiboxue
+ * @email                     :wbx_901118@sina.com
+ * @version                   :1.0
+ * @type                      :扩展类
+ * @explain                   :暂无
+ * @relating                  :暂无
+ * @dependent                 :暂无
+ */
+.axis-setting {
+    display: block;
+    margin-top: 15px;
+    padding: 0 10px 0 10px;
+    font-size: 12px;
+    font-family: '微软雅黑';
+}
+.axis-setting-dim div {
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 10px;
+    height: 20px;
+}
+.axis-setting-checkbox {
+    vertical-align: bottom;
+}
+
+/*@end*/
+
+/**
+ * @name                      :组件关联关系设置
+ * @author                    :lizhantong
+ * @email                     :lztlovely@126.com
+ * @version                   :1.0
+ * @type                      :扩展类
+ * @explain                   :暂无
+ * @relating                  :暂无
+ * @dependent                 :暂无
+ */
+.comp-relation-event {
+    width: 520px;
+}
+.comp-relation-event > span  {
+    float: left;
+    width: 100%;
+    margin-bottom: 5px;;
+}
+.comp-realtion-box {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 300px;
+    border: 1px solid #c5c5c5;
+}
+.comp-realtion-param {
+    float: left;
+    width: 500px;
+    border: 1px solid #c5c5c5;
+    padding: 10px;
+}
+.comp-realtion-param > span {
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+.comp-realtion-param > select {
+    float: left;
+    width: 100px;
+    height: 20px;
+    margin-right: 10px;
+}
+.span-out-param {
+    width: 80px;
+}
+.span-level {
+    width: 120px;
+}
+.comp-thumbnail {
+    position: absolute;
+    border: 1px solid red;
+}
+.comp-thumbnail-pic {
+    width: 100%;
+    height: 100%
+}
+.comp-thumbnail input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.comp-thumbnail img {
+    width: 100%;
+    height: 100%;
+}
+/*@end*/
+
+/* 文本框组件样式 */
+.text-div {
+    width: 100%;
+    height: 30px;
+    border: 0;
+    cursor: pointer;
+    color: #000;
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "微软雅黑";
+}
+.div-write {
+    display: table;
+}
+.div-write div{
+    vertical-align: middle;
+    display: table-cell;
+}
+.buttons {
+    /*overflow: hidden;*/
+    margin: 2px 5px 0 1px;
+    position: relative;
+    background: #e4e4e4;
+    height: 30px;
+    width: 99.5%;
+    border-top: 2px solid #cccccc;
+    border-left: 2px solid #cccccc;
+    border-right: 2px solid #cccccc;
+    border-bottom: 2px solid #cccccc;
+}
+.comp-menu {
+    position: absolute;
+    width: 85%;
+    height: 0;
+    top: 32px;
+}
+
+/* 表格下载按钮样式 */
+.table-download {
+    float: left;
+    padding-top: 4px;
+}
+
+/* 指标为空错误提示信息 */
+.norm-empty-prompt {
+    color: red;
+    margin-left: 50px;
+    display: none;
+}
+
+/* 表格空指标提示样式 */
+.table-norm-empty {
+    margin-left: 35px;
+}
+
+/* 下拉框皮肤样式 */
+.select-skin option{
+    height: 20px;
+}
+
+/* 参考线整体样式 */
+.j-guide-line {
+    display: none;
+}
+
+/* 背景参考线 */
+.di-o_o-body {
+    background-image: url(../img/grid.png);
+}
+
+/* 配置端设置背景为白色 */
+#body-white {
+    background-color: #fff;
+}
+.shell-component .con-edit-btns span{
+    /*border: 1px solid rgba(0, 119, 119, 0.17);*/
+    display: none;
+    float: left;
+}
+/* 修改报表名称区域展示框样式 */
+.reportName {
+    height: 20px;
+    margin: 5px 0;
+    background: #e4e4e4;
+    float: right;
+    font-size: 14px;
+    width: 150px;
+}
+/* 修改报表名称输入框样式 */
+.reportSetName {
+    height: 20px;
+    margin: 5px 0;
+    background: #e4e4e4;
+    float: right;
+    display: none;
+    border: 0 solid #e4e4e4;
+    font-size: 14px;
+    width: 150px;
+}
+.save-reportNameBox {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.save-reportSetName {
+    height: 20px;
+    margin: 5px 0;
+    background: #e4e4e4;
+    float: right;
+    border: 0 solid #e4e4e4;
+    font-size: 14px;
+    width: 150px;
+}
+/* 修改报表名称输入框样式 */
+.save-reportSetName {
+    height: 100%;
+    margin: 5px 0;
+    background: #FFF;
+    float: right;
+    border: 1px solid rgb(238, 238, 238);
+    font-size: 14px;
+    width: 100%;
+}
+
+/**
+ * @name                      :图形指标颜色设置
+ * @author                    :lizhantong
+ * @version                   :1.0
+ * @type                      :扩展类
+ * @explain                   :数据格式设置模块
+ * @relating                  :暂无
+ * @dependent                 :暂无
+ */
+.text-align-set {
+    width: 300px;
+}
+.text-align-set .text-align-set-area {
+    float: left;
+    margin-top: 10px;
+}
+.text-align-set-area > label {
+    float: left;
+    width: 100%;
+    font-weight: bold;
+}
+.text-align-set-area .text-align-set-item {
+    float: left;
+    margin-top: 10px;
+}
+.text-align-set-item > label {
+    float: left;
+    width: 110px;
+    text-align: right;
+    line-height: 20px;
+    height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.text-align-set-item > select {
+    float: left;
+    width: 150px;
+    line-height: 20px;
+    height: 20px;
+}
+/*@end*/
+
+/**
+ * @name                      :字段设置
+ * @author                    :lizhantong
+ * @version                   :1.0
+ * @type                      :扩展类
+ * @explain                   :数据格式设置模块
+ * @relating                  :暂无
+ * @dependent                 :暂无
+ */
+.silkroad-data-field-filter-set {
+    margin-top: 20px;
+    width: 550px;
+}
+.silkroad-data-field-filter-set .field-id {
+    float: left;
+    width: 150px;
+    height: 25px;
+    line-height: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.silkroad-data-field-filter-set .field-name {
+    display: inline-block;
+    width: 120px;
+    height: 25px;
+    line-height: 25px;
+}
+.silkroad-data-field-filter-set select {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+}
+.silkroad-data-field-filter-set .default-value {
+    display: inline-block;
+    width: 120px;
+    height: 25px;
+    line-height: 25px;
+}
+/*@end*/
+
+/**
+ * @name                      :表格跳转设置
+ * @author                    :lizhantong
+ * @version                   :1.0
+ * @type                      :扩展类
+ * @relating                  :暂无
+ * @dependent                 :暂无
+ */
+.table-link-set {
+    float: left;
+    width: 410px;
+    height: 400px;
+}
+.table-link-set .table-link-set-area {}
+
+.table-link-set-area .table-link-set-area-dot {
+    float: left;
+    width: 100%;
+    height: 10px;
+    border-bottom: dotted 1px #000;
+}
+.table-link-set-area .table-link-set-part {
+    float: left;
+    margin-top: 10px;
+    width: 100%;
+    min-height: 35px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.table-link-set-area > label {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-align: center;
+}
+.table-link-set-part > label {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.table-link-set-area .table-link-set-part-items1 {
+    float: left;
+    width: 100%;
+    overflow-y: auto;
+}
+.table-link-set-area .table-link-set-item {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+.table-link-set-item .left {
+    float: left;
+    width: 30%;
+    text-align: right;
+    line-height: 25px;
+    height: 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.table-link-set-item > input {
+    float: left;
+    width: 28%;
+    line-height: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.table-link-set-item .right {
+    float: left;
+    line-height: 25px;
+    height: 25px;
+    width: 40%;
+}
+
+
+/**
+ * @name                      :固定报表
+ * @author                    :lizhantong
+ * @version                   :1.0
+ * @type                      :扩展类
+ * @relating                  :暂无
+ * @dependent                 :暂无
+ */
+.fix-report-mgr {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.fix-report-mgr .operation-btns {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+.fix-report-tab {
+    padding: 6px 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+.fix-report-tab-focus {
+    color: #00a1cb;
+}
+.fix-report-tab span {
+    padding: 10px;
+}
+
+
+.fix-report-content {
+    max-width: 600px;
+    margin: 0 auto;
+    height: 350px;
+    overflow-y: auto;
+}
+
+.fix-report-task-mgr-list {}
+.fix-report-task-mgr-list table {
+    width: 100%;
+}
+.fix-report-task-mgr-list th {
+    padding: 18px 0 7px 0;
+    text-align: left;
+    border-bottom: 2px solid #4a7eb0;
+}
+.fix-report-task-mgr-list .list-index {
+    width: 150px;
+}
+.fix-report-task-mgr-list .list-name {
+    width: 100px;
+}
+.fix-report-task-mgr-list .list-btns {
+    width: 180px;
+}
+.fix-report-task-mgr-list .list-url {
+    width: 170px;
+}
+
+/* 报表列表与数据源列表公用一套样式 */
+.fix-report-task-mgr-list td {
+    padding: 5px 0;
+    border-bottom: 1px solid #65778b;
+}
+.fix-report-task-mgr-list tbody tr:hover {
+    background: #f6f5f5;
+}
+/*.fix-report-mgr .radius {*/
+    /*height: 16px;*/
+    /*width: 16px;*/
+    /*border-radius: 50%;*/
+    /*background-color: #00a1cb;*/
+    /*overflow: hidden;*/
+    /*position: relative;*/
+    /*display: inline-block;*/
+/*}*/
+/*.fix-report-mgr .radius-red {*/
+    /*background-color: #e99586;*/
+/*}*/
+
+/*.fix-report-mgr .normal {*/
+    /*height: 16px;*/
+    /*width: 16px;*/
+    /*position: relative;*/
+    /*overflow: hidden;*/
+    /*display: inline-block;*/
+/*}*/
+/*.fix-report-task-mgr-list .task-item .task-start {}*/
+
+/*.fix-report-task-mgr-list .task-item .task-start > span {*/
+    /*width: 0;*/
+    /*height: 0;*/
+    /*position: absolute;*/
+    /*left: 6px;*/
+    /*top: 4px;*/
+    /*border-style: solid;*/
+    /*border-color: transparent transparent transparent #fff;*/
+    /*border-width: 4px 4px 4px 7px;*/
+/*}*/
+.fix-report-task-mgr-list .task-item .list-url {
+    color: #06c;
+}
+.fix-report-task-mgr-list .task-item .task-stop {}
+
+.fix-report-task-mgr-list .task-item .task-stop > span {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 5px;
+    left: 5px;
+    background: #fff;
+}
+
+/*.fix-report-task-mgr-list .task-item .task-look {}*/
+
+/*.fix-report-task-mgr-list .task-item .task-look > span {*/
+    /*width: 0;*/
+    /*height: 0;*/
+    /*position: absolute;*/
+    /*left: 6px;*/
+    /*top: 4px;*/
+    /*border-style: solid;*/
+    /*border-color: transparent transparent transparent #fff;*/
+    /*border-width: 4px 4px 4px 7px;*/
+/*}*/
+/*.fix-report-mgr .task-add {}*/
+
+/*.fix-report-mgr .task-add > span {*/
+    /*position: absolute;*/
+    /*width: 12px;*/
+    /*height: 4px;*/
+    /*background: #fff;*/
+    /*left: 2px;*/
+    /*top: 6px;*/
+/*}*/
+/*.fix-report-mgr .task-add > span:after {*/
+    /*content: "";*/
+    /*width: 4px;*/
+    /*height: 12px;*/
+    /*background: #fff;*/
+    /*position: absolute;*/
+    /*left: 4px;*/
+    /*top: -4px;*/
+/*}*/
+
+/*.fix-report-task-mgr-list .task-item .task-del {}*/
+
+/*.fix-report-task-mgr-list .task-item .task-del > span {*/
+    /*position: absolute;*/
+    /*width: 12px;*/
+    /*height: 4px;*/
+    /*top: 6px;*/
+    /*left: 2px;*/
+    /*background: #fff;*/
+    /*-webkit-transform: rotate(-45deg);*/
+       /*-moz-transform: rotate(-45deg);*/
+        /*-ms-transform: rotate(-45deg);*/
+         /*-o-transform: rotate(-45deg);*/
+            /*transform: rotate(-45deg);*/
+/*}*/
+/*.fix-report-task-mgr-list .task-item .task-del > span:after {*/
+    /*content: "";*/
+    /*width: 12px;*/
+    /*height: 4px;*/
+    /*background: #fff;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*-webkit-transform: rotate(90deg);*/
+       /*-moz-transform: rotate(90deg);*/
+        /*-ms-transform: rotate(90deg);*/
+         /*-o-transform: rotate(90deg);*/
+            /*transform: rotate(90deg);*/
+/*}*/
+
+/*.fix-report-task-mgr-list .task-item .task-look {}*/
+
+/*.fix-report-task-mgr-list .task-item .task-look > span {*/
+    /*height: 7px;*/
+    /*width: 7px;*/
+    /*background: transparent;*/
+    /*-webkit-border-radius: 50px;*/
+       /*-moz-border-radius: 50px;*/
+            /*border-radius: 50px;*/
+    /*border: 2px solid #00a1cb;*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*top: 0;*/
+/*}*/
+/*.fix-report-task-mgr-list .task-item .task-look > span:after {*/
+    /*content: "";*/
+    /*width: 4px;*/
+    /*height: 8px;*/
+    /*background: #00a1cb;*/
+    /*position: absolute;*/
+    /*top: 6px;*/
+    /*left: 7px;*/
+    /*-webkit-transform: rotate(-45deg);*/
+       /*-moz-transform: rotate(-45deg);*/
+        /*-ms-transform: rotate(-45deg);*/
+         /*-o-transform: rotate(-45deg);*/
+            /*transform: rotate(-45deg);*/
+/*}*/
+
+.fix-report-mgr .box-add {
+    margin: 10px 10px 0 0;
+}
+
+
+.fix-report-task-name-set {
+    margin-top: 10px;
+}
+.fix-report-basic-set h2 {
+    color: #00a1cb;
+}
+.fix-report-task-name-set > span {
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+}
+.fix-report-task-name-set > input {
+    width: 200px;
+    height: 16px;
+    line-height: 16px;
+}
+.fix-report-task-main-set {
+    margin-top: 10px;
+}
+.fix-report-task-main-set .main-set-header {
+    height: 20px;
+    line-height: 20px;
+    border-bottom: 2px solid #4a7eb0;
+}
+.main-set-header > .first {
+    width: 40%;
+}
+.main-set-header > .second {
+    width: 55%;
+}
+.main-set-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: dotted 1px #000;
+}
+.main-set-item > span {
+    width: 40%;
+    height: 35px;
+    line-height: 35px;
+}
+.main-set-item > .item-sets {
+    width: 55%;
+}
+.item-sets > li {
+    padding: 5px 0;
+}
+/*.item-sets > li > input{*/
+    /*display: inline-block;*/
+/*}*/
+.item-sets > li > div {
+    display: inline-block;
+}
+
+.fix-report-scheduling {}
+.fix-report-scheduling .item-set-now-execute {
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 0;
+}
+.fix-report-scheduling .item-set-now-execute input {
+    height: 20px;
+    line-height: 20px;
+}
+.fix-report-scheduling .item-set-now-execute span {
+    height: 20px;
+    line-height: 20px;
+    margin-left: 3px;
+}
+.fix-report-scheduling .item-set-execute-time {
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 0;
+}
+.item-set-execute-time > span {
+    height: 20px;
+    line-height: 20px;
+}
+.item-set-execute-time > div {
+    height: 20px;
+    line-height: 20px;
+    margin-left: 5px;
+}
+.item-set-execute-time > div span {
+    height: 20px;
+    line-height: 20px;
+    margin-left: 5px;
+}
+.item-set-execute-time > div input {
+    width: 94px;
+    height: 18px;
+    line-height: 18px;
+    margin-left: 5px;
+}
+
+.fix-report-scheduling .item-set-execute-granular {
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 0;
+}
+.item-set-execute-granular > span {
+    height: 20px;
+    line-height: 20px;
+}
+.item-set-execute-granular > div {
+    height: 20px;
+    line-height: 20px;
+    margin-left: 5px;
+}
+.item-set-execute-granular > div select {
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 10px;
+}
+.item-set-execute-granular > div input {
+    width: 80px;
+    height: 18px;
+    line-height: 18px;
+    margin-left: 5px;
+}
+/*@end*/

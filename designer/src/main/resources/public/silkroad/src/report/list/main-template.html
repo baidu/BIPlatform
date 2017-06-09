@@ -1,0 +1,37 @@
+<div class="j-root-report-list">
+    <div class="con-common-line">
+        <div class="con-common-max-min">
+            <span class="btn-has-icon btn-has-icon-new c-p j-add-report">新建报表</span>
+        </div>
+    </div>
+    <div class="con-report-list con-common-max-min">
+        <table cellspacing="0">
+            <thead>
+            <tr>
+                <th class="report-index">序号</th>
+                <th class="report-name">报表名称</th>
+                <th class="report-btns">操作按钮</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{each reportList as $item index}}
+            <tr class="report-line j-root-line" data-id="{{$item.id}}" data-theme="{{$item.theme}}">
+                <td>{{index + 1}}</td>
+                <td><a class="text c-p ellipsis j-show-report" title="点击预览">{{$item.name}}</a>
+                </td>
+                <td>
+                    <span class="btn-has-icon btn-has-icon-copy c-p j-copy-report">创建副本</span>
+                    <span class="btn-has-icon btn-has-icon-info c-p j-info-report j-show-publish-info"
+                              title="报表的发布信息">查看发布信息</span>
+                    <span class="btn-has-icon btn-has-icon-edit c-p j-edit-report">编辑</span>
+                    <span class="btn-has-icon btn-has-icon-delete c-p j-delete-report">删除</span>
+                </td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+        {{if reportList.length == 0}}
+        <div class="empty-data ta-c">暂无数据</div>
+        {{/if}}
+    </div>
+</div>

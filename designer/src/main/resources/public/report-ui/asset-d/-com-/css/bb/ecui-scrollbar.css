@@ -1,0 +1,81 @@
+/**
+ * 滚动条
+ */
+.ui-vscrollbar {
+    width: 16px;
+    background: #F0F0F0;
+    padding: 16px 0px;
+}
+.ui-vscrollbar .ui-button {
+    cursor: default;
+    padding: 0px;
+    margin: 0px;
+    /*background-color: #D8D8D8;*/
+}
+.ui-vscrollbar .ui-button-hover {
+    padding: 0px;
+    margin: 0px;
+    cursor: default;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -o-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+}
+.ui-vscrollbar-prev {
+    width: 20px;
+    height: 16px;
+    background: url(img/icon.png) -81px -203px no-repeat;
+}
+.ui-vscrollbar-next {
+    width: 16px;
+    height: 16px;
+    border: 0px;
+    background: url(img/icon.png) -63px -203px no-repeat;
+}
+.ui-vscrollbar .ui-scrollbar-thumb {
+    width: 7px;
+    border-top: 1px solid #F0F0F0;
+    border-bottom: 1px solid #F0F0F0;
+    background: #D8D8D8;
+    border-left: 0 solid white;
+    border-right: 0 solid white;
+}
+.ui-hscrollbar {
+    height: 16px;
+    background: #F0F0F0;
+    padding: 0px 16px;
+}
+.ui-hscrollbar .ui-button {
+    cursor: default;
+    padding: 0px;
+    margin: 0px;
+    background-color: #D1E1E9;
+    border: 0px solid #000;
+}
+.ui-hscrollbar .ui-button-hover {
+    padding: 0px;
+    margin: 0px;
+    cursor: default;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -o-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+}
+.ui-hscrollbar-prev {
+    width: 16px;
+    height: 17px;
+    background: url(img/icon2.png) -41px -83px no-repeat;
+    overflow: hidden;
+}
+.ui-hscrollbar-next {
+    width: 16px;
+    height: 17px;
+    background: url(img/icon2.png) -41px -65px no-repeat;
+    overflow: hidden;
+}
+.ui-hscrollbar .ui-scrollbar-thumb {
+    height: 17px;
+    border: 1px solid #A2BCC7;
+}

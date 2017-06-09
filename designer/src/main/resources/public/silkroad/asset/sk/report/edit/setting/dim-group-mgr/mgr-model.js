@@ -1,0 +1,1 @@
+define(["url"],function(a){return Backbone.Model.extend({initialize:function(){},submitMethodTypeValue:function(b,c){var d=this;$.ajax({url:a.submitDeriveIndsInfo(window.dataInsight.main.id,window.dataInsight.main.model.get("currentCubeId")),type:"POST",data:{deriveInds:JSON.stringify(b)},success:function(){d.updateLeftPanel(c)}})}})});

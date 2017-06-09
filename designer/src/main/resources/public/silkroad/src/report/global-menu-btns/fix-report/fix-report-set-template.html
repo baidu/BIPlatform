@@ -1,0 +1,65 @@
+<div class="fix-report-basic-set j-fix-report-basic-set">
+    <h4>基本设置</h4>
+    <div class="fix-report-task-name-set c-f">
+        <span class="f-l">任务名称：</span>
+        <input class="f-l j-task-id" type="text" task-id="{{taskInfo.taskId}}" value="{{taskInfo.taskName}}"/>
+    </div>
+
+    <div class="fix-report-task-main-set">
+        <ul>
+            <li class="main-set-header c-f">
+                <span class="f-l first">参数名称</span>
+                <span class="f-l second">参数值</span>
+            </li>
+            {{each paramList as item}}
+            <li class="main-set-item c-f">
+                <span class="f-l">{{item.caption}}</span>
+                <ul class="item-sets f-l">
+                    <li>
+                        <div class="j-param-tree" data-param-name="{{item.paramName}}" data-param-caption="{{item.caption}}" data-param-id="{{item.paramId}}" data-tree-select-id="{{item.paramValue.id}}" data-tree-select-name="{{item.paramValue.name}}"></div>
+                    </li>
+                </ul>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+<div class="fix-report-scheduling">
+    <h4>调度设置</h4>
+    <div class="item-set-now-execute c-f">
+        <input type="checkbox" class="f-l j-isRunNow" {{if taskInfo.isRunNow}} checked="checked" {{/if}}/>
+        <span class="f-l">立即执行</span>
+    </div>
+    <div class="item-set-execute-time c-f j-isRunNow-set{{if taskInfo.isRunNow}} hide {{/if}}">
+        <span class="f-l">执行时间:</span>
+        <div class="f-l c-f">
+            <input type="text" class="f-l j-time-hour" {{if !taskInfo.isRunNow}} value="{{taskInfo.executeStrategy.hour}}" {{/if}} placeholder="请输入数字"/>
+            <span class="f-l">时</span>
+            <input type="text" class="f-l j-time-minute" {{if !taskInfo.isRunNow}} value="{{taskInfo.executeStrategy.minute}}" {{/if}} placeholder="请输入数字"/>
+            <span class="f-l">分</span>
+        </div>
+    </div>
+    <div class="item-set-execute-granular c-f j-isRunNow-set{{if taskInfo.isRunNow}} hide {{/if}}">
+        <span class="f-l">执行粒度:</span>
+        <div class="f-l c-f">
+            <select name="" id="" class="f-l j-granularity-parent">
+                {{if taskInfo}}
+                {{each taskInfo.granularityList.parent as granularityId $granularityKey}}
+                <option value="{{$granularityKey}}" {{if $granularityKey===taskInfo.executeStrategy.granularity}} selected="selected" {{/if}}>
+                {{granularityId}}
+                </option>
+                {{/each}}
+                {{/if}}
+            </select>
+            <select name="" class="f-l j-granularity-child {{if taskInfo.executeStrategy.granularity === 'D'}}hide{{/if}}">
+                {{if taskInfo.executeStrategy.granularity !== 'D'}}
+                {{each taskInfo.granularityList.selectChild as child $childKey}}
+                <option value="{{$childKey}}" {{if $childKey===taskInfo.executeStrategy.detail}} selected="selected" {{/if}}>
+                {{child}}
+                </option>
+                {{/each}}
+                {{/if}}
+            </select>
+        </div>
+    </div>
+</div>

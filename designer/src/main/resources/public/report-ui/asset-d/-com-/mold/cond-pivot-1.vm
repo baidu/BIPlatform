@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+#parse("/asset-d/-com-/-cominclude-.vm")
+
+    <head>
+    	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>报表</title>
+        
+        #comCSS
+
+        <style type="text/css">
+        </style>
+    </head>
+
+    <body class="di-page-html-body"><!-- escape enter
+     --><div data-o_o-di="BODY" class="di-page-div-body">
+
+            <!-- DI_BEGIN^_^DONT_MODIFY_ME -->
+
+            <div class="di-o_o-body" data-o_o-di="snpt1">
+
+                <div class="di-o_o-block cond-block" data-o_o-di="snpt1.cpnt-form1">
+                </div>
+
+                <div class="di-o_o-block table-block" data-o_o-di="snpt1.cpnt-table1">
+                    <div class="di-o_o-line">
+                        <div class="di-o_o-item" data-o_o-di="snpt1.vu-form1-confirm1"></div>
+                        <div class="di-o_o-item" data-o_o-di="snpt1.vu-table1-download1"></div>
+                    </div>
+                    <div class="di-o_o-line">
+                        <div class="" data-o_o-di="snpt1.vu-table1-breadcrumb1"></div>
+                    </div>
+                    <div class="di-o_o-line">
+                        <div class="vu-table" data-o_o-di="snpt1.vu-table1"></div>
+                    </div>
+                    <div class="di-o_o-line">
+                        <div class="di-table-prompt">
+                            <div class="di-table-count" data-o_o-di="snpt1.vu-table1-count1">
+                                符合查询条件的数据只显示<span class="di-table-count-num">#{currRecordCount}</span>条。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- DI_END^_^DONT_MODIFY_ME -->
+        
+            <script type="text/javascript">
+                window.__$DI__OPT$__ = {
+                    depictRef: [],
+                    depict: { entityDefs: [] }
+                };
+            </script>
+
+            #comJS
+            #enterDI
+
+        </div><!--
+ --></body>
+</html>

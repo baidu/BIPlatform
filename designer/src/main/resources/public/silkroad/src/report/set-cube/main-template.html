@@ -1,0 +1,30 @@
+<div>
+    <div class="con-set-cube c-f">
+        <div class="con-data-sources-list f-l j-root-data-sources-list">
+            <div class="title fs-14">请选择数据源</div>
+            {{each dataSourcesList as $dsGroup}}
+             <div class="ellipsis btn-has-icon-data-sources-group" title="{{$dsGroup.name}}" data-id="{{$dsGroup.id}}">{{$dsGroup.name}}</div>
+                {{if $dsGroup.active}}
+                 <span class="btn-has-icon btn-has-icon-data-sources data-line c-p j-item{{if $dsGroup.active.selected===true}} selected{{/if}}"
+                    data-id="{{$dsGroup.active.id}}" group-id="{{$dsGroup.id}}">{{$dsGroup.active.name}}</span>
+                {{/if}}
+            {{/each}}
+            {{if dataSourcesList.length == 0}}
+            <div class="empty-data ta-c">
+                暂无数据源组
+                <a class="create-data-sources-link c-p td-u j-create-data-sources-link">
+                    现在去创建数据源组
+                </a>
+            </div>
+            {{/if}}
+        </div>
+        <div class="con-cube-list f-l j-con-cube-list">
+            <div class="title fs-14">请选择要实用的数据表（可多选）</div>
+            <div class="empty-data ta-c">暂无数据表</div>
+        </div>
+    </div>
+    <div class="form-common-line ta-c">
+        {{if dataSourcesList.length > 0}}<span class="button button-flat-primary j-submit">提交</span>{{/if}}
+        <span class="button button-flat-primary j-cancel">取消</span>
+    </div>
+</div>

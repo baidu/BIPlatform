@@ -1,0 +1,4 @@
+MYSQL=com.baidu.rigel.biplatform.ma.ds.service.impl.RelationDBInfoReaderServiceImpl
+H2=com.baidu.rigel.biplatform.ma.ds.service.impl.RelationDBInfoReaderServiceImpl
+ORACLE=com.baidu.rigel.biplatform.ma.ds.service.impl.RelationDBInfoReaderServiceImpl
+MYSQL_DBPROXY=com.baidu.rigel.biplatform.ma.ds.service.impl.RelationDBInfoReaderServiceImpl

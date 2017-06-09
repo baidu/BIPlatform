@@ -1,0 +1,68 @@
+<div class="title fs-14">请选择要使用的事实表（可多选）</div>
+{{if factTables.length==0}}
+    <div class="empty-data ta-c">暂无数据表</div>
+{{else}}
+<ul>
+    {{each factTables as $item}}
+    <li class="data-line c-p{{if $item.selected}} selected{{/if}} j-item" data-id="{{$item.id}}">{{$item.name}}</li>
+    {{/each}}
+</ul>
+<div class="con-set-group j-root-set-group">
+    <span class="btn-has-icon btn-has-icon-info c-p j-set-group">添加分表匹配规则</span>
+    <span class="cor-red">（注意：同一规则只需提供一张表）</span>
+    {{each regexps as $itemReg index}}
+    <div class="form-common-line j-regexps-item">
+        <div class="form-common-text form-common-text-xl">
+            <select class="form-common-select-small w-100 mt-1 j-select-table">
+                {{each factTables as $item}}
+                    {{if $item.selected}}
+                    <option value="{{$item.id}}" {{if index===$item.id}}selected=selected{{/if}}>{{$item.name}}</option>
+                    {{/if}}
+                {{/each}}
+            </select>
+            <select class="form-common-select-small w-100 mt-1 j-select-area-date">
+                {{each separateTableRuleData as $item sepIndex}}
+                <option value="{{$item.value}}" {{if $itemReg.type===$item.value}}selected=selected{{/if}}>{{$item.text}}</option>
+                {{/each}}
+            </select>
+            <select class="form-common-select-small w-100 mt-1 j-select-area-date-children">
+                {{each separateTableRuleData as $item sepIndex}}
+                    {{if $itemReg.type===$item.value}}
+                        {{each $item.children as $itemChildren}}
+                            <option value="{{$itemChildren.value}}" {{if $itemReg.condition===$itemChildren.value}}selected="selected"{{/if}}>{{$itemChildren.text}}</option>
+                        {{/each}}
+                    {{/if}}
+                {{/each}}
+            </select>
+            <input type="text" class="form-common-text-small j-input-table-prefix" placeholder="表前缀" value="{{$itemReg.prefix}}"/>
+            <span class="form-common-btn-extend form-common-btn-extend-absolute j-delete" title="删除">×</span>
+        </div>
+    </div>
+    {{/each}}
+    <div class="cor-red hide j-regexps-validate mt-10"></div>
+</div>
+<div class="form-common-line hide j-root-set-group-template">
+    <div class="form-common-text form-common-text-xl">
+        <!--<input type="text" class="" placeholder="分表匹配规则"/>-->
+        <select class="form-common-select-small w-100 mt-1 j-select-table">
+            {{each factTables as $item}}
+            <option value="{{$item.id}}">{{$item.name}}</option>
+            {{/each}}
+        </select>
+        <select class="form-common-select-small w-100 mt-1 j-select-area-date">
+            {{each separateTableRuleData as $item}}
+            <option value="{{$item.value}}">{{$item.text}}</option>
+            {{/each}}
+        </select>
+        <select class="form-common-select-small w-100 mt-1 j-select-area-date-children">
+            {{each separateTableRuleData.time.children as $item}}
+            <option value="{{$item.value}}">{{$item.text}}</option>
+            {{/each}}
+        </select>
+        <input type="text" class="form-common-text-small j-input-table-prefix" placeholder="表前缀" value="{{$item}}"/>
+        <span class="form-common-btn-extend form-common-btn-extend-absolute j-delete" title="删除">×</span>
+    </div>
+</div>
+{{/if}}
+
+

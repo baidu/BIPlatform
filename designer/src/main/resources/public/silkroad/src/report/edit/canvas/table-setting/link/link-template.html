@@ -1,0 +1,88 @@
+<!--
+数据例子：
+var demoData = {
+    "columnDefine": [
+        {"text": "文本1", "value": "text1", "selectedTable": "table1"},
+        {"text": "文本2", "value": "text2", "selectedTable": "table2"},
+        {"text": "文本3", "value": "text3", "selectedTable": "table3"}
+    ],
+    "planeTableList": [
+        {
+            "text": "表1",
+            "value": "table1"
+        },
+        {
+            "text": "表2",
+            "value": "table2"
+},
+        {
+            "text": "表3",
+            "value": "table3"
+        }
+    ]
+};
+-->
+<!-- 指标颜色设置 -->
+<div class="table-link-set">
+    <div class="table-link-set-area j-table-link-set-first">
+        <div class="table-link-set-part j-table-link-set-column-table">
+            <label>请设置列与跳转表格的关系</label>
+            <div class="table-link-set-part-items1">
+                {{each columnDefine as $column name}}
+                <div class="table-link-set-item j-table-link-normal-items">
+                    <label class="left" data-value="{{$column.value}}" data-text="{{$column.text}}">{{$column.text}}：</label>
+                    <select class="right mr-10 j-table-link-set-plane-table">
+                        <option value="">请选择平面表</option>
+                        {{each planeTableList as $planeTable}}
+                        <option value={{$planeTable.value}}
+                                {{if $column.selectedTable === $planeTable.value}} selected="selected"
+                                {{/if}}>{{$planeTable.text}}</option>
+                        {{/each}}
+                    </select>
+                    <span type="button" class="form-common-input-button f-l j-next {{if !$column.selectedTable}}hide{{/if}}">设置参数</span>
+                    <span class="biplt-radius biplt-radius-red biplt-del mt-3 ml-5 f-l c-p j-del" title="清除关联">
+                        <span></span>
+                    </span>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="table-link-set-area-dot j-table-link-dot"></div>
+        <div class="table-link-set-part j-table-link-operation-column">
+            <div class="f-l c-f">
+                <span class="f-l">操作列设置</span>
+                <span class="biplt-radius c-p biplt-add f-l ml-15 j-add" title="新增">
+                    <span></span>
+                </span>
+            </div>
+            <ul class="table-link-set-part-items1 j-table-link-operation-column-items">
+                {{each operationColumn as $column}}
+                <li class="table-link-set-item">
+                    <input data-value="{{$column.value}}" value="{{$column.text}}" placeholder="请输入操作列名">
+                    <select class="right mr-10 j-table-link-set-plane-table">
+                        <option value="">请选择平面表</option>
+                        {{each planeTableList as $planeTable}}
+                        <option value="{{$planeTable.value}}"
+                                {{if $column.selectedTable === $planeTable.value}} selected="selected"
+                                {{/if}}>{{$planeTable.text}}</option>
+                        {{/each}}
+                    </select>
+                    <span type="button" class="form-common-input-button f-l j-next {{if !$column.selectedTable}}hide{{/if}}">设置参数</span>
+                    <span class="biplt-radius biplt-radius-red biplt-del mt-3 ml-5 f-l c-p j-del" title="删除">
+                        <span></span>
+                    </span>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="table-link-set-area j-table-link-set-param-table hide">
+        <label>请设置参数与跳转表格的关系</label>
+        <div class="table-link-set-area-items j-table-link-set-param-items">
+        </div>
+        <div class="dialog-buttons dialog-ok-cancel-box">
+            <span type="button" class="form-common-input-button mr-10 j-back">上一步</span>
+            <span type="button" class="form-common-input-button j-ok">完成</span>
+        </div>
+    </div>
+</div>

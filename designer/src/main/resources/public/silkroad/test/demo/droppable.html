@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>拖放组件</title>
+    <script type="text/javascript" src="../../dep/jquery-1.11.1.js"></script>
+    <!--<script type="text/javascript" src="../../src/common/jquery-ui.custom.js"></script>-->
+    <script src="../../dep/jquery.ui.core.js"></script>
+    <script src="../../dep/jquery.ui.position.js"></script>
+    <script src="../../dep/jquery.ui.widget.js"></script>
+    <script src="../../dep/jquery.ui.mouse.js"></script>
+    <script src="../../dep/jquery.ui.draggable.js"></script>
+    <script src="../../dep/jquery.ui.droppable.js"></script>
+    <script src="../../dep/jquery.ui.resizable.js"></script>
+    <script src="../../dep/jquery.ui.dialog.js"></script>
+    <script src="../../dep/jquery.ui.sortable.js"></script>
+
+    <style type="text/css" rel="stylesheet">
+        .con-drag-elm {
+            border: 1px solid #015fde;
+            height: 50px;
+            padding: 5px;
+            position: relative;
+        }
+        .drag-elm {
+            display: inline-block;
+            background: #85C5E8;
+            border: 1px solid #51a0c9;
+            padding: 5px;
+            margin: 5px;
+        }
+        .area-landing {
+            height: 50px;
+            border: solid 1px #000;
+            padding: 5px;
+        }
+
+        #log {
+            position: fixed;
+            right: 5px;
+            top: 10px;
+            border: solid 1px #0066cc;
+            line-height: 20px;
+            width: 150px;
+            max-width: 200px;
+        }
+
+        .drop-active {
+            background: #74e183;
+        }
+
+        .c-m {
+            cursor: move;
+        }
+    </style>
+
+</head>
+<body>
+<div id="log"></div>
+<h3>拖拽到指定区域</h3>
+<input type="button" value="恢复拖拽功能" id="switch-draggable">
+<input type="button" value="将第一个设为不可拖拽" id="disable-first">
+
+<h4>待拖拽的元素</h4>
+
+<div class="con-drag-elm j-up-arear">
+    <span class="drag-elm j-drag-1">元素-1 </span>
+    <span class="drag-elm j-drag-1"> 元素-2</span>
+    <span class="drag-elm j-drag-1">元素-3 </span>
+    <span class="drag-elm j-drag-1">元素-4 </span>
+    <span class="drag-elm j-drag-1">元素-5</span>
+</div>
+<h4>着陆区域</h4>
+
+<div class="area-landing j-down-arear"></div>
+
+<script>
+    $(function () {
+        var $upElem = $(".j-drag-1", '.j-up-arear');
+        var $upArea = $('.j-up-arear');
+        var $downArea = $('.j-down-arear');
+
+
+        // 定义可放下(上到下)
+        $downArea.droppable({
+            accept: ".j-drag-1",
+            activeClass: "drop-active",
+            drop: function (event, ui) {
+                var $upElem = ui.draggable;
+                $upElem.appendTo($downArea).removeClass('j-drag-1').addClass('j-drag-2');
+            }
+        });
+
+        // 定义可放下(下到上)
+        $upArea.droppable({
+            accept: ".j-drag-2",
+            activeClass: "drop-active",
+            drop: function (event, ui) {
+                var $item = ui.draggable;
+                $item.appendTo($upArea).removeClass('j-drag-2').addClass('j-drag-1');
+            }
+        });
+
+        $('#switch-draggable').click(function () {
+            var $t = $(this);
+            if ($t.val() == '取消拖拽功能') {
+                $upElem.draggable('destroy').removeClass('c-m');
+                $t.val('恢复拖拽功能');
+            } else {
+
+                // 定义可拖拽
+                $upElem.draggable({
+                    cancel: "a.ui-icon", // clicking an icon won't initiate dragging
+                    revert: "invalid", // when not dropped, the item will revert back to its initial position
+                    // Constrains dragging to within the bounds of the specified element or region.
+                    containment: "document",
+                    helper: "clone",
+                    cursor: "move"
+                }).addClass('c-m');
+
+                $t.val('取消拖拽功能');
+            }
+        });
+
+        $('#switch-draggable').click();
+    });
+</script>
+</body>
+</html>

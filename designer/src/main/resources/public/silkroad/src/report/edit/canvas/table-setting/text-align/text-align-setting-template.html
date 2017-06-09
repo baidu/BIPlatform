@@ -1,0 +1,40 @@
+<!--
+数据例子：
+var demoData = {
+    options: {
+        'left': '居左'，
+        'center': '居中'，
+        'right': '居右'
+    },
+    indList: {
+        click: {
+            caption: '',
+            align: ''
+        }
+    },
+    dimList: {
+        click: {
+            caption: '',
+            align: ''
+        }
+   }
+};
+-->
+<!-- 指标颜色设置 -->
+<div class="text-align-set">
+    <div class="text-align-set-area">
+        <label>对各指标文本进行单独设置</label>
+        {{each indList as $ind name}}
+        <div class="text-align-set-item">
+            <label>{{$ind.caption}}：</label>
+            <select name="{{name}}">
+                {{each options as $option optionKey}}
+                <option value={{optionKey}}
+                {{if $ind.align && optionKey === $ind.align}} selected="selected"
+                {{/if}}>{{$option}}</option>
+                {{/each}}
+            </select>
+        </div>
+        {{/each}}
+    </div>
+</div>

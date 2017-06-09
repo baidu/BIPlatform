@@ -1,0 +1,51 @@
+/*-------------------------------------------------*/
+/* 业务逻辑 -- 功能区按你样式 */
+/*-------------------------------------------------*/
+.global-setting-btns {
+    float: left;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+}
+.global-setting-btns:hover{
+    background: #c7c2c2;
+}
+.global-setting-btns:visited{
+    background: #c7c2c2;
+}
+.global-setting-btns img {
+    padding: 5px;
+}
+.button-right {
+    float: right;
+}
+/* 参数维度列表 */
+.j-global-box {
+    margin: 0 auto;
+    width: 460px;
+}
+/* 添加维度按钮 */
+.j-global-add {
+    cursor: pointer;
+    margin-top: 5px;
+}
+/* 维度属性 */
+.j-global-attr {
+    margin-top: 5px;
+}
+.j-global-attr input[type="text"] {
+    height: 20px;
+    width: 135px;
+}
+.j-global-attr select {
+    height: 24px;
+    width: 130px;
+}
+/* 确认编辑切换按钮 */
+.j-global-close {
+    cursor: pointer;
+    width: 16px;
+    height: 20px;
+    float: right;
+    background-image: url("../img/acteer.png");
+}

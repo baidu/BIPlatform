@@ -1,0 +1,24 @@
+{
+    "data": {
+        "indList": [
+            {
+                "id": "id_or_name",
+                "name": "原始指标2",
+                "type": 0,
+                "methodType": 0,
+                "changeToDim": 0,
+                "visible": 1
+            },
+            {
+                "id": "1",
+                "name": "input_name2",
+                "type": 1,
+                "methodType": 0,
+                "expr": ""
+
+            }
+        ]
+    },
+    "status": 0,
+    "statusInfo": ""
+}

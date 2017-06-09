@@ -1,0 +1,1 @@
+define(["url"],function(a){return Backbone.Model.extend({initialize:function(){},getParameterDim:function(b,c){$.ajax({url:a.getParameterDim(b),type:"GET",success:function(a){c(a)}})},getParameterDimData:function(b,c){$.ajax({url:a.getParameterDimData(b),type:"post",data:"params="+JSON.stringify(c.params),success:function(){}})}})});

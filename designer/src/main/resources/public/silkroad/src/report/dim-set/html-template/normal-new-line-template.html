@@ -1,0 +1,50 @@
+<!--此模版需要数据
+ var demoData = {
+        "currDims": [
+            {"id": "dim1", "name": "维度1"},
+            {"id": "dim2", "name": "维度2"},
+            {"id": "dim3", "name": "维度3"}
+        ],
+        "relationTables": [
+            {
+                id: "table1",
+                name: "表1",
+                // 指定关联字段全集
+                fields: [{id: "table1Fields1", name: "table1Fields1"},{id: "table1Fields2", name: "table1Fields2"}]
+            },
+            {
+                id: "table2",
+                name: "表2",
+                // 指定关联字段全集
+                fields: [{id: "table2Fields1", name: "table2Fields1"},{id: "table2Fields2", name: "table2Fields2"}]
+            }
+        ]
+ };
+-->
+<div class="normal-relation-box j-normal-relation-box">
+    <span class="normal-broken-line"></span>
+    <select class="normal-relation-box-select-fields mr-20">
+        <!-- 循环每一行中的主表字段(cubes.cube1.currDims)-->
+        <option value="0">请选择</option>
+        {{each currDims as $dim}}
+        <option value={{$dim.name}}>
+           {{$dim.comment}}
+        </option>
+        {{/each}}
+    </select>
+    <span class="equal">=</span>
+    <select class="normal-relation-box-select-table mr-30 j-normal-relation-table-select" >
+        <!-- 循环关联数据表(relationTables)-->
+        <option value="0">请选择</option>
+        {{each relationTables as $relationTable}}
+        <option value={{$relationTable.id}}>{{$relationTable.name}}
+        </option>
+        {{/each}}
+    </select>
+    <select class="normal-relation-box-select-fields mr-10">
+        <!-- 循环关联数据表(relationTables)-->
+        <option value="0">请选择</option>
+    </select>
+    <span class="delete j-normal-delete"></span>
+    <span class="add j-normal-add"></span>
+</div>

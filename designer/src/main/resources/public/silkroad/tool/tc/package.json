@@ -1,0 +1,6 @@
+{
+    "name": "HTML模板编译工具",
+    "version": "0.0.1",
+    "author" : "JackZhao <longze_xq@163.com>",
+    "main" : "main.js"
+}

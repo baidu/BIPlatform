@@ -1,0 +1,117 @@
+{
+    "data": {
+        "dimList": [
+            {
+                "id": "100",
+                "name": "镇妖宝塔",
+                "tag": "zhenyao_baota",
+                "type": 0,
+                "changeToInd": 0
+            },
+
+            {
+                "id": "101",
+                "name": "金箍棒",
+                "tag": "jingubang",
+                "type": 0,
+                "changeToInd": 1
+            },
+
+            {
+                "id": "102",
+                "name": "三尖两刃刀",
+                "tag": "sanjian_liangren",
+                "type": 0,
+                "changeToInd": 0
+            },
+            {
+                "id": "104",
+                "name": "红天绫",
+                "tag": "hong_tian_ling",
+                "type": 0,
+                "changeToInd": 0
+            },
+            {
+                "id": "105",
+                "name": "乾坤圈",
+                "tag": "qiankun_quan",
+                "type": 0,
+                "changeToInd": 0
+            },
+            {
+                "id": "106",
+                "name": "风火轮",
+                "tag": "fenghuo_hun",
+                "type": 0,
+                "changeToInd": 0
+            },
+            {
+                "id": "103",
+                "name": "哪吒宝物组",
+                "tag": "id_or_group_name",
+                "type": 1,
+                "dimList": [
+                    {
+                        "id": "104",
+                        "name": "红天绫",
+                        "tag": "hong_tian_ling",
+                        "type": 0,
+                        "changeToInd": 0
+                    },
+                    {
+                        "id": "105",
+                        "name": "乾坤圈",
+                        "tag": "qiankun_quan",
+                        "type": 0,
+                        "changeToInd": 0
+                    },
+                    {
+                        "id": "106",
+                        "name": "风火轮",
+                        "tag": "fenghuo_hun",
+                        "type": 0,
+                        "changeToInd": 0
+                    }
+                ]
+            },
+            {
+                "id": "107",
+                "name": "悟空偷了哪吒宝物赃物组,多文字",
+                "tag": "wukong_tou_nezha",
+                "type": 1,
+                "dimList": [
+                    {
+                        "id": "108",
+                        "name": "红天绫",
+                        "tag": "hong_tian_ling",
+                        "type": 0,
+                        "changeToInd": 0
+                    },
+                    {
+                        "id": "109",
+                        "name": "乾坤圈",
+                        "tag": "qiankun_quan",
+                        "type": 0,
+                        "changeToInd": 0
+                    },
+                    {
+                        "id": "110",
+                        "name": "风火轮",
+                        "tag": "fenghuo_hun",
+                        "type": 0,
+                        "changeToInd": 0
+                    }
+                ]
+            },
+            {
+                "id": "107",
+                "name": "新维度组",
+                "tag": "wukong_tou_nezha",
+                "type": 1,
+                "dimList": []
+            }
+        ]
+    },
+    "status": 0,
+    "statusInfo": ""
+}

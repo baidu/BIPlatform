@@ -1,0 +1,27 @@
+{
+    "data": {
+        "dimList": [
+            {
+                "id": "id_or_name",
+                "name": "原生维度1",
+                "type": 0,
+                "changeToInd": 0
+            },
+            {
+                "id": "id_or_group_name",
+                "name": "维度组1",
+                "type": 1,
+                "dimList": [
+                    {
+                        "id": "group_child",
+                        "name": "维度组子项",
+                        "type": 0,
+                        "changeToInd": 0
+                    }
+                ]
+            }
+        ]
+    },
+    "status": 0,
+    "statusInfo": ""
+}

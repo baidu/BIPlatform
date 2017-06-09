@@ -1,0 +1,61 @@
+/*导航区*/
+.nav,
+.nav-placeholder {
+    min-height: 40px;
+    width: 100%;
+}
+.nav {
+    position: fixed;
+    z-index: 999;
+}
+.nav-main {
+    padding-left: 560px;
+    height: 40px;
+    background: -moz-linear-gradient(#4698e9, #0167cc);
+    background: -webkit-linear-gradient(#4698e9, #0167cc);
+    background: -o-linear-gradient(#4698e9, #0167cc);
+    background: -ms-linear-gradient(#4698e9, #0167cc);
+    background: linear-gradient(#4698e9, #0167cc);
+    background: progid: DXImageTransform . Microsoft . gradient(startColorstr = '#4698E9', endColorstr = '#0167CC', GradientType = 0);
+    background-color: #4698e9;
+    border-bottom: 1px solid #FFF;
+}
+/*导航菜单默认样式*/
+.nav-main .nav-menu {
+    position: relative;
+    float: left;
+    height: 40px;
+    line-height:40px;
+    border-right: 1px solid #015fde;
+    -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1);
+    cursor: pointer
+}
+.nav-main .nav-menu:hover {
+    background-color: #0167cc;
+    background: -moz-linear-gradient(#1e5ca6, #0167cc);
+    background: -webkit-linear-gradient(#1e5ca6, #0167cc);
+    background: -o-linear-gradient(#1e5ca6, #0167cc);
+    background: -ms-linear-gradient(#1e5ca6, #0167cc);
+    background: linear-gradient(#1e5ca6, #0167cc);
+    background: progid: DXImageTransform . Microsoft . gradient(startColorstr = '#1e5ca6', endColorstr = '#0167CC', GradientType = 0)
+}
+/*导航菜单选中样式*/
+.nav-main .nav-menu-focus {
+    background-color: #0167cc;
+    background: -moz-linear-gradient(#1e5ca6, #0167cc);
+    background: -webkit-linear-gradient(#1e5ca6, #0167cc);
+    background: -o-linear-gradient(#1e5ca6, #0167cc);
+    background: -ms-linear-gradient(#1e5ca6, #0167cc);
+    background: linear-gradient(#1e5ca6, #0167cc);
+    background: progid: DXImageTransform . Microsoft . gradient(startColorstr = '#1e5ca6', endColorstr = '#0167CC', GradientType = 0)
+}
+/*导航菜单下的span样式*/
+.nav-menu-span {
+    display: block;
+    color: #ffffff;
+    padding: 0 20px;
+    height: 40px;
+    font-size: 14px;
+    font-family: "微软雅黑"
+}
+

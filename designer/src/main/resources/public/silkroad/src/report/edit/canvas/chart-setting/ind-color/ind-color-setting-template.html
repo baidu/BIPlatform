@@ -1,0 +1,23 @@
+<!--
+数据例子：
+var demoData = {
+    indList: {
+        click: {
+            caption: '',
+            color: ''
+        }
+    }
+};
+-->
+<!-- 指标颜色设置 -->
+<div class="ind-color">
+    <div class="ind-color-alone">
+        <span>对各指标颜色进行单独设置</span>
+        {{each indList as $ind name}}
+        <div class="ind-color-alone-ind">
+            <span>{{$ind.caption}}：</span>
+            <input type="text" name="{{name}}" value="{{$ind.color}}" />
+        </div>
+        {{/each}}
+    </div>
+</div>

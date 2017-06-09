@@ -1,0 +1,120 @@
+/*-------------------------------------------------*/
+/* 业务逻辑 -- 创建与修改数据源                         */
+/*-------------------------------------------------*/
+.data-sources-create {
+    width: 525px;
+    margin: 0 auto;
+}
+.data-sources-create .form-common-label {
+    width: 98px;
+}
+.get-data-table {
+    padding: 0 94px;
+}
+.create-data-table-header {
+    font-weight: normal;
+    font-size: 14px;
+    border-bottom: 1px solid #e4e4e4;
+    margin-top: 10px;
+    padding-bottom: 5px;
+}
+.create-data-table .form-common-label {
+    width: auto;
+    text-align: left;
+    color: #336699;
+    cursor: pointer;
+}
+.create-data-table .data-table-item {
+    cursor: pointer;
+    padding: 5px;
+    margin: 3px 0;
+}
+.create-data-table .data-table-item.selected {
+    background-color: #e9e9e9;;
+}
+.data-sources-create .form-common-select {
+    width: 360px;
+}
+.data-sources-create .form-common-line {
+    margin: 20px 0;
+}
+.data-sources-create .data-table-con {
+    border-bottom: 1px solid #e4e4e4
+}
+.data-sources-create .data-table-con-validation {
+    height: 10px;
+    padding: 3px 0;
+    color: #ff0000;
+    font-size: 12px;
+}
+.data-sources-create .data-table-set-msg-box {
+    margin: 3px 0
+}
+.data-sources-create .form-common-properties {
+    display: inline-block;
+    vertical-align: top;
+}
+.form-common-properties label {
+    display: inline-block;
+}
+.form-common-properties input {
+    display: inline-block;
+    width: 130px;
+    margin: 2px 7px;
+}
+.data-table-set-msg-box .help {
+    /*color: #336699;
+     font-size: 16px;
+     font-weight: bold;
+     padding: 0 5px;
+     cursor: pointer*/
+    margin-left: 10px;
+    padding: 1px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    border: 1px solid #fcf4f4;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    background-color: #d3d3d1;
+    text-align: center;
+    cursor: pointer
+}
+.data-table-set-msg-box .btn-match {
+    margin-left: 10px;
+    height: 25px;
+    background-color: #00a1cb;
+    color: #ffffff;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 0 6px;
+}
+.data-sources-create .c-link .icon-arrow {
+    margin-left: 7px;
+    position: relative;
+    top: -1px;
+
+}
+
+.data-source-item-name {
+    padding-left: 20px;
+}
+.data-source-item-name > input {
+    display: inline-block;
+    vertical-align: middle;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.data-source-item-name > label {
+    display: inline-block;
+    vertical-align: middle;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+}

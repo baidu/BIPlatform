@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+</head>
+<body>
+	<div id="chartMain"
+		style="width: 1300px; height: 400px; border: 1px solid #ccc; padding: 10px;"></div>
+</body>
+<!-- <script src="../dichart.js" type="text/javascript"></script>
+<script src="../echarts-plain-original.js" type="text/javascript"></script> -->
+ <script src="http://localhost:port/asset-p/di-chart.js"></script>
+<script type="text/javascript">
+	var options = {
+		"seriesData" : [
+				{
+					"data" : [ 2582.86, 2734.14, 2711.41, 2536.79, 2181.60,
+							2408.69, 2898.76, 2975.75, 2990.74 ],
+					"name" : "当期周日均收入",
+					"type" : "line"
+				},
+				{
+					"data" : [ 980.33, 980.33, 980.33, 980.33, 980.33, 980.33,
+							980.33, 980.33, 980.33 ],
+					"name" : "本季度日均目标收入",
+					"type" : "line"
+				},
+				{
+					"data" : [ 902.09, 739.76, 548.07, 333.90, 110.90, -204.48,
+							-698.18, -1393.25, -2416.18 ],
+					"name" : "本季度剩余日均所需收入",
+					"type" : "line"
+				},
+				{
+					"data" : [ 2306.33, 2352.97, 2404.19, 2464.34, 2549.44,
+							2700.23, 2458.84, 2526.67, 2503.15, 2579.37,
+							2817.23, 2780.09, 2690.15, 2668.62 ],
+					"name" : "上季度周日均收入",
+					"type" : "line"
+				},
+				{
+					"data" : [ 1511.44, 1601.27, 1694.56, 1781.22, 1722.41,
+							1400.82, 1343.17, 1756.16, 1860.29, 1859.41,
+							1906.47, 1930.66, 1878.52, 1879.13 ],
+					"name" : "去年同期周日均收入",
+					"type" : "line"
+				},
+				{
+					"data" : [ 966.23, 985.23, 885.24, 704.85, 1000.28,
+							1020.84, 1055.88, 1083.14, 1074.10, 1072.47,
+							1106.41, 1171.82, 1187.69 ],
+					"name" : "前年同期周日均收入",
+					"type" : "line"
+				} ],
+		"valueAxisOptions" : [ {
+			"unit" : "万元"
+		} ],
+		"needDataZoom" : true,
+		"gridLeftPadding" : 90,
+		"categories" : [ "W1", "W2", "W3", "W4", "W5", "W6", "W7", "W8", "W9",
+				"W10", "W11", "W12", "W13", "W14" ]
+	};
+	var chart = DiChart.generateChart("chartMain", options);
+</script>
+</html>

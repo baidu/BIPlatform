@@ -1,0 +1,37 @@
+/**
+ * product.css
+ * Copyright 2013 Baidu Inc. All rights reserved.
+ *
+ * @file:    报表展现公用
+ * @author:  xxx(xxx)
+ */
+
+/**
+ * iframe下外壳
+ */
+.di-page-html-body {
+    background-color: white;
+}
+.di-page-div-body {
+    /* 使宽度不受ifr窗口大小控制，而是由内层撑开 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.cond-block {
+    border: 1px solid #DDD;
+    padding: 5px 8px;
+}
+.vu-table {
+    height: 500px;
+}
+.table-block {
+    /*width: 1040px;*/
+    width: 100%;
+}
+

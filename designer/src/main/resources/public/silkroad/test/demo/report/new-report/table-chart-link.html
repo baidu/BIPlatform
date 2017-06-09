@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图表组合并联动</title>
+<link rel="stylesheet" href="../../../../product/asset-d/ditry/dev/css/-di-product.css?__di__=1_0_0" />
+</head>
+<body>
+    <div class="j-nav nav">daohang</div>
+    <div class="j-main">
+    </div>
+    <div data-o_o-di="BODY" class="di-page-div-body">
+        <div class="di-o_o-body" data-o_o-di="snpt1">
+            <div class="di-o_o-block cond-block" data-o_o-di="snpt1.cpnt-form1">
+            </div>
+            <div class="di-o_o-block" data-o_o-di="snpt1.vu-form1-confirm1"></div>
+
+            <div class="di-o_o-block" data-o_o-di="snpt1.cpnt-chart1">
+                <div data-o_o-di="snpt1.vu-chart1"></div>
+            </div>
+
+            <div class="di-o_o-block table-block" data-o_o-di="snpt1.cpnt-table1">
+                <div class="di-o_o-line">
+                    <div class="di-o_o-item" data-o_o-di="snpt1.vu-table1-download1"></div>
+                </div>
+                <div class="di-o_o-line">
+                    <div class="" data-o_o-di="snpt1.vu-table1-breadcrumb1"></div>
+                </div>
+                <div class="di-o_o-line">
+                    <div class="vu-table" data-o_o-di="snpt1.vu-table1"></div>
+                </div>
+                <div class="di-o_o-line">
+                    <div class="di-table-prompt">
+                        <div class="di-table-count" data-o_o-di="snpt1.vu-table1-count1">
+                            符合查询条件的数据只显示<span class="di-table-count-num">#{currRecordCount}</span>条。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../../../dep/require-2.1.11.js"></script>
+    <script src="../../../../product/asset-d/ditry/dev/-di-product.js?__di__=1_0_10" ></script>
+    <script type="text/javascript">
+        window.__$DI__OPT$__ = {
+            depictRef: [],
+            depict: { entityDefs: [] }
+        };
+        var jsonPath = 'lzt/lzt-table-chart-link'; // json路径
+    </script>
+
+    <script type="text/javascript">
+    // FE 开发的测试配置,上线版通过压缩工具删除
+    require.config({
+        baseUrl: '../../../../src/',  //本地模拟为src，线上版问asset
+        paths: {
+            'underscore': '../dep/underscore-1.6.0',
+            'jquery': '../dep/jquery-1.11.1',
+            'backbone': '../dep/backbone-1.1.2',
+            'template': '../dep/template-3.0.0',
+            'jqueryui': '../dep/jquery-ui.custom-1.10.4',
+            'jquerydi': '../dep/jquery.di',
+            'dialog': 'core/dialog'
+        },
+        shim: {
+            'dialog': {
+                deps: [
+                    'jqueryui',
+                    'jquerydi'
+                ]
+            },
+            'jqueryui': {
+                'deps': [
+                    'jquery'
+                ]
+            },
+            'jquerydi': {
+                'deps': [
+                    'jquery'
+                ]
+            },
+            'backbone': {
+                deps: [
+                    'underscore',
+                    'jquery',
+                    'template'
+
+                ]
+            }
+        }
+    });
+    require(['../test/demo/report/new-report/enter'], function (main) {
+
+         <!--delete start-->
+         /* 前端拦截模拟,上线版通过压缩工具删除 */
+         var temp = $.ajax;
+         var ajax = function (url, p) {
+             if(p.type == 'PUT' || p.type == 'DELETE'){
+                 p.type = 'POST';
+             }
+             var mockPsth = '/test/mock-data/';
+             var extendion = '.json';
+             url = mockPsth + url + extendion;
+             temp(url, p);
+         };
+         $.ajax = ajax;
+         <!--delete end-->
+
+         main.enter(jsonPath);
+    });
+</script>
+</body>
+</html>

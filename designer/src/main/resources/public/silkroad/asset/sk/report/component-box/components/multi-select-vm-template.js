@@ -1,0 +1,1 @@
+define(["template"],function(a){function b(b){"use strict";b=b||{};var c=a.utils,d=(c.$helpers,c.$escape),e=b.id,f="";return f+='<div class="comp-box di-o_o-line">\n    <div class="di-o_o-item" data-o_o-di="',f+=d(e),f+='">\n    </div>\n</div>'}return{render:b}});

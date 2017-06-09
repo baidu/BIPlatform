@@ -1,0 +1,22 @@
+{
+    "data": {
+        "dimList": [
+            {
+                "id": "100",
+                "caption": "镇妖宝塔",
+                "name": "zhenyao_baota",
+                "type": "STANDARD_DIMENSION",
+                "canToInd": true
+            },
+            {
+                "id": "101",
+                "caption": "金箍棒",
+                "name": "jingubang",
+                "type": "STANDARD_DIMENSION",
+                "canToInd": false
+            }
+        ]
+    },
+    "status": 0,
+    "statusInfo": ""
+}

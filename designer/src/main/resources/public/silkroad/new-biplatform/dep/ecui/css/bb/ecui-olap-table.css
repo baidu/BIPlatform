@@ -1,0 +1,813 @@
+/**
+ * Table
+ */
+.ui-olap-table table,
+.ui-table table {
+    table-layout: fixed;
+}
+.ui-olap-table-head,
+.ui-table-head {
+    border-top: 1px solid #cfebf6;
+    border-right: 1px solid #cfebf6;
+    height: 40px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.ui-olap-table-locked-head,
+.ui-table-locked-head {
+    border-top: 1px solid #cfebf6;
+    border-bottom: 1px solid #E7F9FE;
+    border-left: 1px solid #cfebf6;
+    height: 30px;
+    overflow: hidden;
+}
+.ui-olap-table-layout,
+.ui-olap-table-locked-layout,
+.ui-table-layout,
+.ui-table-locked-layout {
+    border-right: 1px solid #cfebf6;
+}
+.ui-table-cell {
+    background: #FFF;
+    border-left: 1px solid #CFEBF6;
+    border-bottom: 1px solid #CCC;
+    height: 39px;
+    line-height: 30px;
+    padding: 0 20px;
+    color: #555;
+    margin: 0;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    overflow: visible;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+.ui-olap-table-cell-limited,
+.ui-table-cell-limited{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.ui-table-hcell,
+.ui-olap-table-hcell,
+.ui-olap-table-rowhcell,
+.ui-table-rowhcell {
+    position: relative;
+    border-left: 1px solid #CFEBF6;
+    color: #727272;
+    height: 39px;
+    line-height: 39px;
+    margin: 0;
+    vertical-align: middle;
+    cursor: default;
+    font-weight: normal;
+    text-overflow: ellipsis;
+    overflow: visible;
+    white-space: nowrap;
+    word-break: keep-all;
+    padding: 0 20px 0 20px;
+}
+
+.ui-table-expand-background:before {
+    border-bottom-color: #f6f6f5;
+}
+.ui-table-rowhcell .ui-table-tree-item,
+.ui-olap-table-rowhcell .ui-olap-table-tree-item {
+    height: 39px;
+    padding-left: 15px;
+}
+.ui-olap-table-hcell-bag,
+.ui-table-hcell-bag {
+    margin: 0 10px 0 10px;
+}
+.ui-plane-table-hcell-bag {
+    margin: 0 20px 0 20px;
+}
+.ui-plane-table-hcell-bag-lastcolumn{
+    padding: 0 33px 0 0;
+}
+.ui-olap-table-rowhcell,
+.ui-table-rowhcell {
+    text-align: left;
+    color: #333;
+}
+/* 解决ie7下（固定列）单元格自动换行的问题（强制所有文字不换行，溢出隐藏） */
+.ui-olap-table-rowhcell div,
+.ui-table-rowhcell div {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ui-olap-table-row,
+.ui-table-row {
+    cursor: pointer;
+    background: #E7F9FE;
+}
+.ui-olap-table-row-hover .ui-olap-table-ccell,
+.ui-table-row-hover .ui-table-ccell {
+    background: #F0F4F6;
+}
+.ui-table-row-hover .ui-table-rowhcell {
+    background: #F0F4F6;
+}
+.ui-olap-table-row-checked .ui-olap-table-ccell,
+.ui-table-row-checked .ui-table-ccell,
+.ui-table-row-selected .ui-table-ccell {
+    background: #FFF;
+}
+
+.ui-table-cell-align-center {
+    text-align: center;
+}
+.ui-table-cell-link,
+.ui-olap-table-cell-link {
+    color: #0F7DD2;
+    text-decoration: underline;
+}
+.ui-table-hcell-empty {
+    width: 840px;
+}
+.ui-table-cell-empty {
+    padding: 0 5px;
+}
+.ui-olap-table-tree-item,
+.ui-table-tree-item {
+    position: relative;
+}
+.ui-olap-table-e-c-icon,
+.ui-table-e-c-icon {
+    height: 9px;
+    width: 9px;
+    overflow: hidden;
+    background: url(../img/bb/icon.png) 0px 0px no-repeat;
+    position: absolute;
+    left: 1px;
+    top: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    display: none;
+    margin-top: 6px;
+    /*float: left;*/
+}
+
+.ui-olap-table-expanded-icon,
+.ui-table-expanded-icon {
+    background-position: -16px -151px;
+    display: block;
+}
+.ui-olap-table-collapsed-icon,
+.ui-table-collapsed-icon {
+    background-position: -25px -151px;
+    display: block;
+}
+/*这句样式对表格层级显示可能有问题，会多一些padding-left，到时候需要注意下*/
+.ui-olap-table-expand-background .ui-olap-table-default-icon,
+.ui-table-expand-background .ui-table-default-icon{
+    padding-left: 15px;
+}
+.ui-olap-table-default-icon,
+.ui-table-default-icon {
+    padding-left: 0;
+}
+/* 表格纵向滚动条改为左侧边框线 */
+.ui-olap-table .ui-vscrollbar,
+.ui-table .ui-vscrollbar {
+    width: 1px;
+    /*background-color: #CFEBF6;*/
+    background-color: rgba(255, 255, 255, 0);
+    padding: 40px 0 0 0;
+    z-index: 2;
+}
+.ui-olap-table .ui-vscrollbar .ui-button,
+.ui-table .ui-vscrollbar .ui-button {
+    cursor: default;
+    padding: 0;
+    margin: 0;
+    /*background-color: #CFEBF6;*/
+}
+.ui-olap-table .ui-vscrollbar .ui-button-hover,
+.ui-table .ui-vscrollbar .ui-button-hover {
+    padding: 0;
+    cursor: default;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -o-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+}
+/* 竖直滚动条顶部按钮修改 */
+.ui-olap-table .ui-vscrollbar-prev,
+.ui-table .ui-vscrollbar-prev {
+    width: 1px;
+    height: 14px;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
+    overflow: hidden;
+    /*border-bottom: 1px solid #e7ecee;*/
+    border-right: 1px solid #cfebf6;
+    border-top: 1px solid #cfebf6;
+    border-radius: 0;
+}
+.ui-olap-table .ui-vscrollbar-next,
+.ui-table .ui-vscrollbar-next {
+    width: 6px;
+    height: 14px;
+    background: url(../img/icon2.png) -59px -84px no-repeat;
+    overflow: hidden;
+    border: 1px solid #A2BCC7;
+    display: none;
+}
+/* 竖直滚动条本体隐藏 */
+.ui-olap-table .ui-vscrollbar .ui-scrollbar-thumb,
+.ui-table .ui-vscrollbar .ui-scrollbar-thumb {
+    width: 0;
+    padding: 0;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 4px;
+    overflow: visible;
+}
+/* 表格竖直滚动条浮动 */
+.ui-table .ui-vscrollbar .ui-scrollbar-thumb:before {
+    content: ' ';
+    font-size: 0;
+    width: 7px;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: -12px;
+    height: 100%;
+    background-color: #b5b5b5;
+    border-radius: 5px;
+    z-index: 3;
+}
+/* 表格横向滚动条 */
+.ui-olap-table .ui-hscrollbar,
+.ui-table .ui-hscrollbar {
+    height: 8px;
+    background: #F0F0F0;
+    padding: 0;
+}
+.ui-olap-table .ui-hscrollbar .ui-button,
+.ui-table .ui-hscrollbar .ui-button {
+    cursor: default;
+    padding: 0;
+    margin: 0;
+    background-color: #b5b5b5;
+    border-radius: 4px;
+}
+.ui-olap-table .ui-hscrollbar .ui-button-hover,
+.ui-table .ui-hscrollbar .ui-button-hover {
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    border-radius: 0;
+    -webkit-border-radius: 0px;
+    -o-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+}
+.ui-olap-table .ui-hscrollbar-prev,
+.ui-table .ui-hscrollbar-prev {
+    width: 0;
+    height: 8px;
+    overflow: hidden;
+    display: none;
+}
+.ui-olap-table .ui-hscrollbar-next,
+.ui-table .ui-hscrollbar-next {
+    width: 14px;
+    height: 8px;
+    background: url(../img/icon2.png) -42px -66px no-repeat;
+    overflow: hidden;
+    border: 1px solid #A2BCC7;
+    display: none;
+}
+.ui-olap-table .ui-hscrollbar .ui-scrollbar-thumb,
+.ui-table .ui-hscrollbar .ui-scrollbar-thumb {
+    height: 8px;
+    border: 1px solid #b5b5b5;
+}
+/*条件格式*/
+.ui-table-condfmt-arr {
+    background: url(../img/icon2.png) 0 -106px;
+    width: 10px;
+    height: 10px;
+    overflow: hidden;
+    margin-right: 5px;
+    margin-left: 3px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+.ui-table-condfmt-arr-1 {
+    /*上升绿箭*/
+    background-position: 0 -106px;
+}
+.ui-table-condfmt-arr-2 {
+    /*下降红箭*/
+    background-position: -30px -106px;
+}
+.ui-table-condfmt-arr-3 {
+    /*上升红箭*/
+    background-position: -20px -106px;
+}
+.ui-table-condfmt-arr-4 {
+    /*下降绿箭*/
+    background-position: -10px -106px;
+}
+.ui-olap-table-head-tips,
+.ui-table-head-tips {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url(../img/icon-help-normal.png);
+    vertical-align: middle;
+}
+.ui-table-head-tips:hover {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: url(../img/icon-help-hover.png);
+    vertical-align: middle;
+}
+.ui-olap-table-head-th-content,
+.ui-table-head-th-content {
+    height: 30px;
+}
+.ui-olap-table-hcell-sort-desc,
+.ui-table-hcell-sort-desc {
+    background-image: url(../img/bb/icon-hcell-desc.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left: 5px;
+    width: 8px;
+    height: 15px;
+    color: #E7F9FE;
+    vertical-align: middle;
+}
+.ui-olap-table-hcell-sort-asc,
+.ui-table-hcell-sort-asc {
+    background-image: url(../img/bb/icon-hcell-asc.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left: 5px;
+    width: 8px;
+    height: 15px;
+    color: #E7F9FE;
+    vertical-align: middle;
+}
+.ui-olap-table-hcell-sort,
+.ui-olap-table-hcell-sort-none,
+.ui-table-hcell-sort,
+.ui-table-hcell-sort-none {
+    background-image: url(../img/bb/icon-hcell-sort.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left: 5px;
+    width: 8px;
+    height: 15px;
+    color: #E7F9FE;
+    vertical-align: middle;
+}
+.ui-olap-table-head-font,
+.ui-table-head-font {
+    /*margin-right: 7px;*/
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    color: #727272;
+    font-size: 12px;
+    font-weight: bold;
+
+}
+.ui-olap-table-head-drag,
+.ui-table-head-drag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+}
+.ui-olap-table-drag-box,
+.ui-table-drag-box {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    cursor: col-resize;
+}
+.ui-olap-table-dot-box-drag,
+.ui-table-dot-box-drag {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 9px;
+    height: 100%;
+    display: none;
+}
+.ui-olap-table-dot-box-line,
+.ui-table-dot-box-line {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-right: 1px dashed #CCCCCC;
+}
+.ui-table-expand-background {
+    background-color: #F6F6F5;
+}
+.ui-table-row-selected .ui-table-rowhcell{
+    background: #FFF;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* 表格内部数据外框样式 */
+.ui-table-cell-infor {
+    height: 39px;
+    display: block;
+    padding: 0 20px 0 10px;
+}
+.ui-olap-table-hcell-field-set,
+.ui-table-hcell-field-set {
+    background-image: url(../img/icon-hcell-field-filter.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    width: 20px;
+    height: 16px;
+    color: #E7F9FE;
+    cursor: pointer;
+}
+.ui-table-layout
+.ui-table-body
+tr > td{
+    position: relative;
+}
+/* 左侧留白 */
+.ui-table-locked-layout
+tr > td:first-child:before {
+    content: ' ';
+    font-size: 0;
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #FFF;
+}
+/* 右侧留白 */
+.ui-table-layout
+.ui-table-body
+tr > td:last-child:after{
+    content: ' ';
+    font-size: 0;
+    width: 20px;
+    height: 39px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-block;
+    border-bottom: 1px solid #FFF;
+}
+/* 表格内容区域横向表格线 */
+.ui-table-cell-infor {
+    border-bottom: 1px solid #ccc;
+}
+/* 内容区域左侧10px边距 */
+.ui-table-cell-text {
+    /*margin-left: -10px;*/
+}
+/* 表头内容区域10px左边距 */
+.ui-table-head
+.ui-table-head-font  {
+    /*margin-left: -10px;*/
+}
+/* 汇总行字体加粗 */
+.ui-table-expand-font {
+    font-weight: bold;
+}
+/* 解决表头第一块区域左侧边框线错位 问题 */
+.ui-table-locked-head th:first-child {
+    border-left: 1px solid #E7F9FE;
+}
+.ui-olap-table-locked-head .ui-olap-head-font,
+.ui-table-locked-head .ui-table-head-font {
+    display: block;
+}
+.ui-olap-table-locked-head table,
+.ui-table-locked-head table {
+    width: 100%;
+}
+
+.ui-olap-table-cell-align-center,
+.ui-table-cell-align-center {
+    text-align: center;
+}
+.ui-olap-table-cell-align-left,
+.ui-table-cell-align-left {
+    text-align: left;
+}
+.ui-olap-table-cell-align-right,
+.ui-table-cell-align-right {
+    text-align: right;
+}
+
+.ui-table-field-set-item {
+
+}
+
+.ui-table-fieldset-exhibition {
+    width: 100%;
+    height: 30px;
+    overflow-y: hidden;
+    margin-bottom: 5px;
+}
+.ui-table-fieldset-exhibition > div {
+    position: relative;
+    display: inline-block;
+    background: white;
+    margin-right: 5px;
+}
+.ui-table-fieldset-exhibition span {
+    width: 100px;
+    display: inline-block;
+    border: solid 1px #E6E6E6;
+    padding-right: 15px;
+    height: 28px;
+    line-height: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ui-table-fieldset-exhibition .delete {
+    position: absolute;
+    text-decoration: none;
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+    top: 0px;
+    right: 0px;
+    color: #333;
+    font-size: 18px;
+    font-family: arial, "宋体";
+    text-align: center;
+}
+.ui-table-fieldset-exhibition .delete:hover {
+    color: white;
+    font-weight:bold;
+    /* font-size:22px; */
+    border: 1px solid rgb(252, 244, 244);
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+    border-radius: 50%;
+    background: rgb(223, 149, 134);
+}
+
+
+.ui-tip {
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+}
+.ui-tip-layer-hidden {
+    display: none;
+}
+/**
+  * ESUI (Enterprise Simple UI)
+  * Copyright 2013 Baidu Inc. All rights reserved.
+  *
+  * @file 通用提示用漂浮层
+  * @author dbear
+  */
+.ui-tip-layer {
+    background: #fff;
+    border: 1px solid #b3b9bc;
+    padding: 10px 18px 10px;
+    line-height: 1.5em;
+    z-index: 1002;
+    position: absolute;
+    box-shadow: 0 0 10px #b3b9bc;
+    min-width: 100px;
+    max-width: 300px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.ui-tip-layer-rt,
+.ui-tip-layer-rb {
+    margin-left: -10px;
+}
+.ui-tip-layer-lt,
+.ui-tip-layer-lb {
+    margin-left: 10px;
+}
+.ui-tip-layer-title,
+.ui-tip-layer-body {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+.ui-tip-layer-title {
+    margin: .5em 0;
+}
+.ui-tip-layer-body {
+    margin-bottom: 5px;
+}
+.ui-tip-layer-arrow {
+    display: none;
+    position: absolute;
+    font-size: 1px;
+}
+.ui-tip-layer-arrow-tl {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -24px -12px;
+    background-color: transparent;
+    width: 12px;
+    height: 13px;
+    top: -13px;
+    left: 12px;
+}
+.ui-tip-layer-arrow-tr {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -36px -12px;
+    background-color: transparent;
+    width: 12px;
+    height: 13px;
+    top: -13px;
+    right: 12px;
+}
+.ui-tip-layer-arrow-bl {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -12px -12px;
+    background-color: transparent;
+    width: 12px;
+    height: 13px;
+    bottom: -13px;
+    left: 12px;
+}
+.ui-tip-layer-arrow-br {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: 0px -12px;
+    background-color: transparent;
+    width: 12px;
+    height: 13px;
+    bottom: -13px;
+    right: 12px;
+}
+.ui-tip-layer-arrow-lt {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -26px 0px;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    top: 7px;
+    left: -13px;
+}
+.ui-tip-layer-arrow-lb {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -39px 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    bottom: 7px;
+    left: -13px;
+}
+.ui-tip-layer-arrow-rt {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    top: 7px;
+    right: -13px;
+}
+.ui-tip-layer-arrow-rb {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -13px 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    bottom: 7px;
+    right: -13px;
+}
+.ui-tip-layer-hidden {
+    display: none;
+}
+
+/**
+  * ESUI (Enterprise Simple UI)
+  * Copyright 2013 Baidu Inc. All rights reserved.
+  *
+  * @file 通用提示用漂浮层
+  * @author dbear
+  */
+.ui-tiplayer {
+    background: #fff;
+    border: 1px solid #b3b9bc;
+    padding: 10px 18px 10px;
+    line-height: 1.5em;
+    z-index: 1002;
+    position: absolute;
+    box-shadow: 0 0 10px #b3b9bc;
+    min-width: 100px;
+    max-width: 300px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.ui-tiplayer-title,.ui-tiplayer-body {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    max-width: 500px;
+    max-height: 195px;
+    overflow: auto
+}
+
+.ui-tiplayer-title {
+    margin: .5em 0
+}
+
+.ui-tiplayer-arrow {
+    display: none;
+    position: absolute;
+    font-size: 1px
+}
+
+.ui-tiplayer-arrow-lt {
+    display: block;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: -26px 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    top: 7px;
+    left: -13px
+}
+
+.ui-tiplayer-arrow-lb {
+    display: block;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: -39px 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    bottom: 7px;
+    left: -13px
+}
+
+.ui-tiplayer-arrow-rt {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    width: 9px;
+    height: 9px;
+    top: -8px;
+    right: 5px
+}
+
+.ui-tiplayer-arrow-rb {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    width: 9px;
+    height: 9px;
+    bottom: -9px;
+    right: 5px
+}
+
+.ui-tiplayer-hidden {
+    display: none
+}

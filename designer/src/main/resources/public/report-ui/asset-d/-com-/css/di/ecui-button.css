@@ -1,0 +1,290 @@
+/**
+ * 按钮
+ */
+.ui-button {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 2px 0;
+    /*margin-right: 6px;*/
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    vertical-align: middle;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -webkit-border-radius: 2px;
+    -o-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+    *display: inline;
+    *zoom: 1;
+    text-align: center;
+}
+.ui-normal-btn {
+    color: #fff;
+    padding: 0 20px;
+    background: #00aef3;
+    border: 1px solid #00aef3;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+}
+.ui-normal-btn .ui-button-text {
+    height: 30px;
+    line-height: 30px;
+    width: 24px;
+    display: block;
+    font-size: 12px;
+}
+.ui-button-hover {
+    /*background-position: 0px -127px;*/
+    background: #4E9AE0;
+}
+.ui-button-active {
+    background: #78B3E7;
+}
+.ui-button-g {
+/*    background:  url(img/icon.png) 0px -55px repeat-x;
+    border:  1px solid #7FAFC7;
+*/
+    background: #2584DA;
+    border: 1px solid #2070BB;
+    color: white;
+    width: 55px;
+}
+.ui-button-g-hover {
+    background-position: 0px -79px;
+}
+.ui-button-g-active {
+    background: #C1E4F7;
+}
+.ui-button-i {
+    height: 21px;
+    padding-top: 1px;
+    border: 1px solid #F8F8F8;
+    position: relative;
+    border: 1px solid #F8F8F8;
+    background: #F8F8F8;
+    margin-right: 5px;
+}
+.ui-button-i .ui-button-inner {
+    height: 20px;
+    line-height: 20px;
+    border: 0px;
+    border-top: 1px solid #F8F8F8;
+    padding: 0px 5px 0px 25px;
+    background: none;
+}
+.ui-button-i .ui-button-icon {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    display: block;
+    width: 17px;
+    height: 17px;
+    background: url(img/icon.png) 0px 0px no-repeat;
+}
+.ui-button-i .ui-button-icon-reset {
+    background-position: -37px 0px;
+}
+.ui-button-i .ui-button-icon-flu {
+    background-position: -20px 0px;
+}
+
+.ui-button-i-hover {
+    border: 1px solid #CCC;
+}
+.ui-button-i-active {
+    border: 1px solid #CCC;
+    background: #B7B7B7;
+}
+.ui-button-i-active .ui-button-inner {
+    background: #E6E6E6;
+    border-top: 1px solid #D7D7D7;
+}
+.ui-button-b {
+    height: 21px;
+    padding-top: 1px;
+    border: solid 1px #BCBCBC;
+    position: relative;
+    background:  url(img/icon.png) -6px -103px repeat-x;
+    margin-right: 5px;
+}
+.ui-button-b .ui-button-inner {
+    height: 20px;
+    line-height: 20px;
+    border: 0px;
+    border-top: 1px solid #F8F8F8;
+    padding: 0px 5px 0px 25px;
+    background: none;
+}
+.ui-button-b .ui-button-icon {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    display: block;
+    width: 17px;
+    height: 17px;
+    background: url(img/icon.png) 0px 0px no-repeat;
+}
+.ui-button-b .ui-button-icon-compare {
+    background-position: -32px -19px;
+    width: 16px;
+    height: 15px;
+    top: 4px;
+    left: 5px;
+}
+.ui-button-b-hover {
+    background-position: 0px -127px;
+}
+.ui-button-b-active {
+    background: #B7B7B7;
+}
+.ui-button-b-active .ui-button-inner {
+    background: #E6E6E6;
+    border-top: 1px solid #D7D7D7;
+}
+/* 重色按钮 */
+.ui-g-btn {
+    border: 1px solid #2070BB;
+    background-color: #2584DA;
+    color: #FFF;
+    padding: 0;
+}
+.ui-g-btn-hover {
+    background-color: #4E9AE0;
+}
+.ui-g-btn-active {
+    background-color: #1A578E;
+}
+.ui-g-btn .ui-button-inner {
+    line-height: 16px;
+    padding: 0 20px 3px 20px;
+    vertical-align: top;
+    background-color: #2584DA;
+    border-top: 1px solid #2584DA;
+    margin-top: 1px;
+    -webkit-border-radius: 1px;
+    -o-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    border-radius: 1px;    
+}
+.ui-g-btn-hover .ui-button-inner {
+    background-color: #4E9AE0;
+    border-top: 1px solid #4E9AE0;
+}
+.ui-g-btn-active .ui-button-inner {
+    border-top: 1px solid #206BB0;
+    background-color: #247CCC;
+}
+.ui-g-btn .ui-button-text {
+    vertical-align: middle;
+}
+
+/* 取消按钮 */
+.ui-button-c {
+    /*    background:  url(img/icon.png) 0px -55px repeat-x;
+        border:  1px solid #7FAFC7;
+    */
+    background-color: #e9e9e9;
+    border: 1px solid #B3B3B3;
+    color: black;
+    width: 55px;
+    margin-left: 10px;
+}
+.ui-button-c-hover {
+    background-color: #BCBCBC;
+    background-position: 0px -79px;
+}
+.ui-button-c-active {
+    background-color: #BCBCBC;
+}
+
+/* 轻按钮 */
+.ui-lite-btn {
+    border: 1px solid #CCC;
+    background-color: #F7F7F7;
+    color: #3C78A2;
+    padding: 0;
+}
+.ui-lite-btn-hover {
+    background-color: #FCFCFC;
+}
+.ui-lite-btn-active {
+    background-color: #BBB;
+}
+.ui-lite-btn .ui-button-inner {
+    padding: 0 10px 3px 10px;
+    line-height: 16px;
+    background-color: #F7F7F7;
+    border-top: 1px solid #F7F7F7;
+    margin-top: 1px;
+    -webkit-border-radius: 1px;
+    -o-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    border-radius: 1px;    
+}
+.ui-lite-btn-hover .ui-button-inner {
+    background-color: #FCFCFC;
+    border-top: 1px solid #FCFCFC;
+}
+.ui-lite-btn-active .ui-button-inner {
+    border-top: 1px solid #DDD;
+    background-color: #EEE;
+}
+.ui-lite-btn .ui-button-text {
+    vertical-align: middle;
+}
+/* 下载按钮 */
+.ui-download-btn {
+    border: 1px solid #FFF;
+    background-color: rgba(255, 255, 255, 0);
+    color: #3C78A2;
+    padding: 0;
+}
+.ui-download-btn-hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+.ui-download-btn-active {
+    background-color: rgba(255, 255, 255, 0);
+}
+.ui-download-btn .ui-button-inner {
+    padding: 0;
+    line-height: 8px;
+    -webkit-border-radius: 1px;
+    -o-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    border-radius: 1px;
+}
+.ui-download-btn-hover .ui-button-inner {
+    background-color: rgba(255, 255, 255, 0);
+}
+.ui-download-btn-active .ui-button-inner {
+    background-color: rgba(255, 255, 255, 0);
+}
+.ui-download-btn .ui-button-left {
+    background: url(img/download.png) no-repeat;
+    width: 20px;
+    height: 15px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+.ui-download-btn .ui-button-left:hover{
+    background: url(img/downloadblue.png) no-repeat;
+}
+.ui-download-btn .ui-button-text {
+    vertical-align: middle;
+}
+.ui-download-btn .ui-button-text {
+    display: inline-block;
+}

@@ -1,0 +1,468 @@
+-----------------
+【设计/规约说明】
+-----------------
+
+--------------------------------
+|          构建程序安装          |
+--------------------------------
+
+
+
+
+
+
+---------------------------------
+|             支持              |
+---------------------------------
+
+    布局放在同一行
+    普通报表参数组：
+        整体独立component
+        确定模式和即时模式
+        默认可拥有：“确定”按钮。
+        ref关联到一或多个目标component
+            目标component用通用param接收
+        每个vui来源于目标component。
+        每个vui和“确定”在fragment上用标签指定位置。
+        编辑时：拖进来此component，指定ref，则生成每个reportParam的div，可调整位置。
+        时间：
+            独立component，定义ref
+        普通：
+            独立component，定义ref
+    面包屑：
+        独立component
+        定义ref（如到di-table）
+        提供双向接口：
+            从di-table触发输入bread的text和href
+            从bread点击触发di-table输入href
+    表格设置
+    下载
+    局部展开 / 浮层
+
+TODO
+请求顺序（依赖）
+subTplId
+联动隐含条件（KA的时间范围）
+关于命名空间方案
+    打包时，所有都打到一个js
+    加上首尾的(function() { … })()
+    加上var di = $namespace('di', false);
+
+
+
+
+---------------------------------
+|             概念              |
+---------------------------------
+
+snippet：
+    是报表编辑结果。
+    snippet中主要有这些部件：
+        html
+        vui的anchor
+        vslot的anchor
+        vcontainer的声明
+        component的声明
+    子报表模式：
+        SNIPPET_COPY_MODE：在自己的报表（复杂布局）中，创建一个其他报表的拷贝（从而能进行进一步更改）。
+        SNIPPET_REF_MODE：在自己的报表（复杂布局）中，创建一个其他报表的引用（从而其他报表更新了自己也更新，但是不能更改其中内容）。
+    src-snippet：里面包括其他snippet的引用。
+    prod-snippet：是最终生成的snippet，没有引用了（是否有必要？？）。
+    含有version字段。
+    里面可以包括#parse('asd/fas/dfsadfa/sdf.vm')，但只是文档引用（参见SNIPPET_REF_MODE）
+    [代码]
+        <div data-o_o-di="{ 
+            clzType: 'SNIPPET',
+            id: 'snippet-biz-pool-1'
+        }"> ... </div>
+
+
+component：
+    是功能单元（或叫组件）
+    引用一个或多个vui。
+    component没有“包含”的概念，只有ref概念。
+    一个component可以ref多个vui（为其提供功能）。一个条件区是一个component。
+    例子：一个di-table是一个component，一个di-form
+    form：也是一个component，是条件区component的命名。内部的olap-table控件是vui。
+    数据获取方式：
+        Asyc
+        Html（可暂不实现）
+    [Interface]
+        sync方法
+    [代码]
+        component声明在html中，以div定义：
+        <div data-o_o-di="{
+            clzType: 'COMPONENT',
+            id: 'component-222',
+            clzKey: 'DI_TABLE',
+        }"> ... </div>
+
+
+vui：
+    是视图单元。
+    可以在snippet上定位。
+    目前vui必须隶属于某个component。
+    一般vui用控件来实现，或者是简单的dom元素。
+    在component中，声明在VUI中。
+    VUI = {
+        timeSelect: someUnit
+    }
+    [代码]
+        <div data-o_o-di="{
+            clzType: 'VUI',
+            id: 'vui-id-123'
+        }"> ... </div>      
+        <div data-o_o-di="{
+            clzType: 'COMPONENT',
+            id: 'component-222',
+            clzKey: 'DI_TABLE',
+            vuiRef: {
+                // 在component中的引用名
+                'timeSelect': 'vui-id-123' 
+                // 如果要引用多个vui，则用数组形式：
+                // 'timeSelect': ['vui-id-123', 'vui-id-124', ...]
+            }
+        }"> ... </div>  
+
+
+关于行为、交互的考虑：
+    (目前只支持通过interaciton方式联系component，更细粒度的行为控制后续再考虑定义。
+        注：关于这点，纠结了两天，是否要引入model概念，从而用“可视化编程”的方式，定义model以及控件之间的所有event响应关系。通过定义getDataXXX getParamXXX等约定接口取数据和参数等。
+        这种方式的好处：
+            程序结构很清晰
+            很灵活，几乎最细粒度的描述了代码行为
+            容易做程序员使用的代码生成工具
+        这种方式的弊端：
+            细节暴露过多，给非程序员用的东西不要暴露model这个概念。“组件”概念被弱化。
+            仍然不好描述事件交互中传递的参数。
+            程序员真的需要这种配置试编程么？
+    )
+
+
+关于interaction：
+    用于描述component之间的行为。
+    一个component能定义多个behavior。
+    每个behavior用下面几个部分来描述：
+        事件(event)（一个）：
+            可用的对外事件由component自己声明在component的js的INTERACTION_EVENT中，其中会提供args参数数据。
+                [代码]
+                SOME_COMPONENT_CLASS.INTERACTION_EVENT = [
+                    { name: 'someEventName1', provide: [ 后续再定义，表达事件能提供什么，给设计器用 ] }, 
+                    { name: 'someEventName2', provide: [ ... ] }
+                ];
+            注：可能的产生事件的情况如下，但这些都不
+                (1) 全局初始化事件'init'。
+                (2) vui的用户事件（如：'change'）。
+                (3) component的sync返回事件（如：'sync.parse', 'sync.result', 'sync.error', 'sync.finalize'等）。
+        动作(action)（多个）：现在支持：
+            (1) component中INTERACTION_ACTION提供的方法。
+                [代码]
+                SOME_COMPONENT_CLASS.INTERACTION_ACTION = [
+                    { name: 'someActionName1', require: [ 后续再定义，表达需要提供什么，给设计器用 ] }, 
+                    { name: 'someActionName2', require: [ ... ] }
+                ]
+    可以自己对自己发事件（例如用于init事件）。
+    [代码]
+        interaction声明在component声明中。
+        {
+            clzType: 'COMPONENT',
+            id: 'component-id-222', 
+            clzKey: 'DI_TABLE',
+            init: { action: 'sync' },
+            interactions: [
+                {
+                    event: { 
+                        rid: 'component-1234',
+                        name: 'somechange'
+                    },
+                    action: { 
+                        name: 'sync' 
+                    }
+                },
+                ...
+            ]
+        }
+    关于argHandler：
+        参见模板范例
+        其中，getByPath，如果是数组，直接aaa.1.bbb即可
+        例：table.rowcheck'.1.value的初始化
+        应用场景：
+        (1)event格式转换，涉及到getvalue等。
+        (2)表格触发图动，图要提交时要从form中取参数，所以要有argFetter这个概念。
+        提供默认的argFetter：'value'，其他自己后续加。
+    [应用]
+        条件联动、初始化加载的依赖顺序等，用behavior描述。
+
+
+关于rtpl：
+    rtpl就是后台的tpl引用。
+    mtpl引用声明在component里。
+    [代码]
+        mtpl声明在component中:
+        {
+            clzType: 'SNIPPET',
+            id: 'snippet-biz-pool-1',
+            reportTemplateId: '...'
+        }
+
+vcontainer：
+    是snippet中的结构，作为组织vui的方式。
+    含有控制视图的逻辑（参见layer和expansion）。
+    含有htmlTpl（一个vcontainer可以引用不同的htmlTpl，这个就在编辑时有意义，编辑后就混合到html里了）。
+    vui的anchor在vcontainer中出现。
+    vpart
+        vcontainer含有诸个vpart。
+        vpart是需要由vui提供事件的东西。
+        vcontainer也会改变vpart的视图（最简单的如是否显示），这都由接口确定。
+        vpart是视图结构，内部包含的vcomponent会自动添加到他引用（例如deaf，就是这么自动设置的）！
+    [代码]
+        vcontainer声明在snippet中：
+        <div data-o_o-di="{
+            clzType: 'SNIPPET',
+            id: 'snippet-id-111',
+            ...,
+            vcontainerDef: [
+                { 
+                    clzType: 'VCONTAINER', 
+                    id: 'vcontainer-id-222', 
+                    clzKey: 'BASIC_VCONTAINER' 
+                },
+                { 
+                    clzType: 'VCONTAINER', 
+                    id: 'vcontainer-id-333', 
+                    clzKey: 'EXPANSION_VCONTAINER' 
+                },
+                ...
+            ]
+        }"> ... </div>
+        vpart声明在html中：
+        <div data-o_o-di="{
+            clzType: 'VPART',
+            id: 'vpart-id-2323', 
+            vpartType: 'TRIGGER', 
+            vcontainerRef: 'vcontainer-id-222' 
+        }"></div>
+
+
+
+---------------------------------
+|         已有特定实现          |
+---------------------------------
+
+关于联动
+    描述Component的内部vui的交互。
+    描述类同interaction。
+    在LINKAGE_EVENT中声明可以触发的事件。
+    在LINKAGE_ACTION中声明行为。
+    [Interface]
+        vui需要提供change事件
+    [json配置]
+    <div data-o_o-di="{
+        component: {
+            id: 'component-id-123432',
+            clzKey: 'GENERAL_FORM',
+            linkage: [
+                event: { rid: 'vui-1234', name: 'somechange' },
+                action: { name: 'syncvui', args: [{ vuiName: 'someVUi1' }] }
+            ]
+        }
+    }"> ... </div>
+
+关于表单
+    配置参数：
+        dataOpt: {
+            submitMode: 'IMMEDIATE'
+        }
+    条件控件引用：
+    vuiRef: {
+        'input': ['vui-ka-income-9']
+    }
+
+关于时间单元（timeUnit）
+    所有的时间控件对编辑段接口以这种形式表达，
+    具体定义参见util.parseTimeUnitDef方法。
+
+关于表格初始化行为
+    Ka的需求中有：表格初始化，选中第一行，并且图按照第一行初始化。
+    实现方式是，表格有getValue。 用interaction中的argHandler转换数据
+    例：table.rowcheck'.1.value的初始化
+
+关于第一次
+    参见deaf设置
+
+关于tabcontainer：
+    对于不显示的tab，屏蔽事件。例如，几个图表都挂在submit下，那么每次提交，不能都刷新。
+    参见autoDef设置
+
+关于argsclone：
+    到底要不要
+
+ref的格式标准，以及loc
+
+form的getValue的模式
+    一种是缓存住当前选中的，选则了但是没有点确定的不会被getValue，
+    另一种是即席
+    场景举例：
+        ka中有时间有高级查询，点开高级查询后，不是即席的，但是折叠起来高级查询，点时间是即席的。
+        并且还有下钻，下钻时不要条件（又不要扩大或缩小数据范围，应用之前的条件）
+
+时间范围的表达：
+    支持相对时间，本季，本年之类
+
+关于vui的form初始值
+    支持在html中配，
+    也支持后台传，后台传的会覆盖前端配置的
+
+关于form的异步加载
+    统一datasource、value的数据格式
+    统一onasync事件，传来回调
+    要在vui声明中标注：async: true
+
+关于form条件的可配置，ka中时间控件，貌似选时间点，实际要传一个可配置的时间范围。
+    在getValue中做手脚。
+    一种方式是在interaction中写argHandler，这样可以针对每个事件进行不同定制
+    另一种方式是在form的vui定义中写output: [name: 'getValue', argHandler: '']，这样所有调用此interface时都能用这个argHandler。
+关于input和output：（尚未实现）
+    现在是为了支持arghandler配置。
+
+关于定义里的name：
+    实际意为，component的getValue（和dataloaded）时的属性名，如果没有name，则不会被getvalue
+
+关于component的vuiRef，里面的key是component要求的，不是用户可以随意填的，用户要做的是为这些key指定实现。
+
+关于统一传参数：
+    common-param-factory：首先，报表的参数要覆盖自己的参数，然后reporttemplateid要变，然后统一进行stringify（用标志，不能默认都stringify，因为有的还是用传统的）
+
+关于多种vui的适配：
+    adapter机制
+    api的适配，事件的适配
+
+form立即和点击确定配置案例：
+    ka，两个form，一个立即，一个点击确定执行。
+
+关于fold隐藏后，getValue得不到东西（如ka的需求）：
+    关于getValue的三种状态：
+        NORMAL正常；
+        EMPTY空，即有name但是没有值（后台表示清空）
+        NA，不适用，即连name也没有
+
+在cfgOpt中配：
+    paramMode：决定使用json传输还是普通格式
+
+关于vui事件的适配
+    1。在adapter中转发（例子：input-tree，其中包括参数的改变）
+    2。registerEventAgent
+
+关于def也能用$di调用
+
+关于嵌套的deaf和valueDisabled
+    见object.objKey
+
+关于key：两部分，snipptid点自己id，一方面为了全局命名不重复，另一方面能够立刻得到snippt，从而方便reportTemplateId使用。
+
+关于文字信息的配置：
+    例如，表格的“总共有多少行，当前有多少行。用textLabel，用模板配置，数据内部给。
+
+关于各种opt的总结一下
+    dataInitOpt，dataOpt，cfgOpt
+    包括：
+        opt可以根据rule得到（加s），不加s的是基本的，会cache，opt有自动加的id，为了cache，
+        setData和初始化时都是用的merge，但是merge时array不clone，节省开销，其他clone，保证不被意外改变
+
+关于getValue，的valuedisabled，三种模式支持：空，空值，默认值（由控件自己提供）
+
+关于disable，在decipt中配置disable（“ALL"或者指定componentid数组），再各个component中自己实现
+
+关于最外层的snippet，需要标志diroot，这样，就会解析vm里面的reportTemplate，变成sessionloaded。
+
+关于项目自定义的clz
+    见depict中的clzDefs，会和dict.js的ckzDefs进行merge，例如，图表的默认空时显示的文字，就在这里配置比较方便，不用重复很多遍，并且这里可以定义自己工程的控件。
+    
+关于空数据，约定，控件在setData传null时，要保证渲染空状态（至少不是出错）
+    并且，component应该提供清空的api接口，传入的参数为ui的id，传空则全清空（在difactory中注入）
+
+关于interactPath，和interactMatchMode和，interact的id（不必须有）
+    支持includes和excludes，支持按interactionId，或者
+
+一些特别的：如ka的框架tab页周月季不能显示，解决方法是：vui监听di-tab的vpart的active和inactive事件
+
+每个vui须保证可以setData为空（清空）
+
+关于display设置（初始hide）
+
+关于globalPrompt的配置
+
+关于linkbridge的两种方式
+
+关于控件支持禁用
+
+关于syncviewdisable（取代了event的viewdisable）
+    即可按datasourceId，又可直接配所有datasourceId都需要执行的
+
+vui 也可有interaction，参见ka-income.html中时间选择控件根据form来改变当前状态
+
+funcAuth相关
+
+时间表达相关 数组表示法[] parseTimeOffset
+
+
+
+
+
+
+
+
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+页面整合，假如是在vm中，可以是这样的：
+
+第一步，页面中加个引用，<script src="$!{webRoot}/_report/asset-p/di-stub.js"></script>
+（其中：$!{webRoot} 是web根目录，
+ 
+第二步，页面中要有个放报表的contaier： <div id="asdfasdf"></div>
+
+第三步，创建报表的实例：
+            var instance = new $DataInsight$(
+                'asdfasdf', 
+                { url: '$!{webRoot}/_report/reportTemplate/complex/generateReport.action' }
+            );
+
+第四步，加载报表：
+            instance.load(
+                { data: 'reportTemplateId='+ myReportTemplateId +'&_s_idcard=asdfasdfasdfasdfasdfas==' } 
+            );
+（其中：myReportTemplateId是该报表的id，_s_idcard是产品线的idcard）
+（如果有其他报表参数，可以都加在data里，注意要使用encodeURIComponent(theParam)）
+
+第五步，如果页面设计到要关闭（一般整站式会用到，如果都是单页面的，可以不用考虑）
+    instance.dispose();
+
+
+
+===========================================================
+为什么会有snipept和component两层
+snippet看起来只是个区域，但实际上挂着重要的reporttemplateid（这才是和后端的交互单元）
+component比较尴尬，逻辑上是独立完成任务的，但是，需要外部环境，如：
+    （1）表component需要查询条件，interaction中getValue带入
+    （2）表component维度变化，是meta－config component用和table同一个reporttemplateid与后端交互后，直接后端生效，不须带入。
+现在，component和reporttemplateid就不是对等的了。
+
+之所以没有把interaction放在vui上而是component上，是因为要封装一些默认的交互，
+不让配置过于麻烦。比如，如果不存在form这个component，那么每个要配每个控件的交互，
+相当麻烦。
+
+但是封装到什么程度，是最纠结的。form单独可行，因为form可以图表公用。
+而meta－config其实只为了某个图某个表用的，是不是要封进图或表的component呢？
+进而，是不是要将component和reporttemplateid一一对应呢，这看起来更清楚简单。
+但是，另一个例子，图要加一个控制范围的button，我加了个form表单，里面就一个switchbutton，
+然后配一个interaction，就可以了。如果不是这样，而是“只控制一组任务的功能（图）都封在component里，
+那么我就要升级上线di－table组件了。共有的form是单独的component，而私有的form是封在组件里，
+这种结构也并不和谐。私有的东西可能总有新需求，每次都是上线解决么？那component则一直往大了加了。
+
+这矛盾就在，前端的构件和后端的构件的粒度不一样大。
+
+
+
+
+
+

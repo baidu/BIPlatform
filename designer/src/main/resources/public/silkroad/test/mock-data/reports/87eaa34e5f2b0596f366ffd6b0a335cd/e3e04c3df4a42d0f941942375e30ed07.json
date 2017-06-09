@@ -1,0 +1,38 @@
+{"statusInfo": "Success", "status": 0, "data": {
+    "reportChart": {
+        "title": null,
+        "subTitle": null,
+        "xAxisType": "category",
+        "xAxisCategories": ["广告及包装", "广播通信", "房地产", "服装鞋帽", "礼品饰品"],
+        "yAxises": [
+            {
+                "name": "纵轴",
+                "unitName": "单位"
+            }
+        ],
+        "seriesData": [
+            {
+                "data": [6061131.8920000000, 2279024.0250000000, 760393.1970000000, 2459949.2540000000, 3727627.2100000000],
+                "format": null,
+                "name": "m2",
+                "type": "column",
+                "yAxisName": "COLUMN",
+                "properties": null
+            },
+            {
+                "data": [3698458.1080000000, 1418227.3550000000, 450721.2900000000, 1511476.8720000000, 2221692.2550000000],
+                "format": null,
+                "name": "m3",
+                "type": "pie",
+                "yAxisName": "PIE",
+                "properties": null
+            }
+        ],
+        "allMeasures": ["m2", "m3"],
+        "defaultMeasures": ["m2"],
+        "allDims": ["trade_l1"],
+        "defaultDims": ["trade_l1"],
+        "maxValue": 6061131.8920000000,
+        "minValue": 450721.2900000000
+    }
+}, "properties": {}}

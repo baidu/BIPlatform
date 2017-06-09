@@ -1,0 +1,51 @@
+/**
+ * Meta Condition
+ */
+.meta-condition {
+}
+.meta-condition-head-text {
+    width: 73px;
+    text-align: right;
+    color: #666;
+    margin: 6px 0;
+    float: left;
+}
+.meta-condition-sel .meta-condition-head-text {
+    margin: 7px 0;
+}
+.meta-condition-src {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E3E3E3;
+}
+.meta-condition-tar {
+    padding: 20px 0 10px 0;
+    border-top: 1px solid #FFF;
+}
+.meta-condition-ind-line, 
+.meta-condition-dim-line,
+.meta-condition-sel-line {
+    margin: 0 0 6px 76px;
+    vertical-align: middle;
+    -webkit-border-radius: 3px;
+    -o-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;    
+    border-radius: 3px;    
+}
+.meta-condition-sel-line {
+    padding: 0;
+    margin-left: 79px;
+    margin-right: 100px;
+    background-color: #F0F0F0;
+    border: 1px solid #D8D8D8;
+}
+
+.olap-meta-select-txt {
+    margin: 0 5px 0 10px;
+    vertical-align: middle;
+}
+.olap-meta-select-sel {
+    vertical-align: middle;
+    width: 190px;
+}

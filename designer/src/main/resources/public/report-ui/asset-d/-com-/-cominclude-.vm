@@ -1,0 +1,50 @@
+#**
+ * 公共宏定义
+ *#
+
+## 程序根目录
+#set($webRoot=$!link.getContextPath())
+
+
+#**
+ * 引入CSS
+ *#
+#macro (comCSS)
+    <link rel="stylesheet" href="$!{webRoot}/asset-d/$!{bizKey}/$!{phase}/css/-di-product.css?__v__=$!{repoVersion}" />
+#end
+
+
+#**
+ * 引入JS
+ *#
+#macro (comJS)
+    <script src="$!{webRoot}/asset-d/$!{bizKey}/$!{phase}/-di-product.js?__v__=$!{repoVersion}" ></script>
+#end
+
+
+#**
+ * DI进入
+ *#
+#macro (enterDI)
+    <script type="text/javascript">
+        (function(NS) {
+            NS.xui.XView.start(
+                'di.product.display.ui.LayoutPage',
+                {
+                    externalParam: $!jsonUtils.toJson($!externalParam),
+                    globalType: 'PRODUCT',
+                    diAgent: '$!jsonUtils.escapeInJStr($!diAgent)',
+                    reportTemplateId: '$!jsonUtils.escapeInJStr($!reportTemplateId)',
+                    persistentReportTemplateId: '$!jsonUtils.escapeInJStr($!persistentReportTemplateId)',
+                    webRoot: '$!link.getContextPath()',
+                    bizKey: '$!jsonUtils.escapeInJStr($!bizKey)',
+                    phase: '$!jsonUtils.escapeInJStr($!phase)',
+                    serverTime: '$!{serverTime}',
+                    repoVersion: '$!{repoVersion}',
+                    funcAuth: $!jsonUtils.toJson($!funcAuth),
+                    extraOpt: (window.__$DI__NS$__ || {}).OPTIONS
+                }
+            );
+        })(window);
+    </script>
+#end

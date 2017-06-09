@@ -1,0 +1,15 @@
+{
+    "status": 0,
+    "statusInfo": "提示信息",
+    "data": {
+        "hostAndPort": "a.baidu.com",
+        "dbInstance": "zongheng_db06",
+        "dbPwd": "123456",
+        "dbUser": "crm",
+        "id": "3dea35149dc20164a9a232c1a048c4f3",
+        "name": "数据源2",
+        "productLine": "tieba",
+        "type": "MYSQL",
+        "encoding": "UTF-8"
+    }
+}

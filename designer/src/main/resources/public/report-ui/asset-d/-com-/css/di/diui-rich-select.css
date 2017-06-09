@@ -1,0 +1,166 @@
+.rich-select-instruction {
+    margin-right: 10px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.sxwzbTitle{
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.sxwzbContent{
+    display: none;
+    position: absolute;
+    border: 1px solid #d9e6eb;
+    background-color: #ffffff;
+    z-index: 99;
+    width: 530px;
+    max-height: 300px;
+    overflow-y: scroll;
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+}
+.sxwzbCategories{
+    vertical-align: top;
+    display: inline-block;
+    width: 100px;
+    margin-top: 5px;
+}
+.sxwzbSubdivisions{
+    display: inline-block;
+    width: 400px;
+    line-height: 28px;
+}
+.sxwzbSubdivision{
+    display:inline-block;
+    margin-left:10px;
+}
+.sxwzbType{
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 0px 10px;
+}
+.sxwzbType:nth-child(2n){
+    background-color: #f5f5f5;
+}
+
+.sxwzbButton{
+    position: relative;
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d5d5d5;
+    padding: 0 20px 0 10px;
+    background: url(img/rich-select-combo-arrow.png) no-repeat scroll right -2px #ffffff;
+    cursor: pointer;
+}
+.sxwzbButton div{
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 170px;
+    white-space: nowrap;
+}
+.sxwzbCheckBox {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    margin: 1px 5px 1px 1px;
+}
+.sxwzbCheckBox:before{
+    content: '';
+    width: 14px;
+    height: 14px;
+    position: relative;
+    display: block;
+    padding: 0;
+    margin: -1px 0 0 -1px;
+    background: url(img/rich-select-checkbox-bg.png) no-repeat 0 0;
+}
+.sxwzbCheckBox:after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: -1px;
+    top: -1px;
+    background: none;
+}
+.sxwzbCheckBox:checked:after {
+    background: url(img/rich-select-checkbox-bg.png) no-repeat 0 -16px;
+}
+.sxwzbButtons{
+    margin: 10px 0px 10px 10px;
+}
+.uiButton{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    background: #ffffff;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#f6f6f6));
+    background: -webkit-linear-gradient(top, #ffffff, #f6f6f6);
+    background: -moz-linear-gradient(top, #ffffff, #f6f6f6);
+    background: -ms-linear-gradient(top, #ffffff, #f6f6f6);
+    background: -o-linear-gradient(top, #ffffff, #f6f6f6);
+    border: 1px solid #CCC;
+    font-size: 12px;
+    text-align: center;
+    color: #333;
+    padding: 0 10px;
+    vertical-align: top;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    display: inline-block;
+    zoom: 1;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 23px;
+    line-height: 23px;
+
+}
+.uiButton-ok,.uiButton-circle{
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    padding: 0 20px;
+    background: #00aef3;
+    border: 1px solid #0099e0;
+    border: 1px solid #00aef3;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+.uiButton-ok:hover, .uiButton-circle:hover {
+    background: #00aef3;
+    border: 1px solid #0099e0;
+}
+.uiButton:hover {
+    cursor: pointer;
+}
+.uiButton-circle:hover, .uiButton-circle:active {
+    color: #fff;
+}
+.uiButton-circle {
+    background: none;
+    color: #00aef3;
+}
+.sxwzbText{
+    position: relative;
+    margin-bottom: 5px;
+}
+.sxwzbButton.disabled{
+    background-color: #e5e5e5;
+}
+
+.sxwzbCheckBox:checked:disabled:after{
+    background: url(img/rich-select-checkbox-bg.png) no-repeat 0 -48px;
+}

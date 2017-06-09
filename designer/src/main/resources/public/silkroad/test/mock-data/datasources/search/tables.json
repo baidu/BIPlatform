@@ -1,0 +1,18 @@
+{
+    "status": 0,
+    "statusInfo": "提示信息",
+    "data": [
+        {
+            "id": "dataSource1",
+            "name": "数据源12"
+        },
+        {
+            "id": "dataSource2",
+            "name": "数据源2"
+        },
+        {
+            "id": "dataSource4",
+            "name": "数据源4"
+        }
+    ]}
+

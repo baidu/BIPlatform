@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>报表平台-配置端-mock</title>
+    <link type="text/css" rel="stylesheet" href="src/css/all.css"/>
+    <link rel="stylesheet" href="asset/css/-di-product-debug.css"/>
+</head>
+<body>
+<div class="nav j-nav"></div>
+<div class="nav-placeholder"></div>
+<div class="main j-main"></div>
+<div class="foot ta-c j-foot">&copy; 版权信息</div>
+<script type="text/javascript" src="src/common/ZeroClipboard.js"></script>
+<script type="text/javascript" src="dep/require-2.1.11.js"></script>
+<script type="text/javascript" src="dep/jquery-1.11.1.min.js"></script>
+<script src="/silkroad/asset/di/-di-product-debug.js"></script>
+<script type="text/javascript">
+
+    require.config({
+        baseUrl: 'src/',  //本地模拟为src，线上版问asset
+        paths: {
+            'underscore': '../dep/underscore-1.6.0.min',
+//            'jquery': '../dep/jquery-1.11.1',
+            'backbone': '../dep/backbone-1.1.2.min',
+            'template': '../dep/template-3.0.0',
+            'jqueryui': '../dep/jquery-ui.custom-1.10.4',
+            'jquerydi': 'common/jquery.di',
+            'spectrum': '../dep/spectrum/spectrum',
+            'dialog': 'core/dialog',
+            'url': 'core/url',
+            'constant': 'core/constant',
+            'processUrl': '../test/process-url'
+        },
+        shim: {
+            'dialog': {
+                deps: [
+                    'jqueryui'
+                ]
+            },
+            'jqueryui': {
+                'deps': [
+                    'jquery'
+                ]
+            },
+            'jquerydi': {
+                'deps': [
+                    'jquery'
+                ]
+            },
+            'backbone': {
+                deps: [
+                    'underscore',
+                    'jquery',
+                    'jquerydi',
+                    'template'
+                ]
+            }
+        }
+    });
+
+    require(['enter', 'processUrl'], function (main, processUrl) {
+        var option = {
+            webRoot: 'test/mock-data'
+        };
+        var temp = $.ajax;
+
+        var ajax = function (paramObject) {
+            paramObject.url += '.json';
+            processUrl(paramObject);
+            if (paramObject.type == 'PUT' || paramObject.type == 'DELETE') {
+                paramObject.type = 'POST';
+            }
+            temp(paramObject);
+        };
+        $.ajax = ajax;
+
+        $.ajax({
+            url: option.webRoot + '/login',
+            success: function (data) {
+                main.enter(option);
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

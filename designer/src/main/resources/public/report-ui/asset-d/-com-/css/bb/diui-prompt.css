@@ -1,0 +1,51 @@
+/**
+ * di-ui.css
+ * Copyright 2012 Baidu Inc. All rights reserved.
+ *
+ * @file:    data insight 公用（包括console和product等公用）
+ *           data insight UI
+ * @author:  xxx(xxx)
+ */
+
+.di-table-prompt {
+    font-size: 12px;
+    color: #888;
+    padding: 3px 0 0 0;
+    overflow: hidden;
+    line-height: 18px;
+}
+.di-table-count {
+    color: #000;
+    line-height: 21px;
+    vertical-align: middle;
+    width: auto;
+    font-size: 12px;
+    float: left;
+    margin-left: 20px;
+}
+.di-table-count-num {
+    font-size: 12px;
+    color: #000;
+}
+.di-table-prompt-sel {
+    float: right;
+    line-height: 18px;            
+    vertical-align: middle;
+}
+.di-table-down {
+    width: auto;
+    color: #000;
+    float: right;
+    vertical-align: bottom;
+    margin-right: 15px;
+}
+.di-table-down-text {
+    height: 20px;
+    line-height: 21px;
+    color: #000;
+    float: right;
+    vertical-align: bottom;
+}
+.di-table-down-btn {
+    float: right;
+}

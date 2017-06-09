@@ -1,0 +1,55 @@
+.select-tree {}
+
+.select-tree .select-tree-input {
+    display: inline-block;
+    vertical-align: middle;
+    width: 150px;
+    height: 16px;
+    line-height: 16px;
+    border: solid 1px #939393;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 2px;
+}
+.select-tree .select-tree-box {
+    width: 200px;
+    height: 200px;
+    border: solid 1px #939393;
+    display: none;
+    position: absolute;
+    z-index: 99;
+    background: #fff;
+}
+.select-tree .select-tree-content {
+    width: 184px;
+    height: 160px;
+    overflow: auto;
+    /*border: solid 1px #939393;*/
+    margin: 4px 2px;
+}
+
+.select-tree .select-tree-foot {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+.select-tree .select-tree-foot-btn {
+    font-size: 12px;
+    height: 10px;
+    line-height: 10px;
+    display: inline-block;
+    padding: 2px 10px;
+    cursor: pointer;
+}
+.select-tree .select-tree-foot-ok {
+    background-color: #00a1cb;
+    color: #fff;
+    padding: 5px 10px;
+}
+.select-tree .select-tree-foot-cancel {
+    background-color: #eee;
+    padding: 5px 10px;
+    margin-left: 10px;
+}

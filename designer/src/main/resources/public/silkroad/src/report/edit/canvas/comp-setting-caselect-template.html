@@ -1,0 +1,16 @@
+<div class="con-comp-setting-type1 j-comp-setting" report-comp-id="{{reportCompId}}" data-comp-id="{{compId}}" data-comp-type="{{compType}}">
+    <div>
+        <div class="norm-empty-prompt table-norm-empty">纵轴指标信息不能为空</div>
+    </div>
+    <div class="data-axis-line data-axis-line-34 j-comp-setting-line j-line-x" data-axis-type="x">
+        <span class="letter">横轴:</span>
+        {{each xAxis as item}}
+        <div class="item hover-bg j-root-line c-m" data-id="{{item.id}}">
+            <span class="item-text j-item-text icon-font" title="{{item.caption}}（{{item.name}}）">
+            {{item.caption}}{{if item.name}}（{{item.name}}）{{/if}}
+            </span>
+            <span class="icon hide j-delete" title="删除">×</span>
+        </div>
+        {{/each}}
+    </div>
+</div>

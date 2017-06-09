@@ -1,0 +1,19 @@
+/**
+ * 面包屑
+ */
+.ui-breadcrumb {
+    font-size: 12px;
+}
+.ui-breadcrumb-text-item {
+    color: #333;
+    vertical-align: middle;
+}
+.ui-breadcrumb-link-item {
+    color: #0F7DD2;
+    vertical-align: middle;
+    text-decoration: none;
+}
+.ui-breadcrumb-sep {
+    padding: 0 5px 0 5px;
+    vertical-align: middle;
+}

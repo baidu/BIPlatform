@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>内存释放研究</title>
+</head>
+<body>
+<script type="text/javascript">
+    var A = function (name) {
+        this.name = name;
+        this.age = 0;
+    };
+
+    A.prototype.cry = function(){
+
+    };
+
+    var a = new A('jack');
+
+    document.write('未删前：a.name:' + a.name + ';a.age:' + a.age + ';a.cry:' + a.cry + '<br/>');
+
+    delete a.name;
+    // 对于原型上的方法或属性删除是不好用的
+    //delete a.cry;
+    a.cry = undefined;
+    document.write('已删后：a.name:' + a.name + ';a.age:' + a.age + ';a.cry:' + a.cry + '<br/>');
+
+    var b = new A('tony');
+    document.write('b：b.name:' + b.name + ';b.age:' + b.age + ';b.cry:' + b.cry + '<br/>');
+
+
+</script>
+</body>
+</html>

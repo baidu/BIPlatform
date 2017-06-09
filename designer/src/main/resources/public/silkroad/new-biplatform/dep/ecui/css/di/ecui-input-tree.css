@@ -1,0 +1,56 @@
+/*ui-input-tree*/
+.ui-input-tree {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 20px;
+    border: 1px solid #A9ADB6;
+    background-color: #FFF;
+    vertical-align: middle;
+    *display: inline;
+    zoom: 1;
+}
+.ui-input-tree-text {
+    display: block;
+    height: 19px;
+    padding-left:5px;
+    border-top: 1px solid #F0F0F0;
+    line-height: 18px;
+    font-size: 12px;
+    overflow: hidden;
+}
+.ui-input-tree-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 18px;
+    height: 20px;
+    background: url(../img/ecui.png) -21px -160px;
+}
+.ui-input-tree-cancel {
+    position: absolute;
+    top: 1px;
+    right: 20px;
+    height: 19px;
+    width: 8px;
+    background: url(../img/ecui.png) -77px -160px;
+}
+.ui-input-tree-layer {
+    z-index: 32765;
+    width: 200px;
+    height: 300px;
+    padding: 5px;
+    border: 1px solid #A8ADB6;
+    background: #FFF;
+    overflow: auto; 
+}
+.ui-input-tree-layer .ui-data-tree {
+    width: 200px;
+    line-height: 1.5;
+}
+.ui-input-tree-layer .ui-data-tree-children {
+    line-height: 0;
+}
+.hide {
+    display: none;
+}

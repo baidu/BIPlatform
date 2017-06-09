@@ -1,0 +1,16 @@
+/*!
+ * jQuery UI CSS Framework 1.10.4
+ * http://jqueryui.com
+ *
+ * Copyright 2014 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/category/theming/
+ */
+@import url("jquery.ui.core.css");
+@import url("jquery.ui.button.css");
+@import url("jquery.ui.dialog.css");
+@import url("jquery.ui.resizable.css");
+@import url("jquery.ui.selectable.css");
+

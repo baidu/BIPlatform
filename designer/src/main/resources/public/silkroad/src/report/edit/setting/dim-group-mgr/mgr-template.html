@@ -1,0 +1,17 @@
+<div class="con-dim setting-dim-group">
+    {{each dimList as $item}}{{if $item.type == "GROUP_DIMENSION"}}
+    <div class="item-group c-m j-dim-group" data-id="{{$item.id}}">
+        <div class="group-title hover-bg j-olap-element j-group-title" title="编辑维度组" data-id="{{$item.id}}">
+            <span class="icon-letter icon-fold j-icon-fold fs-18">－</span>
+            <span class="item-text ellipsis j-item-text">{{$item.caption}}</span>
+            <span class="icon-letter icon-group j-edit-dim-group">E</span>
+        </div>
+        {{each $item.levels as $item}}
+        <div class="item c-m hover-bg j-root-line j-sub-dim" data-id="{{$item.id}}">
+            <span class="item-text ellipsis j-item-text">{{$item.caption}}（{{$item.name}}）</span>
+            <span class="icon-letter collect j-delete-sub-dim" data-id="{{$item.id}}" title="删除此项">D</span>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}{{/each}}
+</div>

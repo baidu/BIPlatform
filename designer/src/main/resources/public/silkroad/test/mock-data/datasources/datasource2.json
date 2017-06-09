@@ -1,0 +1,19 @@
+{
+    "status": 0, 
+    "statusInfo": "提示信息", 
+    "data": {
+        "datasourceName": "数据源123", 
+        "datasourceType": "1", 
+        "address": "127.0.0.1,localhost,133.33.33", 
+        "password": "123456", 
+        "database": "dbtest", 
+        "userName": "lzt", 
+        "selectedTables": "id1,id2", 
+        "allTables":[
+            { "id": "id1", "name": "cube测试1"},  
+            { "id": "id2", "name": "cube测试2"}, 
+            { "id": "id3", "name": "cube测试3"}
+        ], 
+        "regexps":["regepx123","regepx2344", "rege456"]
+    }
+}

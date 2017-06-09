@@ -1,0 +1,146 @@
+/**
+ * di.css
+ * Copyright 2012 Baidu Inc. All rights reserved.
+ *
+ * @file:    data insight 公用（包括console和product等公用）
+ * @author:  xxx(xxx)
+ */
+
+/**
+ * 标记且功能性css，在console会起标记作用
+ */
+.di-o_o-block {
+    position: relative;
+    /*margin: 0 10px 20px 0;*/
+    border-radius: 3px;
+}
+.di-o_o-line {
+    position: relative;
+    /*margin: 5px 0 5px 0;*/
+}
+.di-o_o-item {
+    vertical-align: middle;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+.di-o_o-space-l1 {
+    margin-left: 20px;
+}
+.di-o_o-hide {
+    display: none;
+}
+
+/**
+ * 业务相关
+ */
+.cond-block {
+    border: 1px solid #8CCA54;
+}
+.cond-block .di-o_o-item {
+    margin: 0 5px;
+}
+.vu-table {
+    height: 500px;
+}
+
+/**
+ * 全局提示
+ */
+.global-prompt {
+    margin: 200px auto;
+    z-index: 999;
+    padding: 5px 10px;
+    color: #333;
+    background: #F9EDBE;
+    font-family: "微软雅黑", Serif;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #F0C36D;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.global-prompt-waiting {
+    width: 24px;
+    height: 24px;
+    background: url('img/waiting.gif') 0px 0px no-repeat;
+    overflow: hidden;
+    float: left;
+}
+.global-prompt-waiting-text {
+    margin-left: 34px;
+    height: 24px;
+    line-height: 24px;
+    font-family: "微软雅黑", Serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+.global-smile-face {
+    width: 44px;
+    height: 43px;
+    background-image: url(img/iconbizbg.png);
+    background-position: -44px -120px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+.global-sad-face {
+    width: 44px;
+    height: 43px;
+    background-image: url(img/iconbizbg.png);
+    background-position: 0 -120px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+/**
+ * 清除浮动
+ */
+.clear {
+    clear: both;
+    overflow: hidden;
+    height: 0px;
+}
+.canvas .report {
+    background-color: #FFF;
+}
+/* 皮肤对应的背景色,以及字体显示设置 */
+.ecui-loaded {
+    background-color: #FFF;
+    font-family: '微软雅黑', '宋体';
+    font-size: 12px;
+}
+
+/**
+ * 清除浮动-完美清除方案
+ */
+.c-f:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    zoom: 1;
+}
+
+/**
+ * 左浮动
+ */
+.f-l {
+    float: left;
+}

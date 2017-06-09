@@ -1,0 +1,117 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>产品线注册</title>
+<script>
+	function checkname() {
+		var name1 = document.form1.text1.value;
+		if (name1 == "") {
+			alert('用户名不允许为空')
+			document.form1.text1.focus();
+			return false;
+		}
+		return true;
+	}
+
+	function checkpassword() {
+		var password = document.form1.text2.value;
+		if (password == "") {
+			alert('用户密码不允许为空')
+			document.form1.text2.focus();
+			return false;
+		}
+		return true;
+	}
+
+	function checkrepassword() {
+		var password = document.form1.text2.value;
+		var repass = document.form1.text3.value;
+		if (repass == "") {
+			alert('确认密码不允许为空')
+			document.form1.text3.focus();
+			return false;
+		}
+		if (password != repass) {
+			document.form1.text3.select();
+			return false;
+		}
+		return true;
+	}
+
+	function checkEmail() {
+		var email = document.form1.text4.value;
+		var sw = email.indexOf("@", 0);
+		var sw1 = email.indexOf(".", 0);
+		var tt = sw1 - sw;
+		if (email.length == 0) {
+			alert('用户邮箱不允许为空')
+			document.form1.text4.focus();
+			return false;
+		}
+		return ture;
+	}
+
+	function checkDepartment() {
+		var name1 = document.form1.text5.value;
+		if (name1 == "") {
+			alert('用户部门不允许为空')
+			document.form1.text5.focus();
+			return false;
+		}
+		return true;
+	}
+	function check() {
+		if (checkname() && checkpassword() && checkrepassword() && checkEmail()
+				&& checkDepartment()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<form name="form1" method="post" action="/silkroad/register"
+		onsubmit="return check()">
+		<table align="center">
+			<tr>
+				<td>用户名：</td>
+				<td><input id="text1" type="text" name="name">
+					<div id="div1" style="display: inline"></div></td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input id="text2" type="password" name="pwd">
+					<div id="div2" style="display: inline"></div></td>
+			</tr>
+			<tr>
+				<td>确认密码：</td>
+				<td><input id="text3" type="password" name="text3">
+					<div id="div3" style="display: inline"></div></td>
+			</tr>
+			<tr>
+				<td>电子邮件地址：</td>
+				<td><input id="text4" type="text" name="email">
+					<div id="div4" style="display: inline"></div></td>
+			</tr>
+			<tr>
+				<td>部门：</td>
+				<td><input id="text5" type="text" name="department">
+					<div id="div5" style="display: inline"></div></td>
+			</tr>
+			<tr>
+				<td>服务类型:</td>
+				<td><select name="serviceType">
+						<option value="1">线上服务</option>
+						<option value="0">线下服务</option>
+				</select></td>
+			</tr>
+			<tr align="center">
+				<td></td>
+				<td><input type="submit" value="提交" name="tect6"> <input
+					type="reset" value="重置" name="text7"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

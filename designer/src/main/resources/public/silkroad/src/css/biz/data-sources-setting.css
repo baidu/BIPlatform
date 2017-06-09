@@ -1,0 +1,481 @@
+/*-------------------------------------------------*/
+/* 业务逻辑 -- 管理配置数据源                          */
+/*-------------------------------------------------*/
+.con-report-edit {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -ms-box;
+    display: box;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -ms-box-orient: horizontal;
+    box-orient: horizontal;
+}
+.data-sources-setting {
+    width: 184px;
+    border-right: solid 1px #d7d7d7;
+    background-color: #f7f7f7;
+    position: fixed;
+    top: 40px;
+    left: 2px;
+    z-index: 2;
+}
+.ind-cal-setting {
+    width: 184px;
+}
+.data-sources-setting .overflow {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.data-sources-setting.ui-resizable-e {
+    right: -10px;
+ }
+.data-sources-setting .data-table-select {
+    width: 80%;
+    margin: 6px 3px 0 4px;
+}
+.data-sources-setting .title-data-sources {
+    font-weight: bold;
+    line-height: 32px;
+    font-size: 14px;
+    padding-right: 21px;
+    position: relative;
+    padding-left: 4px;
+    border-bottom: solid 2px #c7c2c2;
+}
+.data-sources-setting .icon-data-sources {
+    display: inline-block;
+    float: right;
+    width: 23px;
+    height: 23px;
+    background-image: url("../img/setting.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: absolute;
+    right: 3px;
+    top: 4px;
+}
+.data-sources-setting .icon-data-sources:hover {
+    border-radius: 5px;
+    background-color: #c7c2c2;
+}
+.data-sources-setting .derivative-ind-setting {
+    background-image: url("../img/setting1.png");
+}
+.con-org-ind,
+.con-org-dim {
+    min-height: 30px;
+}
+.data-sources-setting .con-ind {
+    margin: 10px 0;
+}
+.data-sources-setting .title {
+    background: #e4e4e4;
+    font-size: 13px;
+    margin-bottom: 5px;
+    padding-left: 4px;
+    line-height: 29px;
+    position: relative;
+}
+.con-ind .icon-letter {
+    background-color: #E57A3E;
+}
+.con-ind .icon-letter:hover {
+    background-color: #E5593E;
+}
+.data-sources-setting .con-dim {
+    margin: 10px 0;
+}
+.data-sources-setting .setting {
+    display: inline-block;
+    float: right;
+    width: 25px;
+    height: 20px;
+    background-image: url(../img/setting.png);
+    background-position: -0px -3px;
+    cursor: pointer;
+}
+.data-sources-setting .item,
+.ind-cal-setting .item,
+.con-dim .item {
+    font-size: 12px;
+    padding: 5px 0 1px 3px;
+    position: relative;
+    line-height: 14px;
+    margin: 0 3px;
+}
+.data-sources-set-show-data .item {
+    display: inline-block;
+    width: 180px;
+}
+.data-sources-setting .rename-input {
+    border: 1px solid #b1a6a6;
+    position: relative;
+    top: -2px;
+    font-size: 12px;
+}
+.data-sources-setting .hover-bg:hover,
+.ind-cal-setting .hover-bg:hover,
+.con-dim .hover-bg:hover,
+.olap-element-dragging {
+    background: #e6e3e3;
+    border-radius: 3px;
+    padding: 5px 0 1px 3px;
+}
+.con-dim .group-title.hover-bg:hover {
+    padding: 5px 0 1px 5px;
+}
+.olap-element-dragging .collect {
+    display: none;
+}
+.data-sources-setting .item-text,
+.setting-dim-group .item-text{
+    box-sizing: border-box;
+    display: inline-block;
+    padding-right: 18px;
+    width: 100%;
+}
+.data-sources-setting .collect,
+.con-dim .collect {
+    display: none;
+    margin-left: -20px;
+    right: 3px;
+    top: 3px;
+}
+.data-sources-setting .item:hover .icon-letter,
+.con-dim .group-title:hover .icon-group {
+    display: inline-block;
+}
+.data-sources-setting .group-title .icon-group,
+.setting-dim-group .group-title .icon-group {
+    position: absolute;
+    top: 5px;
+    display: none;
+    right: 2px;
+    font-weight: normal;
+}
+.con-dim .item-group {
+    border-radius: 3px;
+    padding: 5px 0 0 20px;
+    overflow: hidden;
+}
+.data-sources-setting .active {
+    background-color: #74e183;
+}
+.con-dim .item-group .icon-fold {
+    left: -17px;
+}
+.data-sources-setting .add {
+    font-size: 20px;
+    color: #33ccff;
+    font-weight: bold;
+    padding: 0 5px;
+    cursor: pointer;
+}
+.data-sources-setting .icon-add-group {
+    display: inline-block;
+    width: 26px;
+    height: 25px;
+    margin-right: 5px;
+    background-image: url(../img/group.png);
+}
+.data-sources-setting .group-name {
+    display: inline-block;
+    width: 97%;
+    font-size: 12px;
+    display: none;
+}
+.data-sources-setting .con-add-group {
+    margin: 9px 0;;
+}
+.con-dim .group-title {
+    font-size: 12px;
+    display: block;
+    background-repeat: no-repeat;
+    padding: 5px 3px 1px 5px;
+    font-weight: bold;
+    background-position: -3px 0;
+    position: relative;
+}
+.data-sources-setting .group-title .delete {
+    visibility: hidden;
+    float: right;
+    cursor: pointer;
+    background: #333;
+    color: #fff;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    border-radius: 7px;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+}
+.con-dim .group-title .delete:hover {
+    background: #000;
+}
+
+.con-dim .group-title:hover .delete {
+    visibility: visible;
+}
+.data-sources-set-show-data {
+    border: none;
+    width: auto;;
+    padding: 5px;
+}
+.data-sources-set-show-data .title {
+    margin: 8px 0 5px;
+}
+.data-sources-set-show-data .checkbox {
+    position: relative;
+    top: 2px;
+}
+.data-sources-float-window-item {
+    margin: 5px;
+    padding: 3px 8px;
+    font-size: 12px;
+    background: #eeeeee;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+.data-sources-float-window-item:hover {
+    background: #939292;
+    color: #ffffff;
+}
+.data-sources-float-window-item.selected {
+    background: #6f6e6e;
+    color: #ffffff;
+}
+.data-sources-extend-title {
+    border-bottom: 1px solid #888;
+    text-align: center;
+}
+.data-sources-derive-inds {
+    margin: 5px;
+}
+.data-sources-derive-inds .data-sources-setting {
+    background-color: transparent;
+}
+.data-sources-derive-inds .description {
+    float: left;
+    width: 100%;
+    color: #a1a1a1;
+    padding: 18px 0 16px 13px;
+    font-size: 13px
+}
+.derive-inds-error {
+    position: absolute;
+    top: 35px;
+    left: 12px;
+    color: #ff0000;
+}
+.data-sources-derive-list-create {
+    width: 340px;
+    margin-left: 12px;
+}
+.data-sources-derive-list-create .name {
+    width: 60px;
+}
+.data-sources-derive-list-create .value {
+    border: 1px solid #e4e4e4;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    height: 18px;
+}
+.data-sources-derive-list-create .text-btn-derive {
+    font-size: 15px;
+}
+.data-sources-derive-list-create .item {
+    padding: 3px 0 3px 0;
+}
+.data-sources-derive-list-create .form-common-text-validation {
+    width: 200px;
+}
+.data-sources-setting .con-dim-single-container {
+    min-height: 10px;
+}
+.data-sources-setting .con-dim-single-container-active {
+    background-color: #e4e4e4;
+}
+.data-sources-derive-inds-tab .classification {
+    margin-right: 10px;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #708ad4;
+    font-family: "微软雅黑";
+    border-radius: 5px;
+    cursor: pointer;
+}
+.data-sources-derive-inds-tab .classification-focus {
+    background-color: #dee6f3;
+    border: 2px solid #c7d9f1;
+    color: #528cd5
+}
+.data-sources-derive-list-select {
+     width: 340px;
+     margin-left: 12px;
+ }
+.data-sources-derive-list-select .select-description {
+     width: 340px;
+     height: 30px;
+}
+.data-sources-derive-list-select .item {
+    margin-bottom: 10px;
+    width: 340px;
+    height: 50px;
+}
+.area-inds-item {
+    width: 336px;
+    min-height: 50px;
+    border: 1px solid #d9d9d9;
+}
+.input-inds-item {
+    width: 40px;
+    height: 30px;
+    border: none;
+    outline: 0 none;
+}
+.label-inds-item {
+    width: 150px;
+    height: 20px;
+}
+.area-inds-item-ind{
+    position: relative;
+    margin: 4px 4px;
+    padding: 4px 18px;
+    border-radius: 5px;
+    width: 40px;
+    font-weight: bold;
+    background-color: #D9E8EF;
+    color: #708ad4;
+    font-family: "微软雅黑";
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.area-inds-item-ind:hover .area-inds-item-ind-delete{
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 56px;
+    width: 16px;
+    height: 18px;
+    text-align: center;
+}
+/*.norm-box .callback-index {*/
+    /*width: 400px;*/
+    /*border: 1px solid #C3C3C3;*/
+    /*height: 100px;*/
+/*}*/
+.callback-index {
+    float: left;
+    width: 550px;
+    margin-left: 8px
+}
+.callback-index-all {
+    float: left;
+    width: 550px;
+    margin-left: 3px;
+}
+.callback-form-box {
+    float: left;
+}
+.callback-form {
+    border: 1px solid #C3C3C3;
+    width: 500px;
+    height: 136px;
+    float: left;
+    margin-top: 7px;
+}
+.callback-name {
+    display: inline-block;
+    width: 125px;
+    height: 100%;
+    margin-left: 3px;
+}
+.callback-name div {
+    text-align: left;
+    color: #000000;
+    font-size: 14px;
+    font-family: '微软雅黑';
+    width: 100px;
+    margin: 10px 0 0 25px;
+    height: 22px;
+}
+.callback-text {
+    float: right;
+    display: inline-block;
+    width: 350px;
+    height: 100%;
+    margin-right: 15px;
+}
+.callback-text input{
+    float: right;
+    display: inline-block;
+    width: 330px;
+    height: 20px;
+    margin: 8px 0 0 0;
+}
+.callback-add {
+    width: 15px;
+    height: 15px;
+    font-size: 20px;
+    float: left;
+    text-align: center;
+    margin: 0 0 0 15px;
+    cursor: pointer;
+    color: #33ccff;
+    font-weight: bold;
+}
+.close-retractable {
+    width: 19px;
+    height: 19px;
+    float: right;
+    text-align: center;
+    border: 1px solid #C3C3C3;
+    cursor: pointer;
+    color: #999;
+    margin: 7px 0 0 2px;
+    font-size: 16px;
+    line-height: 18px;
+    border-radius: 4px;
+}
+.close-retractable:hover{
+    width: 19px;
+    height: 19px;
+    float: right;
+    text-align: center;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 18px;
+    background: #3399ff;
+    border:1px solid #3399ff;
+    margin-top: 7px;
+    border-radius: 4px;
+}
+.callback-retractable {
+    font-size: 16px;
+}
+.callback-title {
+    border: 1px solid #C3C3C3;
+    width: 500px;
+    height: 19px;
+    float: left;
+    margin-top: 7px;
+    font-weight: bold;
+    display: none;
+}
+.callback-title div{
+    color: #333;
+    margin-left: 15px;
+    display: inline-block;
+}

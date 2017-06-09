@@ -1,0 +1,58 @@
+<div class="con-comp-setting-type1 j-comp-setting j-comp-select"  data-comp-id="{{compId}}" data-comp-type="SELECT">
+    <div class="data-axis-line data-axis-line-48 j-comp-setting-line j-line-x" data-axis-type="x">
+        <span class="letter">维度:</span>
+        {{each xAxis as item}}
+        <div class="item hover-bg j-root-line" data-id="{{item.id}}" data-name="{{item.name}}">
+            <span class="item-text j-item-text icon-font" title="{{item.caption}}（{{item.name}}）">
+            {{item.caption}}（{{item.name}}）
+            </span>
+            <span class="icon hide j-delete" title="删除">×</span>
+        </div>
+        {{/each}}
+    </div>
+    <div class="data-axis-line data-axis-line-48 data-btn-line">
+        <span class="letter">设置:</span>
+        <span>下拉框类型：</span>
+        <select class="select-type" data-comp-id="{{compId}}">
+            <option value="ECUI_SELECT" {{if $data.compMold && $data.compMold==="ECUI_SELECT"}} selected="selected"{{/if}}>
+                单选
+            </option>
+            <option value="ECUI_MULTI_SELECT" {{if $data.compMold && $data.compMold==="ECUI_MULTI_SELECT"}} selected="selected"{{/if}}>
+                多选
+            </option>
+        </select>
+
+        <!-- 单选下拉框默认值 -->
+        <div class="select-default"
+            {{if $data.compMold && $data.compMold==="ECUI_SELECT"}}
+                style="display: inline-block;"
+            {{else}}
+                style="display: none;"
+            {{/if}}>
+            <span>&nbsp;&nbsp;下拉框默认值：</span>
+            <span class="select-default-name">
+                全部
+                {{each xAxis as item}}
+                    {{item.caption}}
+                {{/each}}
+            </span>
+            <input class="select-default-value j-select-setAll"
+                style="vertical-align: bottom;" type="checkbox"
+                data-comp-id="{{compId}}"
+                value="全部{{each xAxis as item}}{{item.caption}}{{/each}}"
+                {{if $data.compAll==="true"}}
+                    checked="checked"
+                    {{else}}
+                {{/if}}/>
+        </div>
+        <!--<span>下拉框皮肤：</span>-->
+        <!--<select class="select-skin" data-comp-id="{{compId}}">-->
+            <!--<option value="classics" {{if $data.compSkin && $data.compSkin==="classics"}} selected="selected"{{/if}}>-->
+            <!--经典样式-->
+            <!--</option>-->
+            <!--<option value="lightblue" {{if $data.compSkin && $data.compSkin==="lightblue"}} selected="selected"{{/if}}>-->
+            <!--商桥样式-->
+            <!--</option>-->
+        <!--</select>-->
+    </div>
+</div>

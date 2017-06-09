@@ -1,0 +1,36 @@
+<!--
+数据例子：
+var demoData = {
+    "olapTableParamList": [
+        {"text": "文本1", "value": "text1", "relationParam": "table1"},
+        {"text": "文本2", "value": "text2", "relationParam": "table2"},
+        {"text": "文本3", "value": "text3", "relationParam": "table3"}
+    ],
+    "planeTableParamList": [
+        {
+            "text": "表1",
+            "value": "table1"
+        },
+        {
+            "text": "表2",
+            "value": "table2"
+        },
+        {
+            "text": "表3",
+            "value": "table3"
+        }
+    ]
+};
+-->
+<div class="table-link-set-item">
+    <select class="left">
+        {{each olapTableParamList as $oParamOption }}
+        <option value={{$oParamOption.value}}>{{$oParamOption.text}}</option>
+        {{/each}}
+    </select>
+    <select class="right">
+        {{each planeTableParamList as $pParam}}
+        <option value={{$pParam.value}}>{{$pParam.text}}</option>
+        {{/each}}
+    </select>
+</div>

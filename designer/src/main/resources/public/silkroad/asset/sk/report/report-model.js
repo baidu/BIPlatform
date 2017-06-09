@@ -1,0 +1,1 @@
+define(["url"],function(a){return Backbone.Model.extend({initialize:function(){},publishReport:function(b,c,d){$.ajax({url:a.publishReport(c),type:b,success:function(a){d(a.data)}})},previewReport:function(b,c,d){$.ajax({url:a.previewReport(c),type:b,success:function(a){d(a.data)}})}})});

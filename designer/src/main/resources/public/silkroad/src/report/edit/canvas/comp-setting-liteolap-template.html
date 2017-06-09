@@ -1,0 +1,69 @@
+<div class="con-comp-setting-type1 j-comp-setting" data-comp-id="{{compId}}" data-comp-type="LITEOLAP">
+    <div>
+        <div class="norm-empty-prompt">纵轴指标信息不能为空</div>
+    </div>
+    <div class="data-axis-line data-axis-line-48 j-comp-setting-line j-line-x" data-axis-type="x">
+        <span class="letter">横轴:</span>
+        {{each xAxis as item}}
+        <div class="item hover-bg j-root-line c-m" data-id="{{item.id}}">
+            <span class="item-text j-item-text" title="{{item.caption}}（{{item.name}}）">
+            {{item.caption}}{{if item.name}}（{{item.name}}）{{/if}}
+            </span>
+            <span class="icon-letter j-delete" title="删除">×</span>
+        </div>
+        {{/each}}
+    </div>
+    <div class="data-axis-line data-axis-line-48 j-comp-setting-line j-line-y" data-axis-type="y">
+        <span class="letter">纵轴:</span>
+        {{each yAxis as item}}
+        <div class="item hover-bg j-root-line c-m" data-id="{{item.id}}">
+            <span class="item-text j-item-text" title="{{item.caption}}（{{item.name}}）">
+            {{item.caption}}{{if item.name}}（{{item.name}}）{{/if}}
+            </span>
+            <span class="icon-letter j-delete" title="删除">×</span>
+        </div>
+        {{/each}}
+    </div>
+    <div class="data-axis-line data-axis-line-48 j-comp-setting-line j-line-s" data-axis-type="s">
+        <span class="letter">过滤轴:</span>
+        {{each sAxis as item}}
+        <div class="item hover-bg j-root-line" data-id="{{item.id}}">
+            <span class="item-text j-item-text" title="{{item.caption}}（{{item.name}}）">
+            {{item.caption}}{{if item.name}}（{{item.name}}）{{/if}}
+            </span>
+            <span class="icon-letter j-delete" title="删除">×</span>
+        </div>
+        {{/each}}
+    </div>
+    <div class="data-axis-line data-axis-line-48 j-comp-setting-line j-line-cand-ind" data-axis-type="CAND_IND">
+        <span class="letter">候选指标:</span>
+        {{each candInds as item}}
+        <div class="item hover-bg j-root-line" data-id="{{item.id}}">
+            <span class="item-text j-item-text" title="{{item.caption}}（{{item.name}}）">
+            {{item.caption}}{{if item.name}}（{{item.name}}）{{/if}}
+            </span>
+            {{if !item.used}}
+            <span class="icon-letter j-delete" title="删除">×</span>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+    <div class="data-axis-line data-axis-line-48 j-comp-setting-line j-line-cand-dim" data-axis-type="CAND_DIM">
+        <span class="letter">候选维度:</span>
+        {{each candDims as item}}
+        <div class="item hover-bg j-root-line" data-id="{{item.id}}">
+            <span class="item-text j-item-text" title="{{item.caption}}（{{item.name}}）">
+            {{item.caption}}{{if item.name}}（{{item.name}}）{{/if}}
+            </span>
+            {{if !item.used}}
+            <span class="icon-letter j-delete" title="删除">×</span>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+    <div class="data-axis-line data-axis-line-48 data-btn-line">
+        <span class="letter">设置:</span>
+        <span class="icon-letter icon-letter-btn j-set-data-format">数据格式</span>
+        <span class="icon-letter icon-letter-btn j-set-link">跳转</span>
+    </div>
+</div>

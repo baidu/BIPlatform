@@ -1,0 +1,261 @@
+{
+	"desc" : "lightolap分析模板",
+    "diKey": "DEPICT",
+    "clzDefs": [
+        {
+            "clzKey": "OLAP_TABLE",
+            "dataOpt": {
+                "emptyHTML": "未查询到相关数据"
+            }
+        },
+        {
+            "clzKey": "ECUI_SELECT",
+            "dataOpt": {
+                "optionSize": 10
+            }
+        }
+    ],
+    "entityDefs": [
+        {
+            "id": "snpt1",
+            "clzType": "SNIPPET"
+        },
+        {
+            "id": "snpt1.cpnt-form1",
+            "clzType": "COMPONENT",
+            "clzKey": "DI_FORM",
+            "reportType": "RTPL_VIRTUAL",
+            "init": { 
+                "action": { "name": "sync" }
+            },
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "input": [],
+                "confirm": "snpt1.vu-form1-confirm1"
+            },
+            "dataOpt": { "submitMode": "CONFIRM" }
+        },
+        {
+            "id": "snpt1.vu-form1-confirm1",
+            "clzType": "VUI",
+            "clzKey": "H_BUTTON",
+            "dataOpt": { 
+                "skin": "ui-normal-btn",
+                "text": "查询"
+            }
+        },
+        {
+            "id": "snpt1.cpnt-table1",
+            "clzType": "COMPONENT",
+            "clzKey": "DI_TABLE",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "mainTable": "snpt1.vu-table1",
+                "breadcrumb": "snpt1.vu-table1-breadcrumb1",
+                "download": "snpt1.vu-table1-download1",
+                "countInfo": "snpt1.vu-table1-count1"
+            },
+            "interactions": [
+                {
+                    "events": [
+                        { "rid": "snpt1.cpnt-form1", "name": "dataloaded" },
+                        { "rid": "snpt1.cpnt-form1", "name": "submit" }
+                    ],
+                    "action": { "name": "sync" },
+                    "argHandlers": [
+                        ["clear"],
+                        ["getValue", "snpt1.cpnt-form1"]
+                    ]
+                },
+                { 
+                    "id": "snpt1.cpnt-table1-itrct5",
+                    "event": { "rid": "snpt1.cpnt-table-meta1", "name": "submit" }, 
+                    "action": { "name": "sync" },
+                    "argHandlers": [
+                        ["clear"],
+                        ["getValue", "snpt1.cpnt-form1"]
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "snpt1.cpnt-rtplclone1",
+            "clzType": "COMPONENT",
+            "clzKey": "DI_RTPLCLONE",
+            "vuiRef": {
+                "saveRtplClone": "snpt1.vu-savebutton1",
+                "clearRtplClone": "snpt1.vu-clearbutton1"
+            }
+        },
+        {
+            "id": "snpt1.vu-savebutton1",
+            "clzType": "VUI",
+            "clzKey": "H_BUTTON",
+            "dataOpt": {
+                "skin": "ui-normal-btn",
+                "text": "保存查询条件"
+            }
+        },
+        {
+            "id": "snpt1.vu-clearbutton1",
+            "clzType": "VUI",
+            "clzKey": "H_BUTTON",
+            "dataOpt": {
+                "skin": "ui-normal-btn",
+                "text": "清除查询条件"
+            }
+        },
+        { 
+            "id": "snpt1.vu-table1", 
+            "clzType": "VUI",
+            "clzKey": "OLAP_TABLE",
+            "name": "table",
+            "dataOpt": {
+                "rowHCellCut": 30,
+                "hCellCut": 30,
+                "cCellCut": 30,
+                "vScroll": true,
+                "rowCheckMode": "SELECT"
+            }
+        },
+        {
+            "id": "snpt1.vctnr-fold1",
+            "clzType": "VCONTAINER",
+            "clzKey": "FOLD_PANEL",
+            "vpartRef": {
+                "ctrlBtn": "snpt1.vpt-fold1-ctrlbtn1",
+                "body": "snpt1.vpt-fold1-body1"
+            },
+            "dataOpt": {
+                "autoDeaf": false,
+                "autoComponentValueDisabled": false,
+                "autoVUIValueDisabled": false,
+                "defaultHide": false
+            }
+        },
+        { 
+            "id": "snpt1.vpt-fold1-body1", 
+            "clzType": "VPART" 
+        },
+        {
+            "id": "snpt1.cpnt-table-meta1",
+            "clzType": "COMPONENT",
+            "clzKey": "OLAP_META_CONFIG",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "main": "snpt1.vu-table-meta1"
+            },
+            "interactions": [
+                { 
+                    "rule": { "operator": "excludes", "interactionIds": ["snpt1.cpnt-table1-itrct5"] },
+                    "event": { "rid": "snpt1.cpnt-table1", "name": "dataloaded.DATA" }, 
+                    "action": { "name": "sync" }
+                },
+                { 
+                    "event": { "rid": "snpt1.cpnt-table1", "name": "dataloaded.LINK_DRILL" }, 
+                    "action": { "name": "sync" }
+                },
+                { 
+                    "event": { "rid": "snpt1.cpnt-table1", "name": "dataloaded" }, 
+                    "action": { "name": "sync" }
+                }
+            ],
+            "dataOpt": {
+                "needShowCalcInds": true,
+                "reportType": "RTPL_OLAP_TABLE",
+                "submitMode": "CONFIRM"
+            }
+        },
+        {
+            "id": "snpt1.vu-table-meta1", 
+            "clzType": "VUI",
+            "clzKey": "OLAP_META_DRAGGER"
+        },
+        { 
+            "id": "snpt1.vpt-fold1-ctrlbtn1", 
+            "clzType": "VPART",
+            "dataOpt": { "expandText": "表格设置", "collapseText": "收起表格设置" }
+        },
+        { 
+            "id": "snpt1.vu-table1-breadcrumb1", 
+            "clzType": "VUI",
+            "clzKey": "BREADCRUMB",
+            "dataOpt": {
+                "maxShow": 6
+            }
+        },
+        {
+            "id": "snpt1.vu-table1-download1",
+            "clzType": "VUI",
+            "clzKey": "H_BUTTON",
+            "dataOpt": {
+                "skin": "ui-download-btn",
+                "text": "下载数据"
+            }
+        },
+        {
+            "id": "snpt1.vu-table1-count1",
+            "clzType": "VUI",
+            "clzKey": "TEXT_LABEL",
+            "dataInitOpt": { "hide": true }
+        },
+        {
+            "id": "snpt1.cpnt-liteolapchart-meta1",
+            "clzType": "COMPONENT",
+            "clzKey": "LITEOLAP_META_CONFIG",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "main": "snpt1.vu-liteolapchart-meta1"
+            },
+            "interactions": [
+                { 
+                    "event": { "rid": "snpt1.cpnt-table1", "name": "dataloaded" }, 
+                    "action": { "name": "syncLiteOlapInds" }
+                },
+                { 
+                    "event": { "rid": "snpt1.cpnt-table1", "name": "rowselect" }, 
+                    "action": { "name": "syncLiteOlapInds" }
+                }
+            ],
+            "dataOpt": {
+                "needShowCalcInds": true,
+                "submitMode": "IMMEDIATE",
+                "reportType": "RTPL_OLAP_TABLE",
+                "datasourceId": { "SELECT": "LIST_SELECT" }
+            }
+        },
+        {
+            "id": "snpt1.vu-liteolapchart-meta1", 
+            "clzType": "VUI",
+            "clzKey": "OLAP_META_IND_SELECT"
+        },
+        {
+            "id": "snpt1.cpnt-liteolapchart1", 
+            "clzType": "COMPONENT",
+            "clzKey": "DI_LITEOLAP_CHART",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "mainChart": "snpt1.vu-liteolapchart1"
+            },
+            "interactions": [
+                { 
+                    "event": { "rid": "snpt1.cpnt-liteolapchart-meta1", "name": "submit" },
+                    "action": { "name": "syncLiteOlapChart" },
+                    "argHandlers": [
+                        ["clear"],
+                        ["getValue", "snpt1.vu-liteolapchart-meta1"]
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "snpt1.vu-liteolapchart1", 
+            "clzType": "VUI",
+            "clzKey": "H_CHART",
+            "dataOpt": {
+                "legend": { "xMode": "pl" },
+                "weekViewRange": [null, "-1d"]
+            }
+        }
+    ]
+}

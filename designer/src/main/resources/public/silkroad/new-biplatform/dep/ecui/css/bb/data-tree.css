@@ -1,0 +1,76 @@
+/**
+ * Dim data tree
+ */
+.ui-data-tree {
+    padding-left: 15px;
+    font-size: 12px;
+    height: 20px;
+    width: 120px;
+    line-height: 20px;
+    margin-bottom: 3px;
+    cursor: default;
+    position: relative;
+    border: 1px solid #FFF;
+    overflow: hidden;
+}
+.ui-data-tree-icon {
+    height: 9px;
+    width: 9px;
+    overflow: hidden;
+    background: url(../img/icon.png) 0px 0px no-repeat;
+    position: absolute;
+    left: 2px;
+    top: 5px;
+    display: none;
+}
+.ui-data-tree-close {
+    height: 8px;
+    width: 8px;
+    overflow: hidden;
+    background: url(../img/icon.png) -44px -152px no-repeat;
+    position: absolute;
+    right: 3px;
+    top: 6px;
+    display: none;
+}
+.ui-data-tree label {
+    margin: 0px;
+    padding: 0px;
+}
+.ui-data-tree-expanded {
+    background: url(../img/ecui.png) 2px -35px no-repeat;
+}
+.ui-data-tree-collapsed {
+    background: url(../img/ecui.png) 2px -95px no-repeat;
+}
+.ui-data-tree-expanded .ui-data-tree-icon {
+    background-position: -16px -151px;
+    display: block;
+}
+.ui-data-tree-collapsed .ui-data-tree-icon {
+    background-position: -25px -151px;
+    display: block;
+}
+.ui-data-tree-children {
+    margin-left: 15px;
+}
+.ui-data-tree-hover {
+    background-color: #FEE8AE;
+}
+.ui-data-tree-half {
+    border-color: #D9A425;
+}
+.ui-data-tree-selected {
+    background-color: #FEE8AE;
+    border-color: #D9A425;
+}
+.ui-data-tree-disselected {
+    color: #999;
+}
+
+.ui-dim-item-layer-multi .ui-data-tree-selected .ui-data-tree-close {
+    display: block;
+}
+.ui-dim-linkage-item-dim-layer-multi .ui-data-tree-selected .ui-data-tree-close {
+    display: block;
+}

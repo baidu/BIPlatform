@@ -1,0 +1,70 @@
+<div class="dim-container-normal">
+    <ul class="normal-column-names c-f">
+        <li><span>主数据表</span></li>
+        <li><span>主表字段</span></li>
+        <li><span>关联数据表</span></li>
+        <li><span>关联表字段</span></li>
+    </ul>
+    <div class="normal-main j-normal-main">
+        <!--循环cube列表（dim.normal）-->
+        {{each dim.normal as $cube i}}
+        <div class="normal-main-box c-f j-normal-main-box">
+            <span class="cube-name" cubeId ={{$cube.cubeId}} title={{cubes[$cube.cubeId].name}}>{{cubes[$cube.cubeId].name}}</span>
+            <span class="normal-cube-open j-normal-cube-open"></span>
+            <div class="normal-relation-container j-normal-relation-container c-f">
+                <!--循环cube中的行（dim.normal.children）-->
+                {{each $cube.children as $line j}}
+                <div class="normal-relation-box j-normal-relation-box">
+                    {{if j !==0 }}
+                        <span class="normal-broken-line"></span>
+                    {{/if}}
+                    <select class="normal-relation-box-select-fields mr-20">
+                        <option value="0">请选择</option>
+                        <!-- 循环每一行中的主表字段(cubes.cube1.currDims)-->
+                        {{each cubes[$cube.cubeId].currDims as $dim}}
+                        <option value={{$dim.name}}
+                            {{if $dim.name === $line.currDim}}selected="selected"
+                            {{/if}}>{{$dim.comment}}
+                        </option>
+                        {{/each}}
+                    </select>
+                    <span class="equal">=</span>
+                    <select class="normal-relation-box-select-table mr-30 j-normal-relation-table-select" >
+                        <option value="0">请选择</option>
+                        <!-- 循环关联数据表(relationTables)-->
+                        {{each relationTables as $relationTable}}
+                        <option value={{$relationTable.name}}
+                        {{if $relationTable.name === $line.relationTable}}selected="selected"
+                        {{/if}}>{{$relationTable.name}}
+                        </option>
+                        {{/each}}
+                    </select>
+                    <select class="normal-relation-box-select-fields mr-10">
+                        <option value="0">请选择</option>
+                        <!-- 循环关联数据表(relationTables)-->
+                        {{each relationTables as $relationTable}}
+                        <!-- 如果关联数据表等于当前行的的关联表,那么就循环此关联表中的字段-->
+                        {{if $relationTable.name === $line.relationTable}}
+                            {{each $relationTable.fields as $field}}
+                                <option value={{$field.name}}
+                                {{if $field.name === $line.field}}selected="selected"
+                                {{/if}}>{{$field.comment}}
+                                </option>
+                            {{/each}}
+                        {{/if}}
+                        {{/each}}
+                    </select>
+                    <span class="delete j-normal-delete"></span>
+                    {{if $cube.children.length === (j+1)}}
+                        <span class="add j-normal-add"></span>
+                    {{/if}}
+                </div>
+
+                {{/each}}
+            </div>
+            <span class="normal-error-msg j-normal-error-msg hide"></span>
+        </div>
+        {{/each}}
+    </div>
+    <span class="prompt mt-30">注：建立关联后，默认将关联表的所有字段全部取出</span>
+</div>

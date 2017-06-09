@@ -1,0 +1,1 @@
+define(["template"],function(a){var b=['<ul class="nav-main j-nav-main">',"{{each menus as $menu}}",'<li class="nav-menu{{if $menu.id === currentMenu}} nav-menu-focus{{/if}}" id="{{$menu.id}}">','<span class="nav-menu-span">{{$menu.name}}</span>',"</li>","{{/each}}","</ul>"].join("");return{render:function(c){var d=a.compile(b),e=d(c);return e}}});

@@ -1,0 +1,32 @@
+<!--
+数据例子：
+var demoData = {
+    measureId: '',
+    reocrdSize: '',
+    topType: '',
+    indList: [
+    ],
+    topTypeList: {
+        desc: bottom,
+        asc: top,
+        none: none
+    }
+};
+-->
+<div class="axis-setting">
+    <div class="axis-setting-title">请选择需要设定为副轴的指标</div>
+    <div class="axis-setting-dim">
+        {{each dim as data name}}
+            <div>{{data.caption}}
+                <input
+                type="checkbox"
+                class="axis-setting-checkbox"
+                name ="{{data.name}}"
+                {{if data.axis === '1'}}
+                checked="checked"
+                {{/if}}
+                />
+            </div>
+        {{/each}}
+    </div>
+</div>

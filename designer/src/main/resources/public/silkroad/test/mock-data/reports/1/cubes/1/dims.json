@@ -1,0 +1,130 @@
+{
+    "data": {
+        "dimList": [
+            {
+                "id": "96",
+                "caption": "日",
+                "name": "TimeDay",
+                "type": "TIME_DIMENSION",
+                "canToInd": 0
+            },
+            {
+                "id": "97",
+                "caption": "周",
+                "name": "TimeWeekly",
+                "type": "TIME_DIMENSION",
+                "canToInd": 0
+            },
+            {
+                "id": "98",
+                "caption": "月",
+                "name": "TimeMonth",
+                "type": "TIME_DIMENSION",
+                "canToInd": 0
+            },
+            {
+                "id": "99",
+                "caption": "季",
+                "name": "TimeQuarter",
+                "type": "TIME_DIMENSION",
+                "canToInd": 0
+            },
+            {
+                "id": "100",
+                "caption": "镇妖宝塔",
+                "name": "zhenyao_baota",
+                "type": "STANDARD_DIMENSION",
+                "canToInd": 0
+            },
+            {
+                "id": "101",
+                "caption": "金箍棒",
+                "name": "jingubang",
+                "type": "STANDARD_DIMENSION",
+                "canToInd": 1
+            },
+            {
+                "id": "102",
+                "caption": "三尖两刃刀",
+                "name": "sanjian_liangren",
+                "type": "STANDARD_DIMENSION",
+                "canToInd": 0
+            },
+            {
+                "id": "104",
+                "caption": "红天绫",
+                "name": "hong_tian_ling",
+                "type": "STANDARD_DIMENSION",
+                "canToInd": 0
+            },
+            {
+                "id": "105",
+                "caption": "乾坤圈",
+                "name": "qiankun_quan",
+                "type": "STANDARD_DIMENSION",
+                "canToInd": 0
+            },
+            {
+                "id": "106",
+                "caption": "风火轮",
+                "name": "fenghuo_hun",
+                "type": "STANDARD_DIMENSION",
+                "canToInd": 0
+            },
+            {
+                "id": "103",
+                "caption": "哪吒宝物组",
+                "name": "id_or_group_caption",
+                "type": "GROUP_DIMENSION",
+                "levels": [
+                    {
+                        "id": "104",
+                        "caption": "红天绫",
+                        "name": "hong_tian_ling"
+                    },
+                    {
+                        "id": "105",
+                        "caption": "乾坤圈",
+                        "name": "qiankun_quan"
+                    },
+                    {
+                        "id": "106",
+                        "caption": "风火轮",
+                        "name": "fenghuo_hun"
+                    }
+                ]
+            },
+            {
+                "id": "107",
+                "caption": "悟空偷了哪吒宝物赃物组,多文字",
+                "name": "wukong_tou_nezha",
+                "levels": [
+                    {
+                        "id": "108",
+                        "caption": "红天绫",
+                        "name": "hong_tian_ling"
+                    },
+                    {
+                        "id": "109",
+                        "caption": "乾坤圈",
+                        "name": "qiankun_quan"
+                    },
+                    {
+                        "id": "110",
+                        "caption": "风火轮",
+                        "name": "fenghuo_hun"
+                    }
+                ]
+            },
+            {
+                "id": "108",
+                "caption": "新维度组",
+                "name": "wukong_tou_nezha",
+                "type": "GROUP_DIMENSION",
+                "levels": []
+            }
+        ]
+    },
+    "status": 0,
+    "statusInfo": ""
+}

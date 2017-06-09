@@ -1,0 +1,50 @@
+/**
+ * Form
+ */
+.ui-form {
+    position: absolute;
+    border: 1px solid #4085B4;
+    overflow: hidden;
+    padding-top: 29px;
+    background-color: #FFF;
+}
+.ui-form-title {
+    height: 28px;
+    background: #2584DA;
+    line-height: 28px;
+    padding-left: 10px;
+    border-bottom: 1px solid #4085B4;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: #FFF;
+    font-weight: bold;
+}
+.ui-form-close {
+    display: none;
+    width: 11px;
+    height: 11px;
+    top: 9px;
+    right: 13px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    cursor: default;
+    background: url(img/icon.png) -27px -35px no-repeat;
+}
+.ui-form-body {
+    background-color: #FFF;
+    padding: 10px;
+}
+.ui-form-inner {
+    background-color: #FFF;
+    padding: 10px;
+}
+.ui-messagebox-bottom .ui-button-g:hover {
+    background: #2584DA;
+    color: #FFF
+}
+.ui-messagebox-bottom .ui-form-close {
+    display: none;
+}

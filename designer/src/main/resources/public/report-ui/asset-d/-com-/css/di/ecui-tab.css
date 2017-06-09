@@ -1,0 +1,183 @@
+/**
+ * TAB页
+ */
+.ui-tab {
+}
+.ui-tab-title {
+    height: 27px;
+    padding: 0px;
+    margin: 0px;
+}
+.ui-tab-button {
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #6CACCF;
+    background:  url(img/icon2.png) -25px -0px no-repeat;
+    overflow: hidden;
+}
+.ui-tab-button-disabled {
+    border: 1px solid #BBB;
+}
+.ui-tab-button-hover {
+    background-position:  -50px -0px;
+}
+.ui-tab-button-active {
+    background-position:  -0px 0px;
+} 
+.ui-tab-prev .ui-tab-button-icon {
+    margin: 8px 0px 0px 10px;
+    position: relative;
+    width: 5px;
+    height: 9px;
+    background:  url(img/icon2.png) -75px -9px no-repeat;
+    overflow: hidden;
+}
+.ui-tab-prev-disabled .ui-tab-button-icon {
+    background-position: -80px -9px;
+}
+.ui-tab-next .ui-tab-button-icon {
+    margin: 8px 0px 0px 11px;
+    position: relative;
+    width: 5px;
+    height: 9px;
+    background:  url(img/icon2.png) -75px -0px no-repeat;
+    overflow: hidden;
+}
+.ui-tab-next-disabled .ui-tab-button-icon {
+    background-position: -80px 0px;
+} 
+.ui-tab-item {
+    height: 27px;
+    /*background-color: #CBE3EF;*/
+    margin: 0px 1px 0px 1px;
+}
+.ui-tab-item .ui-tab-item-ledge {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: top;
+    height: 25px;
+    _height: 26px;
+    width: 1px;
+    margin-top: 1px;
+    border-top: solid 1px #9FA9B5;
+    background-color: #7C8999;
+}
+.ui-tab-item .ui-tab-item-lledge {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: top;
+    height: 26px;
+    _height: 27px;
+    width: 1px;
+    border-top: solid 1px #9FA9B5;
+    background-color: #7C8999;
+}
+.ui-tab-item .ui-tab-item-inner {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: top;
+    height: 26px;
+    _height: 27px;
+    color: white;
+    border-top: 1px solid #7C8999;
+    border-left: 1px solid #7C8999;
+    border-right: 1px solid #7C8999;
+    background-color: #7C8999;
+}
+.ui-tab-item-hover .ui-tab-item-ledge {
+    border-top: solid 1px #87BBEB;
+    background-color: #348CDC;
+}
+.ui-tab-item-hover .ui-tab-item-lledge {
+    border-top: solid 1px #87BBEB;
+    background-color: #348CDC;
+}
+.ui-tab-item-hover .ui-tab-item-inner {
+    color: white;
+    border-top: 1px solid #348CDC;
+    border-left: 1px solid #348CDC;
+    border-right: 1px solid #348CDC;
+    background-color: #348CDC;
+}
+.ui-tab-item-active .ui-tab-item-ledge,
+.ui-tab-item-selected .ui-tab-item-ledge {
+    border-top: solid 1px #60A5E3;
+    background-color: #2070BB;
+}
+.ui-tab-item-active .ui-tab-item-lledge,
+.ui-tab-item-selected .ui-tab-item-lledge {
+    border-top: solid 1px #60A5E3;
+    background-color: #2070BB;
+}
+.ui-tab-item-active .ui-tab-item-inner,
+.ui-tab-item-selected .ui-tab-item-inner {
+    color: white;
+    border-top: 1px solid #2070BB;
+    border-left: 1px solid #2070BB;
+    border-right: 1px solid #2070BB;
+    background-color: #2070BB;
+}
+
+.ui-tab-item-container {
+    border-top: 1px solid #E0E0E0;
+}
+.ui-tab-item-text label {
+    vertical-align: middle;
+}
+.ui-tab-item .ui-tab-item-text {
+    height: 22px;
+    _height: 26px;
+    line-height: 22px;
+    _line-height: 26px;
+    vertical-align: middle;
+    display: inline-block;
+    padding: 0px 20px 0px 20px;
+    font-size: 12px;
+}
+.ui-tab-item-hover .ui-tab-item-text {
+    color: white;
+}
+.ui-tab-item-active .ui-tab-item-text {
+    color: white;
+}
+.ui-tab-item-selected .ui-tab-item-text {
+    color: white;
+    font-weight: bold;
+}
+.ui-tab-item .ui-tab-close-btn {
+    height: 25px;
+    _height: 26px;
+    line-height: 25px;
+    _line-height: 26px;
+    vertical-align: middle;
+    width: 17px;
+    display: inline-block;
+    position: relative;
+}
+.ui-tab-item .ui-tab-close-btn-icon {
+    height: 12px;
+    width: 12px;
+    top: 6px;
+    bottom: 7px;
+    left: 0px;
+    right: 5px;
+    position: absolute;
+    display: block;
+    background:  url(img/icon2.png) -0px -25px no-repeat;
+    overflow: hidden;
+}
+.ui-tab-item-hover .ui-tab-close-btn-icon {
+    background-position: -12px -25px;
+}
+.ui-tab-item-active .ui-tab-close-btn-icon {
+    background-position: -12px -25px;
+}
+.ui-tab-item-selected .ui-tab-close-btn-icon {
+    background-position: -12px -25px;
+}

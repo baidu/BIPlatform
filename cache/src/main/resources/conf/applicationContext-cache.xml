@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+												http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+												http://www.springframework.org/schema/context
+            									http://www.springframework.org/schema/context/spring-context-3.1.xsd"
+                                                >
+	
+	
+	<context:component-scan base-package="com.baidu.rigel.biplatform.cache" />
+	
+	<!-- <bean id="redisSentinelConfiguration"
+        class="org.springframework.data.redis.connection.RedisSentinelConfiguration">
+         <property name="master">
+            <bean class="org.springframework.data.redis.connection.RedisNode">
+                <property name="name" value="biplatform_master"></property>
+            </bean>
+        </property>
+        <property name="sentinels">
+            <set>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg index="0" value="host" />
+                    <constructor-arg index="1" value="port" />                    
+                </bean>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg index="0" value="host" />
+                    <constructor-arg index="1" value="port" />                
+                </bean>
+            </set>
+        </property>
+    </bean>
+    
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig" lazy-init="true">
+	    <property name="maxTotal" value="8" />
+	    <property name="maxIdle" value="1" />
+	    <property name="minIdle" value="1" />
+	    <property name="maxWaitMillis" value="-1" />
+  	</bean>
+    
+
+     <bean id="jedisConnFactory" lazy-init="true"
+        class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" >
+        <constructor-arg name="sentinelConfig" ref="redisSentinelConfiguration"/>
+        <constructor-arg name="poolConfig" ref="poolConfig"/>
+    </bean>
+
+	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate" lazy-init="true" p:connection-factory-ref="jedisConnFactory"/>
+	
+	<bean id="redisCacheManager" class="org.springframework.data.redis.cache.RedisCacheManager" primary="true" >
+    	<constructor-arg name="template" ref="redisTemplate"/>
+    </bean> -->
+		
+</beans>

@@ -1,0 +1,23 @@
+<div class="con-report-edit">
+    <div class="data-sources-setting overflow j-data-sources-setting">
+        <div class="overflow j-scroll-data-sources">
+            <div class="con-data-table p-r c-f">
+                <select class="data-table-select j-cube-select">
+                    {{each cubeList}}
+                    <option value="{{$value.id}}">{{$value.name}}</option>
+                    {{/each}}
+                </select>
+                <span class="icon-data-sources j-icon-data-sources" title="数据模型相关设置"></span>
+            </div>
+            <div class="con-ind j-data-sources-setting-con-ind"></div>
+            <div class="con-dim j-data-sources-setting-con-dim"></div>
+        </div>
+    </div>
+    <div class="canvas j-canvas">
+        <div class="buttons btns-height j-global-btn"></div>
+        <div class="comp-setting j-con-comp-setting"></div>
+        <div class="report j-report"></div>
+        <div class="comp-menu j-global-menu"></div>
+        <span class="button button-flat-primary button-publish-report j-button-publish-report">发布</span>
+    </div>
+</div>

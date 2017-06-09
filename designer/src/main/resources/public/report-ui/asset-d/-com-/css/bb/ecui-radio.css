@@ -1,0 +1,64 @@
+/**
+ * 单选
+ */
+.ui-radio-container {
+    height: 16px;
+    width: 260px;
+    padding: 18px 0px 18px 0px;
+}
+.ui-radio-container-item {
+    height: 16px;
+    padding: 0px 10px 0px 0px;
+    line-height: 16px;
+    color: #2581B1;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+.ui-radio-container-item-space {
+    padding-left: 10px;
+    border-left: 1px solid #BBBBBB;
+}
+.ui-radio-container-item-selected {
+    color: #333333;
+    cursor: auto;
+}
+.ui-radio-container-b {
+    height: auto;
+    width: auto;
+    padding: 0;
+}
+.ui-radio-container-b .ui-radio-container-item {
+    height: 20px;
+    line-height: 20px;
+    padding: 0px 10px;
+    border: 1px solid #BCBCBC;
+    margin-right: 7px;
+    background: #FFF;
+    color: #000;
+    font-weight: normal;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+.ui-radio-container-b .ui-radio-container-item-hover {
+    background: #85C5E6;
+    border: 1px solid #73AAC6;
+}
+.ui-radio-container-b .ui-radio-container-item-selected {
+    font-weight: bold;
+    background: #85C5E6;
+    border-left: 1px solid #73AAC6;
+    border-right: 1px solid #73AAC6;
+    border-top: 1px solid #4F7589;
+    border-bottom: 1px solid #73AAC6;
+}

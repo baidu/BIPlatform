@@ -1,0 +1,61 @@
+<!--
+var demoData = {
+                currDims: [
+                    {"id": "dim1", "name": "维度1"},
+                    {"id": "dim2", "name": "维度2"},
+                    {"id": "dim3", "name": "维度3"}
+                ],
+                boxIndex: 1,
+                lineIndex: 2
+            };
+-->
+<div class="callback-relation-box c-f j-callback-relation-box" bodyIndex={{lineIndex}}>
+    <span class="callback-broken-line"></span>
+    <div class="callback-relation-content">
+        <div class="first-part c-f">
+            <span>选择被关联表：</span>
+            <select>
+                <option value="0">请选择</option>
+                {{each currDims as $dim}}
+                <option value={{$dim.id}}>{{$dim.name}}
+                </option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="callback-relation-content-two-part c-f">
+            <span class="callback-address-name">选择回调字段：</span>
+            <input type="text" name="" id="" class="callback-address-input j-callback-address-input" value="" />
+            <span class="callback-address-prompt">
+                例如：http://10.46.133.66:8999/pfplat/callbackmock.action
+            </span>
+        </div>
+        <div class="callback-relation-content-three-part c-f">
+            <span class="callback-cache-name">选取缓存类型：</span>
+            <div>
+                <input type="radio" value="1" class="callback-cache-type-right-input" name="callback-cache-body{{boxIndex}}-box{{lineIndex}}"
+                {{if refreshType === 1}} checked="checked" {{/if}} />
+                <label class="callback-cache-type-right-label">
+                    无需缓存（数据量大，不推荐）
+                </label>
+            </div>
+            <div>
+                <input type="radio" value="2" class="callback-cache-type-right-input" name="callback-cache-body{{boxIndex}}-box{{lineIndex}}"
+                {{if refreshType === 2}} checked="checked" {{/if}} />
+                <label class="callback-cache-type-right-label">
+                    在数据刷新后立刻刷新缓存
+                </label>
+            </div>
+            <div class="ml-89">
+                <input type="radio" value="3" class="callback-cache-type-right-input" name="callback-cache-body{{boxIndex}}-box{{lineIndex}}"
+                {{if refreshType === 3}} checked="checked" {{/if}} />
+                    <span class="callback-cache-type-right-label">间隔
+                    <input type="text" class="callback-cache-type-interval j-callback-cache-type-interval" value="" />
+                    秒刷新一次缓存</span>
+            </div>
+        </div>
+    </div>
+    <span class="delete j-callback-delete"></span>
+    <span class="add j-callback-add"></span>
+</div>
+
+

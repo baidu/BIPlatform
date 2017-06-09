@@ -1,0 +1,45 @@
+{
+    "data": {
+        "dimList": [
+            {
+                "id": "id_or_name",
+                "name": "原生维度",
+                "type": 0,
+                "changeToInd": 0
+            },
+            {
+                "id": "id_or_name2",
+                "name": "原生维度2",
+                "type": 0,
+                "changeToInd": 0
+            },
+            {
+                "id": "id_or_group_name",
+                "name": "维度组",
+                "type": 1,
+                "dimList": [
+                    {
+                        "id": "group_child2",
+                        "name": "维度组子项",
+                        "type": 0,
+                        "changeToInd": 0
+                    },
+                    {
+                        "id": "group_child2",
+                        "name": "维度组子项",
+                        "type": 0,
+                        "changeToInd": 0
+                    },
+                    {
+                        "id": "group_child3",
+                        "name": "维度组子项",
+                        "type": 0,
+                        "changeToInd": 0
+                    }
+                ]
+            }
+        ]
+    },
+    "status": 0,
+    "statusInfo": ""
+}

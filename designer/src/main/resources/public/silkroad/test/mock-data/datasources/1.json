@@ -1,0 +1,15 @@
+{
+    "status": 1,
+    "statusInfo": "提示信息",
+    "data": {
+        "hostAndPort": "hostAndPort",
+        "dbInstance": "dbName",
+        "dbPwd": "pwd",
+        "dbUser": "user",
+        "id": "id",
+        "name": "数据源2",
+        "productLine": "tieba",
+        "type": "MYSQL",
+        "encoding": "GBK"
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+<meta charset="UTF-8">
+<title>常用表单样式</title>
+<link type="text/css" rel="stylesheet" href="../../src/css/base.css" />
+<link type="text/css" rel="stylesheet"
+	href="../../src/css/component/form.css" />
+<link type="text/css" rel="stylesheet"
+	href="../../src/css/component/button.css" />
+</head>
+<body>
+	<div class="m-10">
+
+		<h3>简单输入框</h3>
+
+		<div class="form-common-text form-common-text-small m-5">
+			<input type="text" placeholder="提示文字" />
+		</div>
+
+		<div class="form-common-text  m-5">
+			<input type="text" placeholder="提示文字" />
+		</div>
+
+		<div class="form-common-text form-common-text-big  m-5">
+			<input type="text" placeholder="提示文字" value="真实value文字" />
+		</div>
+
+		<h3>前面有label的输入框</h3>
+
+		<div class="form-common-line">
+			<label class="form-common-label" for="id">四个文字：</label>
+
+			<div class="form-common-text form-common-text-big  m-5">
+				<input type="text" placeholder="提示文字" value="真实value文字" id="id" />
+			</div>
+			（点文字后面的input也能获取焦点啊）
+		</div>
+
+
+		<h3>验证失败的输入框</h3>
+
+		<div class="form-common-line">
+			<label class="form-common-labe" for="id">四个文字：</label>
+
+			<div class="form-common-text form-common-text-big  m-5">
+				<input type="text" placeholder="提示文字" value="真实value文字" id="id" /> <span
+					class="form-common-text-validation">不能为空巴拉巴拉</span>
+			</div>
+			（当有验证时请注意表单间距）
+		</div>
+
+		<h3>表单的扩展按钮</h3>
+
+		<div class="form-common-line">
+			<label class="form-common-label" for="id">四个文字：</label>
+
+			<div class="form-common-text form-common-text-big">
+				<input type="text" placeholder="提示文字" value="真实value文字" id="id" />
+			</div>
+			<span class="form-common-btn-extend">+</span> <span
+				class="button button-flat-primary">+</span>
+		</div>
+
+		<h3>按钮</h3>
+		<span class="button button-flat-primary m-10">确定</span> <span
+			class="button button-flat m-10">取消</span> <span
+			class="button glow button-flat-action m-10">提交</span> <span href="#"
+			class="button glow button-flat-highlight m-10">获取数据源表</span> <span
+			class="button disabled button-flat-caution m-10">不可用</span> <span
+			href="#" class="button button-flat-royal m-10">不发光</span> <span
+			class="button glow button-flat-primary m-10">+</span>
+	</div>
+</body>
+</html>

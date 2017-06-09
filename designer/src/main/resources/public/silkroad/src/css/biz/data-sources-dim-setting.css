@@ -1,0 +1,294 @@
+﻿/*页面样式区 总宽度是：680 + 2*/
+.dim-setting {
+    padding: 10px 25px;
+    width: 630px;
+}
+.dim-setting div,
+.dim-setting input,
+.dim-setting label,
+.dim-setting span {
+    font-size: 12px;
+}
+/*页面样式-头部区域 宽度：630*/
+.dim-setting .dim-setting-head {
+    padding: 10px 0;
+    height: 20px;
+    border-bottom: 1px solid #e4e4e4
+}
+.dim-setting .dim-setting-head input {
+    margin-right: 3px;
+    vertical-align: middle;
+    cursor: pointer
+}
+.dim-setting .dim-setting-head label {
+    margin-right: 100px;
+    vertical-align: middle;
+    font-size: 14px;
+    cursor: pointer
+}
+
+/*页面样式-内容区域-普通纬度 宽度630*/
+.dim-setting .dim-normal-container {
+    padding: 10px 7px;
+}
+/*页面样式-内容区域-普通纬度-body区域 宽度616*/
+.dim-body {
+    position: relative;
+}
+.dim-body:hover {
+    background-color: #f4f7fa
+}
+.dim-body-delete {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 18px;
+    width: 18px;
+    line-height: 16px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    border: 1px solid #fcf4f4;
+    border-radius: 50%;
+    background-color: #df9586;
+    cursor: pointer;
+    display: none;
+}
+.dim-body-border {
+    border: 1px solid #d9d9d9;
+    width: 616px;
+    margin-bottom: 30px;
+}
+/*页面样式-内容区域-普通纬度-body区域-第一行*/
+.dim-body-first-line {
+    height: 44px;
+    font-size: 14px;
+    padding: 15px 0;
+}
+/*页面样式-内容区域-普通纬度-body区域-第一行-左侧 宽度110*/
+.dim-body-first-line .dim-body-first-line-left {
+    float: left;
+    margin-right: 30px;
+    height: 20px;
+    line-height: 20px;
+}
+/*页面样式-内容区域-普通纬度-body区域-第一行-左侧-文本*/
+.dim-body-first-line-left-text {
+    float: left;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    background-color: #b9dbfe;
+    font-weight: bold;
+    color: #ffffff;
+}
+/*页面样式-内容区域-普通纬度-body区域-第一行-左侧-箭头形状*/
+.dim-body-first-line-left-shape {
+    float: left;
+    padding: 2px 0px;
+    font-weight: bold;
+    color: #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #b9dbfe;
+}
+
+/*页面样式-内容区域-普通纬度-body区域-第一行-右侧 宽度476*/
+.dim-body-first-line-right {
+    float: left;
+}
+.dim-body-first-line-right select {
+    width: 245px;
+    margin-left: 5px;
+}
+.dim-body-first-line-right .current-table {
+    font-size: 14px;
+    font-weight: bold;
+}
+.dim-body-first-line-right .or {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 18px;
+    color: #e4e4e4;
+}
+
+/*页面样式-内容区域-普通纬度-body区域-第二行*/
+.dim-body-two-line {
+    font-size: 14px;
+}
+
+/*页面样式-内容区域-普通纬度-body区域-第二行-左侧 宽度110*/
+.dim-body-two-line .dim-body-two-line-left {
+    float: left;
+    margin-right: 30px;
+    height: 20px;
+    line-height: 20px;
+}
+/*页面样式-内容区域-普通纬度-body区域-第二行-左侧-文本*/
+.dim-body-two-line-left .dim-body-two-line-left-text {
+    float: left;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    background-color: #b9dbfe;
+    font-weight: bold;
+    color: #ffffff;
+}
+/*页面样式-内容区域-普通纬度-body区域-第二行-左侧-箭头形状*/
+.dim-body-two-line-left .dim-body-two-line-left-shape {
+    float: left;
+    padding: 2px 0px;
+    font-weight: bold;
+    color: #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #b9dbfe;
+}
+/*页面样式-内容区域-普通纬度-body区域-第二行-右侧 宽度476*/
+.dim-body-two-line-right {
+    float: left;
+}
+.dim-body-two-line-right select {
+    margin-right: 5px;
+}
+
+.dim-body-two-line-right .equal {
+    margin-left: 10px;
+    margin-right: 13px;
+    font-size: 18px;
+}
+/*页面样式-内容区域-普通纬度-body区域-第三行*/
+.dim-body-three-line {
+    margin-top: 20px;
+    font-size: 14px;
+    width: 616px;
+    padding: 10px 0;
+}
+/*页面样式-内容区域-普通纬度-body区域-第三行-左侧 宽度110*/
+.dim-body-three-line .dim-body-three-line-left {
+    float: left;
+    margin-right: 30px;
+    line-height: 20px;
+}
+/*页面样式-内容区域-普通纬度-body区域-第三行-左侧-文本*/
+.dim-body-three-line-left .dim-body-three-line-left-text {
+    float: left;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    background-color: #b9dbfe;
+    font-weight: bold;
+    color: #ffffff;
+}
+/*页面样式-内容区域-普通纬度-body区域-第三行-左侧-箭头形状*/
+.dim-body-three-line-left .dim-body-three-line-left-shape {
+    float: left;
+    padding: 2px 0px;
+    font-weight: bold;
+    color: #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #b9dbfe;
+}
+/*页面样式-内容区域-普通纬度-body区域-第三行-右侧 宽度476*/
+.dim-body-three-line-right {
+    float: left;
+    padding: 10px 10px;
+    width: 420px;
+    border: 1px solid #e4e4e4;
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+.dim-body-three-line-right-date {
+    height: 30px;
+}
+.dim-body-three-line-right input {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.dim-body-three-line-right label {
+    margin-right: 20px;
+    vertical-align: middle;
+    font-size: 12px;
+    display: inline-block;
+}
+.dim-body-three-line-right select {
+    width: 150px;
+    vertical-align: middle
+}
+/*页面样式-内容区域-普通纬度-body区域-添加新的表关联*/
+.add-table-correlation {
+    display: block;
+    margin: 10px 0;
+    font-size: 10px;
+    color: #1b66c7;
+    cursor: pointer;
+}
+
+/*页面样式-内容区域-时间纬度 宽度630*/
+.dim-setting .dim-date-container {
+    padding: 10px 7px;
+    display: none;
+}
+
+/*页面样式-内容区域-回调纬度 宽度630*/
+.dim-setting .dim-callback-container {
+    padding: 10px 7px;
+    display: none;
+}
+
+/*页面样式-内容区域-回调纬度-第二行右侧*/
+.dim-callback-container .dim-callback-address-right {
+    float: left;
+    width: 474px;
+}
+.dim-callback-address-right .dim-callback-address-input {
+    float: left;
+    width: 447px;
+    height: 25px;
+    border: 1px solid #d9d9d9;
+    border-top-color: #aaaaaa;
+    border-radius: 2px;
+    outline: 0 none;
+}
+.dim-callback-address-right .dim-callback-address-input:hover {
+    border: 1px solid #a6a6a6;
+    border-top-color: #808080;
+}
+
+.dim-callback-address-right .dim-callback-address-input:focus {
+    border: 1px solid #609ed2;
+}
+
+.dim-callback-address-right .dim-callback-address-prompt {
+    float: left;
+    margin-top: 5px;
+    color: #d7d7d7;
+    font-weight: bold;
+}
+/*页面样式-内容区域-回调纬度-第三行右侧*/
+.dim-callback-container .dim-select-cache-type-right {
+    float: left;
+    width: 476px;
+}
+.dim-select-cache-type-right div {
+    float: left;
+}
+.dim-select-cache-type-right-input {
+    margin-right: 3px;
+    vertical-align: middle;
+}
+.dim-select-cache-type-right-label {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.dim-select-cache-type-right-label-interval {
+    width: 50px;
+    height: 15px;
+    margin: 0px 5px;
+    border: 1px solid #d9d9d9;
+    border-top-color: #aaaaaa;
+    border-radius: 2px;
+    outline: 0 none;
+}

@@ -1,0 +1,394 @@
+/**
+ * 左侧菜单
+ */
+.ui-menu {
+    position: relative;
+    cursor: pointer;
+}
+div.ui-menu-children div.ui-menu {
+    font-size: 14px;
+}
+div.ui-menu-children div.ui-menu-children div.ui-menu {
+    font-size: 12px;
+}
+.ui-menu-hover {
+    background: #FFF;
+}
+.ui-menu-icon {
+    position: absolute;
+    background: url(img/icon.png) 0px 0px no-repeat;
+}
+.ui-menu-icon-new {
+    width: 26px;
+    height: 11px;
+    overflow: hidden;
+    position: absolute;
+    background: url(img/icon.png) -34px -221px no-repeat;
+    display: inline-block;
+    margin-left: 3px;
+    vertical-align: middle;
+    *display: inline;
+    *zoom: 1;
+}
+.ui-menu-children {
+    width: 172px;
+    border-bottom: 3px solid #CECECE;
+    border-left: 1px solid #9ABCD1;
+    border-right: 1px solid #9ABCD1;
+    border-top: 1px solid #9ABCD1;
+    color: #333;
+}
+.ui-menu-children a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: #333;
+}
+.ui-menu-children a {
+    blr: expression(this.onFocus=this.blur());
+    outline: none;
+}
+.ui-menu-children a: focus {
+    -moz-outline-style: none;
+}
+.ui-menu-children .ui-menu {
+    height: 40px;
+    padding-left: 30px;
+    line-height: 40px;
+    border-bottom: 1px solid #9ABCD1;
+    background: #EAF3F8;
+}
+.ui-menu-children .ui-menu-hover {
+    background: #FFF;
+}
+.ui-menu-children .ui-menu .ui-menu-icon {
+    top: 14px;
+    left: 15px;
+    width: 7px;
+    height: 12px;
+    background-position: -20px -35px;
+    overflow: hidden;
+}
+.ui-menu-children .ui-menu .ui-menu-icon-new {
+    margin-top: 15px;
+    *margin-top: 0px;
+}
+.ui-menu-children .ui-menu-expanded {
+    border-bottom: 1px solid #7E8B92;
+}
+.ui-menu-children .ui-menu-expanded .ui-menu-icon {
+    top: 16px;
+    left: 12px;
+    width: 12px;
+    height: 7px;
+    background-position: 0px -47px;
+}
+.ui-menu-children .ui-menu-selected {
+    color: #FFF;
+    background: #56ABD8;
+    font-weight: bold;
+}
+.ui-menu-children .ui-menu-selected a {
+    color: #FFF;
+}
+.ui-menu-children .ui-menu-half-selected {
+    color: #2581B1;
+    font-weight: bold;
+}
+.ui-menu-children .ui-menu-half-selected a {
+    color: #2581B1;
+}
+.ui-menu-children .ui-menu-children {
+    border: 0px;
+    border-top: 1px solid #B0C2CC;
+}
+.ui-menu-children .ui-menu-children .ui-menu {
+    padding-left: 45px;
+    height: 30px;
+    line-height: 30px;
+    background: #D7EBF6;
+}
+.ui-menu-children .ui-menu-children .ui-menu-hover {
+    background: #FFF;
+}
+.ui-menu-children .ui-menu-children .ui-menu .ui-menu-icon {
+    top: 9px;
+    left: 23px;
+    width: 14px;
+    height: 14px;
+    background-position: -48px -19px;
+}
+.ui-menu-children .ui-menu-children .ui-menu .ui-menu-icon-new {
+    margin-top: 10px;
+    *margin-top: 0px;
+}
+.ui-menu-children .ui-menu-children .ui-menu-expanded .ui-menu-icon {
+    background-position: -62px -19px;
+}
+.ui-menu-children .ui-menu-children .ui-menu-selected {
+    color: #FFF;
+    background: #56ABD8;
+    font-weight: bold;
+}
+.ui-menu-children .ui-menu-children .ui-menu-selected a {
+    color: #FFF;
+}
+.ui-menu-children .ui-menu-children .ui-menu-half-selected {
+    color: #333;
+}
+.ui-menu-children .ui-menu-children .ui-menu-half-selected a {
+    color: #333;
+}
+.ui-menu-children .ui-menu-children .ui-menu-children .ui-menu {
+    height: 27px;
+    line-height: 27px;
+    color: #515050;
+    background: #C3D1DA;
+    border: 1px solid #B2BFC7;
+    border-top: 0px;
+    padding-left: 44px;
+}
+.ui-menu-children .ui-menu-children .ui-menu-children .ui-menu .ui-menu-icon-new {
+    margin-top: 8px;
+    *margin-top: 0px;
+}
+.ui-menu-children .ui-menu-children .ui-menu-children .ui-meznu-hover {
+    background: #FFF;
+}
+.ui-menu-children .ui-menu-children .ui-menu-children .ui-menu-selected {
+    color: #FFF;
+    background: #56ABD8;
+    border-color: #4D99C1;
+}
+/**
+ * float menu
+ */
+.ui-float-menu {
+    position: relative;
+    cursor: default;
+}
+.ui-float-menu-pointer {
+    cursor: pointer;
+}
+div.ui-float-menu-children div.ui-float-menu {
+    font-size: 14px;
+}
+div.ui-float-menu-children div.ui-float-menu-children div.ui-float-menu {
+    font-size: 12px;
+}
+.ui-float-menu-hover {
+    background: #FFF;
+}
+.ui-float-menu-icon {
+    position: absolute;
+    background: url(img/icon.png) 0px 0px no-repeat;
+}
+.ui-float-menu-icon-arror {
+    background: url(img/icon.png) -70px -385px no-repeat;
+    width: 6px;
+    height: 12px;
+    overflow: hidden;
+    margin: 0px 10px 0px 155px;
+    left: 0px;
+    top: 0px;
+    display: block;
+    position: absolute;
+}
+.ui-float-menu-icon-new {
+    width: 26px;
+    height: 11px;
+    overflow: hidden;
+    position: absolute;
+    background: url(img/icon.png) -34px -221px no-repeat;
+    display: inline-block;
+    margin-left: 3px;
+    vertical-align: middle;
+    *display: inline;
+    *zoom: 1;
+}
+.ui-float-menu-children {
+    width: 172px;
+    border-bottom: 3px solid #CECECE;
+    border-left: 1px solid #9ABCD1;
+    border-right: 1px solid #9ABCD1;
+    border-top: 1px solid #9ABCD1;
+    color: #333;
+}
+.ui-float-menu-children a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: #333;
+}
+.ui-float-menu-children a {
+    blr: expression(this.onFocus=this.blur());
+    outline: none;
+}
+.ui-float-menu-children a: focus {
+    -moz-outline-style: none;
+}
+.ui-float-menu-children .ui-float-menu {
+    height: 40px;
+    padding-left: 30px;
+    line-height: 40px;
+    border-bottom: 1px solid #9ABCD1;
+    background: #EAF3F8;
+}
+.ui-float-menu-children .ui-float-menu-hover {
+    background: #FFF;
+    z-index: 1000;
+}
+.ui-float-menu-children .ui-float-menu .ui-float-menu-icon {
+    top: 14px;
+    left: 15px;
+    width: 7px;
+    height: 12px;
+    background-position: -20px -35px;
+    overflow: hidden;
+}
+.ui-float-menu-children .ui-float-menu .ui-float-menu-icon-new {
+    margin-top: 15px;
+    *margin-top: 0px;
+}
+.ui-float-menu-children .ui-float-menu-expanded {
+    border-bottom: 1px solid #7E8B92;
+}
+.ui-float-menu-children .ui-float-menu-expanded .ui-float-menu-icon {
+    top: 16px;
+    left: 12px;
+    width: 12px;
+    height: 7px;
+    background-position: 0px -47px;
+}
+.ui-float-menu-children .ui-float-menu-selected {
+    color: #FFF;
+    background: #56ABD8;
+    font-weight: bold;
+}
+.ui-float-menu-children .ui-float-menu-selected a {
+    color: #FFF;
+}
+.ui-float-menu-children .ui-float-menu-half-selected {
+    color: #2581B1;
+    font-weight: bold;
+}
+.ui-float-menu-children .ui-float-menu-half-selected a {
+    color: #2581B1;
+}
+.ui-float-menu-children .ui-float-menu-icon-arror {
+    margin-top: 15px;
+}
+
+.ui-float-menu-children .ui-float-menu-children {
+    border: 0px;
+    border-top: 1px solid #B0C2CC;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu {
+    padding-left: 30px;
+    height: 30px;
+    line-height: 30px;
+    background: #D7EBF6;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu-hover {
+    background: #FFF;
+    z-index: 10000;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu .ui-float-menu-icon {
+    top: 9px;
+    left: 23px;
+    width: 14px;
+    height: 14px;
+    background-position: -48px -19px;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu .ui-float-menu-icon-new {
+    margin-top: 10px;
+    *margin-top: 0px;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu-expanded .ui-float-menu-icon {
+    background-position: -62px -19px;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu-selected {
+    color: #FFF;
+    background: #56ABD8;
+    font-weight: bold;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu-selected a {
+    color: #FFF;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu-half-selected {
+    color: #333;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu-half-selected a {
+    color: #333;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu-icon-arror {
+    margin-top: 10px;
+}
+
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu-children .ui-float-menu {
+    height: 27px;
+    line-height: 27px;
+    color: #515050;
+    background: #C3D1DA;
+    border: 1px solid #B2BFC7;
+    border-top: 0px;
+    padding-left: 44px;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu-children .ui-float-menu .ui-float-menu-icon-new {
+    margin-top: 8px;
+    *margin-top: 0px;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu-children .ui-float-menu-hover {
+    background: #FFF;
+    z-index: 10000;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu-children .ui-float-menu-selected {
+    color: #FFF;
+    background: #56ABD8;
+    border-color: #4D99C1;
+}
+.ui-float-menu-children .ui-float-menu-children .ui-float-menu-children .ui-float-menu-icon-arror {
+    margin-top: 8px;
+}
+
+.ui-float-menu-fake {
+    position: absolute;
+    border: solid rgb(63,133,180) 1px;
+    box-shadow: 3px 3px 4px #999;
+    -o-box-shadow: 3px 3px 4px #999;
+    -moz-box-shadow: 3px 3px 4px #999;
+    -webkit-box-shadow: 3px 3px 4px #999;
+}
+.ui-float-menu-floater {
+    position: absolute;
+    z-index: 100;
+    *z-index: 10000;
+    border: 1px solid #9ABCD1;
+    padding: 10px 10px;
+    background-color: white;
+    box-shadow: 3px 3px 4px #999;
+    -o-box-shadow: 3px 3px 4px #999;
+    -moz-box-shadow: 3px 3px 4px #999;
+    -webkit-box-shadow: 3px 3px 4px #999;
+
+}
+.ui-float-menu-floater .ui-float-menu-floater-line {
+
+}
+.ui-float-menu-floater .ui-float-menu-floater-line-separater {
+    border-bottom: #E0E0E0 solid 1px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.ui-float-menu-floater .ui-float-menu-floater-line .ui-float-menu-floater-radio-line-title {
+    width: 70px;
+    margin: 7px 10px 4px 2px;
+    text-align: right;
+    color: #2581B1;
+    font-weight: bold;
+    float: left;
+}
+.ui-float-menu-floater .ui-float-menu-floater-line .ui-float-menu-floater-radio-line-detail {
+    width: 410px;
+    float: left;
+}

@@ -1,0 +1,239 @@
+.ui-tip {
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+}
+.ui-tip-layer-hidden {
+    display: none;
+}
+/**
+  * ESUI (Enterprise Simple UI)
+  * Copyright 2013 Baidu Inc. All rights reserved.
+  *
+  * @file 通用提示用漂浮层
+  * @author dbear
+  */
+.ui-tip-layer {
+    background: #fff;
+    border: 1px solid #b3b9bc;
+    padding: 10px 18px 10px;
+    line-height: 1.5em;
+    z-index: 1002;
+    position: absolute;
+    box-shadow: 0 0 10px #b3b9bc;
+    min-width: 100px;
+    max-width: 300px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.ui-tip-layer-rt,
+.ui-tip-layer-rb {
+    margin-left: -10px;
+}
+.ui-tip-layer-lt,
+.ui-tip-layer-lb {
+    margin-left: 10px;
+}
+.ui-tip-layer-title,
+.ui-tip-layer-body {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+.ui-tip-layer-title {
+    margin: .5em 0;
+}
+.ui-tip-layer-body {
+    margin-bottom: 5px;
+}
+.ui-tip-layer-arrow {
+    display: none;
+    position: absolute;
+    font-size: 1px;
+}
+.ui-tip-layer-arrow-tl {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -24px -12px;
+    background-color: transparent;
+    width: 12px;
+    height: 13px;
+    top: -13px;
+    left: 12px;
+}
+.ui-tip-layer-arrow-tr {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -36px -12px;
+    background-color: transparent;
+    width: 12px;
+    height: 13px;
+    top: -13px;
+    right: 12px;
+}
+.ui-tip-layer-arrow-bl {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -12px -12px;
+    background-color: transparent;
+    width: 12px;
+    height: 13px;
+    bottom: -13px;
+    left: 12px;
+}
+.ui-tip-layer-arrow-br {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: 0px -12px;
+    background-color: transparent;
+    width: 12px;
+    height: 13px;
+    bottom: -13px;
+    right: 12px;
+}
+.ui-tip-layer-arrow-lt {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -26px 0px;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    top: 7px;
+    left: -13px;
+}
+.ui-tip-layer-arrow-lb {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -39px 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    bottom: 7px;
+    left: -13px;
+}
+.ui-tip-layer-arrow-rt {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    top: 7px;
+    right: -13px;
+}
+.ui-tip-layer-arrow-rb {
+    display: block;
+    background-image: url(../img/esui_transparent.gif);
+    background-repeat: no-repeat;
+    background-position: -13px 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    bottom: 7px;
+    right: -13px;
+}
+.ui-tip-layer-hidden {
+    display: none;
+}
+
+/**
+  * ESUI (Enterprise Simple UI)
+  * Copyright 2013 Baidu Inc. All rights reserved.
+  *
+  * @file 通用提示用漂浮层
+  * @author dbear
+  */
+.ui-tiplayer {
+    background: #fff;
+    border: 1px solid #b3b9bc;
+    padding: 10px 18px 10px;
+    line-height: 1.5em;
+    z-index: 1002;
+    position: absolute;
+    box-shadow: 0 0 10px #b3b9bc;
+    min-width: 100px;
+    max-width: 300px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.ui-tiplayer-title,.ui-tiplayer-body {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    max-width: 500px;
+    max-height: 195px;
+    overflow: auto
+}
+
+.ui-tiplayer-title {
+    margin: .5em 0
+}
+
+.ui-tiplayer-arrow {
+    display: none;
+    position: absolute;
+    font-size: 1px
+}
+
+.ui-tiplayer-arrow-lt {
+    display: block;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: -26px 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    top: 7px;
+    left: -13px
+}
+
+.ui-tiplayer-arrow-lb {
+    display: block;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: -39px 0;
+    background-color: transparent;
+    width: 13px;
+    height: 12px;
+    bottom: 7px;
+    left: -13px
+}
+
+.ui-tiplayer-arrow-rt {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    width: 9px;
+    height: 9px;
+    top: -8px;
+    right: 5px
+}
+
+.ui-tiplayer-arrow-rb {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    width: 9px;
+    height: 9px;
+    bottom: -9px;
+    right: 5px
+}
+
+.ui-tiplayer-hidden {
+    display: none
+}

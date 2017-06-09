@@ -1,0 +1,64 @@
+{{if tableId === "0" || tableId === "ownertable"}}
+<!--内置维度-->
+<div class="date-relation-owner-two-part c-f j-date-two-part">
+    <span>选择时间字段：</span>
+    <select>
+        <option value="0">请选择</option>
+        {{each currDims as $dim}}
+        <option value={{$dim.name}}>{{$dim.comment}}
+        </option>
+        {{/each}}
+    </select>
+    <span>粒度：</span>
+    <select class="j-owner-date-level-select">
+        <option value="0">请选择</option>
+        {{each fields as $level}}
+        <option value={{$level.id}}>{{$level.name}}
+        </option>
+        {{/each}}
+    </select>
+    <span>时间格式：</span>
+    <select class="j-owner-date-type-select">
+        <option value="0">请选择</option>
+    </select>
+</div>
+{{else}}
+<!--普通维度-->
+<div class="date-relation-normal-two-part c-f j-date-two-part">
+    <span>指定关联字段：</span>
+    <select>
+        <option value="0">请选择</option>
+        {{each currDims as $dim}}
+        <option value={{$dim.name}}>{{$dim.comment}}
+        </option>
+        {{/each}}
+    </select>
+    <span class="equal">=</span>
+    <select>
+        <option value="0">请选择</option>
+        {{each fields as $field}}
+        <option value={{$field.id}}>{{$field.name}}
+        </option>
+        {{/each}}
+    </select>
+</div>
+<div class="date-relation-normal-three-part j-date-three-part">
+    <span class="date-relation-normal-three-part-name">日期格式：</span>
+    <div class="date-relation-normal-three-part-box c-f">
+        {{each fields as $field}}
+        <div class="date-relation-normal-three-part-box-date-format c-f">
+            <span>{{$field.name}}</span>
+            <select formatKey={{$field.id}}>
+                <option value="0">请选择</option>
+                {{each dateFormatOptions[$field.id] as $format}}
+                <option value={{$format}}>{{$format}}
+                </option>
+                {{/each}}
+            </select>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{/if}}
+
+

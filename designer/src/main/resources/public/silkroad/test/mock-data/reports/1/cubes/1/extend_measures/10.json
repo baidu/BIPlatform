@@ -1,0 +1,101 @@
+{
+
+    "status": 0,
+    "statusInfo": "",
+    "data": [
+        {
+            "id": "1",
+            "caption": "车迟国",
+            "name": "chechi_guo",
+            "type": "COMMON",
+            "aggregator": "SUM",
+            "canToDim": true,
+            "visible": true
+        },
+        {
+            "id": "2",
+            "caption": "女儿国-文字喜多多",
+            "name": "nver_guo",
+            "type": "COMMON",
+            "aggregator": "COUNT",
+            "canToDim": false,
+            "visible": true
+        },
+        {
+            "id": "3",
+            "caption": "天竺国",
+            "name": "tianzhu_guo",
+            "type": "COMMON",
+            "aggregator": "AVERAGE",
+            "canToDim": true,
+            "visible": true
+        },
+        {
+            "id": "4",
+            "caption": "比丘国",
+            "name": "biqiu_guo",
+            "type": "COMMON",
+            "aggregator": "SUM",
+            "canToDim": 1,
+            "visible": true
+        },
+        {
+            "id": "6",
+            "caption": "灭法国",
+            "name": "miefaguo_hide",
+            "type": "COMMON",
+            "aggregator": "SUM",
+            "canToDim": true,
+            "visible": false
+        },
+        {
+            "id": "7",
+            "caption": "唐僧被色诱的国家",
+            "name": "tangseng_seyou",
+            "type": "CAL",
+            "aggregator": "SUM",
+            "expr": "女儿国 + 天竺国"
+        },
+        {
+            "id": "8",
+            "caption": "RUN",
+            "name": "run",
+            "type": "CAL",
+            "aggregator": "SUM",
+            "expr": "原始指标1"
+
+        },
+        {
+            "id": "9",
+            "caption": "如此多的文字呈现也没有问题，是吧",
+            "name": "so_many_words",
+            "type": "COMMON",
+            "aggregator": "SUM",
+            "expr": "原始指标1"
+        },
+        {
+            "id": "10",
+            "caption": "rr1",
+            "name": "测试环比1",
+            "type": "RR"
+        },
+        {
+            "id": "11",
+            "caption": "rr2",
+            "name": "测试环比2",
+            "type": "RR"
+        },
+        {
+            "id": "12",
+            "caption": "so_many_words",
+            "name": "sr1",
+            "type": "SR"
+        },
+        {
+            "id": "13",
+            "caption": "so_many_words",
+            "name": "sr2",
+            "type": "SR"
+        }
+    ]
+}

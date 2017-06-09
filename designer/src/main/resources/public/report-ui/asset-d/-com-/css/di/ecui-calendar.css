@@ -1,0 +1,279 @@
+/**
+ * 日历
+ */
+.ui-calendar-select-options {
+    font-size: 12px;
+}
+.ui-calendar-select-options .ui-vscrollbar {
+    width: 16px;
+    background: #F0F0F0;
+    padding: 16px 0;
+}
+.ui-calendar-select-options .ui-vscrollbar .ui-button {
+    cursor: default;
+    padding: 0;
+    margin: 0;
+    background-color: #D8D8D8;
+}
+.ui-calendar-select-options .ui-vscrollbar .ui-button-hover {
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -o-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+}
+.ui-calendar-select-options .ui-vscrollbar-prev {
+    width: 16px;
+    height: 16px;
+    border: 0;
+    background: url(img/icon.png) -81px -203px no-repeat;
+}
+.ui-calendar-select-options .ui-vscrollbar-next {
+    width: 16px;
+    height: 16px;
+    border: 0;
+    background: url(img/icon.png) -63px -203px no-repeat;
+}
+.ui-calendar-select-options .ui-vscrollbar .ui-scrollbar-thumb {
+    width: 16px;
+    border-top: 1px solid #F0F0F0;
+    border-bottom: 1px solid #F0F0F0;
+    border-left-width: 0;
+    border-right-width: 0;
+    background-image: none;
+}
+.ui-calendar {
+    display: inline-block;
+    vertical-align: middle;
+    /*width: 175px;*/
+    height: 24px;
+    background: white;
+    *display: inline;
+    *zoom: 1;
+}
+.ui-calendar-range-mode {
+    /*width:227px;*/
+}
+.ui-calendar-fix-view {
+    background: #FFF;
+    text-align: center;
+}
+.ui-calendar-btn {
+    display: inline-block;
+    vertical-align: middle;
+    height: 21px;
+    padding-top: 1px;
+    border: 1px solid white;
+    position: relative;
+    *display: inline;
+    *zoom: 1;
+}
+.ui-calendar-btn .ui-button-inner {
+    display: inline-block;
+    height: 20px;
+    *display: inline;
+    *zoom: 1;
+    border-top: 1px solid white;
+}
+.ui-calendar-btn .ui-button-icon {
+    position: absolute;
+    background: url(img/icon.png) 0 0 no-repeat;
+}
+.ui-calendar-btn-prv .ui-button-inner, 
+.ui-calendar-btn-nxt .ui-button-inner {
+    width: 19px;
+}
+.ui-calendar-btn-cal .ui-button-inner {
+    width: 23px;
+}
+.ui-calendar-btn-prv .ui-button-icon {
+    width: 9px;
+    height: 11px;
+    top: 6px;
+    left: 5px;
+    background-position: -1px -35px;
+    overflow: hidden;
+}
+.ui-calendar-btn-prv-disabled .ui-button-icon {
+    background-position: -66px -172px;
+}
+.ui-calendar-btn-nxt .ui-button-icon {
+    width: 9px;
+    height: 11px;
+    top: 6px;
+    left: 5px;
+    background-position: -11px -35px;
+    overflow: hidden;
+}
+.ui-calendar-btn-nxt-disabled .ui-button-icon {
+    background-position: -76px -172px;
+}
+.ui-calendar-btn-prv-hover, 
+.ui-calendar-btn-nxt-hover, 
+.ui-calendar-btn-cal-hover {
+    border: 1px solid #CCC;
+}
+.ui-calendar-btn-prv-active, 
+.ui-calendar-btn-nxt-active, 
+.ui-calendar-btn-cal-active {
+    border: 1px solid #CCC;
+    background: #B7B7B7;
+}
+.ui-calendar-btn-prv-active .ui-button-inner, 
+.ui-calendar-btn-nxt-active .ui-button-inner, 
+.ui-calendar-btn-cal-active .ui-button-inner {
+    background: #E6E6E6;
+    border-top: 1px solid #D7D7D7;
+}
+.ui-calendar-btn-cal {
+    margin-left: 2px;
+}
+.ui-calendar-btn-cal .ui-button-icon {
+    width: 16px;
+    height: 15px;
+    top: 4px;
+    left: 4px;
+    background-position: -32px -19px;
+}
+.ui-calendar-text {
+    font-size: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+    color: #333;
+    font-family: Tahoma, Arial;
+    *display: inline;
+    *zoom: 1;
+}
+.ui-calendar-fix-view .ui-calendar-text {
+    font-size: 15px;
+}
+.ui-calendar-fake-text {
+    color: #F8F8F8;
+}
+.ui-calendar-fix-view .ui-calendar-fake-text {
+    color: #FFF;
+}
+
+.ui-calendar-layer {
+    border: 1px solid #4286B4;
+    background: #FFF;
+    font-size: 12px;
+    width: 225px;
+    text-align: left;
+    -o-box-shadow:  5px 5px 6px #999;
+    -moz-box-shadow:  5px 5px 6px #999;
+    -webkit-box-shadow:  5px 5px 6px #999;
+    box-shadow:  5px 5px 6px #999;
+}
+.ui-calendar-layer .ui-button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: url(img/icon.png);
+}
+.ui-calendar-layer-buttons {
+    height: 23px;
+    border-bottom: 1px solid #4286B4;
+    padding: 4px 10px;
+    background: #59A0D0;
+}
+.ui-calendar-layer .ui-calendar-layer-btn-prv {
+    width: 17px;
+    height: 17px;
+    background-position: -67px -34px;
+    vertical-align: middle;
+}
+.ui-calendar-layer .ui-calendar-layer-btn-nxt {
+    width: 17px;
+    height: 17px;
+    background-position: -81px -34px;
+    vertical-align: middle;
+}
+.ui-calendar-layer-slt-year {
+    width: 65px;
+    margin-right: 10px;
+    margin-left: 22px;
+    vertical-align: middle;
+}
+.ui-calendar-layer-slt-month {
+    width: 45px;
+    margin-right: 25px;
+    vertical-align: middle;
+}
+.ui-calendar-layer-month-view {
+    cursor: default;
+}
+.ui-calendar-layer-month-view table {
+    margin: 0 auto;
+    width: 100%;
+}
+.ui-calendar-layer-month-view table td {
+    height: 25px;
+    text-align: center;
+    line-height: 20px;
+    cursor: default;
+}
+.ui-calendar-layer-month-view .ui-monthview-title {
+    background: #F1F1F1;
+}
+.ui-calendar-layer-month-view .ui-monthview-item {
+    border-top: 1px solid #D4D4D4;
+    border-right: 1px solid #D4D4D4;
+}
+.ui-calendar-layer-month-view .ui-monthview-item-tip {
+    background: url(img/icon.png) 20px -151px no-repeat;
+}
+.ui-calendar-layer-month-view .ui-monthview-item-last {
+    border-right: 0;
+}
+.ui-calendar-layer-month-view .ui-monthview-item-hover {
+    background-color: #CEEAFD;
+}
+.ui-calendar-layer-month-view .ui-monthview-item-selected {
+    background-color: #4C95C9;
+    color: #FFF;
+}
+.ui-calendar-layer-month-view .ui-monthview-item-mark {
+    background-color: #4C95C9;
+    color: #FFF;
+}
+.ui-calendar-layer-month-view .ui-monthview-item-disabled {
+    color: #B9BDC6;
+}
+.ui-calendar-layer .ui-select {
+    height: 21px;
+    border: 1px solid #4780A6;
+    line-height: 21px;
+    color: #FFF;
+    background: none;
+    cursor: pointer;
+}
+.ui-calendar-layer .ui-select-focus {
+    border-color: #35607D;
+}
+.ui-calendar-layer .ui-select-text {
+    padding-left: 5px;
+    border-width: 0;
+    line-height: 21px;
+}
+.ui-calendar-layer .ui-select-button {
+    background: url(img/icon.png) -59px -200px no-repeat;
+}
+.ui-calendar-select-options {
+    border: 1px solid #8C9EAA;
+    background: #F8F8F8;
+    color: #666;
+}
+.ui-calendar-select-options .ui-select-item {
+    padding-left: 5px;
+    cursor: default;
+}
+.ui-calendar-select-options .ui-select-item-focus {
+    background: #59A0D0;
+    color: #FFF;
+}
+

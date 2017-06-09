@@ -1,0 +1,11 @@
+<div class="j-global-attr">
+    <input type="text" class="parameter-name" placeholder="维度名称"/>
+    <select class="parameter-id">
+        {{each dimList as $item}}
+        <option value="{{$item.id}}">{{$item.caption}}</option>
+        {{/each}}
+    </select>
+    <input type="text" class="parameter-default" placeholder="默认值"/>
+    <input type="checkbox" class="parameter-needed"/>
+    <div class="j-global-close"></div>
+</div>

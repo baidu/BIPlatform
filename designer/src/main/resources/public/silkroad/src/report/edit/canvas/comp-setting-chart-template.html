@@ -1,0 +1,84 @@
+<div class="con-comp-setting-type1 j-comp-setting" report-comp-id="{{reportCompId}}" data-comp-id="{{compId}}" data-comp-type="{{compType}}">
+    <div>
+        <div class="norm-empty-prompt">纵轴指标信息不能为空</div>
+    </div>
+    <div class="data-axis-line data-axis-line-48 j-comp-setting-line j-line-x" data-axis-type="x">
+        <span class="letter">横轴:</span>
+        {{each xAxis as item}}
+        <div class="item hover-bg j-root-line c-m" data-id="{{item.id}}">
+            <span class="item-text j-item-text icon-font" title="{{item.caption}}（{{item.name}}）">
+            {{item.caption}}{{if item.name}}（{{item.name}}）{{/if}}
+            </span>
+            <span class="icon hide j-delete" title="删除">×</span>
+        </div>
+        {{/each}}
+    </div>
+    <div class="data-axis-line data-axis-line-48 j-comp-setting-line j-line-y" data-axis-type="y">
+        <span class="letter">纵轴:</span>
+        {{each yAxis as item}}
+        <div class="item hover-bg j-root-line c-m" data-id="{{item.id}}">
+            {{if item.chartType === null}}
+                <span class="icon-chart column j-icon-chart" chart-type="column" ></span>
+            {{else}}
+                <span class="icon-chart {{item.chartType}} j-icon-chart" chart-type="{{item.chartType}}" ></span>
+            {{/if}}
+            <span class="item-text j-item-text icon-font" title="{{item.caption}}（{{item.name}}）">
+            {{item.caption}}{{if item.name}}（{{item.name}}）{{/if}}
+            </span>
+            <span class="icon hide j-delete" title="删除">×</span>
+        </div>
+        {{/each}}
+    </div>
+    <div class="data-axis-line data-axis-line-48 j-comp-setting-line j-line-s" data-axis-type="s">
+        <span class="letter">过滤轴:</span>
+        {{each sAxis as item}}
+        <div class="item hover-bg j-root-line" data-id="{{item.id}}">
+            <span class="item-text j-item-text" title="{{item.caption}}（{{item.name}}）">
+            {{item.caption}}{{if item.name}}（{{item.name}}）{{/if}}
+            </span>
+            <span class="icon-letter j-delete" title="删除">×</span>
+        </div>
+        {{/each}}
+    </div>
+    <div class="data-axis-line data-axis-line-48 j-comp-setting-line j-line-cand-ind" data-axis-type="CAND_IND">
+        <span class="letter">候选指标:</span>
+        {{each candInds as item}}
+        <div class="item hover-bg j-root-line" data-id="{{item.id}}">
+            {{if item.chartType === null}}
+            <span class="icon-chart column j-icon-chart" chart-type="column" ></span>
+            {{else}}
+            <span class="icon-chart {{item.chartType}} j-icon-chart" chart-type="{{item.chartType}}" ></span>
+            {{/if}}
+            <span class="item-text j-item-text icon-font" title="{{item.caption}}（{{item.name}}）">
+            {{item.caption}}{{if item.name}}（{{item.name}}）{{/if}}
+            </span>
+            {{if !item.used}}
+            <span class="icon hide j-delete" title="删除">×</span>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+    <!--<div class="data-axis-line data-axis-line-48 j-comp-setting-line j-line-cand-dim" data-axis-type="CAND_DIM">-->
+        <!--<span class="letter">候选维度:</span>-->
+        <!--{{each candDims as item}}-->
+        <!--<div class="item hover-bg j-root-line" data-id="{{item.id}}">-->
+            <!--<span class="item-text j-item-text" title="{{item.caption}}（{{item.name}}）">-->
+            <!--{{item.caption}}{{if item.name}}（{{item.name}}）{{/if}}-->
+            <!--</span>-->
+            <!--{{if !item.used}}-->
+            <!--<span class="icon-letter j-delete" title="删除">×</span>-->
+            <!--{{/if}}-->
+        <!--</div>-->
+        <!--{{/each}}-->
+    <!--</div>-->
+    <div class="data-axis-line data-axis-line-48 data-btn-line">
+        <span class="letter">设置:</span>
+        <span class="icon-letter icon-letter-btn j-set-data-format">数据格式</span>
+        <span class="icon-letter icon-letter-btn j-set-topn">TOPN</span>
+        <span class="icon-letter icon-letter-btn j-set-relation">关联</span>
+        <span class="icon-letter icon-letter-btn j-set-axis">双坐标轴设定</span>
+        <span class="icon-letter icon-letter-btn j-set-ind-color">指标颜色</span>
+        <span class="icon-letter icon-letter-btn j-set-axis-text">坐标轴名字</span>
+        <span class="icon-letter icon-letter-btn j-set-individuation">个性化</span>
+    </div>
+</div>

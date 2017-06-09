@@ -1,0 +1,142 @@
+{
+    "desc" : "查询条件||多维图形||多维表格||表格图形可联动",
+    "diKey": "DEPICT",
+    "clzDefs": [
+        {
+            "clzKey": "OLAP_TABLE",
+            "dataOpt": {
+                "emptyHTML": "未查询到相关数据"
+            }
+        },
+        {
+            "clzKey": "ECUI_SELECT",
+            "dataOpt": {
+                "optionSize": 10
+            }
+        }
+    ],
+    "entityDefs": [
+        {
+            "id": "snpt1",
+            "clzType": "SNIPPET"
+        },
+        {
+            "id": "snpt1.cpnt-form1",
+            "clzType": "COMPONENT",
+            "clzKey": "DI_FORM",
+            "reportType": "RTPL_VIRTUAL",
+            "init": { 
+                "action": { "name": "sync" }
+            },
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "input": [],
+                "confirm": "snpt1.vu-form1-confirm1"
+            },
+            "dataOpt": { "submitMode": "CONFIRM" }
+        },
+        {
+            "id": "snpt1.vu-form1-confirm1",
+            "clzType": "VUI",
+            "clzKey": "H_BUTTON",
+            "dataOpt": { 
+                "skin": "ui-normal-btn",
+                "text": "报表生成"
+            }
+        },
+        {
+            "id": "snpt1.cpnt-table1",
+            "clzType": "COMPONENT",
+            "clzKey": "DI_TABLE",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "mainTable": "snpt1.vu-table1",
+                "breadcrumb": "snpt1.vu-table1-breadcrumb1",
+                "download": "snpt1.vu-table1-download1",
+                "countInfo": "snpt1.vu-table1-count1"
+            },
+            "interactions": [
+                {
+                    "events": [
+                        { "rid": "snpt1.cpnt-form1", "name": "dataloaded" },
+                        { "rid": "snpt1.cpnt-form1", "name": "submit" }
+                    ],
+                    "action": { "name": "sync" },
+                    "argHandlers": [
+                        ["clear"],
+                        ["getValue", "snpt1.cpnt-form1"]
+                    ]
+                }
+            ]
+        },
+        { 
+            "id": "snpt1.vu-table1", 
+            "clzType": "VUI",
+            "clzKey": "OLAP_TABLE",
+            "name": "table",
+            "dataOpt": {
+                "rowHCellCut": 30,
+                "hCellCut": 30,
+                "cCellCut": 30,
+                "vScroll": true,
+                "rowCheckMode": "SELECT"
+            }
+        },
+        { 
+            "id": "snpt1.vu-table1-breadcrumb1", 
+            "clzType": "VUI",
+            "clzKey": "BREADCRUMB",
+            "dataOpt": {
+                "maxShow": 6
+            }
+        },
+        {
+            "id": "snpt1.vu-table1-download1",
+            "clzType": "VUI",
+            "clzKey": "H_BUTTON",
+            "dataOpt": {
+                "skin": "ui-download-btn",
+                "text": "下载数据"
+            }
+        },
+        {
+            "id": "snpt1.vu-table1-count1",
+            "clzType": "VUI",
+            "clzKey": "TEXT_LABEL",
+            "dataInitOpt": { "hide": true }
+        },
+        {
+            "id": "snpt1.cpnt-chart1", 
+            "clzType": "COMPONENT",
+            "clzKey": "DI_CHART",
+            "sync": { "viewDisable": "ALL" },
+            "vuiRef": {
+                "mainChart": "snpt1.vu-chart1"
+            },
+            "interactions": [
+                {
+                   "events": [
+                        { "rid": "snpt1.cpnt-table1", "name": "rowselect" },
+                        { "rid": "snpt1.cpnt-table1", "name": "dataloaded" }
+                    ],
+                    "action": { "name": "syncX" },
+                    "argHandlers": [
+                        ["clear"],
+                        ["dimTagsList", "snpt1.cpnt-table1"],
+                        ["getValue", "snpt1.cpnt-form1"]
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "snpt1.vu-chart1", 
+            "clzType": "VUI",
+            "clzKey": "H_CHART",
+            "dataOpt": {
+                "height": 260,
+                "legend": { "xMode": "pl" },
+                "weekViewRange": [null, "-1d"]
+            }
+        }
+    ]
+}
