@@ -1,4 +1,4 @@
-#BIPlatform
+BIPlatform
 
 声明：因公司内部代码规范管理原因，平台代码版本维护由git迁移到公司svn管理，平台更新代码按天同步到github，感谢关注！
 
