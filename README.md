@@ -12,7 +12,8 @@ fileserver －－ 静态文件服务器 存储平台生成的静态文件
 model －－ 模型组建层 定义分析、问答模型
 designer －－ 设计器
 tesseract －－ 执行引擎
-##构建流程：
+
+## 构建流程：
 
 clone项目到本地指定目录
 分别在fileserver、tesseract、designer目录下执行 mvn install构建项目
