@@ -173,7 +173,7 @@
     //===============
 
     // Expand the buttons.init string back into the buttons object
-    //   and create seperate object properties for each button.
+    //   and create separate object properties for each button.
     //   e.g. buttons.size.title = "Font Size"
     $.each(buttons.init.split("|"), function (idx, button) {
         var items = button.split(","), name = items[0];
