@@ -77,29 +77,6 @@ public class SqlQueryServiceImpl implements QueryService {
             DataModel dataModel = null;
             SqlQuestionModel sqlQuestionModel = (SqlQuestionModel) questionModel;
             if (sqlQuestionModel.getDataSourceInfo().getDataSourceType() == DataSourceType.ASYN) {
-            // 寮傛鏁版嵁婧�
-                
-//                AsynQuery asynQuery = new AsynQuery(sqlQuestionModel.getSql(), sqlQuestionModel.getDataSourceInfo());
-//                Object asynQueryCache = cacheManagerService.getFromCache(asynQuery.getKey());
-//                
-//                if (asynQueryCache == null) {
-//                    DrunClient dc = new DrunClient();
-//                    String config = "{\"beforeActions\":[],\"finallyActions\":[],\"processParallel\":false,\"processActions\":[{\"order\":1,\"type\":1,"
-//                            + "\"resourceReq\":{\"runwayMemory\":0,\"runwayPoolMemory\":0},\"configProperties\":[{\"name\":\"exitValue\",\"value\":\"1\"},"
-//                            + "{\"name\":\"command\",\"value\":\"echo 0 \"},{\"date\":\"20151223\"}],\"clazzName\":\"com.baidu.rigel.dmap.runner.shell.ShellRunner\"}]}";
-//                    String origMetaJson = "{\"callbackUrl\":\"http://cp01-sys-ra09-jueheng2qa049.cp01.baidu.com:8030/queryrouter/query/status\",\"origId\":\""
-//                            + asynQuery.getKey() + "\"}";
-//                    SubmitResult submitResult = dc.submitWithOrigMeta("com.baidu.rigel.drun.scheduleframework.example.DummyLeader",
-//                            "dispatch-pool-test", config, new LeaderResourceReq(null, null, null), origMetaJson);
-//                    // 灏唖ql + ds key 涓瓨鏀緌ueryUUID锛屽瓨鏀緇eaderId銆�
-//                    if (submitResult.isSuccess()) {
-//                        // asynQuery.setDrunTaskId(submitResult.getLeaderId());
-//                        // cacheManagerService.setToCache(asynQuery.getKey(), asynQuery);
-//                    } else {
-//                        logger.error("queryId:{} submit drun task fail", questionModel.getQueryId());
-//                        throw new Exception("submit drun task fail");
-//                    }
-//                }
                 dataModel = new DataModel();
             } else {
                 JdbcHandler jdbcHandler = QueryHandlerBuilder.buildJdbcHandler(sqlQuestionModel
